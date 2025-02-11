@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1828778011798166}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1828778011798166
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4949971873494608}
+  - 114: {fileID: 114933611787818261}
+  m_Layer: 0
+  m_Name: SecurityCameraAnimLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4949971873494608
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828778011798166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.978442, y: -26.25283, z: -1.2947077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114933611787818261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828778011798166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfbc50e2c9c1dad6163134215099969, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  LibraryName:
+  AnimDefaults:
+    DefinitionName: Default
+    Categories:
+    - CategoryName: Movement
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions:
+      - ActionName: Aim
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 20044bfbe7b23324195f2ad80bf0cdbd, type: 2}
+            Looping: 0
+            Clamp: 1
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 0.001
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: PowerDown
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: bd70070cfc1552f4d9ecf9c172e64a9c, type: 2}
+            Looping: 0
+            Clamp: 1
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: PowerUp
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 14f1d23839cb9f84e8f0230d74a919d6, type: 2}
+            Looping: 0
+            Clamp: 1
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+  yRotAnim: {fileID: 7400000, guid: e1862421cb197fc4e84781e11904d44b, type: 2}
+  segueStartAnim: {fileID: 0}
+  segueEndAnim: {fileID: 0}
+  segueModel: {fileID: 0}
+  AnimOverrides: []
+  totalAnimCount: 0

@@ -1,0 +1,244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1969399536476389}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1969399536476389
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4320999382449772}
+  - 114: {fileID: 114960793960846896}
+  m_Layer: 0
+  m_Name: GlobeSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4320999382449772
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969399536476389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.445107, y: -4.475909, z: 4.211744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114960793960846896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969399536476389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f39a46826d59365104ef07a8827c42, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ZoomIn:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: f3ed559816b403e48a38b3a432f677d8, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  ZoomInWithC:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 5a5404154b0a2fa45882a10f8a80dc2e, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  ZoomOut:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 02e6375cfacaee0459afcaee9461649a, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  ZoomOutWithB:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 108b4cb6f294cb84fb370cbbb7d3efd3, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  GlobeStart:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 473f6614581410247aa0155d0bddc6b9, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.7
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  GlobeSpin:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: ca3e45c5c53b6634f87446d9646e0e9b, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 1
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  GlobeMarkerLoop:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 3e95bf2eb6ae2e04c9ef7e25d3d436b1, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 1
+    m_priority: 128
+    m_volume: 0.4
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  TextType:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: ac88f5185266e5445be3ca85672069dc, type: 3}
+    VolGroup: 2
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.5
+    m_volumeVariance: 0
+    m_pitch: 1.3
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.005
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0

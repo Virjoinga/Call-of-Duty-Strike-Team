@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: kow_outro5_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - Object006/AFG_SmokePlume_fire
+  - Hind_body/debris_firebig_jh
+  - Hind_body/explosion_flak_jh
+  - Hind_body/explosion_flakl_jh
+  - Object006/explosion_flakpad_jh
+  - Hind_body/vtol_muzzle_flashes
+  - NODE_VTOL/vtol_muzzle_flashes
+  - afg_fire_jh
+  - Hind_body/Sparks_damage_jh
+  - FX_embers
+  - Watercannon
+  - Water_splash1_jh
+  - Water_splash2_jh
+  - jet_dust
+  - Object014/explosion_flakpad2_jh
+  Effects:
+  - EffectName: big_fire_on
+    EventName:
+    TimeOffset: 12.1
+    Path: Object006/AFG_SmokePlume_fire
+    Action: 0
+  - EffectName: helicopter_hit_trail
+    EventName:
+    TimeOffset: 2.6
+    Path: Hind_body/debris_firebig_jh
+    Action: 0
+  - EffectName: helicopter_hit
+    EventName:
+    TimeOffset: 2.6
+    Path: Hind_body/explosion_flak_jh
+    Action: 0
+  - EffectName: helicopter_hit_again
+    EventName:
+    TimeOffset: 7.6
+    Path: Hind_body/explosion_flakl_jh
+    Action: 0
+  - EffectName: helicopter_expl_pad
+    EventName:
+    TimeOffset: 28.1
+    Path: Object006/explosion_flakpad_jh
+    Action: 0
+  - EffectName: vtol_muzzle_on
+    EventName:
+    TimeOffset: 1.1
+    Path: NODE_VTOL/vtol_muzzle_flashes
+    Action: 0
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 7.1
+    Path: NODE_VTOL/vtol_muzzle_flashes
+    Action: 1
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 2.1
+    Path: Hind_body/Sparks_damage_jh
+    Action: 0
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 10.1
+    Path: afg_fire_jh
+    Action: 0
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 12.1
+    Path: FX_embers
+    Action: 0
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 9.2
+    Path: sparks
+    Action: 0
+  - EffectName: vtol_muzzle_off
+    EventName:
+    TimeOffset: 12
+    Path: sparks
+    Action: 1
+  - EffectName: water_splash2
+    EventName:
+    TimeOffset: 16
+    Path: jet_dust
+    Action: 0
+  - EffectName: debris_expl
+    EventName:
+    TimeOffset: 31.1
+    Path: Object014/explosion_flakpad2_jh
+    Action: 0

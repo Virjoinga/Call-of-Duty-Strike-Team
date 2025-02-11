@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fae7c051ac5b18ba9db6a8edd97eb88, type: 3}
+  m_Name: VTOLminigun
+  m_EditorClassIdentifier:
+  SpinUpAcceleration: 1.8
+  SpinDownAcceleration: 0.5
+  DamageRanges:
+  - Damage: 500
+    Range: 999999
+  DamageRangesNPC:
+  - Damage: 500
+    Range: 999999
+  TimeBetweenShots: 0.02
+  HeatUpSpeed: 0.1
+  CoolDownSpeed: 0.45
+  ShakeIntensity: 0.02
+  Spread: 3
+  ImpactForce: 140
+  NoBulletCasings: 1
+  AccuracyStatAdjustment: 0.1

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: afg_FortGateSmash
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - explosion_tank_jh_afggb
+  - explosion_flak_jh_afg2gb
+  - wood_impact_jh_afg4out
+  - wood_impact_jh_afg4out
+  - PROP_Tank/veh_abhrams/Turret001/Barrel/abrams_fire_jh_afggb
+  - NODE_TankBase002/NODE_Tank 1/T72_damaged/AFG_SmokePlume_fire
+  Effects:
+  - EffectName: barricade_smash
+    EventName:
+    TimeOffset: 6.5
+    Path: wood_impact_jh_afg4out
+    Action: 0
+  - EffectName: tankfire_1
+    EventName:
+    TimeOffset: 12.9
+    Path: PROP_Tank/veh_abhrams/Turret001/Barrel/abrams_fire_jh_afggb
+    Action: 0
+  - EffectName: tank_explosion
+    EventName:
+    TimeOffset: 13.5
+    Path: explosion_tank_jh_afggb
+    Action: 0
+  - EffectName: tank_fire_2
+    EventName:
+    TimeOffset: 30.2
+    Path: PROP_Tank/veh_abhrams/Turret001/Barrel/abrams_fire_jh_afggb
+    Action: 0
+  - EffectName: gate_hit
+    EventName:
+    TimeOffset: 31
+    Path: explosion_flak_jh_afg2gb
+    Action: 0
+  - EffectName: gate_hit
+    EventName:
+    TimeOffset: 25
+    Path: PROP_Tank/veh_abhrams/Turret001/Barrel/abrams_fire_jh_afggb
+    Action: 1
+  - EffectName: gate_hit
+    EventName:
+    TimeOffset: 45
+    Path: PROP_Tank/veh_abhrams/Turret001/Barrel/abrams_fire_jh_afggb
+    Action: 1
+  - EffectName: gate_hit
+    EventName:
+    TimeOffset: 12.5
+    Path: NODE_TankBase002/NODE_Tank 1/T72_damaged/AFG_SmokePlume_fire
+    Action: 0

@@ -1,0 +1,268 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1713782238564216}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1713782238564216
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4097068896089169}
+  - 114: {fileID: 114850369261099262}
+  m_Layer: 0
+  m_Name: AfghanAmbientSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4097068896089169
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713782238564216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 74.825485, y: 86.61623, z: -292.5851}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114850369261099262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713782238564216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b540b935df57944faac58481acfc4d4, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  LightBattleLoop:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 75ee3a2b3ff730d49b54a330318e78a3, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 1
+    m_priority: 128
+    m_volume: 0.4
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 2
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 220
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  DistantChatter:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: dc2d1a4172c00544982de710c790fb13, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.08
+    m_volumeVariance: 0.02
+    m_pitch: 1
+    m_pitchVariance: 0.08
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 220
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  AAFire:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: a714fb9b9e2e6c842b3f65b9170aab8b, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.25
+    m_volumeVariance: 0.05
+    m_pitch: 1
+    m_pitchVariance: 0.2
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 4
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 220
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  DistantExplosion:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 29c9411a8389b4e498f0ce652e36b223, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.35
+    m_volumeVariance: 0.071
+    m_pitch: 1
+    m_pitchVariance: 0.2
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 2
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 200
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  HMGBurst:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: b706123146efd934baecffe3bfa09d4d, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.35
+    m_volumeVariance: 0.071
+    m_pitch: 1
+    m_pitchVariance: 0.3
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 2
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 220
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  MortarExplosion:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: e8da0acd69c3e6f4c987583a8310438c, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.25
+    m_volumeVariance: 0.05
+    m_pitch: 1
+    m_pitchVariance: 0.3
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 3
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 220
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0
+  GunBattle:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: aabc1238541630b48b5798fcc7fc4c3b, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 1
+    m_priority: 128
+    m_volume: 0.5
+    m_volumeVariance: 0.02
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 8
+    m_maxDistance: 70
+    m_rollOffMode: 1
+    m_pan2D: 0
+  BigFireLoop:
+    m_nextSoundChoice: 0
+    m_audioSourceData:
+    - {fileID: 8300000, guid: a3e2ee17740bf0c4a88a00c0c720f405, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 1
+    m_priority: 128
+    m_volume: 0.5
+    m_volumeVariance: 0
+    m_pitch: 0.7
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 15
+    m_maxDistance: 35
+    m_rollOffMode: 1
+    m_pan2D: 0
+  DistantChatterGMG:
+    m_nextSoundChoice: 1
+    m_audioSourceData:
+    - {fileID: 8300000, guid: dc2d1a4172c00544982de710c790fb13, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.07
+    m_volumeVariance: 0.02
+    m_pitch: 1
+    m_pitchVariance: 0.08
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 1
+    m_panLevel: 0
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 150
+    m_maxDistance: 400
+    m_rollOffMode: 1
+    m_pan2D: 0

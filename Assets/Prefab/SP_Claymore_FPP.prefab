@@ -1,0 +1,1440 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1096196674785970}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1096196674785970
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4518843977998651}
+  - 114: {fileID: 114191836896703757}
+  - 114: {fileID: 114285556149041593}
+  m_Layer: 0
+  m_Name: SP_Claymore_FPP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4518843977998651
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096196674785970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60.73043, y: -6.8167256E-19, z: -57.479332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4508644025489599}
+  m_Father: {fileID: 0}
+--- !u!114 &114191836896703757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096196674785970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f366274e275907ace61dac775805f0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_PlaygroundActors:
+  - {fileID: 0}
+  m_ReplaceCharacters: []
+  m_WarpTo: []
+  LinkInfo:
+  - Type: 1
+    RefObject:
+      Name: PlayerCharacter
+      Type: 1
+      Index: 0
+      Position: {x: 0, y: 0, z: 0}
+      ObjectTransform: {fileID: 0}
+      linkTransform: {fileID: 0}
+      ActorAnimation: {fileID: 0}
+      CurrentAnim: {fileID: 0}
+      AnimDirector: {fileID: 0}
+      ActorRef: {fileID: 0}
+      AnimationStartTime: -1
+      GunAway: 1
+      GunOut: 1
+    NodeIndex: 1
+    ActorIndex: 0
+    FPSActorIndex: 0
+    WorldReferenceIndex: 0
+    Required: 1
+    UsePlaygroundMesh: 0
+  Sequence:
+    Statements:
+    - Conditions:
+      - Type: 1
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
+      Actions:
+      - Type: 24
+        Clip: {fileID: 7400000, guid: 05b13b68fc15ea4428d0e5aa31f6e9c5, type: 2}
+        FPSClip: {fileID: 7400000, guid: 05b13b68fc15ea4428d0e5aa31f6e9c5, type: 2}
+        Actor:
+          Name: Actor0
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Invalid
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0
+        DelayTimeFP: 0
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 2
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID: Claymore
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 0}
+        SoundBank: {fileID: 0}
+        PlayFPFunction:
+        PlayFunction:
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 1
+        PlayVolumeFP: 1
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 14
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name: Actor0
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 1.6
+        DelayTimeFP: 0
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 0
+        BlobShadowOnOff: 0
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText: SetPieceEndResponse
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 0}
+        SoundBank: {fileID: 0}
+        PlayFPFunction:
+        PlayFunction:
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0
+        PlayVolumeFP: 1
+        FadeDuration: 0
+        FadeDurationFP: 1
+        DesiredVolume: 0
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 8
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name: Actor0
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 1.6
+        DelayTimeFP: 0
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText: SpawnClaymore
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 0}
+        SoundBank: {fileID: 0}
+        PlayFPFunction:
+        PlayFunction:
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 1
+        PlayVolumeFP: 1
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 6
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Node_CharPosition
+          Type: 0
+          Index: 1
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0.05
+        DelayTimeFP: 0.05
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        PlayFPFunction: FoleyMovementFast
+        PlayFunction: FoleyMovementSlow
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0.4
+        PlayVolumeFP: 0.4
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 6
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Node_CharPosition
+          Type: 0
+          Index: 1
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0.15
+        DelayTimeFP: 0.15
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        PlayFPFunction: FoleyGrab
+        PlayFunction: FoleyGrab
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0.5
+        PlayVolumeFP: 0.5
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 6
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Node_CharPosition
+          Type: 0
+          Index: 1
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0.475
+        DelayTimeFP: 0.475
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        PlayFPFunction: FoleyMovementFast
+        PlayFunction: FoleyMovementFast
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0.5
+        PlayVolumeFP: 0.5
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 6
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Node_CharPosition
+          Type: 0
+          Index: 1
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0.85
+        DelayTimeFP: 0.85
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        PlayFPFunction: FoleyDropDown
+        PlayFunction: FoleyDropDown
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0.1
+        PlayVolumeFP: 0.1
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      - Type: 6
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Node_PlantClaymor
+          Type: 0
+          Index: 2
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0.93
+        DelayTimeFP: 0.93
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 114479808764924579, guid: e1f1e1a8ca2754f4e8654a0938a8d1b4, type: 2}
+        SoundBank: {fileID: 114479808764924579, guid: e1f1e1a8ca2754f4e8654a0938a8d1b4, type: 2}
+        PlayFPFunction: ClaymorePlant
+        PlayFunction: ClaymorePlant
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0.7
+        PlayVolumeFP: 0.7
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      IsTestStatement: 0
+      branchTo: -1
+    - Conditions:
+      - Type: 3
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0.4
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
+      Actions:
+      - Type: 5
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name: Actor0
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Prop:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name: Invalid
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        DelayTime: 0
+        DelayTimeFP: 0
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 0
+        BlobShadowOnOff: 0
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 0}
+        SoundBank: {fileID: 0}
+        PlayFPFunction:
+        PlayFunction:
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 0
+        PlayVolumeFP: 1
+        FadeDuration: 0
+        FadeDurationFP: 1
+        DesiredVolume: 0
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      IsTestStatement: 0
+      branchTo: -1
+  ReferenceMesh: {fileID: 1546998214672763}
+  WorldReferenceNode: {fileID: 4291881133862027}
+  PausedTime: 0
+  TheCamera: {fileID: 0}
+  Activated: 0
+  UsePlaygroundMeshes: 0
+  IsCutscene: 0
+  ClearActorsTasks: 1
+  AddStartTransition: 1
+  AddEndTransition: 1
+  MaintainCameraMode: 1
+  MainCharacterFPP: 0
+  ReplaceCharacterGuns: 1
+  BlendToFPP: 0
+  IsInvulnerableDuring: 0
+  FirstPersonSpawner: {fileID: 0}
+  SpawnerController: {fileID: 0}
+  ActionType: 2
+  ActorReferences: []
+  NodeReferences:
+  - Name:
+    Type: 3
+    Index: 0
+    Position: {x: 0, y: 0, z: 0}
+    ObjectTransform: {fileID: 0}
+    linkTransform: {fileID: 0}
+    ActorAnimation: {fileID: 0}
+    CurrentAnim: {fileID: 0}
+    AnimDirector: {fileID: 0}
+    ActorRef: {fileID: 0}
+    AnimationStartTime: -1
+    GunAway: 0
+    GunOut: 1
+  - Name:
+    Type: 3
+    Index: 0
+    Position: {x: 0, y: 0, z: 0}
+    ObjectTransform: {fileID: 4291881133862027}
+    linkTransform: {fileID: 0}
+    ActorAnimation: {fileID: 0}
+    CurrentAnim: {fileID: 0}
+    AnimDirector: {fileID: 0}
+    ActorRef: {fileID: 0}
+    AnimationStartTime: -1
+    GunAway: 0
+    GunOut: 1
+  - Name:
+    Type: 3
+    Index: 0
+    Position: {x: 0, y: 0, z: 0}
+    ObjectTransform: {fileID: 4159446974372603}
+    linkTransform: {fileID: 0}
+    ActorAnimation: {fileID: 0}
+    CurrentAnim: {fileID: 0}
+    AnimDirector: {fileID: 0}
+    ActorRef: {fileID: 0}
+    AnimationStartTime: -1
+    GunAway: 0
+    GunOut: 1
+  WorldObjects: []
+  WeaponLighting: []
+  m_CallOnCompletion: {fileID: 0}
+  CameraCutTimes: []
+--- !u!114 &114285556149041593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096196674785970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede75691f5cbe1f312bc4bebde40206e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Guid: eb0e0ad1-2f7c-4592-bd8f-c09064ea066d
+  m_CanBeMoved: 0
+--- !u!1 &1546998214672763
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4508644025489599}
+  - 111: {fileID: 111294601734371434}
+  - 114: {fileID: 114795591403176514}
+  m_Layer: 0
+  m_Name: RefMesh_PlantClaymore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4508644025489599
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546998214672763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4291881133862027}
+  - {fileID: 4159446974372603}
+  m_Father: {fileID: 4518843977998651}
+--- !u!111 &111294601734371434
+Animation:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546998214672763}
+  m_Enabled: 1
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &114795591403176514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546998214672763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede75691f5cbe1f312bc4bebde40206e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Guid: b95783f1-870e-4d35-9162-bf114d06dc68
+  m_CanBeMoved: 0
+--- !u!1 &1561492112300835
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4291881133862027}
+  - 33: {fileID: 33838695062659167}
+  - 23: {fileID: 23075801257480238}
+  - 114: {fileID: 114533268760636903}
+  m_Layer: 0
+  m_Name: Node_CharPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4291881133862027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561492112300835}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -5.1110983E-05, y: 0, z: -0.0012224615}
+  m_LocalScale: {x: 0.39396062, y: 0.39396062, z: 0.39396062}
+  m_Children: []
+  m_Father: {fileID: 4508644025489599}
+--- !u!33 &33838695062659167
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561492112300835}
+  m_Mesh: {fileID: 4300000, guid: 36b4c4f775082234c98c5377eac7f458, type: 2}
+--- !u!23 &23075801257480238
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561492112300835}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 0
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 399ddbfa5682ab84fb14db349dcaf1e1, type: 2}
+  m_SubsetIndices: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!114 &114533268760636903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561492112300835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede75691f5cbe1f312bc4bebde40206e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Guid: e989b828-f671-49f8-8d19-a17a63b9ddb8
+  m_CanBeMoved: 0
+--- !u!1 &1352368136312532
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4159446974372603}
+  - 33: {fileID: 33545571844864682}
+  - 23: {fileID: 23257883656696642}
+  - 114: {fileID: 114701760272873409}
+  m_Layer: 0
+  m_Name: Node_PlantClaymor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4159446974372603
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352368136312532}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.038822174, y: 1.8213175E-08, z: 0.72320175}
+  m_LocalScale: {x: 0.39396062, y: 0.39396062, z: 0.39396062}
+  m_Children: []
+  m_Father: {fileID: 4508644025489599}
+--- !u!33 &33545571844864682
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352368136312532}
+  m_Mesh: {fileID: 4300000, guid: 701dca5d088d10c4990374c05af0fd0f, type: 2}
+--- !u!23 &23257883656696642
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352368136312532}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 0
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 399ddbfa5682ab84fb14db349dcaf1e1, type: 2}
+  m_SubsetIndices: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!114 &114701760272873409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352368136312532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede75691f5cbe1f312bc4bebde40206e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Guid: 31a36289-15b4-48e6-89a3-59e708398307
+  m_CanBeMoved: 0

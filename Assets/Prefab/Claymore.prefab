@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1804223018264902}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1804223018264902
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4789686362949393}
+  - 114: {fileID: 114377958004412271}
+  - 114: {fileID: 114189375318352171}
+  m_Layer: 0
+  m_Name: Claymore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4789686362949393
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804223018264902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.68936, y: -2.4144062E-17, z: -46.91281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4339496872246812}
+  m_Father: {fileID: 0}
+--- !u!114 &114377958004412271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804223018264902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5785ec8af4e4df3b632059181c0f1c50, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ContextMenuParents:
+  - {fileID: 1804223018264902}
+  Radius: 10
+--- !u!114 &114189375318352171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804223018264902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92210f7504c19f6520a0bb8270a2a27, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  quickType: 0
+  UseBlip: 1
+  BlipWorldOffset: {x: 0, y: 0, z: 0}
+  DestroyOnFinish: 0
+  mInterior: {fileID: 0}
+  FacingAngle: 0
+  CaptureAngle: 360
+  FirstPersonTriggerRadius: 3
+  FirstPersonVisibleRadius: 10
+  MultiManCoverCluster: {fileID: 0}
+  StartViewable: 0
+  ActionLabel: S_CMHack
+  CancelLabel: S_CMCancel
+  ResumeLabel: S_CMResume
+--- !u!1 &1327362666583369
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4339496872246812}
+  - 135: {fileID: 135887085981805787}
+  - 114: {fileID: 114334336609695128}
+  m_Layer: 12
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4339496872246812
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327362666583369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children: []
+  m_Father: {fileID: 4789686362949393}
+--- !u!135 &135887085981805787
+SphereCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327362666583369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114334336609695128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327362666583369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468b0012e0a3ad61e2d49bc98d65cd28, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Interface:
+    TimeToHack: 5
+    IsMultiManHack: 0
+    ObjectToCallOnStart: {fileID: 0}
+    FunctionToCallOnStart:
+    ObjectToCallOnSuccess: {fileID: 0}
+    FunctionToCallOnSuccess:
+    GroupObjectToCallOnSuccess: []
+    GroupFunctionToCallOnSuccess: []
+    ObjectToCallOnFail: {fileID: 0}
+    FunctionToCallOnFail:
+    GroupObjectToCallOnFail: []
+    GroupFunctionToCallOnFail: []
+    TimerData:
+      StatusLight:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      StatusLightComp: {fileID: 0}
+      IsTimerSwtich: 0
+      ActiveSwitchTime: 5
+      ObjectToControl: []
+      FuncToCallOnHack: []
+      FuncToCallOnTimeOut: []
+  SetPieceEnter: {fileID: 114979665731116151, guid: 938235f01c20b18499f5461a5d7b98d1, type: 2}
+  SetPieceExit: {fileID: 114384102861113993, guid: 183e244b63ecb1f4aba820ee4c9a3c3f, type: 2}
+  HackLoopAnimation:
+    Clip: {fileID: 7400000, guid: 35b9a3fea077e1a41bb63869c897de46, type: 2}
+  DuckIntoAnimation:
+    Clip: {fileID: 7400000, guid: d7bdc7732c4c61240ab2375406ebf762, type: 2}
+  DuckIdleAnimation:
+    Clip: {fileID: 7400000, guid: 08d49ae6348b9084fb80c906ce8c64e2, type: 2}
+  DuckOutOfAnimation:
+    Clip: {fileID: 7400000, guid: 41ffd1352347e424d91beb619116a38f, type: 2}
+  ProgressBlipRef: {fileID: 1511686354622599, guid: 6054a8c327915d1429cecdfa0164d627, type: 2}
+  LastHacker: {fileID: 0}
+  AllowDestroyOnHack: 1
+  IsInUse: 0
+  SetPiece: {fileID: 114611675560633209, guid: 4662ee380a856e64f8f7026a15328878, type: 2}
+  SetPiece_FPP: {fileID: 114191836896703757, guid: 6e09a0bd1c7406f43a190b530cba39e1, type: 2}
+  HitBoxRig: {fileID: 11400000, guid: 6fbba753ff3a74e4ab4c6358316b0c14, type: 2}
+  DetonationTime: 0
+  ClaymoreModel: {fileID: 1028536981907701, guid: 3b2ea3f27aa0bba40a9b5d0dd5af999c, type: 2}

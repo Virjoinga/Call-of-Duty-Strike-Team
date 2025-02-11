@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1733292923433328}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1733292923433328
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4507387134440915}
+  - 114: {fileID: 114373139328841314}
+  m_Layer: 0
+  m_Name: KowloonAmbientHighSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4507387134440915
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733292923433328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -121.3107, y: 97.450745, z: -58.34069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114373139328841314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733292923433328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64d424ab0f53f88690121e9f2e2ea9c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DogBarks:
+    m_nextSoundChoice: 2
+    m_audioSourceData:
+    - {fileID: 8300000, guid: a01b16a8e3567634b9a53f6e4115c66b, type: 3}
+    - {fileID: 8300000, guid: ecfbad7d117bdf54dbd709531b67394e, type: 3}
+    - {fileID: 8300000, guid: 42ed5f89650b88945a9607d4f05e9600, type: 3}
+    - {fileID: 8300000, guid: 9a0ef06f467db7e4187dc1fd95ba7de8, type: 3}
+    - {fileID: 8300000, guid: 5ec1e31d40043e741ade6e2bef0b6aef, type: 3}
+    - {fileID: 8300000, guid: 360d76145c6cb694c8c2c736f8265dd6, type: 3}
+    - {fileID: 8300000, guid: 06b6d766a5fb91a4997a15bfe04c3a82, type: 3}
+    - {fileID: 8300000, guid: 3c7e696f3136cde408082319c2ebd80d, type: 3}
+    - {fileID: 8300000, guid: 45cccec068a5b4a418343ee56fde1f3c, type: 3}
+    VolGroup: 5
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 0.3
+    m_volumeVariance: 0.05
+    m_pitch: 1
+    m_pitchVariance: 0.15
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 5
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0

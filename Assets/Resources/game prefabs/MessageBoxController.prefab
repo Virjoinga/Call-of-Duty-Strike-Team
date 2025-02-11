@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1817494419531116}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1817494419531116
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4569112876811857}
+  - 114: {fileID: 114349096168228700}
+  m_Layer: 0
+  m_Name: MessageBoxController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4569112876811857
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817494419531116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114349096168228700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817494419531116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85129d16454865723befd0d8603c06a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  MsgBoxPrefab: {fileID: 114623347112153158, guid: 3d288466f2a24574ba3c1c88d3371c26, type: 2}
+  LevelUpMsgBoxPrefab: {fileID: 114496601119141782, guid: 06e05c4f116d98f4b87c41cf327fb009, type: 2}
+  HintMsgBoxPrefab: {fileID: 114894574623029744, guid: 363692c15bc63f74bb7adb99303a46cc, type: 2}
+  ActivateMsgBoxPrefab: {fileID: 114043006285743727, guid: 3e90489f94f70484b9163fe30ba7d6f7, type: 2}
+  DailyRewardMsgBoxPrefab: {fileID: 114004392725952439, guid: b6b80490a071d61459e0ab81e44ce78a, type: 2}
+  CloudConflictMsgBoxPrefab: {fileID: 114025645654435453, guid: d7775f3591541d34a88945b2aa84b32c, type: 2}
+  ChallengeMsgBoxPrefab: {fileID: 114633754121282591, guid: 70317310efcdc0a438e0151af7401b07, type: 2}
+  ImageListMessageBoxPrefab: {fileID: 114390145812848934, guid: 10c8f3624e1bc9f44a6109b5e49d0299, type: 2}
+  UnsupportedMsgBoxPrefab: {fileID: 114508084961968244, guid: cdde7fc7fcaf4d442a601f7ce9eb2df8, type: 2}
+  GlobalLeagueMsgBoxPrefab: {fileID: 114945346181117757, guid: 38ac3d18c272cbb4295e1ef8153479ac, type: 2}
+  TBFInfoMsgBoxPrefab: {fileID: 114345384661426151, guid: f9e90babfdd7c834e9df51c7428c06bb, type: 2}
+  MinSize: {x: -1, y: -1}
+  AutoSize: 1

@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a782379ac935614847d193352f97ce0, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier:
+  AlwaysIncludedShaders:
+  - {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  SoldierPathShader: {fileID: 4800000, guid: ba05f23e0f855974080b6008bbb13703, type: 3}
+  SoldierPathTexture: {fileID: 2800000, guid: 88d7496fcc38b5b40ae0a788b9db1de2, type: 3}
+  SoldierPathMaterial: {fileID: 2100000, guid: 514944ae9a5b6864381a45bb56932fad, type: 2}
+  BloodyScreenRamp:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 71.29596
+      outSlope: 71.29596
+      tangentMode: 0
+    - time: 0.009540532
+      value: 0.68020135
+      inSlope: 1.9247751
+      outSlope: 1.9247751
+      tangentMode: 0
+    - time: 0.5496933
+      value: 0.934741
+      inSlope: 0.34774092
+      outSlope: 0.34774092
+      tangentMode: 0
+    - time: 0.79999995
+      value: 1
+      inSlope: 0.2607161
+      outSlope: 0.2607161
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  BloodPool: {fileID: 1968716261052930, guid: 8d8f403de1fa19342bfa66f620214055, type: 2}
+  BloodSpray: {fileID: 1402730591644672, guid: 27a7b1bc784f74e4a9bc42c5dd829495, type: 2}
+  BulletEject: {fileID: 1245859628788829, guid: 95e02b44a989bfb45b9fc3070cb40b4a, type: 2}
+  LaserSight: {fileID: 1863047411418840, guid: b21258393e34d0c41bbbd3b6d73c3e99, type: 2}
+  MasonrySpray: {fileID: 1657935153405674, guid: d1a385c70586fe941aea78c811224245, type: 2}
+  MetalSpray: {fileID: 1979900339871055, guid: 1a893c06a9872ec44908499faa068e51, type: 2}
+  WoodSpray: {fileID: 1108367279531117, guid: 14fdee82f31159146b660a84951970f5, type: 2}
+  MuzzleFlash: {fileID: 1053578402117849, guid: bb000900b767eb142af1bff9314ed306, type: 2}
+  TracerFire: {fileID: 1479989431639647, guid: 27a22b3b46c7c4340bc43a149720baa0, type: 2}
+  FriendlyTracer: {fileID: 2100000, guid: 00ab3a869731e96468f846008a26eed5, type: 2}
+  EnemyTracer: {fileID: 2100000, guid: 5c34ed9a600c3ff4093c149ab312dfc7, type: 2}
+  MinigunTracer: {fileID: 2100000, guid: c2ac364b9698ada43906a157c2369f82, type: 2}
+  RangeRingProjector: {fileID: 1552655671695764, guid: 58130fdef581d744b889dbe7422d2a3f, type: 2}
+  BlobShadow: {fileID: 1356434525343388, guid: 1e541313b93c70142be2a9cef75f02db, type: 2}
+  HaloModel: {fileID: 1171885343741282, guid: 6e5abb30d77b23948a3424ec06c5e1df, type: 2}
+  SentryGunMuzzleFlash: {fileID: 1337382632646005, guid: 80fb1173e52967e449f1698a34bf1472, type: 2}
+  SentryGunCasingEject: {fileID: 1228046565748333, guid: 9a7ddbf643a01c34bb3b368ac030b397, type: 2}
+  MinigunMuzzleFlash: {fileID: 1337382632646005, guid: 80fb1173e52967e449f1698a34bf1472, type: 2}
+  MinigunCasingEject: {fileID: 1228046565748333, guid: 9a7ddbf643a01c34bb3b368ac030b397, type: 2}
+  AN94MuzzleFlash: {fileID: 1501080639565791, guid: 01fe4b6fdc63a414db9e99bd42339594, type: 2}
+  AN94CasingEject: {fileID: 1496786521602073, guid: d58fc948a007623489aad055b97faa0d, type: 2}
+  M8A1MuzzleFlash: {fileID: 1816075280290960, guid: 2f756c7bc19f1d440abf53396324513d, type: 2}
+  M8A1CasingEject: {fileID: 1488620269584558, guid: 65829d98fcf30da48a735f2a2dc1369b, type: 2}
+  Type25MuzzleFlash: {fileID: 1501080639565791, guid: 01fe4b6fdc63a414db9e99bd42339594, type: 2}
+  Type25CasingEject: {fileID: 1403192376935777, guid: 704011c0913ba4d4e8bdbc05977a5995, type: 2}
+  KS23MuzzleFlash: {fileID: 1344125749707801, guid: 83e04cb573925cd47b04632dc829b77b, type: 2}
+  KS23CasingEject: {fileID: 1478774883611138, guid: b8d4f40a5f2ff8d41ab06258c1e8c2d9, type: 2}
+  KSGMuzzleFlash: {fileID: 1344125749707801, guid: 83e04cb573925cd47b04632dc829b77b, type: 2}
+  KSGCasingEject: {fileID: 1548418768740876, guid: 37190ced0f2b2984991d7c2de98df1ad, type: 2}
+  M1216MuzzleFlash: {fileID: 1344125749707801, guid: 83e04cb573925cd47b04632dc829b77b, type: 2}
+  M1216CasingEject: {fileID: 0}
+  HAMRMuzzleFlash: {fileID: 1306144722485340, guid: b1713c53a81d1c9478d628c4bd9c16cf, type: 2}
+  HAMRCasingEject: {fileID: 1043596615804892, guid: a1992ae1ae2df1f48a22f81158225e65, type: 2}
+  LSATMuzzleFlash: {fileID: 1306144722485340, guid: b1713c53a81d1c9478d628c4bd9c16cf, type: 2}
+  LSATCasingEject: {fileID: 1174325734598941, guid: aa27dbb1e8b6d2b43a8f8353cea83e66, type: 2}
+  QBBLSWMuzzleFlash: {fileID: 1306144722485340, guid: b1713c53a81d1c9478d628c4bd9c16cf, type: 2}
+  QBBLSWCasingEject: {fileID: 1006533850416393, guid: 3a0d5511f0bf9c742b662b7f471624d7, type: 2}
+  BallistaMuzzleFlash: {fileID: 1825194364840315, guid: da52a90134ab8cd44b02f2f7eba54375, type: 2}
+  BallistaCasingEject: {fileID: 1424440617248525, guid: 386f4af81a9fdc244abbe00b83ecac9c, type: 2}
+  AS50MuzzleFlash: {fileID: 1825194364840315, guid: da52a90134ab8cd44b02f2f7eba54375, type: 2}
+  AS50CasingEject: {fileID: 1885103783729543, guid: 5ca2fd6070d4ac74290a798f126ade99, type: 2}
+  SVUASMuzzleFlash: {fileID: 1825194364840315, guid: da52a90134ab8cd44b02f2f7eba54375, type: 2}
+  SVUASCasingEject: {fileID: 1139869711061285, guid: ee709704fe14149418edb0edc754ae02, type: 2}
+  BerettaMuzzleFlash: {fileID: 1669095060165874, guid: 770f98b5f15b57444af5df391872272a, type: 2}
+  BerettaCasingEject: {fileID: 1116958422936951, guid: 51e5f8de62fbe2048a91985d108890ee, type: 2}
+  PDW57MuzzleFlash: {fileID: 1448260932785748, guid: cf8b05c7cecf61641a34e85d52a851a5, type: 2}
+  PDW57CasingEject: {fileID: 1567320749191930, guid: a972b1514cd72d5458fdf1397dd3ec84, type: 2}
+  SkorpionEVOMuzzleFlash: {fileID: 1959660278468762, guid: 998b9e6366e5a26428e5adbaa1a54fe3, type: 2}
+  SkorpionEVOCasingEject: {fileID: 1567320749191930, guid: a972b1514cd72d5458fdf1397dd3ec84, type: 2}
+  VektorK10MuzzleFlash: {fileID: 1448260932785748, guid: cf8b05c7cecf61641a34e85d52a851a5, type: 2}
+  VektorK10CasingEject: {fileID: 1567320749191930, guid: a972b1514cd72d5458fdf1397dd3ec84, type: 2}
+  LaserScanLineShader: {fileID: 4800000, guid: 8be52636f4360e74fbc1ca7d107d05c9, type: 3}
+  LaserScanLineTexture: {fileID: 2800000, guid: a54f6c6a851f3a3499cc71af46573423, type: 3}
+  SniperBeamMaterial: {fileID: 2100000, guid: 693c06d7e9162cb4bb508c821e2ed3a3, type: 2}
+  MysteryBoxIcon: {fileID: 1753086595733494, guid: 353865f4ed167104cb34fb00a1ed6655, type: 2}
+  BloodEffect: {fileID: 2100000, guid: db8e4d146c7c11449a758d5cdcaa89f5, type: 2}
+  InvulnerabilityEffect: {fileID: 2100000, guid: 5d33d0e325df2a3428b82babc036e47c, type: 2}
+  CameraTransitionRamp:
+    serializedVersion: 2
+    m_Curve:
+    - time: -0.5
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: -0.102147244
+      value: 0.092731684
+      inSlope: 0.37973082
+      outSlope: 0
+      tangentMode: 0
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.010000002
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.46137315
+      value: 0.41176718
+      inSlope: -1.861915
+      outSlope: -1.4752383
+      tangentMode: 0
+    - time: 0.75235915
+      value: 0.05586347
+      inSlope: -0.14325662
+      outSlope: -0.14325662
+      tangentMode: 0
+    - time: 1.25
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  FadingShaders:
+  - OpaqueShader: {fileID: 4800000, guid: fe36c8481cba2914490e59fdcc192546, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 676b29fc06e390644aac1cd3125b41a2, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 6cad177685473924e945cde31ab41ef4, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 23d14368b2b24a24f9eb30eae8f8f61a, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 7de6f6903d4925345b0baf6b1f911f09, type: 3}
+    TransparentShader: {fileID: 4800000, guid: cedd0dd79c52d664da275df49bb0854f, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: f2deecfba1779fb4997b56a0ceba9e64, type: 3}
+    TransparentShader: {fileID: 4800000, guid: c0589ee0b4c5e7b468ee62f7727c2930, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 6d779c76b50204c4c9c4d8b3d1989244, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 99f04e4172e8ec54bb829ecd1121473d, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 2271030e74530eb4a8ac8d16c099f8e7, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 931f332818717c84093f1f1811cd32fa, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 8d33978faedb4b9478da821daf037b12, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 3c7cf5e70dfbc1d4698c38f46f62c423, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: c7c010e046c43204e832677d75fd5776, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 840827280e3a0fd4096179928df4e659, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: ec0786cbdec1fbd43a9761dbab86e39f, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 0a1a4f142bd25d947b65e2b4fa02277c, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: 54d4b1466033e244aae599703f7ff4c6, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 84dc3e4e0b8c84b4dafc66748f5ba96a, type: 3}
+  - OpaqueShader: {fileID: 4800000, guid: ae8aac76bc3223f419b2dcaa39d2de53, type: 3}
+    TransparentShader: {fileID: 4800000, guid: 6276c89fb5b0cec4399687cc56e8e78c, type: 3}

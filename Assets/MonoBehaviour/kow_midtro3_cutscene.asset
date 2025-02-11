@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: kow_midtro3_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - NODE_VTOL/l_carriage_door/l_engine_pod/enginefire_jh
+  - NODE_VTOL/l_carriage_door/l_engine_pod/jet_thrustfail_jh
+  - NODE_VTOL/l_carriage_door/l_engine_pod/explosion_flak_jh
+  - explosion_vehicle_jh
+  Effects:
+  - EffectName: wall_sparks off
+    EventName:
+    TimeOffset: 0
+    Path: NODE_VTOL/l_carriage_door/r_engine_pod/r_engine_pod_f4/Sparks_wall_scrape_jh
+    Action: 1
+  - EffectName: wall_sparks on
+    EventName:
+    TimeOffset: 10.5
+    Path: NODE_VTOL/l_carriage_door/r_engine_pod/r_engine_pod_f4/Sparks_wall_scrape_jh
+    Action: 0
+  - EffectName: wall_sparks off
+    EventName:
+    TimeOffset: 14
+    Path: NODE_VTOL/l_carriage_door/r_engine_pod/r_engine_pod_f4/Sparks_wall_scrape_jh
+    Action: 1
+  - EffectName: explosion off
+    EventName:
+    TimeOffset: 3.4
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/jet_thrust_jh
+    Action: 1
+  - EffectName: explosion on
+    EventName:
+    TimeOffset: 2.2
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/explosion_flak_jh
+    Action: 0
+  - EffectName: engine_fire
+    EventName:
+    TimeOffset: 0
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/enginefire_jh
+    Action: 1
+  - EffectName: engine_fire
+    EventName:
+    TimeOffset: 9
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/enginefire_jh
+    Action: 0
+  - EffectName: big_explosion_on
+    EventName:
+    TimeOffset: 11.8
+    Path: explosion_vehicle_jh
+    Action: 0
+  - EffectName: big_explosion_on
+    EventName:
+    TimeOffset: 8.1
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/enginefire_jh
+    Action: 0
+  - EffectName: failing engine one
+    EventName:
+    TimeOffset: 7.5
+    Path: NODE_VTOL/l_carriage_door/l_engine_pod/jet_thrustfail_jh
+    Action: 0

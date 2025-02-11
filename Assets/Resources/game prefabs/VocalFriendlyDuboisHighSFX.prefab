@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1311806405209793}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1311806405209793
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4637459200231909}
+  - 114: {fileID: 114766489206553268}
+  m_Layer: 0
+  m_Name: VocalFriendlyDuboisHighSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4637459200231909
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311806405209793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114766489206553268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311806405209793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ceafa8d79062660abd83bdcce14700, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  KillConfirm:
+    m_nextSoundChoice: 2
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 8233a196ccca0354ab4f73f25369adbf, type: 3}
+    - {fileID: 8300000, guid: ea8ebba6954963e408e7e5b3d903398e, type: 3}
+    - {fileID: 8300000, guid: 6f169bb4841b8d64f982bd5403810dbe, type: 3}
+    - {fileID: 8300000, guid: ffee8fd005238b745bfa73b39badb53d, type: 3}
+    - {fileID: 8300000, guid: 513435abb0753664b9f22c8d040f6201, type: 3}
+    - {fileID: 8300000, guid: 7a245459bab58f34083a5af5bc1accad, type: 3}
+    VolGroup: 7
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0
+  SniperDown:
+    m_nextSoundChoice: 2
+    m_audioSourceData:
+    - {fileID: 8300000, guid: 720dd004c89f5684f95c4786408308a2, type: 3}
+    - {fileID: 8300000, guid: 26aa92e98a72ed540a74c4f17f544796, type: 3}
+    - {fileID: 8300000, guid: a5d3985a5d1fd254d8cbc84655b00fe2, type: 3}
+    - {fileID: 8300000, guid: 13ce9a328f4a5484a885fe251bac75ca, type: 3}
+    VolGroup: 7
+    m_bypassEffects: 0
+    m_loop: 0
+    m_priority: 128
+    m_volume: 1
+    m_volumeVariance: 0
+    m_pitch: 1
+    m_pitchVariance: 0
+    m_mute: 0
+    m_playOnAwake: 1
+    m_maxInstances: 1
+    m_timeBetweenDuplicatePlay: 0.1
+    m_play3D: 0
+    m_panLevel: 1
+    m_spread: 0
+    m_dopplerLevel: 0
+    m_minDistance: 5
+    m_maxDistance: 50
+    m_rollOffMode: 1
+    m_pan2D: 0

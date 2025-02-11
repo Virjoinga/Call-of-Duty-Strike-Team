@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fae7c051ac5b18ba9db6a8edd97eb88, type: 3}
+  m_Name: SentryGun
+  m_EditorClassIdentifier:
+  SpinUpAcceleration: 3
+  SpinDownAcceleration: 1
+  DamageRanges:
+  - Damage: 3500
+    Range: 5
+  - Damage: 200
+    Range: 6
+  - Damage: 100
+    Range: 25
+  DamageRangesNPC:
+  - Damage: 3500
+    Range: 8
+  - Damage: 250
+    Range: 8.5
+  - Damage: 100
+    Range: 25
+  TimeBetweenShots: 0.02
+  HeatUpSpeed: 0
+  CoolDownSpeed: 0.45
+  ShakeIntensity: 0.12
+  Spread: 2.5
+  ImpactForce: 140
+  NoBulletCasings: 0
+  AccuracyStatAdjustment: 0.1

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecf395c7d26c44703e42deb11afbb99, type: 3}
+  m_Name: SentryGun
+  m_EditorClassIdentifier:
+  HitBoxes:
+  - Location: Body
+    Bone: Sentry_Main/Sentry_Gun
+    Type: 0
+    Direction: 0
+    Center: {x: 0, y: -0.01, z: -0.49}
+    Radius: 0.1
+    Height: 0.5
+    Size: {x: 0.87, y: 1.52, z: 1.53}
+    Mass: 10
+    DamageMultiplier: 1
+    DefaultSurfaceMaterial: 16
+    SurfaceMarkup:
+      NoDecals: 0
+    SiblingForceFraction: []
+  - Location: Barrel
+    Bone: Sentry_Main/Sentry_Gun
+    Type: 0
+    Direction: 0
+    Center: {x: 0, y: 0.01, z: 0}
+    Radius: 0.1
+    Height: 0.5
+    Size: {x: 0.18, y: 0.69, z: 0.26}
+    Mass: 10
+    DamageMultiplier: 1
+    DefaultSurfaceMaterial: 16
+    SurfaceMarkup:
+      NoDecals: 0
+    SiblingForceFraction: []
+  Constraints: []

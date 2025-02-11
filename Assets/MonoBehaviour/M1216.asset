@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6c39c588fbe5d6b10b599925acc8c4, type: 3}
+  m_Name: M1216
+  m_EditorClassIdentifier:
+  Name: M1216
+  Loadout:
+    Accuracy: 0.7
+    Damage: 0.75
+    RateOfFire: 0.45
+    Mobility: 1
+    Range: 0.15
+  UnlockLevel: 7
+  Capacity: 16
+  BulletStartQuantity: 160
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 3.8
+  ValidReloadThreshold: 0.7
+  PutAwayTime: 0.3
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 200
+    Range: 6
+  - Damage: 70
+    Range: 10
+  - Damage: 20
+    Range: 11
+  - Damage: 20
+    Range: 15
+  - Damage: 5
+    Range: 16
+  - Damage: 0
+    Range: 30
+  UtilityRanges:
+  - Utility: 0.5
+    Range: 0
+  - Utility: 1
+    Range: 1
+  - Utility: 1
+    Range: 3
+  - Utility: 0.2
+    Range: 6
+  - Utility: 0
+    Range: 15
+  - Utility: 0
+    Range: 30
+  ImpactForce: 250
+  FirstPersonAccuracy: 8
+  ThirdPersonAccuracy: 8
+  FirstPersonRecoil: 3.8
+  ThirdPersonRecoil: 4
+  Range: 0
+  LongRange: 0.5
+  HeadShotMaxRange: 15
+  RunSpeed: 100
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 1
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_M1216
+  LongDescription:
+  ShortDescription:
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: -0.0015, y: -0.0724, z: 0.0708, w: -0.9948}
+  inHandLocalPosition: {x: -0.075, y: 0.0121, z: 0.0019}
+  HitBoxRig: {fileID: 11400000, guid: f142aa09332d494419eae575527c33c9, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.13
+  TimeToRechamber: 0.867
+  ShotSpread: 80

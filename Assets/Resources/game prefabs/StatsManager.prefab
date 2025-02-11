@@ -1,0 +1,582 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1950859593077865}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1950859593077865
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4443198853907296}
+  - 114: {fileID: 114049019182578797}
+  - 114: {fileID: 114541531771018045}
+  - 114: {fileID: 114912989496694332}
+  - 114: {fileID: 114822492986532004}
+  - 114: {fileID: 114444435790849276}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString:
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4443198853907296
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114049019182578797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93498141a4f7878511739810a665b2a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  AchievementsList:
+    Achievements:
+    - Identifier: wetwork1
+      nPoints: 20
+      nSteps: 25
+      XpOnCompletion: 150
+    - Identifier: wetwork2
+      nPoints: 15
+      nSteps: 50
+      XpOnCompletion: 300
+    - Identifier: wetwork3
+      nPoints: 10
+      nSteps: 100
+      XpOnCompletion: 500
+    - Identifier: wetwork4
+      nPoints: 10
+      nSteps: 200
+      XpOnCompletion: 1000
+    - Identifier: wetwork5
+      nPoints: 10
+      nSteps: 500
+      XpOnCompletion: 2500
+    - Identifier: wetwork6
+      nPoints: 5
+      nSteps: 1000
+      XpOnCompletion: 5000
+    - Identifier: wetwork7
+      nPoints: 5
+      nSteps: 2500
+      XpOnCompletion: 10000
+    - Identifier: wetwork8
+      nPoints: 5
+      nSteps: 5000
+      XpOnCompletion: 20000
+    - Identifier: marksman1
+      nPoints: 20
+      nSteps: 10
+      XpOnCompletion: 250
+    - Identifier: marksman2
+      nPoints: 15
+      nSteps: 25
+      XpOnCompletion: 500
+    - Identifier: marksman3
+      nPoints: 10
+      nSteps: 50
+      XpOnCompletion: 1000
+    - Identifier: marksman4
+      nPoints: 10
+      nSteps: 100
+      XpOnCompletion: 2000
+    - Identifier: marksman5
+      nPoints: 5
+      nSteps: 250
+      XpOnCompletion: 2500
+    - Identifier: marksman6
+      nPoints: 5
+      nSteps: 500
+      XpOnCompletion: 5000
+    - Identifier: marksman7
+      nPoints: 5
+      nSteps: 1000
+      XpOnCompletion: 10000
+    - Identifier: fragtastic1
+      nPoints: 20
+      nSteps: 20
+      XpOnCompletion: 500
+    - Identifier: fragtastic2
+      nPoints: 10
+      nSteps: 50
+      XpOnCompletion: 1000
+    - Identifier: fragtastic3
+      nPoints: 5
+      nSteps: 100
+      XpOnCompletion: 2000
+    - Identifier: ghillie1
+      nPoints: 20
+      nSteps: 50
+      XpOnCompletion: 1000
+    - Identifier: ghillie2
+      nPoints: 10
+      nSteps: 100
+      XpOnCompletion: 1500
+    - Identifier: ghillie3
+      nPoints: 5
+      nSteps: 200
+      XpOnCompletion: 3000
+    - Identifier: flawless
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 500
+    - Identifier: fearless
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 500
+    - Identifier: backstabber
+      nPoints: 10
+      nSteps: 1
+      XpOnCompletion: 50
+    - Identifier: thebrink
+      nPoints: 10
+      nSteps: 5
+      XpOnCompletion: 1000
+    - Identifier: looknohands1
+      nPoints: 20
+      nSteps: 3
+      XpOnCompletion: 150
+    - Identifier: looknohands2
+      nPoints: 10
+      nSteps: 5
+      XpOnCompletion: 200
+    - Identifier: looknohands3
+      nPoints: 5
+      nSteps: 20
+      XpOnCompletion: 800
+    - Identifier: knifeveteran1
+      nPoints: 20
+      nSteps: 10
+      XpOnCompletion: 500
+    - Identifier: knifeveteran2
+      nPoints: 10
+      nSteps: 50
+      XpOnCompletion: 2000
+    - Identifier: knifeveteran3
+      nPoints: 5
+      nSteps: 200
+      XpOnCompletion: 7500
+    - Identifier: silencer1
+      nPoints: 20
+      nSteps: 50
+      XpOnCompletion: 2000
+    - Identifier: silencer2
+      nPoints: 10
+      nSteps: 250
+      XpOnCompletion: 5000
+    - Identifier: silencer3
+      nPoints: 5
+      nSteps: 500
+      XpOnCompletion: 10000
+    - Identifier: gettingitdone1
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 250
+    - Identifier: gettingitdone2
+      nPoints: 20
+      nSteps: 5
+      XpOnCompletion: 1000
+    - Identifier: gettingitdoneveteran1
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 500
+    - Identifier: gettingitdoneveteran2
+      nPoints: 20
+      nSteps: 5
+      XpOnCompletion: 2000
+    - Identifier: breach1
+      nPoints: 20
+      nSteps: 5
+      XpOnCompletion: 250
+    - Identifier: breach2
+      nPoints: 10
+      nSteps: 20
+      XpOnCompletion: 1000
+    - Identifier: breach3
+      nPoints: 5
+      nSteps: 50
+      XpOnCompletion: 2000
+    - Identifier: hoarder1
+      nPoints: 10
+      nSteps: 500
+      XpOnCompletion: 0
+    - Identifier: hoarder2
+      nPoints: 10
+      nSteps: 1000
+      XpOnCompletion: 0
+    - Identifier: sociable1
+      nPoints: 10
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: sociable2
+      nPoints: 10
+      nSteps: 50
+      XpOnCompletion: 0
+    - Identifier: armory1
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: armory2
+      nPoints: 5
+      nSteps: 4
+      XpOnCompletion: 0
+    - Identifier: perky1
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: perky2
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: turtle1
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: turtle2
+      nPoints: 5
+      nSteps: 4
+      XpOnCompletion: 0
+    - Identifier: quartermaster1
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: quartermaster2
+      nPoints: 5
+      nSteps: 10
+      XpOnCompletion: 0
+    - Identifier: quartermaster3
+      nPoints: 5
+      nSteps: 50
+      XpOnCompletion: 0
+    - Identifier: needalittlehelphere1
+      nPoints: 5
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: needalittlehelphere2
+      nPoints: 5
+      nSteps: 5
+      XpOnCompletion: 0
+    - Identifier: needalittlehelphere3
+      nPoints: 5
+      nSteps: 25
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes1
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes2
+      nPoints: 15
+      nSteps: 5
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes3
+      nPoints: 10
+      nSteps: 10
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes4
+      nPoints: 10
+      nSteps: 20
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes5
+      nPoints: 5
+      nSteps: 35
+      XpOnCompletion: 0
+    - Identifier: earnyourstripes6
+      nPoints: 5
+      nSteps: 50
+      XpOnCompletion: 0
+    - Identifier: activeservice1
+      nPoints: 10
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: activeservice2
+      nPoints: 10
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: activeservice3
+      nPoints: 10
+      nSteps: 1
+      XpOnCompletion: 0
+    - Identifier: internationaldeployment1
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 200
+    - Identifier: internationaldeployment2
+      nPoints: 15
+      nSteps: 10
+      XpOnCompletion: 1000
+    - Identifier: internationaldeployment3
+      nPoints: 10
+      nSteps: 25
+      XpOnCompletion: 2000
+    - Identifier: internationaldeployment4
+      nPoints: 10
+      nSteps: 50
+      XpOnCompletion: 4000
+    - Identifier: internationaldeployment5
+      nPoints: 5
+      nSteps: 250
+      XpOnCompletion: 15000
+    - Identifier: tourofduty
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 10000
+    - Identifier: youreontheteam
+      nPoints: 20
+      nSteps: 1
+      XpOnCompletion: 0
+  PerksList:
+    Perks:
+    - Identifier: 0
+      Tier: 1
+      UnlockCost: 100
+      UnlockLevel: 11
+      ProCost: 500
+      ModifierValue: 1.5
+      ProModifierValue: 2
+      ProXPTarget: 288000
+    - Identifier: 1
+      Tier: 1
+      UnlockCost: 500
+      UnlockLevel: 20
+      ProCost: 1000
+      ModifierValue: 0.5
+      ProModifierValue: 1
+      ProXPTarget: 384000
+    - Identifier: 2
+      Tier: 1
+      UnlockCost: 0
+      UnlockLevel: 1
+      ProCost: 100
+      ModifierValue: 1.5
+      ProModifierValue: 2
+      ProXPTarget: 96000
+    - Identifier: 3
+      Tier: 1
+      UnlockCost: 20
+      UnlockLevel: 3
+      ProCost: 200
+      ModifierValue: 0.75
+      ProModifierValue: 0.5
+      ProXPTarget: 192000
+    - Identifier: 4
+      Tier: 1
+      UnlockCost: 2500
+      UnlockLevel: 40
+      ProCost: 2500
+      ModifierValue: 1
+      ProModifierValue: 2
+      ProXPTarget: 576000
+    - Identifier: 5
+      Tier: 1
+      UnlockCost: 1250
+      UnlockLevel: 29
+      ProCost: 225
+      ModifierValue: 0
+      ProModifierValue: 0
+      ProXPTarget: 480000
+    - Identifier: 6
+      Tier: 2
+      UnlockCost: 0
+      UnlockLevel: 1
+      ProCost: 100
+      ModifierValue: 1.2
+      ProModifierValue: 1.4
+      ProXPTarget: 96000
+    - Identifier: 7
+      Tier: 2
+      UnlockCost: 20
+      UnlockLevel: 5
+      ProCost: 200
+      ModifierValue: 0.75
+      ProModifierValue: 0.5
+      ProXPTarget: 192000
+    - Identifier: 8
+      Tier: 2
+      UnlockCost: 100
+      UnlockLevel: 14
+      ProCost: 500
+      ModifierValue: 1.2
+      ProModifierValue: 1.4
+      ProXPTarget: 288000
+    - Identifier: 9
+      Tier: 2
+      UnlockCost: 500
+      UnlockLevel: 23
+      ProCost: 1000
+      ModifierValue: 1.25
+      ProModifierValue: 1.5
+      ProXPTarget: 384000
+    - Identifier: 10
+      Tier: 2
+      UnlockCost: 1250
+      UnlockLevel: 32
+      ProCost: 2500
+      ModifierValue: 0.5
+      ProModifierValue: 0
+      ProXPTarget: 480000
+    - Identifier: 11
+      Tier: 2
+      UnlockCost: 2500
+      UnlockLevel: 44
+      ProCost: 270
+      ModifierValue: 0
+      ProModifierValue: 0
+      ProXPTarget: 576000
+    - Identifier: 12
+      Tier: 3
+      UnlockCost: 0
+      UnlockLevel: 1
+      ProCost: 100
+      ModifierValue: 1
+      ProModifierValue: 1.25
+      ProXPTarget: 0
+    - Identifier: 13
+      Tier: 3
+      UnlockCost: 20
+      UnlockLevel: 8
+      ProCost: 200
+      ModifierValue: 0.75
+      ProModifierValue: 0.5
+      ProXPTarget: 192000
+    - Identifier: 14
+      Tier: 3
+      UnlockCost: 2500
+      UnlockLevel: 48
+      ProCost: 2500
+      ModifierValue: 1.25
+      ProModifierValue: 1.5
+      ProXPTarget: 576000
+    - Identifier: 15
+      Tier: 3
+      UnlockCost: 500
+      UnlockLevel: 26
+      ProCost: 1000
+      ModifierValue: 5
+      ProModifierValue: 10
+      ProXPTarget: 384000
+    - Identifier: 16
+      Tier: 3
+      UnlockCost: 100
+      UnlockLevel: 17
+      ProCost: 500
+      ModifierValue: 0.5
+      ProModifierValue: 0
+      ProXPTarget: 288000
+    - Identifier: 17
+      Tier: 3
+      UnlockCost: 1250
+      UnlockLevel: 36
+      ProCost: 225
+      ModifierValue: 0
+      ProModifierValue: 0
+      ProXPTarget: 480000
+    - Identifier: 18
+      Tier: 4
+      UnlockCost: 0
+      UnlockLevel: -1
+      ProCost: 2500
+      ModifierValue: 1.6
+      ProModifierValue: 2
+      ProXPTarget: 576000
+    - Identifier: 19
+      Tier: 4
+      UnlockCost: 0
+      UnlockLevel: -1
+      ProCost: 2500
+      ModifierValue: 1.6
+      ProModifierValue: 2
+      ProXPTarget: 576000
+    - Identifier: 20
+      Tier: 4
+      UnlockCost: 0
+      UnlockLevel: -1
+      ProCost: 2500
+      ModifierValue: 1.6
+      ProModifierValue: 2
+      ProXPTarget: 576000
+    - Identifier: 21
+      Tier: 4
+      UnlockCost: 0
+      UnlockLevel: -1
+      ProCost: 2500
+      ModifierValue: 1.6
+      ProModifierValue: 2
+      ProXPTarget: 576000
+    - Identifier: 22
+      Tier: 4
+      UnlockCost: 0
+      UnlockLevel: -1
+      ProCost: 2500
+      ModifierValue: 1.6
+      ProModifierValue: 2
+      ProXPTarget: 576000
+  AchievementSyncManagerInstance: {fileID: 114912989496694332}
+  LeaderboardManagerInstance: {fileID: 114822492986532004}
+--- !u!114 &114541531771018045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c84c514c16293a762e93525c2b7770c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &114912989496694332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31df11d7ef9706e902db8d0dbc25f9a3, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &114822492986532004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47b16a51d69ab5739178e74f1c0f006, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &114444435790849276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950859593077865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d150464af5d510f966d30fddfd507fc9, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:

@@ -1,0 +1,607 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e058dbae155341f995a1fc29cfd66c1f, type: 3}
+  m_Name: ViewModelData_KSG
+  m_EditorClassIdentifier:
+  Arms: {fileID: 1678869774208921, guid: 0f0dc2880c72c544b8d2262631a37594, type: 2}
+  Ammo: {fileID: 0}
+  AN94: {fileID: 0}
+  XPR50: {fileID: 0}
+  Ballista: {fileID: 0}
+  Beretta: {fileID: 0}
+  C4: {fileID: 0}
+  C4Remote: {fileID: 0}
+  Claymore: {fileID: 0}
+  FragGrenade: {fileID: 0}
+  HAMR: {fileID: 0}
+  Knife: {fileID: 0}
+  KS23: {fileID: 0}
+  KSG: {fileID: 1371757490891634, guid: 2fda3e653ade6864e82e5ec0f64019ee, type: 2}
+  LSAT: {fileID: 0}
+  M1216: {fileID: 0}
+  M8A1: {fileID: 0}
+  PDW: {fileID: 0}
+  QBBLSW: {fileID: 0}
+  Skorpion: {fileID: 0}
+  SVUAS: {fileID: 0}
+  Type25: {fileID: 0}
+  Vektor: {fileID: 0}
+  AmmoCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  AN94CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 1.2, y: 0.2, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  AN94SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  XPR50CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  XPR50SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  BallistaCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  BallistaSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    HipsChamber: {fileID: 0}
+    SightsChamber: {fileID: 0}
+    Reload: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    RechamberingEvents: {fileID: 0}
+  BerettaCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 1.8, y: -0.3, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  BerettaSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  C4CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  ClaymoreCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  FragGrenadeCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  FragGrenadeSpecificAnims:
+    Start: {fileID: 0}
+    End: {fileID: 0}
+  HAMRCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 1.11, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  HAMRSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  KnifeCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  KnifeSpecificAnims:
+    Stab: {fileID: 0}
+  KS23CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  KS23SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadStart: {fileID: 0}
+    ReloadLoop: {fileID: 0}
+    ReloadEnd: {fileID: 0}
+    HipsCocking: {fileID: 0}
+    SightsCocking: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    RechamberingEvents: {fileID: 0}
+    ReloadHipCockingEvents: {fileID: 0}
+    ReloadSightsCockingEvents: {fileID: 0}
+  KSGCoreAnims:
+    PositionOffset: {x: 0, y: 0.016, z: 0}
+    RotationOffset: {x: 1.7, y: 0.25, z: 0}
+    HipsIdle: {fileID: 7400000, guid: 40c527a11bf2a3f4a8cc95e040e935f4, type: 2}
+    SightsIdle: {fileID: 7400000, guid: 91e22a841bb357d47b60dec6d0f50cfa, type: 2}
+    TakeOut: {fileID: 7400000, guid: 84ddcbf6c12f9f048b5c39bb9c05144e, type: 2}
+    PutAway: {fileID: 7400000, guid: 2a45eac5d0eb1f24fbebd6673422cfc5, type: 2}
+    Move: {fileID: 7400000, guid: e8f1c528b890b7e40bc0f27598aadb69, type: 2}
+    HipsToSights: {fileID: 7400000, guid: 361d58d3b81102d4ba8af8aaa862da2f, type: 2}
+    HipsLook:
+      Up: {fileID: 7400000, guid: 82b9d090cdcb63c4eba2b65a1544e2d9, type: 2}
+      Down: {fileID: 7400000, guid: ddf9ffcce6c97254fbaa7527304b16c2, type: 2}
+      Left: {fileID: 7400000, guid: 200abe9b8554ddb4fb16c46a88ceee58, type: 2}
+      Right: {fileID: 7400000, guid: 0d1869ded5858cd47a9524a9ade6f3b9, type: 2}
+    SightsLook:
+      Up: {fileID: 7400000, guid: 42b315e80d388414d86e3e8c7835cae4, type: 2}
+      Down: {fileID: 7400000, guid: 00ffc032e9a21304b8bb2cf178b989dd, type: 2}
+      Left: {fileID: 7400000, guid: 87956d8ca6706bb499135b19e63dd464, type: 2}
+      Right: {fileID: 7400000, guid: 889894fc7d6230846bd9cd92fbefde79, type: 2}
+  KSGSpecificAnims:
+    HipsFire: {fileID: 7400000, guid: 9dbfad5ea48653046b37f86a839dddd8, type: 2}
+    SightsFire: {fileID: 7400000, guid: c67e0d5557653b443a057630ed0427ac, type: 2}
+    ReloadStart: {fileID: 7400000, guid: d88c1fc4c0f8a8d42a44aaf7dfa32e5f, type: 2}
+    ReloadLoop: {fileID: 7400000, guid: 953ab4e2d887605488c0f52d4dbeeee4, type: 2}
+    ReloadEnd: {fileID: 7400000, guid: dc9d5ad7b596da0428a75479111f074e, type: 2}
+    ReloadEndEvents: {fileID: 11400000, guid: f5b002cbd27d143468831fa77a2cbf89, type: 2}
+    ReloadLoopEvents: {fileID: 11400000, guid: 0b5e867a05679b048a9c73d1ea90ba36, type: 2}
+    ReloadHipCockingEvents: {fileID: 11400000, guid: 6d3fb3fff79c8034ea799ba607903f35, type: 2}
+    ReloadSightsCockingEvents: {fileID: 11400000, guid: 1696c0f4a8f81ed43ade2166615b926b, type: 2}
+  LSATCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 1.42, y: 0.24, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  LSATSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  M1216CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 1.2, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  M1216SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    HipsRechamber: {fileID: 0}
+    SightsRechamber: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    RechamberingEvents: {fileID: 0}
+  M8A1CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  M8A1SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  PDWCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  PDWSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  QBBLSWCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  QBBLSWSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  SVUASCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  SVUASSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  SkorpionCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  SkorpionSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  Type25CoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  Type25SpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  VektorCoreAnims:
+    PositionOffset: {x: 0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
+    HipsIdle: {fileID: 0}
+    SightsIdle: {fileID: 0}
+    TakeOut: {fileID: 0}
+    PutAway: {fileID: 0}
+    Move: {fileID: 0}
+    HipsToSights: {fileID: 0}
+    HipsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+    SightsLook:
+      Up: {fileID: 0}
+      Down: {fileID: 0}
+      Left: {fileID: 0}
+      Right: {fileID: 0}
+  VektorSpecificAnims:
+    HipsFire: {fileID: 0}
+    SightsFire: {fileID: 0}
+    ReloadEmpty: {fileID: 0}
+    ReloadTactical: {fileID: 0}
+    ReloadEmptyEvents: {fileID: 0}
+    ReloadTacticalEvents: {fileID: 0}
+  ThemedMaterials:
+  - BaseMaterial: {fileID: 2100000, guid: aa9ef66586144484f9f19536e7111bb2, type: 2}
+    ThemedTextures:
+    - Theme: Urban
+      TextureForTheme: {fileID: 0}
+    - Theme: Pakistan
+      TextureForTheme: {fileID: 0}
+    - Theme: Afghanistan
+      TextureForTheme: {fileID: 0}
+    - Theme: Snow
+      TextureForTheme: {fileID: 0}
+  - BaseMaterial: {fileID: 2100000, guid: e2fb9bd968c07a84db7588367969eae4, type: 2}
+    ThemedTextures:
+    - Theme: Urban
+      TextureForTheme: {fileID: 2800000, guid: c1002c0fb8e520d4d963fd6b3ec0b366, type: 3}
+    - Theme: Pakistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Afghanistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Snow
+      TextureForTheme: {fileID: 2800000, guid: ce21b25d84e0a014c9a6f4804f6dae10, type: 3}
+  - BaseMaterial: {fileID: 2100000, guid: 5e494f74720c0eb44b9b6fe68a589af1, type: 2}
+    ThemedTextures:
+    - Theme: Urban
+      TextureForTheme: {fileID: 2800000, guid: c1002c0fb8e520d4d963fd6b3ec0b366, type: 3}
+    - Theme: Pakistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Afghanistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Snow
+      TextureForTheme: {fileID: 2800000, guid: ce21b25d84e0a014c9a6f4804f6dae10, type: 3}
+  - BaseMaterial: {fileID: 2100000, guid: d028534c86114c44bb5451917afa4ebf, type: 2}
+    ThemedTextures:
+    - Theme: Urban
+      TextureForTheme: {fileID: 2800000, guid: c1002c0fb8e520d4d963fd6b3ec0b366, type: 3}
+    - Theme: Pakistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Afghanistan
+      TextureForTheme: {fileID: 2800000, guid: 036c3d8b3f3df024f85175f8833b095f, type: 3}
+    - Theme: Snow
+      TextureForTheme: {fileID: 2800000, guid: ce21b25d84e0a014c9a6f4804f6dae10, type: 3}
+  XPR50Scope: {fileID: 0}
+  BallistaScope: {fileID: 0}
+  SVUASScope: {fileID: 0}

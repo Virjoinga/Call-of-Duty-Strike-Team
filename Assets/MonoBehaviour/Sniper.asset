@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a211ed1ccc4f5ad68adca5f2b6dcbb9, type: 3}
+  m_Name: Sniper
+  m_EditorClassIdentifier:
+  Name: Ballista
+  Loadout:
+    Accuracy: 1
+    Damage: 1
+    RateOfFire: 0.1
+    Mobility: 0.2
+    Range: 1
+  UnlockLevel: 4
+  Capacity: 1
+  BulletStartQuantity: 50
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 1
+  ValidReloadThreshold: 1
+  PutAwayTime: 0.5
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 10000
+    Range: 999999
+  UtilityRanges:
+  - Utility: 0.1
+    Range: 0
+  - Utility: 0.1
+    Range: 20
+  - Utility: 1
+    Range: 40
+  - Utility: 1
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 0.5
+  ThirdPersonAccuracy: 0.5
+  FirstPersonRecoil: 2
+  ThirdPersonRecoil: 2
+  Range: 0
+  LongRange: 0.5
+  HeadShotMaxRange: 1000
+  RunSpeed: 95
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 30
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 5
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_Sniper
+  LongDescription:
+  ShortDescription:
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: 0.001132107, y: 0.04113191, z: -0.02749178, w: 0.9987748}
+  inHandLocalPosition: {x: -0.08, y: 0.01703, z: 0.00535}
+  HitBoxRig: {fileID: 11400000, guid: 48ca37ee680cd6d4286ad977cb9fbbb7, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  RecoilTime: 0.3
+  RechamberTime: 0.5
+  DamagePercentage: 70

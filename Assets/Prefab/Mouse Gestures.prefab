@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1094284396098947}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1094284396098947
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4672991406478186}
+  - 114: {fileID: 114902392760680898}
+  m_Layer: 0
+  m_Name: Mouse Gestures
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4672991406478186
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094284396098947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19890666, y: 1.175439, z: -0.31684732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114902392760680898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094284396098947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2c6e7cf35250647b97462f0f307e7e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  defaultPrefabs: {fileID: 114149446869972774, guid: 6b3121db6f69fed47af4316221dacc4a, type: 2}
+  defaultCompFlags:
+    perFinger:
+      enabled: 1
+      touch: 1
+      motion: 1
+      longPress: 1
+      drag: 1
+      swipe: 1
+      tap: 1
+      doubleTap: 1
+    globalGestures:
+      enabled: 1
+      longPress: 1
+      drag: 1
+      swipe: 1
+      tap: 1
+      doubleTap: 1
+      pinch: 1
+      rotation: 1
+      twoFingerLongPress: 1
+      twoFingerDrag: 1
+      twoFingerSwipe: 1
+      twoFingerTap: 1
+  maxMouseButtons: 3

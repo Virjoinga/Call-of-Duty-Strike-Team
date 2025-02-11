@@ -1,0 +1,1016 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1095350461999596}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1095350461999596
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4526145037834899}
+  - 114: {fileID: 114898119328168838}
+  m_Layer: 0
+  m_Name: MissionListings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4526145037834899
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095350461999596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114898119328168838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095350461999596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b544726e108e21ed004eb320ab323133, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Missions:
+  - Location: Alaska
+    BaseName: 01_Arc_Mission
+    NumStorySections: 6
+    Sections:
+    - SceneName: 01_Arc_Mission_S1_Baked
+      Name: S_ARC_SECTION_01
+      Description: S_ARC_SECTION_01_DESC
+      IntelToCollect: 3
+      LeaderboardID: 110
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 1
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 6000
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 4
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 540
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 35
+        Veteran: 65
+      ImageType: 10
+    - SceneName: 01_Arc_Mission_S2_Baked
+      Name: S_ARC_SECTION_02
+      Description: S_ARC_SECTION_02_DESC
+      IntelToCollect: 3
+      LeaderboardID: 111
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 4000
+        Veteran: 5000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 8
+        Veteran: 16
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 420
+        Veteran: 300
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 55
+      ImageType: 11
+    - SceneName: 01_Arc_Mission_S3_Baked
+      Name: S_ARC_SECTION_03
+      Description: S_ARC_SECTION_03_DESC
+      IntelToCollect: 3
+      LeaderboardID: 112
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 7000
+        Veteran: 9000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 12
+        Veteran: 24
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 360
+        Veteran: 300
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 55
+      ImageType: 12
+    - SceneName: 01_Arc_Mission_S4_Baked
+      Name: S_ARC_SECTION_04
+      Description: S_ARC_SECTION_04_DESC
+      IntelToCollect: 3
+      LeaderboardID: 113
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 7500
+        Veteran: 10000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 15
+        Veteran: 30
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 420
+        Veteran: 360
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 50
+      ImageType: 13
+    - SceneName: 01_Arc_Mission_S6_Baked
+      Name: S_ARC_SECTION_06
+      Description: S_ARC_SECTION_06_DESC
+      IntelToCollect: 3
+      LeaderboardID: 114
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 11000
+        Veteran: 12000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 20
+        Veteran: 37
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 510
+        Veteran: 480
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 35
+        Veteran: 50
+      ImageType: 14
+    - SceneName: 01_Arc_Mission_S7_Baked
+      Name: S_ARC_SECTION_07
+      Description: S_ARC_SECTION_07_DESC
+      IntelToCollect: 0
+      LeaderboardID: 115
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 4000
+        Veteran: 5000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 5
+        Veteran: 8
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 330
+        Veteran: 240
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 20
+        Veteran: 30
+      ImageType: 15
+    NameKey: S_ARC_MISSION_TITLE
+    MissionId: 1
+    Type: 1
+    Environment: 0
+    SectionSelectImage: 0
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: AlaskaGMG
+    BaseName: 01_Arc_Mission_GMG
+    NumStorySections: 0
+    Sections:
+    - SceneName: 04_GO_Arc_Survival_S1_Baked
+      Name: S_ARC_GMG_01
+      Description: S_ARC_GMG_01_DESC
+      IntelToCollect: 0
+      LeaderboardID: 116
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 1
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 0
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 5
+        Icon: 10
+        Normal: 10
+        Veteran: 10
+      - MedalTargetType: 6
+        Icon: 11
+        Normal: 20
+        Veteran: 20
+      - MedalTargetType: 2
+        Icon: 12
+        Normal: 30
+        Veteran: 30
+      - MedalTargetType: 7
+        Icon: 13
+        Normal: 50
+        Veteran: 50
+      - MedalTargetType: 8
+        Icon: 14
+        Normal: 12
+        Veteran: 12
+      ImageType: 16
+    NameKey: S_ARC_MISSION_TITLE
+    MissionId: 4
+    Type: 2
+    Environment: 0
+    SectionSelectImage: 0
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: Afghanistan
+    BaseName: 01_Afg_Mission
+    NumStorySections: 5
+    Sections:
+    - SceneName: 01_Afg_Mission_S1_Baked
+      Name: S_AFG_SECTION_01
+      Description: S_AFG_SECTION_01_DESC
+      IntelToCollect: 3
+      LeaderboardID: 120
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 8500
+        Veteran: 9500
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 18
+        Veteran: 28
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 420
+        Veteran: 360
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 35
+        Veteran: 40
+      ImageType: 19
+    - SceneName: 01_Afg_Mission_S2_Baked
+      Name: S_AFG_SECTION_02
+      Description: S_AFG_SECTION_02_DESC
+      IntelToCollect: 3
+      LeaderboardID: 121
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 6000
+        Veteran: 7000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 16
+        Veteran: 28
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 360
+        Veteran: 300
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 50
+      ImageType: 20
+    - SceneName: 01_Afg_Mission_S3_Baked
+      Name: S_AFG_SECTION_03
+      Description: S_AFG_SECTION_03_DESC
+      IntelToCollect: 3
+      LeaderboardID: 122
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 15000
+        Veteran: 19000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 30
+        Veteran: 50
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 540
+        Veteran: 540
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 45
+        Veteran: 50
+      ImageType: 21
+    - SceneName: 01_Afg_Mission_S4_Baked
+      Name: S_AFG_SECTION_04
+      Description: S_AFG_SECTION_04_DESC
+      IntelToCollect: 3
+      LeaderboardID: 123
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 11000
+        Veteran: 12500
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 20
+        Veteran: 29
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 720
+        Veteran: 540
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 50
+      ImageType: 22
+    - SceneName: 01_Afg_Mission_S5_Baked
+      Name: S_AFG_SECTION_05
+      Description: S_AFG_SECTION_05_DESC
+      IntelToCollect: 0
+      LeaderboardID: 124
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 7600
+        Veteran: 9000
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 10
+        Veteran: 28
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 210
+        Veteran: 200
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 50
+      ImageType: 23
+    NameKey: S_AFG_MISSION_TITLE
+    MissionId: 2
+    Type: 1
+    Environment: 1
+    SectionSelectImage: 1
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: AfghanistanGMG
+    BaseName: 01_Afg_Mission
+    NumStorySections: 0
+    Sections:
+    - SceneName: 01_GO_Afg_Defend_S1_Baked
+      Name: S_AFG_GMG_01
+      Description: S_AFG_GMG_01_DESC
+      IntelToCollect: 0
+      LeaderboardID: 125
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 1
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 0
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 5
+        Icon: 10
+        Normal: 10
+        Veteran: 10
+      - MedalTargetType: 6
+        Icon: 11
+        Normal: 20
+        Veteran: 20
+      - MedalTargetType: 2
+        Icon: 12
+        Normal: 30
+        Veteran: 30
+      - MedalTargetType: 7
+        Icon: 13
+        Normal: 50
+        Veteran: 50
+      - MedalTargetType: 8
+        Icon: 14
+        Normal: 12
+        Veteran: 12
+      ImageType: 24
+    NameKey: S_AFG_MISSION_TITLE
+    MissionId: 5
+    Type: 2
+    Environment: 1
+    SectionSelectImage: 1
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: Kowloon
+    BaseName: 02_Kow_Mission
+    NumStorySections: 5
+    Sections:
+    - SceneName: 02_Kow_Mission_S1_Baked
+      Name: S_KOW_SECTION_01
+      Description: S_KOW_SECTION_01_DESC
+      IntelToCollect: 3
+      LeaderboardID: 130
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 8500
+        Veteran: 9600
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 24
+        Veteran: 29
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 450
+        Veteran: 450
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 45
+        Veteran: 50
+      ImageType: 27
+    - SceneName: 02_Kow_Mission_S2_Baked
+      Name: S_KOW_SECTION_02
+      Description: S_KOW_SECTION_02_DESC
+      IntelToCollect: 3
+      LeaderboardID: 131
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 7500
+        Veteran: 8700
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 16
+        Veteran: 25
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 390
+        Veteran: 300
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 35
+        Veteran: 50
+      ImageType: 28
+    - SceneName: 02_Kow_Mission_S3_Baked
+      Name: S_KOW_SECTION_03
+      Description: S_KOW_SECTION_03_DESC
+      IntelToCollect: 0
+      LeaderboardID: 132
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 6000
+        Veteran: 7200
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 7
+        Veteran: 13
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 270
+        Veteran: 180
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 28
+        Veteran: 40
+      ImageType: 29
+    - SceneName: 02_Kow_Mission_S4_Baked
+      Name: S_KOW_SECTION_04
+      Description: S_KOW_SECTION_04_DESC
+      IntelToCollect: 3
+      LeaderboardID: 133
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 15000
+        Veteran: 19500
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 38
+        Veteran: 48
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 600
+        Veteran: 480
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 40
+        Veteran: 40
+      ImageType: 30
+    - SceneName: 02_Kow_Mission_S5_Baked
+      Name: S_KOW_SECTION_05
+      Description: S_KOW_SECTION_05_DESC
+      IntelToCollect: 3
+      LeaderboardID: 134
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 1
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 2
+        Normal: 13000
+        Veteran: 14500
+      - MedalTargetType: 2
+        Icon: 4
+        Normal: 28
+        Veteran: 37
+      - MedalTargetType: 3
+        Icon: 3
+        Normal: 540
+        Veteran: 360
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 45
+        Veteran: 50
+      ImageType: 31
+    NameKey: S_KOW_02_TITLE
+    MissionId: 3
+    Type: 1
+    Environment: 2
+    SectionSelectImage: 2
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: KowloonGMG
+    BaseName: 02_Kow_Mission
+    NumStorySections: 0
+    Sections:
+    - SceneName: 05_GO_Kow_Survival_S1_Baked
+      Name: S_KOW_GMG_01
+      Description: S_KOW_GMG_01_DESC
+      IntelToCollect: 0
+      LeaderboardID: 135
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 1
+      IsTutorial: 0
+      IsSpecOps: 1
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 0
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 5
+        Icon: 10
+        Normal: 10
+        Veteran: 10
+      - MedalTargetType: 6
+        Icon: 11
+        Normal: 20
+        Veteran: 20
+      - MedalTargetType: 2
+        Icon: 12
+        Normal: 30
+        Veteran: 30
+      - MedalTargetType: 7
+        Icon: 13
+        Normal: 50
+        Veteran: 50
+      - MedalTargetType: 8
+        Icon: 14
+        Normal: 12
+        Veteran: 12
+      ImageType: 32
+    NameKey: S_KOW_02_TITLE
+    MissionId: 6
+    Type: 2
+    Environment: 2
+    SectionSelectImage: 2
+    IncludeInStats: 1
+    FlashPointIndex: -1
+  - Location: ArtTests
+    BaseName:
+    NumStorySections: 0
+    Sections:
+    - SceneName: DEST_PROPS_TEST_Baked
+      Name:
+      Description:
+      IntelToCollect: 0
+      LeaderboardID: -1
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 0
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 0
+        Normal: 500
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 0
+        Normal: 3
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 0
+        Normal: 930
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 65
+      ImageType: 0
+    - SceneName: AFG_LOD_TEST_Baked
+      Name:
+      Description:
+      IntelToCollect: 0
+      LeaderboardID: -1
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 0
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 0
+        Normal: 500
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 0
+        Normal: 3
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 0
+        Normal: 930
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 65
+      ImageType: 0
+    - SceneName: SnowboltTest_Baked
+      Name:
+      Description:
+      IntelToCollect: 0
+      LeaderboardID: -1
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 0
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 0
+        Normal: 500
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 0
+        Normal: 3
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 0
+        Normal: 930
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 65
+      ImageType: 0
+    - SceneName: weapons
+      Name:
+      Description:
+      IntelToCollect: 0
+      LeaderboardID: -1
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 0
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 0
+        Normal: 500
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 0
+        Normal: 3
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 0
+        Normal: 930
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 65
+      ImageType: 0
+    - SceneName: Arctic2_Domination_S1_Baked
+      Name:
+      Description:
+      IntelToCollect: 0
+      LeaderboardID: -1
+      UnlockedAtXpLevel: -1
+      UnlockEarlyCost: 250
+      Locked: 0
+      IsTutorial: 0
+      IsSpecOps: 0
+      IsVTOL: 0
+      AllowInMaster: 1
+      GMGGameType: 5
+      FlashpointObjective: 0
+      Medals:
+      - MedalTargetType: 0
+        Icon: 0
+        Normal: 0
+        Veteran: 0
+      - MedalTargetType: 1
+        Icon: 0
+        Normal: 500
+        Veteran: 800
+      - MedalTargetType: 2
+        Icon: 0
+        Normal: 3
+        Veteran: 5
+      - MedalTargetType: 3
+        Icon: 0
+        Normal: 930
+        Veteran: 630
+      - MedalTargetType: 4
+        Icon: 0
+        Normal: 50
+        Veteran: 65
+      ImageType: 0
+    NameKey: S_TESTSPLITLEVEL
+    MissionId: 11
+    Type: 3
+    Environment: 0
+    SectionSelectImage: 0
+    IncludeInStats: 0
+    FlashPointIndex: -1
+  - Location: Everyplay
+    BaseName:
+    NumStorySections: 0
+    Sections: []
+    NameKey: S_EVERYPLAY
+    MissionId: 12
+    Type: 4
+    Environment: 2
+    SectionSelectImage: 0
+    IncludeInStats: 0
+    FlashPointIndex: -1
+  - Location: KInvite
+    BaseName:
+    NumStorySections: 0
+    Sections: []
+    NameKey: S_KINVITE
+    MissionId: 12
+    Type: 5
+    Environment: 2
+    SectionSelectImage: 0
+    IncludeInStats: 0
+    FlashPointIndex: -1

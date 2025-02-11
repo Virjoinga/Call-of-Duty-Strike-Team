@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: Arc_outro1_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 78d15ab143d50d34ebca60b380953855, type: 2}
+  ObjectsToDisableOnStart:
+  - VFX_PanelDamage/Sparks
+  Effects:
+  - EffectName:
+    EventName: VFX_SparksExplode_On
+    TimeOffset: 1
+    Path: VFX_PanelDamage/Sparks
+    Action: 0

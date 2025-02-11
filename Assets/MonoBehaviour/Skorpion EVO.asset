@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd25f693b0a72c0254962ba9de46557, type: 3}
+  m_Name: Skorpion EVO
+  m_EditorClassIdentifier:
+  Name: Skorpion EVO
+  Loadout:
+    Accuracy: 0.4
+    Damage: 0.8
+    RateOfFire: 0.8
+    Mobility: 0.9
+    Range: 0.2
+  UnlockLevel: 10
+  Capacity: 32
+  BulletStartQuantity: 256
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 33
+  ReloadTime: 1.9
+  ValidReloadThreshold: 0.6
+  PutAwayTime: 0.3
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 205
+    Range: 10
+  - Damage: 150
+    Range: 11
+  - Damage: 110
+    Range: 14
+  - Damage: 20
+    Range: 20
+  - Damage: 1
+    Range: 30
+  UtilityRanges:
+  - Utility: 0.3
+    Range: 0
+  - Utility: 0.5
+    Range: 19
+  - Utility: 1
+    Range: 20
+  - Utility: 1
+    Range: 40
+  - Utility: 0.25
+    Range: 41
+  - Utility: 0.2
+    Range: 80
+  - Utility: 0
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 13
+  ThirdPersonAccuracy: 11
+  FirstPersonRecoil: 1.2
+  ThirdPersonRecoil: 2
+  Range: 55
+  LongRange: 0.8
+  HeadShotMaxRange: 55
+  RunSpeed: 98
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 13
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_Skorpion
+  LongDescription:
+  ShortDescription:
+  HardCost: 200
+  SoftCost: 2000
+  UnlockCost: 200
+  inHandLocalRotation: {x: 0.002384494, y: 0.04663571, z: -0.05100937, w: 0.9976059}
+  inHandLocalPosition: {x: -0.1288711, y: 0.01321313, z: 0.01638586}
+  HitBoxRig: {fileID: 11400000, guid: acc1cd4f26015c44fb230f08da2fdaeb, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.0565

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: afg_intro2_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - brick_impact4_jh_afg2in
+  - brick_impact_jh_afg2in
+  - brick_impact3_jh_afg2in
+  - blood_spray_jh_afg2in
+  - explosion_tank_jh_afg2in
+  - roof_dust_jh__afg2in
+  - brick_impact2_jh_afg2in
+  - Tracer_fire_jh
+  - Tracer_fire2_jh
+  - interior_debris
+  - Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/RPG_Main_Body/Missile_Control/RPGParticleTrail
+  Effects:
+  - EffectName: bullet_impacts_stairs
+    EventName:
+    TimeOffset: 10.8
+    Path: brick_impact4_jh_afg2in
+    Action: 0
+  - EffectName: bullet_impacts_woodfall
+    EventName:
+    TimeOffset: 17.5
+    Path: brick_impact3_jh_afg2in
+    Action: 0
+  - EffectName: bullet_impacts_backwall
+    EventName:
+    TimeOffset: 20.4
+    Path: brick_impact_jh_afg2in
+    Action: 0
+  - EffectName: bloodspray
+    EventName:
+    TimeOffset: 21.1
+    Path: blood_spray_jh_afg2in
+    Action: 0
+  - EffectName: explosion_tank
+    EventName:
+    TimeOffset: 41.6
+    Path: explosion_tank_jh_afg2in
+    Action: 0
+  - EffectName: roof_dust
+    EventName:
+    TimeOffset: 43
+    Path: roof_dust_jh__afg2in
+    Action: 0
+  - EffectName: bullet_impact_2
+    EventName:
+    TimeOffset: 24
+    Path: brick_impact2_jh_afg2in
+    Action: 0
+  - EffectName: bullet_impact_2
+    EventName:
+    TimeOffset: 20.2
+    Path: Tracer_fire_jh
+    Action: 0
+  - EffectName: bullet_impact_2
+    EventName:
+    TimeOffset: 23
+    Path: Tracer_fire_jh
+    Action: 1
+  - EffectName: bullet_impact_2
+    EventName:
+    TimeOffset: 23.5
+    Path: Tracer_fire2_jh
+    Action: 0
+  - EffectName: interior_expl
+    EventName:
+    TimeOffset: 41.7
+    Path: interior_debris
+    Action: 0
+  - EffectName: rpg_trail
+    EventName:
+    TimeOffset: 40
+    Path: Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/RPG_Main_Body/Missile_Control/RPGParticleTrail
+    Action: 0

@@ -1,0 +1,2256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1843279056510858}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1843279056510858
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4966911225959762}
+  - 114: {fileID: 114860473218666491}
+  m_Layer: 0
+  m_Name: RiotShieldNPCAnimLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4966911225959762
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843279056510858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.978442, y: -26.25283, z: -1.2947077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114860473218666491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843279056510858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfbc50e2c9c1dad6163134215099969, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  LibraryName:
+  AnimDefaults:
+    DefinitionName: Default
+    Categories:
+    - CategoryName: Movement
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions:
+      - ActionName: Stand
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 8530de3a005a9fd48b95b1d15fb65638, type: 2}
+            Looping: 1
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 2
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: TurnToFace
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: c3ce0707c14d6a54084ae3562fa54e03, type: 2}
+            Looping: 1
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: Advance
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 51bb880b2d24eb343b493d89d90561b4, type: 2}
+            Looping: 1
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: Flinch
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: aabe5a82e60744c42b598725a768419a, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: ShieldBash
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 9c45b13dc92659847ad3821d764c26ae, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: ShootPistol
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: f753f64b39c6816448c619a963ea9cd7, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: ThrowGrenade
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 76253911a8e9fff459094df7dfe58a94, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: FlinchBig
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 04352e6541f367a42b4b54075a58b91c, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: TransWalkToGrenade
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 27cd985cb6c85cd46ae46e9cafbdbe76, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: GrenadeIdle
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: db7c26f8a2966a748ad42abb563d434e, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+      - ActionName: TransGrenadeToWalk
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 7400000, guid: 1e4a3937e70b4944e88299caf3a881e9, type: 2}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+    - CategoryName: SetPiece
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions:
+      - ActionName: Actor0
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 0}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+    - CategoryName: Deaths
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions:
+      - ActionName: DeathFront
+        Anim:
+          Anims:
+          - RefIndex: 0
+            AnimClip: {fileID: 0}
+            Looping: 0
+            Clamp: 0
+            ForceAdditive: 0
+            BlendType: 0
+            BlendTime: 0.25
+            OverrideBone:
+            Multibone: 0
+            Speed: 1
+            PreventAiming: 0
+            PreventReloading: 0
+            Monopoly: 0
+            segueData:
+              segueStartOffsetPos: {x: 0, y: 0, z: 0}
+              segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndOffsetPos: {x: 0, y: 0, z: 0}
+              segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+              segueEndVelocity: {x: 0, y: 0, z: 0}
+              valid: 0
+            Events: []
+            Branches: []
+            branchCount: 1
+          PickRandom: 0
+        HasAnimation: 0
+    - CategoryName: Aiming
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions: []
+    - CategoryName: Wounded
+      BlendType: 0
+      FromBone:
+      Multibone: 0
+      Actions: []
+  yRotAnim: {fileID: 7400000, guid: e1862421cb197fc4e84781e11904d44b, type: 2}
+  segueStartAnim: {fileID: 0}
+  segueEndAnim: {fileID: 0}
+  segueModel: {fileID: 0}
+  AnimOverrides:
+  - OverrideName: Dead
+    CategoryOverrides:
+    - ActionOverrides:
+      - ActionOverride:
+          ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 3225575c24edc8447b2fd1215dd014c2, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 1
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 8530de3a005a9fd48b95b1d15fb65638, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 2
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: c3ce0707c14d6a54084ae3562fa54e03, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 51bb880b2d24eb343b493d89d90561b4, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: aabe5a82e60744c42b598725a768419a, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 9c45b13dc92659847ad3821d764c26ae, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: f753f64b39c6816448c619a963ea9cd7, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 76253911a8e9fff459094df7dfe58a94, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: FlinchBig
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: FlinchBig
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 04352e6541f367a42b4b54075a58b91c, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TransWalkToGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: TransWalkToGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 27cd985cb6c85cd46ae46e9cafbdbe76, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: GrenadeIdle
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: GrenadeIdle
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: db7c26f8a2966a748ad42abb563d434e, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TransGrenadeToWalk
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: TransGrenadeToWalk
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 1e4a3937e70b4944e88299caf3a881e9, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      DefaultCategory:
+        CategoryName: Movement
+        BlendType: 0
+        FromBone:
+        Multibone: 0
+        Actions:
+        - ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 8530de3a005a9fd48b95b1d15fb65638, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 2
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: c3ce0707c14d6a54084ae3562fa54e03, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 51bb880b2d24eb343b493d89d90561b4, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: aabe5a82e60744c42b598725a768419a, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 9c45b13dc92659847ad3821d764c26ae, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: f753f64b39c6816448c619a963ea9cd7, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 76253911a8e9fff459094df7dfe58a94, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: FlinchBig
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 04352e6541f367a42b4b54075a58b91c, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: TransWalkToGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 27cd985cb6c85cd46ae46e9cafbdbe76, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: GrenadeIdle
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: db7c26f8a2966a748ad42abb563d434e, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: TransGrenadeToWalk
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 1e4a3937e70b4944e88299caf3a881e9, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      CategoryIndex: 0
+    OverrideStacks: []
+  - OverrideName: Carried
+    CategoryOverrides:
+    - ActionOverrides:
+      - ActionOverride:
+          ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 2b59c9771dd61dc439bdf2b63a947fc2, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 8530de3a005a9fd48b95b1d15fb65638, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 2
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: c3ce0707c14d6a54084ae3562fa54e03, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 51bb880b2d24eb343b493d89d90561b4, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: dbfab21368585194d9c18d5f44b33045, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 9c45b13dc92659847ad3821d764c26ae, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 27d213ac4c7eac449b60843eff6f9fa1, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 76253911a8e9fff459094df7dfe58a94, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: FlinchBig
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: New Action8
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TransWalkToGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: New Action9
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: GrenadeIdle
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: New Action10
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      - ActionOverride:
+          ActionName: TransGrenadeToWalk
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 1
+        DefaultAction:
+          ActionName: New Action11
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 0}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      DefaultCategory:
+        CategoryName: Movement
+        BlendType: 0
+        FromBone:
+        Multibone: 0
+        Actions:
+        - ActionName: Stand
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 8530de3a005a9fd48b95b1d15fb65638, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 2
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: TurnToFace
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: c3ce0707c14d6a54084ae3562fa54e03, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: Advance
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 51bb880b2d24eb343b493d89d90561b4, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: Flinch
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: dbfab21368585194d9c18d5f44b33045, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ShieldBash
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 9c45b13dc92659847ad3821d764c26ae, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ShootPistol
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 27d213ac4c7eac449b60843eff6f9fa1, type: 2}
+              Looping: 1
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+        - ActionName: ThrowGrenade
+          Anim:
+            Anims:
+            - RefIndex: 0
+              AnimClip: {fileID: 7400000, guid: 76253911a8e9fff459094df7dfe58a94, type: 2}
+              Looping: 0
+              Clamp: 0
+              ForceAdditive: 0
+              BlendType: 0
+              BlendTime: 0.25
+              OverrideBone:
+              Multibone: 0
+              Speed: 1
+              PreventAiming: 0
+              PreventReloading: 0
+              Monopoly: 0
+              segueData:
+                segueStartOffsetPos: {x: 0, y: 0, z: 0}
+                segueStartOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndOffsetPos: {x: 0, y: 0, z: 0}
+                segueEndOffsetRot: {x: 0, y: 0, z: 0, w: 0}
+                segueEndVelocity: {x: 0, y: 0, z: 0}
+                valid: 0
+              Events: []
+              Branches: []
+              branchCount: 1
+            PickRandom: 0
+          HasAnimation: 0
+      CategoryIndex: 0
+    OverrideStacks: []
+  - OverrideName: CarriedFP
+    CategoryOverrides: []
+    OverrideStacks: []
+  totalAnimCount: 0

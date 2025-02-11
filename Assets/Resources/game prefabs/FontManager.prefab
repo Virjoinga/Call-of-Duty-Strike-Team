@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1119133004557845}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1119133004557845
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4321013745393801}
+  - 114: {fileID: 114498204909869118}
+  m_Layer: 0
+  m_Name: FontManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4321013745393801
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119133004557845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114498204909869118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119133004557845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e690dbc03880a1ade4d49a6047561f4c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  FontMaterials:
+  - {fileID: 2100000, guid: fe84b29fec4a3234e8f02afe7ed61731, type: 2}
+  - {fileID: 2100000, guid: 109dbb56104f53d4092ad5d659c27684, type: 2}
+  - {fileID: 2100000, guid: 009a32d5055ff774f8d8d2a487655bd0, type: 2}
+  - {fileID: 2100000, guid: 13fde00c0ecc83e4f960b1f86f70d605, type: 2}
+  x2Texture:
+  - {fileID: 2800000, guid: e2c26bd3aafd5eb41998202abf59f85f, type: 3}
+  - {fileID: 2800000, guid: f1dbb171694be2c46b69bec63a8f0f3e, type: 3}
+  - {fileID: 2800000, guid: 4731cf530e7a6484caf90c83d2127bfe, type: 3}
+  - {fileID: 2800000, guid: 39542b4f6f1baa84a96df506631f7ab5, type: 3}
+  x2FontDef:
+  - {fileID: 4900000, guid: 0e803faa8844f90498fb8a7229388d2d, type: 3}
+  - {fileID: 4900000, guid: 5a095c7db7ea76b4cb4c12c6c11a6df1, type: 3}
+  - {fileID: 4900000, guid: 69550cdfc23085943add16e9dc896d70, type: 3}
+  - {fileID: 4900000, guid: 7d9d551087435dc488d335ee99051468, type: 3}

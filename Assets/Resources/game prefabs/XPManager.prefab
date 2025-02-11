@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1564320437301673}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1564320437301673
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4526362282311265}
+  - 114: {fileID: 114679811650135485}
+  m_Layer: 0
+  m_Name: XPManager
+  m_TagString:
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4526362282311265
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564320437301673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114679811650135485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564320437301673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92304a3c9bd083aef30faf520e89285, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_XPAwards:
+    Kill_OtherGun:
+      Identifier: Kill_Other Gun
+      Message: S_XP_KILL_OTHER_GUN
+      XP: 100
+    Kill_AssistInKill:
+      Identifier: Kill_Assist In Kill
+      Message: S_XP_ASSIST_IN_KILL
+      XP: 20
+    Kill_DestroySentry:
+      Identifier: KIll_Destroy Sentry
+      Message: S_XP_DESTROY_SENTRY
+      XP: 100
+    Kill_MachineGunOrSniper:
+      Identifier: KIll_Machine Gun Or Sniper
+      Message: S_XP_MACHINE_GUN_OR_SNIPER
+      XP: 150
+    Kill_MountedGun:
+      Identifier: KIll_Mounted Gun
+      Message: S_XP_MOUNTED_GUN
+      XP: 250
+    Kill_Window:
+      Identifier: KIll_Window
+      Message: S_XP_WINDOW
+      XP: 125
+    Bonus_Payback:
+      Identifier: Bonus_Payback
+      Message: S_XP_PAYBACK
+      XP: 50
+    Bonus_Backup:
+      Identifier: Bonus_backup
+      Message: S_XP_BACKUP
+      XP: 50
+    Bonus_DoubleKill:
+      Identifier: Bonus_Double Kill
+      Message: S_XP_DOUBLE_KILL
+      XP: 50
+    Bonus_TripleKill:
+      Identifier: Bonus_Triple Kill
+      Message: S_XP_TRIPLE_KILL
+      XP: 100
+    Bonus_MultiKill:
+      Identifier: Bonus_Multi Kill
+      Message: S_XP_MULTI_KILL
+      XP: 200
+    Bonus_Longshot:
+      Identifier: Bonus_Longshot
+      Message: S_XP_LONGSHOT
+      XP: 50
+    Bonus_OneShotOneKill:
+      Identifier: Bonus_One Shot One Kill
+      Message: S_XP_ONE_SHOT_ONE_KILL
+      XP: 50
+    Bonus_Headshot:
+      Identifier: Bonus_Headshot
+      Message: S_XP_HEADSHOT
+      XP: 50
+    Bonus_Execution:
+      Identifier: Bonus_Execution
+      Message: S_XP_EXECUTION
+      XP: 100
+    Bonus_Avenger:
+      Identifier: Bonus_Avenger
+      Message: S_XP_AVENGER
+      XP: 50
+    Bonus_SmartBomb:
+      Identifier:
+      Message:
+      XP: 0
+    Bonus_Backstabber:
+      Identifier: Bonus_Backstabber
+      Message: S_XP_BACKSTABBER
+      XP: 50
+    Bonus_DeadEye:
+      Identifier: Bonus_Dead Eye
+      Message: S_XP_DEADEYE
+      XP: 50
+    Bonus_Efficiency:
+      Identifier: Bonus_Efficiency
+      Message: S_XP_EFFICIENCY
+      XP: 100
+    Bonus_TrippleStealthKill:
+      Identifier: Bonus_Triple Stealth Kill
+      Message: S_XP_TRIPLE_KILL
+      XP: 200
+    Bonus_FuryKill:
+      Identifier: Bonus_Fury Kill
+      Message: S_XP_MULTI_KILL
+      XP: 500
+  m_XPMissionsAndObjectives:
+    MissionPassedNormal:
+      Identifier:
+      Message:
+      XP: 300
+    MissionPassedVeteran:
+      Identifier:
+      Message:
+      XP: 1000
+    SecondaryObjectiveNormal:
+      Identifier:
+      Message:
+      XP: 50
+    SecondaryObjectiveVeteran:
+      Identifier:
+      Message:
+      XP: 100
+    Intel:
+      Identifier:
+      Message:
+      XP: 100
+    EarnedMedalNormal:
+      Identifier:
+      Message:
+      XP: 100
+    EarnedMedalVeteran:
+      Identifier:
+      Message:
+      XP: 200
+  m_XPLevels:
+  - m_Threshold: 0
+  - m_Threshold: 1000
+  - m_Threshold: 2500
+  - m_Threshold: 4500
+  - m_Threshold: 7000
+  - m_Threshold: 10000
+  - m_Threshold: 13600
+  - m_Threshold: 17800
+  - m_Threshold: 22600
+  - m_Threshold: 28000
+  - m_Threshold: 34000
+  - m_Threshold: 40700
+  - m_Threshold: 48100
+  - m_Threshold: 56200
+  - m_Threshold: 65000
+  - m_Threshold: 74500
+  - m_Threshold: 84800
+  - m_Threshold: 95900
+  - m_Threshold: 107800
+  - m_Threshold: 120500
+  - m_Threshold: 134000
+  - m_Threshold: 148400
+  - m_Threshold: 163700
+  - m_Threshold: 179900
+  - m_Threshold: 197000
+  - m_Threshold: 215000
+  - m_Threshold: 234000
+  - m_Threshold: 254000
+  - m_Threshold: 275000
+  - m_Threshold: 297000
+  - m_Threshold: 320000
+  - m_Threshold: 344000
+  - m_Threshold: 369000
+  - m_Threshold: 395000
+  - m_Threshold: 422000
+  - m_Threshold: 450000
+  - m_Threshold: 479000
+  - m_Threshold: 509000
+  - m_Threshold: 540000
+  - m_Threshold: 572000
+  - m_Threshold: 605000
+  - m_Threshold: 639000
+  - m_Threshold: 674000
+  - m_Threshold: 710000
+  - m_Threshold: 747000
+  - m_Threshold: 785000
+  - m_Threshold: 824000
+  - m_Threshold: 864000
+  - m_Threshold: 905000
+  - m_Threshold: 947000
+  - m_Threshold: 1000000
+  m_MaxPrestigeLevels: 5
+  m_XPMultiplier: 1
+  XPLevelForVeteranModeUnlock: 10

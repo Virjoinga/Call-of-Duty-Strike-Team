@@ -1,0 +1,28 @@
+public enum PerkType
+{
+	Bandolier = 0,
+	Scavenger = 1,
+	IronLungs = 2,
+	DeadSilence = 3,
+	ColdBlooded = 4,
+	Perk1Greed = 5,
+	SonicBoom = 6,
+	QuickDraw = 7,
+	SteadyAim = 8,
+	Medic = 9,
+	Toughness = 10,
+	Perk2Greed = 11,
+	LightWeight = 12,
+	SleightOfHand = 13,
+	Hardline = 14,
+	FlakJacket = 15,
+	Stalker = 16,
+	Perk3Greed = 17,
+	Rifleman = 18,
+	Shotgunner = 19,
+	Sniper = 20,
+	MachineGunner = 21,
+	SMGOperative = 22,
+	Max = 23,
+	None = -1
+}

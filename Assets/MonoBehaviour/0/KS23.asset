@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d75fbb3cd1776b2469bef426add47e, type: 3}
+  m_Name: KS23
+  m_EditorClassIdentifier:
+  Name: SS-23K
+  Loadout:
+    Accuracy: 0.6
+    Damage: 1
+    RateOfFire: 0.1
+    Mobility: 0.95
+    Range: 0.25
+  UnlockLevel: -1
+  Capacity: 7
+  BulletStartQuantity: 77
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 3
+  ValidReloadThreshold: 1
+  PutAwayTime: 0.3
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 900
+    Range: 7
+  - Damage: 600
+    Range: 10
+  - Damage: 105
+    Range: 11
+  - Damage: 75
+    Range: 15
+  - Damage: 5
+    Range: 16
+  - Damage: 0
+    Range: 30
+  UtilityRanges:
+  - Utility: 0.5
+    Range: 0
+  - Utility: 1
+    Range: 1
+  - Utility: 1
+    Range: 10
+  - Utility: 0.2
+    Range: 11
+  - Utility: 0.2
+    Range: 30
+  - Utility: 0
+    Range: 32
+  ImpactForce: 330
+  FirstPersonAccuracy: 9
+  ThirdPersonAccuracy: 9
+  FirstPersonRecoil: 6
+  ThirdPersonRecoil: 2
+  Range: 45
+  LongRange: 0.5
+  HeadShotMaxRange: 15
+  RunSpeed: 100
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 9
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_KS23
+  LongDescription: S_EQUIPMENT_DESC_KS23_LONG
+  ShortDescription: S_EQUIPMENT_DESC_KS23_SHORT
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: 0.0532, y: 0.085, z: -0.0914, w: 0.9907}
+  inHandLocalPosition: {x: -0.2318, y: 0.0382, z: 0.0206}
+  HitBoxRig: {fileID: 11400000, guid: a78f83f8f62d49546a7f6f8d32c85b83, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.65
+  TimeForReloadStart: 0.4
+  TimeForReloadSingleShell: 0.6
+  TimeForReloadEnd: 0.8
+  TimeToRechamberHips: 0.6
+  TimeToRechamberSights: 0.6
+  ShotSpread: 100

@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: Arc_outro7_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 3b06ee5ac884ee74fbe66b430e741450, type: 2}
+  ObjectsToDisableOnStart:
+  - vtol_jet_snow_jh
+  - NODE_VTOL_Int/x78_vtol_int/blood_spray_jh
+  - NODE_VTOL/l_carriage_door/vtol_jet_snow_sm_jh
+  - NODE_VTOL_Int/x78_vtol_int/end_expl_damage
+  - NODE_VTOL_Int/x78_vtol_int/white_out
+  - Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/Weapon004/AN94_LOD0 4/MUZZLE_FLASH 6
+  - Bip005/Bip002 Pelvis003/Bip002 Spine009/Bip002 Spine010/Bip002 Spine011/Bip002 Neck003/Bip002 R Clavicle003/Bip002 R UpperArm003/Bip002 R Forearm003/Bip002 R Hand003/Weapon003/AN94_LOD0 3/FX_assaultrifle_muzzle 1
+  - Bip007/Bip002 Pelvis005/Bip002 Spine015/Bip002 Spine016/Bip002 Spine017/Bip002 Neck005/Bip002 R Clavicle005/Bip002 R UpperArm005/Bip002 R Forearm005/Bip002 R Hand005/Weapon005/AN94_LOD0 5/FX_assaultrifle_muzzle 1
+  - Bip004/Bip002 Pelvis002/Bip002 Spine006/Bip002 Spine007/Bip002 Spine008/Bip002 Neck002/Bip002 R Clavicle002/Bip002 R UpperArm002/Bip002 R Forearm002/Bip002 R Hand002/Weapon002/AN94_01_LOD0/FX_assaultrifle_muzzle 1
+  - Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/Weapon004/AN94_LOD0 4/FX_assaultrifle_muzzle 1
+  Effects:
+  - EffectName: snow_blow
+    EventName:
+    TimeOffset: 5
+    Path: vtol_jet_snow_jh
+    Action: 0
+  - EffectName: snow_blow
+    EventName:
+    TimeOffset: 10
+    Path: vtol_jet_snow_jh
+    Action: 1
+  - EffectName: snow_blow
+    EventName:
+    TimeOffset: 23
+    Path: vtol_jet_snow_jh
+    Action: 0
+  - EffectName: blood_spray
+    EventName:
+    TimeOffset: 28.3
+    Path: NODE_VTOL_Int/x78_vtol_int/blood_spray_jh
+    Action: 0
+  - EffectName: snow_blow_small
+    EventName:
+    TimeOffset: 9
+    Path: NODE_VTOL/l_carriage_door/vtol_jet_snow_sm_jh
+    Action: 0
+  - EffectName: end_explo_damage
+    EventName:
+    TimeOffset: 34.5
+    Path: NODE_VTOL_Int/x78_vtol_int/end_expl_damage
+    Action: 0
+  - EffectName: white_out
+    EventName:
+    TimeOffset: 31
+    Path: NODE_VTOL_Int/x78_vtol_int/white_out
+    Action: 0
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 3.9
+    Path: NODE_VTOL/l_carriage_door/vtol_jet_thrustrear_jh
+    Action: 1
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 15.8
+    Path: Bip007/Bip002 Pelvis005/Bip002 Spine015/Bip002 Spine016/Bip002 Spine017/Bip002 Neck005/Bip002 R Clavicle005/Bip002 R UpperArm005/Bip002 R Forearm005/Bip002 R Hand005/Weapon005/AN94_LOD0 5/FX_assaultrifle_muzzle 1
+    Action: 0
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 25
+    Path: Bip007/Bip002 Pelvis005/Bip002 Spine015/Bip002 Spine016/Bip002 Spine017/Bip002 Neck005/Bip002 R Clavicle005/Bip002 R UpperArm005/Bip002 R Forearm005/Bip002 R Hand005/Weapon005/AN94_LOD0 5/FX_assaultrifle_muzzle 1
+    Action: 1
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 16.3
+    Path: Bip004/Bip002 Pelvis002/Bip002 Spine006/Bip002 Spine007/Bip002 Spine008/Bip002 Neck002/Bip002 R Clavicle002/Bip002 R UpperArm002/Bip002 R Forearm002/Bip002 R Hand002/Weapon002/AN94_01_LOD0/FX_assaultrifle_muzzle 1
+    Action: 0
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 25
+    Path: Bip004/Bip002 Pelvis002/Bip002 Spine006/Bip002 Spine007/Bip002 Spine008/Bip002 Neck002/Bip002 R Clavicle002/Bip002 R UpperArm002/Bip002 R Forearm002/Bip002 R Hand002/Weapon002/AN94_01_LOD0/FX_assaultrifle_muzzle 1
+    Action: 1
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 17
+    Path: Bip005/Bip002 Pelvis003/Bip002 Spine009/Bip002 Spine010/Bip002 Spine011/Bip002 Neck003/Bip002 R Clavicle003/Bip002 R UpperArm003/Bip002 R Forearm003/Bip002 R Hand003/Weapon003/AN94_LOD0 3/FX_assaultrifle_muzzle 1
+    Action: 0
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 25
+    Path: Bip005/Bip002 Pelvis003/Bip002 Spine009/Bip002 Spine010/Bip002 Spine011/Bip002 Neck003/Bip002 R Clavicle003/Bip002 R UpperArm003/Bip002 R Forearm003/Bip002 R Hand003/Weapon003/AN94_LOD0 3/FX_assaultrifle_muzzle 1
+    Action: 1
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 17
+    Path: Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/Weapon004/AN94_LOD0 4/FX_assaultrifle_muzzle 1
+    Action: 0
+  - EffectName: rear_thrust_off
+    EventName:
+    TimeOffset: 25
+    Path: Bip006/Bip002 Pelvis004/Bip002 Spine012/Bip002 Spine013/Bip002 Spine014/Bip002 Neck004/Bip002 R Clavicle004/Bip002 R UpperArm004/Bip002 R Forearm004/Bip002 R Hand004/Weapon004/AN94_LOD0 4/FX_assaultrifle_muzzle 1
+    Action: 1

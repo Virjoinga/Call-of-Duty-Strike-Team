@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c68b5a066292eb6b5dd537671efbd17, type: 3}
+  m_Name: AN-94_Dubois
+  m_EditorClassIdentifier:
+  Name: AN-94
+  Loadout:
+    Accuracy: 0.4
+    Damage: 0.5
+    RateOfFire: 0.4
+    Mobility: 0.5
+    Range: 0.4
+  UnlockLevel: -1
+  Capacity: 30
+  BulletStartQuantity: 5000
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 2.5
+  ValidReloadThreshold: 0.6
+  PutAwayTime: 0.3
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 20
+    Range: 90
+  - Damage: 0
+    Range: 100
+  UtilityRanges:
+  - Utility: 0.3
+    Range: 0
+  - Utility: 0.5
+    Range: 19
+  - Utility: 1
+    Range: 20
+  - Utility: 1
+    Range: 40
+  - Utility: 0.25
+    Range: 41
+  - Utility: 0.2
+    Range: 80
+  - Utility: 0
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 8
+  ThirdPersonAccuracy: 8
+  FirstPersonRecoil: 2
+  ThirdPersonRecoil: 2
+  Range: 1250
+  LongRange: 0.5
+  HeadShotMaxRange: 100
+  RunSpeed: 95
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 2
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_AN-94
+  LongDescription:
+  ShortDescription:
+  HardCost: 100
+  SoftCost: 1000
+  UnlockCost: 0
+  inHandLocalRotation: {x: 0.0677, y: 0.0716, z: -0.0497, w: 0.9938}
+  inHandLocalPosition: {x: -0.3871, y: -0.008, z: 0.0228}
+  HitBoxRig: {fileID: 11400000, guid: 163bc06f0452a8741b203fcdfed08fc7, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.1

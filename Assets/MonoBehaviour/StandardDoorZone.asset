@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca60ac5d73c174091631edad175f217, type: 3}
+  m_Name: StandardDoorZone
+  m_EditorClassIdentifier:
+  SP_OpenTowardsLeaveAjar: {fileID: 114445249656795553, guid: 0f995b30bc9a4bd468bbf778d022b987, type: 2}
+  SP_OpenAwayLeaveAjar: {fileID: 114049342705350636, guid: 77aa50688972c9b4eb8e7609872d2911, type: 2}
+  SP_OpenTowardsAndClose: {fileID: 114533126628611611, guid: 88560f5330bf47b45af2185db26913dd, type: 2}
+  SP_OpenAwayAndClose: {fileID: 114324043924830597, guid: b81fdc55cbc74db4980df32e910060ca, type: 2}
+  SP_WalkThroughAndCloseTowards: {fileID: 114926183681192813, guid: 1da4bd9b1b18f0644a2afb83602d80a7, type: 2}
+  SP_WalkThroughAndCloseAway: {fileID: 114271593043368719, guid: 3adb00729a92e0e49ad809a49fa9e221, type: 2}
+  SP_FlingOpenTowards: {fileID: 114378759026192589, guid: 2762b9b52d9456744a5b978bf417e90d, type: 2}
+  SP_BurstThrough: {fileID: 114760469822189765, guid: 104a7a6ae19166c47a1be19fabb9aca7, type: 2}
+  PlayerOpenTowardsNormal: {fileID: 114456320633436635, guid: 73ea84506bbb3b7469d2e163d7567922, type: 2}
+  PlayerOpenTowardsNormal_FPP: {fileID: 114034416297365244, guid: 7f40e4a1e15f4c44d88c61fcf08cea28, type: 2}
+  PlayerOpenAwayNormal: {fileID: 114291146607155017, guid: 6cb522f6fa5d695439d8239e01a8ef86, type: 2}
+  PlayerOpenAwayNormal_FPP: {fileID: 114223190462734046, guid: 988bf9b6dcbc81c42bd0e777e4004bf7, type: 2}
+  PlayerOpenTowardsStealth: {fileID: 114680076123247749, guid: 3dfb576b2b835bc43a9bf8b7c9d2a6dc, type: 2}
+  PlayerOpenAwayStealth: {fileID: 114741818059558928, guid: 77cba59fb3ca0ab498d7b840801c8da5, type: 2}
+  delay_OpenTowardsLeaveAjar: {x: 3.5, y: 2.5}
+  delay_OpenAwayLeaveAjar: {x: 1.5, y: 3}
+  delay_OpenTowardsAndClose: {x: 3, y: 3}
+  delay_OpenAwayAndClose: {x: 3, y: 3}
+  delay_WalkThroughAndCloseTowards: {x: 3, y: 3}
+  delay_WalkThroughAndCloseAway: {x: 3, y: 3}
+  delay_FlingOpenTowards: {x: 0, y: 0}
+  delay_BurstThrough: {x: 0.5, y: 3}
+  delay_PlayerOpenTowardsNormal: {x: 2, y: 2}
+  delay_PlayerOpenAwayNormal: {x: 2, y: 2}
+  delay_PlayerOpenTowardsStealth: {x: 4, y: 4}
+  delay_PlayerOpenAwayStealth: {x: 3, y: 3}
+  offset_OpenTowardsLeaveAjar: {x: 0.5993872, y: 0.0001477897}
+  offset_OpenAwayLeaveAjar: {x: 0.5993872, y: 0.0007281788}
+  offset_OpenTowardsAndClose: {x: 0.5989839, y: 0.00181818}
+  offset_OpenAwayAndClose: {x: 0.6003975, y: 0.00350295}
+  offset_WalkThroughAndCloseTowards: {x: 0.5989839, y: 0.0001738966}
+  offset_WalkThroughAndCloseAway: {x: 0.6012638, y: 0.002636962}
+  offset_FlingOpenTowards: {x: 0.5989839, y: 0.101971}
+  offset_BurstThrough: {x: 0, y: 0}
+  offset_PlayerOpenTowardsNormal: {x: 0.5989839, y: -0.0002005696}
+  offset_PlayerOpenAwayNormal: {x: 0.5969408, y: 0}
+  offset_PlayerOpenTowardsStealth: {x: 0, y: 0}
+  offset_PlayerOpenAwayStealth: {x: 0, y: 0}
+  delay_WalkThroughTowardsLeaveAjar: {x: 2, y: 0.5}
+  delay_WalkThroughAwayLeaveAjar: {x: 0.5, y: 2}

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf2a5b0cf2161981f0cd1009307a48e, type: 3}
+  m_Name: QBBLSW
+  m_EditorClassIdentifier:
+  Name: QBBLSW
+  Loadout:
+    Accuracy: 0.45
+    Damage: 0.75
+    RateOfFire: 0.75
+    Mobility: 0.4
+    Range: 0.5
+  UnlockLevel: -1
+  Capacity: 75
+  BulletStartQuantity: 450
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 27
+  ReloadTime: 4.667
+  ValidReloadThreshold: 0.7
+  PutAwayTime: 0.8
+  TakeOutTime: 1.5
+  DamageRanges:
+  - Damage: 240
+    Range: 20
+  - Damage: 145
+    Range: 35
+  - Damage: 145
+    Range: 45
+  - Damage: 35
+    Range: 51
+  - Damage: 35
+    Range: 80
+  - Damage: 3
+    Range: 100
+  UtilityRanges:
+  - Utility: 0.3
+    Range: 0
+  - Utility: 0.5
+    Range: 19
+  - Utility: 1
+    Range: 25
+  - Utility: 1
+    Range: 48
+  - Utility: 0.25
+    Range: 51
+  - Utility: 0.2
+    Range: 80
+  - Utility: 0
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 14
+  ThirdPersonAccuracy: 10
+  FirstPersonRecoil: 1.15
+  ThirdPersonRecoil: 2
+  Range: 70
+  LongRange: 0.7
+  HeadShotMaxRange: 100
+  RunSpeed: 72
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 11
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_QBBLSW
+  LongDescription: S_EQUIPMENT_DESC_QBBLSW_LONG
+  ShortDescription: S_EQUIPMENT_DESC_QBBLSW_SHORT
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: -0.0111, y: 0.0507, z: -0.0479, w: 0.9975}
+  inHandLocalPosition: {x: -0.0422, y: 0.0621, z: 0.0178}
+  HitBoxRig: {fileID: 11400000, guid: b12432f0d8e5b1843a44a3c0d444931f, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.068

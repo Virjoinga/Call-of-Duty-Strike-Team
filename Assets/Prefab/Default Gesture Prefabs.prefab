@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1666273273986123}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1666273273986123
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4767832695207396}
+  - 114: {fileID: 114560664168008954}
+  m_Layer: 0
+  m_Name: Default Gesture Prefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4767832695207396
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666273273986123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 141.00745, y: -213.04199, z: -34.64258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114560664168008954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666273273986123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c3a53d848e13475a919dca8e233cae, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  fingerMotion: {fileID: 114619341822634641, guid: 03a27fa06c4615740a26fc7c74ce8771, type: 2}
+  fingerDrag: {fileID: 114891993637832226, guid: 9de7b51058eff6b4594694580ef8d458, type: 2}
+  fingerTap: {fileID: 114572804917070974, guid: b6bc8864eb23f6f4891d60b6dd1384b4, type: 2}
+  fingerDoubleTap: {fileID: 114048916480896875, guid: 68707e84dabf66742b4824102ca4f63d, type: 2}
+  fingerSwipe: {fileID: 114907751605920773, guid: 0846c6bbcc5e9a445b33a5817c48c091, type: 2}
+  fingerLongPress: {fileID: 114723884006052270, guid: 939b11f08158c264592d1cc6305e72da, type: 2}
+  drag: {fileID: 114891993637832226, guid: 9de7b51058eff6b4594694580ef8d458, type: 2}
+  tap: {fileID: 114572804917070974, guid: b6bc8864eb23f6f4891d60b6dd1384b4, type: 2}
+  doubleTap: {fileID: 114048916480896875, guid: 68707e84dabf66742b4824102ca4f63d, type: 2}
+  swipe: {fileID: 114907751605920773, guid: 0846c6bbcc5e9a445b33a5817c48c091, type: 2}
+  longPress: {fileID: 114723884006052270, guid: 939b11f08158c264592d1cc6305e72da, type: 2}
+  pinch: {fileID: 114276319277948363, guid: 5349f579336297f4785127cfa113d1f6, type: 2}
+  rotation: {fileID: 114564081961728415, guid: ca988403f7983e142b666cb8c07aaaa7, type: 2}
+  twoFingerDrag: {fileID: 114228440248369072, guid: e8a3264c6799ff54da29ef3f4815c74e, type: 2}
+  twoFingerTap: {fileID: 114769538805151348, guid: 96f28c2e1e802ce42962907e4eab425d, type: 2}
+  twoFingerSwipe: {fileID: 114017562276031480, guid: 8303e577972543042912b7cee6145eab, type: 2}
+  twoFingerLongPress: {fileID: 114250972153816992, guid: 7089bb160c1460c469a675fa01d00599, type: 2}

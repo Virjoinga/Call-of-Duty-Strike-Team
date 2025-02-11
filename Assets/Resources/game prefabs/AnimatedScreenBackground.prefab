@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1389302213054284}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1389302213054284
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4342858523956477}
+  - 114: {fileID: 114052690183428300}
+  m_Layer: 9
+  m_Name: AnimatedScreenBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4342858523956477
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389302213054284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114052690183428300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389302213054284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e422d9e392825eb7419a9736e072e79, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  BlendStart: {r: 0.09801738, g: 0.27312475, b: 0.32835823, a: 0.6862745}
+  BlendEnd: {r: 0.03308086, g: 0.16616142, b: 0.20149255, a: 1}
+  BlendMiddle: {r: 0.32835823, g: 0.32549173, b: 0.044107825, a: 0.6862745}
+  MinPersistence: 0.25
+  MaxPersistence: 0.5
+  Multiplication: 2
+  NumberOfOctaves: 4
+  BackgroundMaterial: {fileID: 2100000, guid: e79b2a5f74e31f043b0728d464d001e5, type: 2}

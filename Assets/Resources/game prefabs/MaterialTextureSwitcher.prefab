@@ -1,0 +1,361 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1273610056084505}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1273610056084505
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4970500414165298}
+  - 114: {fileID: 114071961772868568}
+  m_Layer: 0
+  m_Name: MaterialTextureSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4970500414165298
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273610056084505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114071961772868568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273610056084505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fb452d1b107b1ff6237b50ce4c79a9, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  MaterialData:
+  - Mat: {fileID: 2100000, guid: ca6d99fef4c70174dab32ef83e5fb76c, type: 2}
+    x1Texture: LoadoutMenu
+    x2Texture: LoadoutMenu_@x2
+    rgbTexture: LoadoutMenu_rgb
+    alphaTexture: LoadoutMenu_alpha
+    Main: LoadoutMenu
+    Alpha: LoadoutMenu
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 2f950a958239dd94d8a583eed0d63697, type: 2}
+    x1Texture: Common
+    x2Texture: Common_@x2
+    rgbTexture: Common_rgb
+    alphaTexture: Common_alpha
+    Main: Common
+    Alpha: Common
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: c4a7d55f70682d84d9a36f8df0c7fb7c, type: 2}
+    x1Texture: GlobeSelectHud
+    x2Texture: GlobeSelectHud_@x2
+    rgbTexture: GlobeSelectHud_rgb
+    alphaTexture: GlobeSelectHud_alpha
+    Main: GlobeSelectHud
+    Alpha: GlobeSelectHud
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 6bb0d507e64854e48af214303b926f7d, type: 2}
+    x1Texture: CommonBackgroundBox
+    x2Texture: CommonBackgroundBox_@x2
+    rgbTexture: CommonBackgroundBox_rgb
+    alphaTexture: CommonBackgroundBox_alpha
+    Main: CommonBackgroundBox
+    Alpha: CommonBackgroundBox
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 8b1ba9156ca19f642abe4ae45eb8ab95, type: 2}
+    x1Texture: CommonForegroundBox
+    x2Texture: CommonForegroundBox_@x2
+    rgbTexture: CommonForegroundBox_rgb
+    alphaTexture: CommonForegroundBox_alpha
+    Main: CommonForegroundBox
+    Alpha: CommonForegroundBox
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 88d7753c83d89b045b5d7a39646bf808, type: 2}
+    x1Texture: StatisticsMenu
+    x2Texture: StatisticsMenu_@x2
+    rgbTexture: StatisticsMenu_rgb
+    alphaTexture: StatisticsMenu_alpha
+    Main: StatisticsMenu
+    Alpha: StatisticsMenu
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 5fcaf691446aeb549a15698a19778ec7, type: 2}
+    x1Texture: Nav_boarder
+    x2Texture: Nav_boarder_@x2
+    rgbTexture: Nav_boarder_rgb
+    alphaTexture: Nav_boarder_alpha
+    Main: Nav_boarder
+    Alpha: Nav_boarder
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 205d2f50b46066a4286316b745fc0e46, type: 2}
+    x1Texture: FirstPersonHud
+    x2Texture: FirstPersonHud_@x2
+    rgbTexture: FirstPersonHud_rgb
+    alphaTexture: FirstPersonHud_alpha
+    Main: FirstPersonHud
+    Alpha: FirstPersonHud
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 99178e47a758d53478d6de1276b3cbe3, type: 2}
+    x1Texture: DefaultHud
+    x2Texture: DefaultHud_@x2
+    rgbTexture: DefaultHud_rgb
+    alphaTexture: DefaultHud_alpha
+    Main: DefaultHud
+    Alpha: DefaultHud
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 3aa787948c02e364cb47acf789c889df, type: 2}
+    x1Texture: Rank_Icons_Large
+    x2Texture: Rank_Icons_large_@x2
+    rgbTexture: Rank_Icons_Large_rgb
+    alphaTexture: Rank_Icons_Large_alpha
+    Main: Rank_Icons_Large
+    Alpha: Rank_Icons_Large
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 44f778dcd2168304aa5a041754465c87, type: 2}
+    x1Texture: Rank_Icons
+    x2Texture: Rank_Icons_@x2
+    rgbTexture: Rank_Icons_rgb
+    alphaTexture: Rank_Icons_alpha
+    Main: Rank_Icons
+    Alpha: Rank_Icons
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 436bea88ce8f9f2458e23fef01f431c1, type: 2}
+    x1Texture: Brackets
+    x2Texture: Brackets_@x2
+    rgbTexture: Brackets_rgb
+    alphaTexture: Brackets_alpha
+    Main: Brackets
+    Alpha: Brackets
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: d5feaffb2633394488cb36dcf59b8f14, type: 2}
+    x1Texture: MissionBriefing
+    x2Texture: MissionBriefing_@x2
+    rgbTexture: MissionBriefing_rgb
+    alphaTexture: MissionBriefing_alpha
+    Main: MissionBriefing
+    Alpha: MissionBriefing
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: b193ed88d6b6e9a4bb21fd3026511dee, type: 2}
+    x1Texture: Header_BG
+    x2Texture: Header_BG_@x2
+    rgbTexture: Header_BG_rgb
+    alphaTexture: Header_BG_alpha
+    Main: Header_BG
+    Alpha: Header_BG
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: f9610a9440895e34a8c7b6a2a1411c42, type: 2}
+    x1Texture: BriefingText_Brackets
+    x2Texture: BriefingText_Brackets_@x2
+    rgbTexture: BriefingText_Brackets_rgb
+    alphaTexture: BriefingText_Brackets_alpha
+    Main: BriefingText_Brackets
+    Alpha: BriefingText_Brackets
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: d10b3f37b90d0cc4bae5afb55a07dda0, type: 2}
+    x1Texture: MissionComplete
+    x2Texture: MissionComplete_@x2
+    rgbTexture: MissionComplete_rgb
+    alphaTexture: MissionComplete_alpha
+    Main: MissionComplete
+    Alpha: MissionComplete
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: f6d69bea28055254099b3523495717aa, type: 2}
+    x1Texture: Weapons_Large
+    x2Texture: Weapons_Large_@x2
+    rgbTexture: Weapons_Large_rgb
+    alphaTexture: Weapons_Large_alpha
+    Main: Weapons_Large
+    Alpha: Weapons_Large
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 202fdcc476bd42140958cfda9d8709f1, type: 2}
+    x1Texture: Weapons_Small
+    x2Texture: Weapons_Small_@x2
+    rgbTexture: Weapons_Small_rgb
+    alphaTexture: Weapons_Small_alpha
+    Main: Weapons_Small
+    Alpha: Weapons_Small
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 7c71ec55e507acf40877a0af6d506f76, type: 2}
+    x1Texture: Perks_Icons_Large
+    x2Texture: Perks_Icons_Large_@x2
+    rgbTexture: Perks_Icons_Large_rgb
+    alphaTexture: Perks_Icons_Large_alpha
+    Main: Perks_Icons_Large
+    Alpha: Perks_Icons_Large
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 85b4b5babe27de14aac6b73d088e715c, type: 2}
+    x1Texture: Perks_Icons_small
+    x2Texture: Perks_Icons_small_@x2
+    rgbTexture: Perks_Icons_small_rgb
+    alphaTexture: Perks_Icons_small_alpha
+    Main: Perks_Icons_small
+    Alpha: Perks_Icons_small
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 181c7aec1ac34a14faa1e3e3d2f93444, type: 2}
+    x1Texture: Equipment_Largel
+    x2Texture: Equipment_Largel_@x2
+    rgbTexture: Equipment_Largel_rgb
+    alphaTexture: Equipment_Largel_alpha
+    Main: Equipment_Largel
+    Alpha: Equipment_Largel
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 857fc960e8b6bc94aa09e5f4fe285075, type: 2}
+    x1Texture: Equipment_Small
+    x2Texture: Equipment_Small_@x2
+    rgbTexture: Equipment_Small_rgb
+    alphaTexture: Equipment_Small_alpha
+    Main: Equipment_Small
+    Alpha: Equipment_Small
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: af07f44774022d446bcec1dead23803a, type: 2}
+    x1Texture: Medals_Icons
+    x2Texture: Medals_Icons_@x2
+    rgbTexture: Medals_Icons_rgb
+    alphaTexture: Medals_Icons_alpha
+    Main: Medals_Icons
+    Alpha: Medals_Icons
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: c8dfa33959c836e4e9ec2829caafc7a1, type: 2}
+    x1Texture: Image_Frame
+    x2Texture: Image_Frame_@x2
+    rgbTexture: Image_Frame_rgb
+    alphaTexture: Image_Frame_alpha
+    Main: Image_Frame
+    Alpha: Image_Frame
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 3509c840e5fe259419e31e5f974a75a3, type: 2}
+    x1Texture: Title_BG
+    x2Texture: Title_BG_@x2
+    rgbTexture: Title_BG_rgb
+    alphaTexture: Title_BG_alpha
+    Main: Title_BG
+    Alpha: Title_BG
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 16ee97edf85965f4cba98bbb8e01fef4, type: 2}
+    x1Texture: TextBoxBackground
+    x2Texture: TextBoxBackground_@x2
+    rgbTexture: TextBoxBackground_rgb
+    alphaTexture: TextBoxBackground_alpha
+    Main: TextBoxBackground
+    Alpha: TextBoxBackground
+    Availability: 2
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: afe4945a154078044a870692b6a72020, type: 2}
+    x1Texture: SectionSelectImages
+    x2Texture: SectionSelectImages_@x2
+    rgbTexture:
+    alphaTexture:
+    Main: SectionSelectImages
+    Alpha:
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 1b5090375cc0a024abf277178c319876, type: 2}
+    x1Texture: SectionSelectAfghanImages
+    x2Texture: SectionSelectAfghanImages_@x2
+    rgbTexture:
+    alphaTexture:
+    Main: SectionSelectAfghanImages
+    Alpha:
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: c4d145449daa8e6429f4e168f4cf23cf, type: 2}
+    x1Texture: SectionSelectArcticImages
+    x2Texture: SectionSelectArcticImages_@x2
+    rgbTexture: SectionSelectArcticImages_rgb
+    alphaTexture: SectionSelectArcticImages_alpha
+    Main: SectionSelectArcticImages
+    Alpha: SectionSelectArcticImages
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 2836bb8715c05cd4e85dbca62385c0c8, type: 2}
+    x1Texture: SectionSelectKowloonImages
+    x2Texture: SectionSelectKowloonImages_@x2
+    rgbTexture:
+    alphaTexture:
+    Main: SectionSelectKowloonImages
+    Alpha:
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 71de65c38d7769844acf916b9bd66d37, type: 2}
+    x1Texture: Rank_Icons_small
+    x2Texture: Rank_Icons_small_@x2
+    rgbTexture: Rank_Icons_small_rgb
+    alphaTexture: Rank_Icons_small_alpha
+    Main: Rank_Icons_small
+    Alpha: Rank_Icons_small
+    Availability: 1
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: d980d4ceba537b948aa7e84111310ea4, type: 2}
+    x1Texture: SectionSelectMoroccoImages
+    x2Texture: SectionSelectMoroccoImages_@x2
+    rgbTexture:
+    alphaTexture:
+    Main: Rank_Icons_small
+    Alpha: Rank_Icons_small
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 5cdda4c0ca64fee4d98192370d52af56, type: 2}
+    x1Texture: LargeLeagueMedals
+    x2Texture: LargeLeagueMedals_@x2
+    rgbTexture:
+    alphaTexture:
+    Main:
+    Alpha:
+    Availability: 0
+    Loaded: 0
+  - Mat: {fileID: 2100000, guid: 7d19455f79fd647449d7e14e01fe5110, type: 2}
+    x1Texture: SectionSelectCarrierImages
+    x2Texture: SectionSelectCarrierImages_@x2
+    rgbTexture:
+    alphaTexture:
+    Main:
+    Alpha:
+    Availability: 0
+    Loaded: 0
+  vertexColouredFast: {fileID: 2100000, guid: f38c9faa2f9a05b4481bad9e7f4f7208, type: 2}
+  vertexColoured: {fileID: 2100000, guid: 1b4f563f72eef184d97f466692643560, type: 2}

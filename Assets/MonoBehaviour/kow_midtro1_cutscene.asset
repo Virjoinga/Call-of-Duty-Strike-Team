@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: kow_midtro1_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - kow_wall_bullet_jh
+  - Ballista_LOD00/MUZZLE_FLASH/FX_assaultrifle_muzzle
+  Effects:
+  - EffectName: wall_hit
+    EventName:
+    TimeOffset: 4.3
+    Path: kow_wall_bullet_jh
+    Action: 0
+  - EffectName: muzzle
+    EventName:
+    TimeOffset: 3.76
+    Path: Ballista_LOD00/MUZZLE_FLASH/FX_assaultrifle_muzzle
+    Action: 0
+  - EffectName: muzzle
+    EventName:
+    TimeOffset: 5
+    Path: Ballista_LOD00/MUZZLE_FLASH/FX_assaultrifle_muzzle
+    Action: 1
+  - EffectName: muzzle
+    EventName:
+    TimeOffset: 6.8
+    Path: Ballista_LOD00/MUZZLE_FLASH/FX_assaultrifle_muzzle
+    Action: 0
+  - EffectName: muzzle
+    EventName:
+    TimeOffset: 5.5
+    Path: kow_wall_bullet_jh
+    Action: 1

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277ff44e4b8cc45af68106f8163c2ba, type: 3}
+  m_Name: kow_intro1_cutscene
+  m_EditorClassIdentifier:
+  EventData: {fileID: 11400000, guid: 7e15c5f6fb5ecae48865f2a7c5153e9c, type: 2}
+  ObjectsToDisableOnStart:
+  - NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_005/jetwings_thrust_jh
+  - NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_006/jetwings_thrust_jh
+  - NODE_VTOL_Int/x78_vtol_int/explosion_vtolint_jh
+  - NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_005/Sparks_damage_jh
+  Effects:
+  - EffectName: vtol interior explosion on
+    EventName:
+    TimeOffset: 6.5
+    Path: NODE_VTOL_Int/x78_vtol_int/explosion_vtolint_jh
+    Action: 0
+  - EffectName: vtol interior explosion off
+    EventName:
+    TimeOffset: 15
+    Path: NODE_VTOL_Int/x78_vtol_int/explosion_vtolint_jh
+    Action: 1
+  - EffectName: jetwingsl  on
+    EventName:
+    TimeOffset: 15
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_005/jetwings_thrust_jh
+    Action: 0
+  - EffectName: jetwingsl  off
+    EventName:
+    TimeOffset: 19
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/SpareWeapon001/Jet_Wing_004/Jet_Wing_005/jetwings_thrust_jh
+    Action: 1
+  - EffectName: jetwingsr  on
+    EventName:
+    TimeOffset: 15
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_006/jetwings_thrust_jh
+    Action: 0
+  - EffectName: jetwingsr  off
+    EventName:
+    TimeOffset: 19
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/SpareWeapon001/Jet_Wing_004/Jet_Wing_006/jetwings_thrust_jh
+    Action: 1
+  - EffectName: jetwing_sparks_off
+    EventName:
+    TimeOffset: 11.4
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_005/Sparks_damage_jh
+    Action: 1
+  - EffectName: jetwing_sparks_on
+    EventName:
+    TimeOffset: 2
+    Path: NODE_VTOL_Int/PROP_Troop002/Bip003/Bip002 Pelvis001/Bip002 Spine003/Bip002 Spine004/Jet_Wing_004/Jet_Wing_005/Sparks_damage_jh
+    Action: 0

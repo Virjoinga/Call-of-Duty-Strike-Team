@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41811a1b373454fa2c84bc21231613e4, type: 3}
+  m_Name: LSAT_enemy
+  m_EditorClassIdentifier:
+  Name: LSAT
+  Loadout:
+    Accuracy: 0.6
+    Damage: 0.6
+    RateOfFire: 0.65
+    Mobility: 0.4
+    Range: 0.65
+  UnlockLevel: 1
+  Capacity: 100
+  BulletStartQuantity: 200
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 6.91
+  ValidReloadThreshold: 0.65
+  PutAwayTime: 0.8
+  TakeOutTime: 1.5
+  DamageRanges:
+  - Damage: 230
+    Range: 20
+  - Damage: 140
+    Range: 35
+  - Damage: 140
+    Range: 45
+  - Damage: 32
+    Range: 51
+  - Damage: 32
+    Range: 80
+  - Damage: 3
+    Range: 100
+  UtilityRanges:
+  - Utility: 0.3
+    Range: 0
+  - Utility: 0.5
+    Range: 19
+  - Utility: 1
+    Range: 25
+  - Utility: 1
+    Range: 48
+  - Utility: 0.25
+    Range: 51
+  - Utility: 0.2
+    Range: 80
+  - Utility: 0
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 16
+  ThirdPersonAccuracy: 16
+  FirstPersonRecoil: 4
+  ThirdPersonRecoil: 2
+  Range: 70
+  LongRange: 0.7
+  HeadShotMaxRange: 100
+  RunSpeed: 72
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 8
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_LSAT_enemy
+  LongDescription:
+  ShortDescription:
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: -0.0097, y: 0.0675, z: -0.0281, w: 0.9972}
+  inHandLocalPosition: {x: -0.2246, y: -0.0055, z: 0.0072}
+  HitBoxRig: {fileID: 11400000, guid: 8b9a6be229c43364a8eb61e494288db0, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.075

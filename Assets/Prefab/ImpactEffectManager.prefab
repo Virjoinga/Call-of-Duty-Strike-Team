@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1786918976142746}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1786918976142746
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4508063294434202}
+  - 114: {fileID: 114256512189346939}
+  m_Layer: 0
+  m_Name: ImpactEffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4508063294434202
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786918976142746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114256512189346939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786918976142746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068d839dc5e138bf4ea1302e6f31301f, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_effectPrefab:
+  - {fileID: 1780355114940844, guid: 9470c206852279545b030e0901136c56, type: 2}
+  - {fileID: 1370421525888754, guid: 8b9659f8d739113438afcc8bc2138999, type: 2}
+  - {fileID: 1346759360212716, guid: 0e3c5416a9b94984387ff1083305dfc0, type: 2}
+  - {fileID: 1623436100337213, guid: dfd119eafb05be247890f11c93e9444c, type: 2}
+  - {fileID: 1176858081026637, guid: c382cb2ab1f454d4caf5cfac6fafe788, type: 2}
+  - {fileID: 1894265364987325, guid: 5c7f0ae9ff582c9418483271fa5d9392, type: 2}
+  - {fileID: 1472239182604319, guid: ce9b6ce41beb6464fbe22e7766f4c319, type: 2}
+  - {fileID: 1076307596232027, guid: 76f7671f13d910c4c9bdc68afe623885, type: 2}
+  - {fileID: 1076307596232027, guid: 76f7671f13d910c4c9bdc68afe623885, type: 2}
+  - {fileID: 1926951505672226, guid: 257e3f83e21506a4f91749a7339fad39, type: 2}
+  - {fileID: 1585551022993224, guid: f433b212ac148524486d0df79740892b, type: 2}
+  - {fileID: 1652919426602018, guid: b63c56b15a5e454448ec23f431358182, type: 2}
+  - {fileID: 1076307596232027, guid: 76f7671f13d910c4c9bdc68afe623885, type: 2}
+  - {fileID: 1295150713993481, guid: 95832b8e759b60549a70b8e36cce9611, type: 2}
+  - {fileID: 1933024628155577, guid: 8291f68a782e6f148b4a7453a8a5b165, type: 2}
+  - {fileID: 1908686620393270, guid: 5a36dd7f87bf5074a8ca5f704a6111ff, type: 2}
+  - {fileID: 1460786423633496, guid: a80434942f0fcbb4ba9ae6ebc0b8fe51, type: 2}
+  - {fileID: 1997959627697807, guid: a54530149f03d8147b4140d1c864abaf, type: 2}
+  m_impactDecalMaterial: {fileID: 0}
+  m_impactDecalUVs: []
+  m_decalSize: 0.1
+  m_disableDecal: 1
+  m_disableLighting: 1

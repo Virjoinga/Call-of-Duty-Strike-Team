@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc08bce173695b0e1dc66548053a4bbd, type: 3}
+  m_Name: Type25
+  m_EditorClassIdentifier:
+  Name: Type25
+  Loadout:
+    Accuracy: 0.5
+    Damage: 0.55
+    RateOfFire: 0.7
+    Mobility: 0.8
+    Range: 0.4
+  UnlockLevel: 1
+  Capacity: 30
+  BulletStartQuantity: 300
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 33
+  ReloadTime: 1.95
+  ValidReloadThreshold: 0.6
+  PutAwayTime: 0.3
+  TakeOutTime: 0.5
+  DamageRanges:
+  - Damage: 210
+    Range: 20
+  - Damage: 130
+    Range: 25
+  - Damage: 130
+    Range: 48
+  - Damage: 32
+    Range: 51
+  - Damage: 32
+    Range: 80
+  - Damage: 3
+    Range: 100
+  UtilityRanges:
+  - Utility: 0.3
+    Range: 0
+  - Utility: 0.5
+    Range: 19
+  - Utility: 1
+    Range: 20
+  - Utility: 1
+    Range: 40
+  - Utility: 0.25
+    Range: 41
+  - Utility: 0.2
+    Range: 80
+  - Utility: 0
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 8.3
+  ThirdPersonAccuracy: 8
+  FirstPersonRecoil: 1
+  ThirdPersonRecoil: 2
+  Range: 60
+  LongRange: 0.7
+  HeadShotMaxRange: 100
+  RunSpeed: 95
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 45
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 4
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName: wd_Type25
+  LongDescription:
+  ShortDescription:
+  HardCost: 200
+  SoftCost: 2000
+  UnlockCost: 200
+  inHandLocalRotation: {x: -0.0056, y: 0.0418, z: -0.0549, w: 0.9975}
+  inHandLocalPosition: {x: -0.0741, y: 0.0683, z: 0.0148}
+  HitBoxRig: {fileID: 11400000, guid: acc1cd4f26015c44fb230f08da2fdaeb, type: 2}
+  ThirdPersonAudioFilter: {fileID: 114414381072821603, guid: 9a910dda684fd404d83b4b101cac53a3, type: 2}
+  TimeBetweenShots: 0.06

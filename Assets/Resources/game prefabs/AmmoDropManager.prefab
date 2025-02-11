@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1283021829514678}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1283021829514678
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4746585808811503}
+  - 114: {fileID: 114274371182357885}
+  m_Layer: 0
+  m_Name: AmmoDropManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4746585808811503
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283021829514678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -75.28598, y: 40.50839, z: -77.38462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114274371182357885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283021829514678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db872b4f121a7172f49412b64168517a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DisableAmmoPickups: 0
+  DropRate: 50
+  StandardRifleAmount: 20
+  StandardSniperAmount: 5
+  StandardLMGAmount: 50
+  StandardShotgunAmount: 10
+  StandardSMGAmount: 20
+  VeteranModifier: 0.5
+  SpecOpsModifier: 0.2
+  ScavengerPerkRegularMission: 1.5
+  ScavengerPerkVeteranMission: 2
+  ScavengerPerkSpecOps: 1.5
+  ScavengerPerkRegularMissionPro: 2
+  ScavengerPerkVeteranMissionPro: 2.2
+  ScavengerPerkSpecOpsPro: 2
+  MaxClipsMission: 10
+  MaxClipsSpecOps: 5
+  BaseAmmoCost: 1
+  IncAmmoCost: 1

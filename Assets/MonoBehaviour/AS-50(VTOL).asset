@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778bc65d0299bb5c8bc680bfc9534569, type: 3}
+  m_Name: AS-50(VTOL)
+  m_EditorClassIdentifier:
+  Name: XPR-50
+  Loadout:
+    Accuracy: 0.9
+    Damage: 0.9
+    RateOfFire: 0.4
+    Mobility: 0.3
+    Range: 0.9
+  UnlockLevel: 1
+  Capacity: 8
+  BulletStartQuantity: 80
+  UnlimitedAmmo: 0
+  LowAmmoPercentage: 50
+  ReloadTime: 3.39
+  ValidReloadThreshold: 0.6
+  PutAwayTime: 0.5
+  TakeOutTime: 1.2
+  DamageRanges:
+  - Damage: 800
+    Range: 99999
+  UtilityRanges:
+  - Utility: 0.1
+    Range: 0
+  - Utility: 0.1
+    Range: 20
+  - Utility: 1
+    Range: 40
+  - Utility: 1
+    Range: 100
+  ImpactForce: 140
+  FirstPersonAccuracy: 25
+  ThirdPersonAccuracy: 25
+  FirstPersonRecoil: 3.2
+  ThirdPersonRecoil: 2
+  Range: 80
+  LongRange: 0.885
+  HeadShotMaxRange: 1000
+  RunSpeed: 95
+  ADSRunSpeedModifier: 0.5
+  AimDownSightsFOV: 30
+  SemiAutoFireRates: {x: 1, y: 2}
+  SuppressionRadius: 3
+  Type: 4
+  ModelHiResPrefab: {fileID: 0}
+  ModelHiResName:
+  LongDescription:
+  ShortDescription:
+  HardCost: 0
+  SoftCost: 0
+  UnlockCost: 0
+  inHandLocalRotation: {x: -0.00239014, y: 0.05878866, z: -0.04055109, w: 0.9974437}
+  inHandLocalPosition: {x: -0.08, y: 0.01703, z: 0.00535}
+  HitBoxRig: {fileID: 11400000, guid: ac638e27adfa8dd4b90d045978150862, type: 2}
+  ThirdPersonAudioFilter: {fileID: 0}
+  TimeBetweenShots: 0.185
+  ScopeFieldOfView: 12.5
+  SwayMinimum: 1
+  SwayMaximum: 2.5
+  SwayFrequency: 1.4

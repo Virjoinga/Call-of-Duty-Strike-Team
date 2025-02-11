@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1267934961846706}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1267934961846706
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4597395309248972}
+  - 114: {fileID: 114714928621027271}
+  m_Layer: 0
+  m_Name: WeaponManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4597395309248972
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267934961846706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -75.28598, y: 40.50839, z: -77.38462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114714928621027271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267934961846706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aab642038d17065fb29aefb670561f, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  AssaultRifles:
+  - {fileID: 11400000, guid: f9d6ea210a47c0848b6e84bda41ac187, type: 2}
+  - {fileID: 11400000, guid: d86c34419f4e6c3488e076928410b2e6, type: 2}
+  - {fileID: 11400000, guid: 454bb323c7dbba64f9da8d16a03aeeaf, type: 2}
+  LightMachineGuns:
+  - {fileID: 11400000, guid: 35eb8e238b5e4f64dafe50fb50f68433, type: 2}
+  - {fileID: 11400000, guid: fdbc76f46ef96a44c917c51493a943f2, type: 2}
+  - {fileID: 11400000, guid: baf4e925b7bf31d4a8cffad0d759b822, type: 2}
+  SniperRifles:
+  - {fileID: 11400000, guid: 798c16ada898c9d49b9117d038a068d3, type: 2}
+  - {fileID: 11400000, guid: bc44e9854e9a4e34ba91cf517a31ad92, type: 2}
+  - {fileID: 11400000, guid: a2d37b1edf2542141aa3fb167b3a3ea8, type: 2}
+  Shotguns:
+  - {fileID: 11400000, guid: 90d51763c2522b844a512f3aecd40188, type: 2}
+  - {fileID: 11400000, guid: 14d1f930c9c1a454aa72c3229d92536d, type: 2}
+  - {fileID: 11400000, guid: 263fb816e0452064089af0728c9721bb, type: 2}
+  SMGs:
+  - {fileID: 11400000, guid: 750abe3535cd94f43ac5e82877effa45, type: 2}
+  - {fileID: 11400000, guid: 6288e10cb1e028a49a23a18c7ff54225, type: 2}
+  - {fileID: 11400000, guid: 861c81eb6cf9f934a912a7c77d1205e9, type: 2}
+  TutorialWeapons:
+  - {fileID: 11400000, guid: 798c16ada898c9d49b9117d038a068d3, type: 2}
+  - {fileID: 11400000, guid: f9d6ea210a47c0848b6e84bda41ac187, type: 2}
+  LoadoutEquipment:
+  - {fileID: 11400000, guid: 20702eb7b968ed841b83292e2c2f1d67, type: 2}
+  - {fileID: 11400000, guid: d8ea524bd899c2e42a185c6b60429175, type: 2}
+  - {fileID: 11400000, guid: 96ead0c0bd399f14cb48e57651de6e40, type: 2}
+  SupportEquipment:
+  - {fileID: 11400000, guid: 20702eb7b968ed841b83292e2c2f1d67, type: 2}
+  - {fileID: 11400000, guid: d8ea524bd899c2e42a185c6b60429175, type: 2}
+  - {fileID: 11400000, guid: 96ead0c0bd399f14cb48e57651de6e40, type: 2}
+  ArmourUpgradeOrder:
+  - {fileID: 11400000, guid: 261f54b0129afbc41aa239adc447f7a2, type: 2}
+  - {fileID: 11400000, guid: 2bf08c77d77d56d4bb57c9379fe04f95, type: 2}
+  - {fileID: 11400000, guid: b65b0a7be44b87744a507b964f2e0418, type: 2}
+  - {fileID: 11400000, guid: 512daf4a6899e0446a39f24de3983eab, type: 2}
+  Bundles:
+  - {fileID: 11400000, guid: 15a7c0ba72a2c194d9e4b8344af0c4d0, type: 2}
+  - {fileID: 11400000, guid: 48e8ff02df7a48744a9bbdc55a761192, type: 2}
+  - {fileID: 11400000, guid: 8985b320a7d03a8479f1a88c65770d9a, type: 2}
+  - {fileID: 11400000, guid: dab4866fe7f0e1d4ab4024e735287c2a, type: 2}
+  - {fileID: 11400000, guid: 5f37cba08c7621845a902cf268fa1aad, type: 2}

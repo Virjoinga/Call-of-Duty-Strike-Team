@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1480598915650561}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1480598915650561
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4318603197743994}
+  - 114: {fileID: 114998216356898913}
+  - 114: {fileID: 114970621790424640}
+  m_Layer: 0
+  m_Name: NavigationSetPieces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4318603197743994
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480598915650561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5364285, y: -13.55134, z: -2.6006913}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &114998216356898913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480598915650561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d9179ec1b0499adebeb55da5d24b0a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  WalkLowMantelUp: {fileID: 114715354491678359, guid: d307255c39287b74880692a9dbda31ba, type: 2}
+  WalkLowMantelDown: {fileID: 114598456336707877, guid: 84d84b8cc623ef349b7060f0a9cf60bc, type: 2}
+  WalkLowMantle1MUp: {fileID: 114411149540303080, guid: 44272bb092f39564baea51444c154ff9, type: 2}
+  WalkLowMantle1MDown: {fileID: 114066747784880816, guid: a029262e59a60554c9aa0dded59fce78, type: 2}
+  WalkHighMantelDown: {fileID: 114168803991295184, guid: 75d2aa7f2b8efb74bad0c19d9f6098fd, type: 2}
+  Walk3MMantelUp: {fileID: 114384350594021615, guid: 0d4f1da30e6d5214191683d2c248b279, type: 2}
+  Walk3MMantelDown: {fileID: 114110620594180529, guid: 2273ebe86523aad4f8954cb5a5bf8d0d, type: 2}
+  WalkHighMantelUp: {fileID: 114594981365620907, guid: 7c9c8cbf2a93f58419633b235d2d4e4a, type: 2}
+  WalkVent: {fileID: 114014473038744875, guid: fd8679026e90c1347b5f1b0dc4727e5f, type: 2}
+  WalkVentRev: {fileID: 114334879285075481, guid: b4a0e62110072a943aa50be376ad3c4a, type: 2}
+  MantleOverFromCover: {fileID: 0}
+  WalkVault: {fileID: 114796190807367119, guid: fa3c3c01b8bdf6a49b51229063c3bd3e, type: 2}
+  WalkVaultRev: {fileID: 114724543316501419, guid: 30cc65cd4ce85b24b823789321c119d5, type: 2}
+  WalkVaultWindow: {fileID: 114604444162841444, guid: 13a0a23a5de865d429349d8906946b90, type: 2}
+  WalkVaultWindowRev: {fileID: 114347656009987747, guid: edfcd74b1974c2145883c573449a8cad, type: 2}
+  WalkTwoManVault: {fileID: 114434435531600064, guid: 3e33c320cc9d63b4bafca71ebbd1f750, type: 2}
+  StealthKill1: {fileID: 114422185769350897, guid: 60e6e388f543f4641b7eef8863f34a0c, type: 2}
+  StealthKill2: {fileID: 114685907187999852, guid: 28a42364e6a2e5c4abcef3e48581d033, type: 2}
+  StealthKill3: {fileID: 114626092324541265, guid: 5c76809cd0832fe47ae2f1f069262af8, type: 2}
+  StealthKill4: {fileID: 114676484331884049, guid: e8d9b96ab23bb0d4ea213b82b27a947c, type: 2}
+  PickupBody: {fileID: 114616260074021466, guid: c4f1bfeff5e5b4f40bd159a8dc16ba3d, type: 2}
+  DropBody: {fileID: 114607432214135275, guid: 908b862fb89fc244798a6111ac8e9902, type: 2}
+  PeekEnter: {fileID: 114275032314415780, guid: 30c4908c331927644a3558ec9c78b3a1, type: 2}
+  PeekEnter_FPP: {fileID: 114312058424725319, guid: 1463a3cf764c54544bffb5d5eeef4fda, type: 2}
+  PeekExit: {fileID: 114121556060111616, guid: be8bc781ecf9bee4fa34e6717514e894, type: 2}
+  PeekExit_FPP: {fileID: 114394622668737898, guid: 48ea526f27335aa4da38fff1f03b0908, type: 2}
+  DeathFront: {fileID: 114415708403290876, guid: 1d959911cc6059b4b995258698052af3, type: 2}
+  Heal: {fileID: 114895388838271823, guid: b49deb2d954d1c54e9c3567f75c1fcee, type: 2}
+  PlantC4: {fileID: 114995373407232841, guid: 081e88ba171fe97439ed6fec6ffe0023, type: 2}
+  PlantC4_FPP: {fileID: 114302757639346033, guid: 6cdc22406d16fde4f977f16156397513, type: 2}
+  CurrentSetPiece: {fileID: 0}
+--- !u!114 &114970621790424640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480598915650561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bc5e1b077df512b15ad64ab8e61cb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  SetPiece: {fileID: 0}
+  WasSuccessful: 0
+  m_IsCutscene: 0
+  m_DealWithEnemies: 1
+  IsOnlyViewableInTPP: 0
+  m_FlashPointmanager: {fileID: 0}
+  m_ReplaceCharacters: []
+  m_OnlyActiveDuringSetpiece: []
+  SPModule: {fileID: 0}
+  m_CallOnCompletion:
+    m_Object: {fileID: 0}
+    m_ObjectGuid:
+  startAutomatically: 0
+  ObjectActors: []
+  CurrentStatementIndex: 0
