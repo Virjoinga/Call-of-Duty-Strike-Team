@@ -751,33 +751,44 @@ public abstract class AutoSpriteBase : SpriteBase, ISpriteAggregator, ISpritePac
 		spriteFrames = list2.ToArray();
 	}
 
-	/*virtual void ISpriteAggregator.SetUVs(Rect uvs)
+	void ISpriteAggregator.SetUVs(Rect uvs)
 	{
 		SetUVs(uvs);
 	}
 
-	virtual GameObject ISpriteAggregator.get_gameObject()
-	{
-		return base.gameObject;
-	}
+    GameObject ISpriteAggregator.gameObject
+    {
+        get
+        {
+            return base.gameObject;
+        }
+    }
 
-	virtual GameObject ISpritePackable.get_gameObject()
-	{
-		return base.gameObject;
-	}
+    GameObject ISpritePackable.gameObject
+    {
+        get
+        {
+            return base.gameObject;
+        }
+    }
 
-	virtual ANCHOR_METHOD ISpritePackable.get_Anchor()
-	{
-		return base.Anchor;
-	}
+    ANCHOR_METHOD ISpritePackable.Anchor
+    {
+        get
+        {
+            return base.Anchor;
+        }
+    }
 
-	virtual Color ISpritePackable.get_Color()
+	Color ISpritePackable.Color
 	{
-		return base.Color;
+		get
+		{
+			return base.Color;
+		}
+		set 
+		{ 
+			base.Color = value; 
+		}
 	}
-
-	virtual void ISpritePackable.set_Color(Color value)
-	{
-		base.Color = value;
-	}*/
 }
