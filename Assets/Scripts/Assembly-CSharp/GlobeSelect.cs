@@ -180,7 +180,7 @@ public class GlobeSelect : MonoBehaviour
 
 	private IEnumerator CreateSatellites()
 	{
-		Transform satellites = base.transform.FindChild("Satellites");
+		Transform satellites = base.transform.Find("Satellites");
 		if (satellites == null)
 		{
 			GameObject satelliteChild = new GameObject("Satellites");

@@ -75,7 +75,7 @@ public class BundleManager : MonoBehaviour
 	public void ClearCache()
 	{
 		OnScreenLog.Instance.AddLine("Clearning asset bundle cache...");
-		Caching.CleanCache();
+		Caching.ClearCache();
 		BundleWrapper.ResetStaticData();
 		OnScreenLog.Instance.AppendToLine("done");
 		BundleWrapper.SetAssetBundleSubPath(mVersionData.content[0]);

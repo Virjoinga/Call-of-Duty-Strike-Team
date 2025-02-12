@@ -73,7 +73,7 @@ public class DepthOfFieldScatter : PostEffectsBase
 
 	public virtual float FocalDistance01(float worldDist)
 	{
-		return camera.WorldToViewportPoint((worldDist - camera.nearClipPlane) * camera.transform.forward + camera.transform.position).z / (camera.farClipPlane - camera.nearClipPlane);
+		return GetComponent<Camera>().WorldToViewportPoint((worldDist - GetComponent<Camera>().nearClipPlane) * GetComponent<Camera>().transform.forward + GetComponent<Camera>().transform.position).z / (GetComponent<Camera>().farClipPlane - GetComponent<Camera>().nearClipPlane);
 	}
 
 	public virtual void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -95,7 +95,7 @@ public class DepthOfFieldScatter : PostEffectsBase
 			maxBlurSize = 0f;
 		}
 		focalSize = Mathf.Clamp(focalSize, 0f, 0.3f);
-		focalDistance01 = ((!focalTransform) ? FocalDistance01(focalLength) : (camera.WorldToViewportPoint(focalTransform.position).z / camera.farClipPlane));
+		focalDistance01 = ((!focalTransform) ? FocalDistance01(focalLength) : (GetComponent<Camera>().WorldToViewportPoint(focalTransform.position).z / GetComponent<Camera>().farClipPlane));
 		bool flag = source.format == RenderTextureFormat.ARGBHalf;
 		RenderTexture renderTexture = ((num3 <= 1) ? null : RenderTexture.GetTemporary(source.width / num3, source.height / num3, 0, source.format));
 		if ((bool)renderTexture)

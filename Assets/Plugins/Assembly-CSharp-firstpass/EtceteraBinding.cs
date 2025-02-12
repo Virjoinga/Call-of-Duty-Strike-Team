@@ -10,7 +10,7 @@ public class EtceteraBinding
 	public static IEnumerator takeScreenShot(string filename)
 	{
 		yield return new WaitForEndOfFrame();
-		Application.CaptureScreenshot(filename);
+		ScreenCapture.CaptureScreenshot(filename);
 		string path = Application.persistentDataPath + "/" + filename;
 		int frame = 0;
 		while (!File.Exists(path) && frame < 300)

@@ -202,7 +202,7 @@ public class ObjectiveBlip : HudBlipIcon
 	{
 		if (base.IsSwitchedOn)
 		{
-			Text.renderer.enabled = false;
+			Text.GetComponent<Renderer>().enabled = false;
 		}
 	}
 
@@ -210,21 +210,21 @@ public class ObjectiveBlip : HudBlipIcon
 	{
 		if (base.IsSwitchedOn)
 		{
-			Text.renderer.enabled = true;
+			Text.GetComponent<Renderer>().enabled = true;
 		}
 	}
 
 	public override void JustSwitchedOff()
 	{
-		base.gameObject.renderer.enabled = false;
-		Text.renderer.enabled = false;
+		base.gameObject.GetComponent<Renderer>().enabled = false;
+		Text.GetComponent<Renderer>().enabled = false;
 		CancelHighlight();
 	}
 
 	public override void JustSwitchedOn()
 	{
-		base.gameObject.renderer.enabled = true;
-		Text.renderer.enabled = true;
+		base.gameObject.GetComponent<Renderer>().enabled = true;
+		Text.GetComponent<Renderer>().enabled = true;
 		ShowHighlight();
 	}
 
@@ -235,6 +235,6 @@ public class ObjectiveBlip : HudBlipIcon
 	public void ColourBlip(Color colour)
 	{
 		blipColour = colour;
-		base.renderer.material.color = colour;
+		base.GetComponent<Renderer>().material.color = colour;
 	}
 }

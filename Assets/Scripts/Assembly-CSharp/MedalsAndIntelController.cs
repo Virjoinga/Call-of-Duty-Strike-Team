@@ -53,12 +53,12 @@ public class MedalsAndIntelController : MenuScreenBlade
 		mMedalsIcons = new MedalIconController[numMedalSlots];
 		mMedalsStrings = new string[numMedalSlots];
 		mMedalsAchieved = new bool[numMedalSlots];
-		Transform transform = base.transform.FindChild("Medals");
-		Transform transform2 = transform.FindChild("Content");
+		Transform transform = base.transform.Find("Medals");
+		Transform transform2 = transform.Find("Content");
 		for (int i = 0; i < numMedalSlots; i++)
 		{
-			Transform transform3 = transform2.FindChild("Medal" + (i + 1));
-			Transform transform4 = transform3.FindChild("Icon");
+			Transform transform3 = transform2.Find("Medal" + (i + 1));
+			Transform transform4 = transform3.Find("Icon");
 			mMedalsIcons[i] = transform4.GetComponent<MedalIconController>();
 			if (mMedalsIcons[i] != null)
 			{

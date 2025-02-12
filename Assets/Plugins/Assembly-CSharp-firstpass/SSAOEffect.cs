@@ -82,7 +82,7 @@ public class SSAOEffect : MonoBehaviour
 
 	private void OnEnable()
 	{
-		base.camera.depthTextureMode |= DepthTextureMode.DepthNormals;
+		base.GetComponent<Camera>().depthTextureMode |= DepthTextureMode.DepthNormals;
 	}
 
 	private void CreateMaterials()
@@ -110,10 +110,10 @@ public class SSAOEffect : MonoBehaviour
 		m_OcclusionAttenuation = Mathf.Clamp(m_OcclusionAttenuation, 0.2f, 2f);
 		m_Blur = Mathf.Clamp(m_Blur, 0, 4);
 		RenderTexture renderTexture = RenderTexture.GetTemporary(source.width / m_Downsampling, source.height / m_Downsampling, 0);
-		float fieldOfView = base.camera.fieldOfView;
-		float farClipPlane = base.camera.farClipPlane;
+		float fieldOfView = base.GetComponent<Camera>().fieldOfView;
+		float farClipPlane = base.GetComponent<Camera>().farClipPlane;
 		float num = Mathf.Tan(fieldOfView * ((float)Math.PI / 180f) * 0.5f) * farClipPlane;
-		float x = num * base.camera.aspect;
+		float x = num * base.GetComponent<Camera>().aspect;
 		m_SSAOMaterial.SetVector("_FarCorner", new Vector3(x, num, farClipPlane));
 		int num2;
 		int num3;

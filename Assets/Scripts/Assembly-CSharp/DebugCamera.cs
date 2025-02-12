@@ -22,7 +22,7 @@ public class DebugCamera : MonoBehaviour
 	private void Awake()
 	{
 		m_transform = base.transform;
-		m_camera = base.camera;
+		m_camera = base.GetComponent<Camera>();
 		m_camera.enabled = false;
 	}
 
@@ -92,7 +92,7 @@ public class DebugCamera : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.O) && Input.GetKey(KeyCode.LeftShift))
 			{
 				string text = Application.persistentDataPath + string.Format("/capture-{0:yyyy-MM-dd_hh-mm-ss-tt}.png", DateTime.Now);
-				Application.CaptureScreenshot(text);
+				ScreenCapture.CaptureScreenshot(text);
 				Debug.Log(text);
 			}
 		}

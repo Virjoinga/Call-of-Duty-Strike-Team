@@ -35,9 +35,9 @@ public class SmoothLookAt : MonoBehaviour
 
 	public virtual void Start()
 	{
-		if ((bool)rigidbody)
+		if ((bool)GetComponent<Rigidbody>())
 		{
-			rigidbody.freezeRotation = true;
+			GetComponent<Rigidbody>().freezeRotation = true;
 		}
 	}
 

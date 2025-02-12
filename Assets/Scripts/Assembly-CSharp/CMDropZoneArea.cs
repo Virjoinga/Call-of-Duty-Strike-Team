@@ -29,7 +29,7 @@ public class CMDropZoneArea : InterfaceableObject
 			Vector3 zero = Vector3.zero;
 			MeshFilter component = base.gameObject.GetComponent<MeshFilter>();
 			Vector3 position = Vector3.zero;
-			if (component != null && !base.renderer.isPartOfStaticBatch)
+			if (component != null && !base.GetComponent<Renderer>().isPartOfStaticBatch)
 			{
 				Mesh mesh = component.mesh;
 				if (mesh != null)

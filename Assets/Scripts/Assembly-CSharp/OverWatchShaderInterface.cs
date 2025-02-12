@@ -141,9 +141,9 @@ public class OverWatchShaderInterface : MonoBehaviour
 
 	private void OnPreRender()
 	{
-		if (base.camera.targetTexture == null)
+		if (base.GetComponent<Camera>().targetTexture == null)
 		{
-			base.camera.targetTexture = m_RenderTex;
+			base.GetComponent<Camera>().targetTexture = m_RenderTex;
 		}
 	}
 
@@ -156,9 +156,9 @@ public class OverWatchShaderInterface : MonoBehaviour
 		material.SetFloat("_IntensitySquare", SquareIntensity);
 		material.SetFloat("_Fade", FadeIntensity);
 		Graphics.Blit(source, destination, material);
-		if (base.camera.targetTexture == m_RenderTex)
+		if (base.GetComponent<Camera>().targetTexture == m_RenderTex)
 		{
-			base.camera.targetTexture = null;
+			base.GetComponent<Camera>().targetTexture = null;
 			Graphics.Blit(destination, null, materialQuick);
 		}
 	}

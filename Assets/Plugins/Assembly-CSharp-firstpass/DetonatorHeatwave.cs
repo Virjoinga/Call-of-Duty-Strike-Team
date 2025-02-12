@@ -51,7 +51,7 @@ public class DetonatorHeatwave : DetonatorComponent
 			_elapsedTime += Time.deltaTime;
 			_normalizedTime = _elapsedTime / duration;
 			s = Mathf.Lerp(_startSize, _maxSize, _normalizedTime);
-			_heatwave.renderer.material.SetFloat("_BumpAmt", (1f - _normalizedTime) * distortion);
+			_heatwave.GetComponent<Renderer>().material.SetFloat("_BumpAmt", (1f - _normalizedTime) * distortion);
 			_heatwave.gameObject.transform.localScale = new Vector3(s, s, s);
 			if (_elapsedTime > duration)
 			{
@@ -82,7 +82,7 @@ public class DetonatorHeatwave : DetonatorComponent
 				heatwaveMaterial = MyDetonator().heatwaveMaterial;
 			}
 			_material.CopyPropertiesFromMaterial(heatwaveMaterial);
-			_heatwave.renderer.material = _material;
+			_heatwave.GetComponent<Renderer>().material = _material;
 			_heatwave.transform.parent = base.transform;
 			_delayedExplosionStarted = false;
 			_explodeDelay = 0f;

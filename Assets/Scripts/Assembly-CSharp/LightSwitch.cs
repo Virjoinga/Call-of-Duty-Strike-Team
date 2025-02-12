@@ -14,7 +14,7 @@ public class LightSwitch : MonoBehaviour
 	{
 		if (LightToSwitch == null)
 		{
-			LightToSwitch = base.gameObject.light;
+			LightToSwitch = base.gameObject.GetComponent<Light>();
 		}
 		if (StartOn)
 		{

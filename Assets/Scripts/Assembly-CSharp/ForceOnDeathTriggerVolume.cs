@@ -69,14 +69,14 @@ public class ForceOnDeathTriggerVolume : MonoBehaviour
 
 	public bool ApplyForce(HitLocation hitLocation, SurfaceImpact impact)
 	{
-		if (hitLocation != null && impact != null && !hitLocation.rigidbody.isKinematic)
+		if (hitLocation != null && impact != null && !hitLocation.GetComponent<Rigidbody>().isKinematic)
 		{
 			float f = Angle * ((float)Math.PI / 180f);
 			DirectionOfForce = new Vector3(Mathf.Cos(f), Mathf.Sin(f), 0f);
 			float num = Vector3.Dot(DirectionOfForce, impact.direction);
 			if (num < -0.2f)
 			{
-				hitLocation.rigidbody.AddForceAtPosition(ForceAmount * DirectionOfForce, hitLocation.transform.position, ForceMode.Impulse);
+				hitLocation.GetComponent<Rigidbody>().AddForceAtPosition(ForceAmount * DirectionOfForce, hitLocation.transform.position, ForceMode.Impulse);
 				return true;
 			}
 		}

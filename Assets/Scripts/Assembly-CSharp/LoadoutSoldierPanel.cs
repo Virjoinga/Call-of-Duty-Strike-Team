@@ -26,8 +26,8 @@ public class LoadoutSoldierPanel : MonoBehaviour
 
 	public void Awake()
 	{
-		Transform transform = base.transform.FindChild("Content");
-		Transform transform2 = transform.FindChild("SoldierBox");
+		Transform transform = base.transform.Find("Content");
+		Transform transform2 = transform.Find("SoldierBox");
 		SoldierImages = transform2.GetComponentsInChildren<PackedSprite>();
 		mButton = transform.GetComponentInChildren<FrontEndButton>();
 		Transform root = base.transform.root;

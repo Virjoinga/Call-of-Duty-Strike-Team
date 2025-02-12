@@ -24,7 +24,7 @@ public class ActorGenerator
 		m_Instance = null;
 	}
 
-	public static void ConfigureNavMeshAgent(NavMeshAgent navAgent, float navBaseOffset, bool isEnemy, float angularSpeed)
+	public static void ConfigureNavMeshAgent(UnityEngine.AI.NavMeshAgent navAgent, float navBaseOffset, bool isEnemy, float angularSpeed)
 	{
 		navAgent.baseOffset = navBaseOffset;
 		navAgent.angularSpeed = angularSpeed;
@@ -33,16 +33,16 @@ public class ActorGenerator
 		navAgent.radius = 0.3f;
 		if (OverwatchController.Instance.Active)
 		{
-			navAgent.obstacleAvoidanceType = ObstacleAvoidanceType.LowQualityObstacleAvoidance;
+			navAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.LowQualityObstacleAvoidance;
 		}
 		else
 		{
-			navAgent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
+			navAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.HighQualityObstacleAvoidance;
 		}
 		int num = 0;
-		num |= 1 << NavMesh.GetNavMeshLayerFromName("Default");
-		num |= 1 << NavMesh.GetNavMeshLayerFromName("Jump");
-		num |= (isEnemy ? (1 << NavMesh.GetNavMeshLayerFromName("EnemyOnly")) : 0);
+		num |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+		num |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
+		num |= (isEnemy ? (1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("EnemyOnly")) : 0);
 		navAgent.walkableMask = num;
 	}
 
@@ -105,7 +105,7 @@ public class ActorGenerator
 		if (descriptor.ChctrType != CharacterType.SecurityCamera && descriptor.ChctrType != CharacterType.SentryGun)
 		{
 			actorBase.SetActive(false);
-			NavMeshAgent navMeshAgent = (actor.navAgent = actorBase.AddComponent<NavMeshAgent>());
+			UnityEngine.AI.NavMeshAgent navMeshAgent = (actor.navAgent = actorBase.AddComponent<UnityEngine.AI.NavMeshAgent>());
 			float angularSpeed = 360f;
 			if (descriptor.ChctrType == CharacterType.RiotShieldNPC)
 			{
@@ -371,7 +371,7 @@ public class ActorGenerator
 		component.Connect(bac2);
 		if (descriptor.ChctrType != CharacterType.SecurityCamera && descriptor.ChctrType != CharacterType.SentryGun)
 		{
-			NavMeshAgent navAgent = component.navAgent;
+			UnityEngine.AI.NavMeshAgent navAgent = component.navAgent;
 			CharacterController characterController = actorBase.AddComponent<CharacterController>();
 			characterController.center = new Vector3(0f, navAgent.height / 2f, 0f);
 			characterController.radius = 0.6f;
@@ -593,7 +593,7 @@ public class ActorGenerator
 		PoseModuleSharedData poseModuleSharedData = gameObject.AddComponent<PoseModuleSharedData>().Connect(component) as PoseModuleSharedData;
 		poseModuleSharedData.Initialise(model, descriptor.MoveAimDescription);
 		GameObject gameObject2 = gameObject;
-		Transform transform = gameObject.transform.FindChild("Picker");
+		Transform transform = gameObject.transform.Find("Picker");
 		if (transform != null)
 		{
 			gameObject2 = transform.gameObject;
@@ -777,12 +777,12 @@ public class ActorGenerator
 		return ragdoll;
 	}
 
-	public static SoftJointLimit CreateSoftJointStructure(HitBoxDescriptor.SoftJointLimit descriptor)
+	public static SoftJointLimitSpring CreateSoftJointStructure(HitBoxDescriptor.SoftJointLimitSpring descriptor)
 	{
-		SoftJointLimit result = default(SoftJointLimit);
-		result.bounciness = descriptor.Bounciness;
+		SoftJointLimitSpring result = default(SoftJointLimitSpring);
+		//result.bounciness = descriptor.Bounciness;
 		result.damper = descriptor.Damper;
-		result.limit = descriptor.Limit;
+		//result.limit = descriptor.Limit;
 		result.spring = descriptor.Spring;
 		return result;
 	}

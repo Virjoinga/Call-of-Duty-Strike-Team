@@ -19,7 +19,7 @@ public class WaveAnimator : MonoBehaviour
 
 	private void Awake()
 	{
-		m_material = base.renderer.material;
+		m_material = base.GetComponent<Renderer>().material;
 		base.enabled = false;
 	}
 

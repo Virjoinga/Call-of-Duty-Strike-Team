@@ -81,7 +81,7 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 
 	private float mRealTimeLastFrame;
 
-	private NavMeshAgent mNavAgent;
+	private UnityEngine.AI.NavMeshAgent mNavAgent;
 
 	private float mTargetingDist = 20f;
 
@@ -278,7 +278,7 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 	private bool AttachToNavMesh(int cameraNavMeshLayer)
 	{
 		mCameraNavMeshMask = 1 << cameraNavMeshLayer;
-		NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(base.transform.position, mCameraNavMeshMask);
+		UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(base.transform.position, mCameraNavMeshMask);
 		if (navMeshHit.hit)
 		{
 			GameObject gameObject = new GameObject("NavCamParent");
@@ -288,9 +288,9 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 			mTargetingAdjacent = mTargetingDist / Mathf.Cos((float)Math.PI / 180f * Pitch);
 			base.transform.position = new Vector3(0f, 0f, 0f);
 			SetCameraRelativeToTarget();
-			mNavAgent = gameObject.AddComponent<NavMeshAgent>();
+			mNavAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
 			mNavAgent.updateRotation = false;
-			mNavAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+			mNavAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.NoObstacleAvoidance;
 			mNavAgent.walkableMask = 1 << cameraNavMeshLayer;
 			mNavAgent.autoRepath = false;
 			mNavAgent.autoTraverseOffMeshLink = false;
@@ -315,7 +315,7 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 		yaw = num;
 		num = (IdealPitch = eulerAngles.x);
 		pitch = num;
-		int navMeshLayerFromName = NavMesh.GetNavMeshLayerFromName("Camera");
+		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Camera");
 		if (!AttachToNavMesh(navMeshLayerFromName))
 		{
 		}
@@ -891,8 +891,8 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 		{
 			mNavAgent.Move(mPanMove + mWorldSpacePan * num4);
 			base.transform.position += vector6;
-			NavMeshHit hit;
-			if (NavMesh.SamplePosition(base.transform.position, out hit, mTargetingDist * 2f, mCameraNavMeshMask))
+			UnityEngine.AI.NavMeshHit hit;
+			if (UnityEngine.AI.NavMesh.SamplePosition(base.transform.position, out hit, mTargetingDist * 2f, mCameraNavMeshMask))
 			{
 				float to = hit.position.y - mNavAgent.transform.position.y;
 				base.transform.localPosition = new Vector3(base.transform.localPosition.x, Mathf.Lerp(base.transform.localPosition.y, to, 0.5f), base.transform.localPosition.z);

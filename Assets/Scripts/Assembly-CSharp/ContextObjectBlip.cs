@@ -59,7 +59,7 @@ public class ContextObjectBlip : HudBlipIcon
 		mSelectedIcon.SetFrame(0, 0);
 		if (m_ContextButton != null)
 		{
-			m_ContextButton.gameObject.renderer.enabled = false;
+			m_ContextButton.gameObject.GetComponent<Renderer>().enabled = false;
 		}
 		base.transform.position = new Vector3(base.transform.position.x, base.transform.position.y, FinalPositionZOffset);
 	}
@@ -148,9 +148,9 @@ public class ContextObjectBlip : HudBlipIcon
 		{
 			m_ContextButtonCollider.enabled = false;
 		}
-		if (m_ContextButton != null && m_ContextButton.gameObject.renderer.enabled != base.renderer.enabled)
+		if (m_ContextButton != null && m_ContextButton.gameObject.GetComponent<Renderer>().enabled != base.GetComponent<Renderer>().enabled)
 		{
-			m_ContextButton.gameObject.renderer.enabled = base.renderer.enabled;
+			m_ContextButton.gameObject.GetComponent<Renderer>().enabled = base.GetComponent<Renderer>().enabled;
 		}
 	}
 
@@ -159,7 +159,7 @@ public class ContextObjectBlip : HudBlipIcon
 		bool flag = (bool)OverwatchController.Instance && OverwatchController.Instance.Active;
 		if (base.IsOnScreen && (CameraManager.Instance.ActiveCamera == CameraManager.ActiveCameraType.StrategyCamera || flag))
 		{
-			base.renderer.enabled = false;
+			base.GetComponent<Renderer>().enabled = false;
 		}
 		base.LateUpdate();
 	}

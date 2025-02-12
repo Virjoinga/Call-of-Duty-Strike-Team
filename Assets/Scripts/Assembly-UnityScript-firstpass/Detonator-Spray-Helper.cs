@@ -32,18 +32,18 @@ public class Detonator_0020Spray_0020Helper : MonoBehaviour
 
 	public virtual void Start()
 	{
-		isReallyOn = particleEmitter.emit;
-		particleEmitter.emit = false;
+		isReallyOn = GetComponent<ParticleEmitter>().emit;
+		GetComponent<ParticleEmitter>().emit = false;
 		spawnTime = Time.time;
 		startTime = UnityEngine.Random.value * (startTimeMax - startTimeMin) + startTimeMin + Time.time;
 		stopTime = UnityEngine.Random.value * (stopTimeMax - stopTimeMin) + stopTimeMin + Time.time;
 		if (!(UnityEngine.Random.value <= 0.5f))
 		{
-			renderer.material = firstMaterial;
+			GetComponent<Renderer>().material = firstMaterial;
 		}
 		else
 		{
-			renderer.material = secondMaterial;
+			GetComponent<Renderer>().material = secondMaterial;
 		}
 	}
 
@@ -51,11 +51,11 @@ public class Detonator_0020Spray_0020Helper : MonoBehaviour
 	{
 		if (!(Time.time <= startTime))
 		{
-			particleEmitter.emit = isReallyOn;
+			GetComponent<ParticleEmitter>().emit = isReallyOn;
 		}
 		if (!(Time.time <= stopTime))
 		{
-			particleEmitter.emit = false;
+			GetComponent<ParticleEmitter>().emit = false;
 		}
 	}
 

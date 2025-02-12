@@ -107,9 +107,9 @@ public class InflictDamage : MonoBehaviour
 		HitLocation[] array = bones;
 		foreach (HitLocation hitLocation in array)
 		{
-			if (!hitLocation.rigidbody.isKinematic)
+			if (!hitLocation.GetComponent<Rigidbody>().isKinematic)
 			{
-				hitLocation.rigidbody.AddExplosionForce(explosionForce, explosionPosition, explosionRadius, upwardsModifier, ForceMode.Impulse);
+				hitLocation.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPosition, explosionRadius, upwardsModifier, ForceMode.Impulse);
 			}
 		}
 	}

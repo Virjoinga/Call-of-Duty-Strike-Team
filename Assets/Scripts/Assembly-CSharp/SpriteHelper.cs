@@ -6,9 +6,9 @@ public class SpriteHelper
 	{
 		sprite.lowerLeftPixel = new Vector2(lowerLeftX, lowerLeftY);
 		sprite.pixelDimensions = new Vector2(pixelWidth, pixelHeight);
-		if (sprite.renderer.sharedMaterial != null && sprite.renderer.sharedMaterial.mainTexture != null)
+		if (sprite.GetComponent<Renderer>().sharedMaterial != null && sprite.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 		{
-			Texture mainTexture = sprite.renderer.sharedMaterial.mainTexture;
+			Texture mainTexture = sprite.GetComponent<Renderer>().sharedMaterial.mainTexture;
 			sprite.SetUVs(new Rect(lowerLeftX / (float)mainTexture.width, 1f - lowerLeftY / (float)mainTexture.height, pixelWidth / (float)mainTexture.width, pixelHeight / (float)mainTexture.height));
 		}
 		sprite.UpdateUVs();

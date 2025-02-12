@@ -138,7 +138,7 @@ public class BloodEffect : MonoBehaviour
 		array3[7] = new Vector2(-1f, 1f);
 		m_mesh.vertices = array;
 		m_mesh.uv = array2;
-		m_mesh.uv1 = array3;
+		m_mesh.uv2 = array3;
 		int num2 = 24;
 		int[] array4 = new int[num2];
 		array4[0] = 0;

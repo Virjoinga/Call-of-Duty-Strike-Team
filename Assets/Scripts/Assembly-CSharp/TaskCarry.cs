@@ -316,7 +316,7 @@ public class TaskCarry : Task
 			mDropOffContainer = null;
 		}
 		mState = State.MovingToFloorDropOffPosition;
-		NavMeshPath navMeshPath = new NavMeshPath();
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 		if (!WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(mActor, pos, navMeshPath))
 		{
 			return;

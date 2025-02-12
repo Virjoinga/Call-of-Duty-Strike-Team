@@ -37,7 +37,7 @@ public class FakeActor : MonoBehaviour
 		AnimationClip[] animations = Animations;
 		foreach (AnimationClip clip in animations)
 		{
-			AnimationState item = mModel.animation.AddClipSafe(clip, string.Format("Anim{0}", list.Count));
+			AnimationState item = mModel.GetComponent<Animation>().AddClipSafe(clip, string.Format("Anim{0}", list.Count));
 			list.Add(item);
 		}
 		mStates = list.ToArray();
@@ -48,7 +48,7 @@ public class FakeActor : MonoBehaviour
 			{
 				float[] coefficients = new float[27];
 				Transform transform = mModel.transform.FindInHierarchy("Bip002 Pelvis");
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(transform.position, componentsInChildren[0], coefficients);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
 				ProbeUtils.UpdateMaterials(coefficients, componentsInChildren);
 			}
 		}

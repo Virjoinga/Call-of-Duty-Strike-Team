@@ -59,17 +59,17 @@ public class HitBoxDescriptor : ScriptableObject
 
 		public Vector3 SecondaryAxis = Vector3.up;
 
-		public SoftJointLimit LowerAngularXLimit;
+		public SoftJointLimitSpring LowerAngularXLimit;
 
-		public SoftJointLimit UpperAngularXLimit;
+		public SoftJointLimitSpring UpperAngularXLimit;
 
-		public SoftJointLimit AngularYLimit;
+		public SoftJointLimitSpring AngularYLimit;
 
-		public SoftJointLimit AngularZLimit;
+		public SoftJointLimitSpring AngularZLimit;
 	}
 
 	[Serializable]
-	public class SoftJointLimit
+	public class SoftJointLimitSpring
 	{
 		public float Limit;
 

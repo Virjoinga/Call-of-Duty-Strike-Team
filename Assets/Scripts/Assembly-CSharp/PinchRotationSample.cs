@@ -86,7 +86,7 @@ public class PinchRotationSample : SampleBase
 	{
 		base.Start();
 		base.UI.StatusText = "Use two fingers anywhere on the screen to rotate and scale the green object.";
-		originalMaterial = target.renderer.sharedMaterial;
+		originalMaterial = target.GetComponent<Renderer>().sharedMaterial;
 	}
 
 	private void OnEnable()
@@ -163,7 +163,7 @@ public class PinchRotationSample : SampleBase
 	private void UpdateTargetMaterial()
 	{
 		Material sharedMaterial = ((pinching && rotating) ? pinchAndRotationMaterial : (pinching ? pinchMaterial : ((!rotating) ? originalMaterial : rotationMaterial)));
-		target.renderer.sharedMaterial = sharedMaterial;
+		target.GetComponent<Renderer>().sharedMaterial = sharedMaterial;
 	}
 
 	private void OnGUI()

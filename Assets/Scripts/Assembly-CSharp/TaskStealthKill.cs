@@ -110,8 +110,8 @@ public class TaskStealthKill : Task
 					Vector3 vector = mTarget.GetPosition() - characterStartNode.position;
 					setPieceLogic.PlaceSetPiece(mActor.GetPosition() + vector, rot);
 					characterStartNode = setPieceLogic.GetCharacterStartNode(0);
-					NavMeshPath path = new NavMeshPath();
-					if (!NavMesh.CalculatePath(mActor.GetPosition(), characterStartNode.position, mActor.navAgent.walkableMask, path) || SuspiciouslyLong(path))
+					UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+					if (!UnityEngine.AI.NavMesh.CalculatePath(mActor.GetPosition(), characterStartNode.position, mActor.navAgent.walkableMask, path) || SuspiciouslyLong(path))
 					{
 						Vector3 forward = mTarget.GetPosition() - mActor.GetPosition();
 						forward.y = 0f;
@@ -165,7 +165,7 @@ public class TaskStealthKill : Task
 		}
 	}
 
-	private bool SuspiciouslyLong(NavMeshPath path)
+	private bool SuspiciouslyLong(UnityEngine.AI.NavMeshPath path)
 	{
 		if (path.status != 0)
 		{

@@ -56,7 +56,7 @@ public class DetonatorSpray : DetonatorComponent
 				_tmpScale = minScale + Random.value * (maxScale - minScale);
 				_tmpScale *= size;
 				gameObject.transform.localScale = new Vector3(_tmpScale, _tmpScale, _tmpScale);
-				gameObject.rigidbody.velocity = Vector3.Scale(vector.normalized, b);
+				gameObject.GetComponent<Rigidbody>().velocity = Vector3.Scale(vector.normalized, b);
 				Object.Destroy(gameObject, duration * timeScale);
 				_delayedExplosionStarted = false;
 				_explodeDelay = 0f;

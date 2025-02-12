@@ -61,7 +61,7 @@ public class DynamicCrosshair : MonoBehaviour
 
 	public void Awake()
 	{
-		DamageFeedback.renderer.enabled = false;
+		DamageFeedback.GetComponent<Renderer>().enabled = false;
 	}
 
 	public void Update()
@@ -70,6 +70,6 @@ public class DynamicCrosshair : MonoBehaviour
 		float num2 = 0.6f;
 		float num3 = Time.realtimeSinceStartup - mLastDamageTime;
 		mDamageFeedbackFade = Mathf.Clamp01((num3 - num) / num2);
-		DamageFeedback.renderer.enabled = mDamageFeedbackFade < 1f;
+		DamageFeedback.GetComponent<Renderer>().enabled = mDamageFeedbackFade < 1f;
 	}
 }

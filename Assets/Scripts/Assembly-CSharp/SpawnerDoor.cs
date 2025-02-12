@@ -127,7 +127,7 @@ public class SpawnerDoor : SpawnerDoorBase
 			dummyTask.CreateTask(actor.tasks, TaskManager.Priority.IMMEDIATE, Task.Config.DenyPlayerInput);
 			if (mDoorPlayer != null && DoorOpenAnimation != null)
 			{
-				mDoorPlayer.animation["OpenDoor"].speed = 4f;
+				mDoorPlayer.GetComponent<Animation>()["OpenDoor"].speed = 4f;
 				mDoorPlayer.Play("OpenDoor");
 				yield return new WaitForSeconds(DoorOpenAnimation.length);
 			}

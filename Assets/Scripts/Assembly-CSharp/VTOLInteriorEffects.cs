@@ -101,16 +101,16 @@ public class VTOLInteriorEffects : MonoBehaviour, ILightingOverride
 			if (light.Locator != null)
 			{
 				float intensity = light.Intensity;
-				smPropertyBlock.AddColor(smPropertyLightColor[j], 2f * intensity * light.Colour);
+				smPropertyBlock.SetColor(smPropertyLightColor[j], 2f * intensity * light.Colour);
 				mLightPositions[j] = light.Locator.position;
 				value2[j] = 25f / (light.Range * light.Range);
 			}
 		}
-		smPropertyBlock.AddColor(smPropertyEffectsAmbient, value);
-		smPropertyBlock.AddVector(smPropertyLightPosX, new Vector4(mLightPositions[0].x, mLightPositions[1].x, mLightPositions[2].x, mLightPositions[3].x));
-		smPropertyBlock.AddVector(smPropertyLightPosY, new Vector4(mLightPositions[0].y, mLightPositions[1].y, mLightPositions[2].y, mLightPositions[3].y));
-		smPropertyBlock.AddVector(smPropertyLightPosZ, new Vector4(mLightPositions[0].z, mLightPositions[1].z, mLightPositions[2].z, mLightPositions[3].z));
-		smPropertyBlock.AddVector(smPropertyLightAttenSq, value2);
+		smPropertyBlock.SetColor(smPropertyEffectsAmbient, value);
+		smPropertyBlock.SetVector(smPropertyLightPosX, new Vector4(mLightPositions[0].x, mLightPositions[1].x, mLightPositions[2].x, mLightPositions[3].x));
+		smPropertyBlock.SetVector(smPropertyLightPosY, new Vector4(mLightPositions[0].y, mLightPositions[1].y, mLightPositions[2].y, mLightPositions[3].y));
+		smPropertyBlock.SetVector(smPropertyLightPosZ, new Vector4(mLightPositions[0].z, mLightPositions[1].z, mLightPositions[2].z, mLightPositions[3].z));
+		smPropertyBlock.SetVector(smPropertyLightAttenSq, value2);
 		Renderer[] array = mInteriorRenderers;
 		foreach (Renderer renderer in array)
 		{

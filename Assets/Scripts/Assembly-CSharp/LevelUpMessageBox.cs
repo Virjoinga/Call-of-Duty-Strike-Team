@@ -84,9 +84,9 @@ public class LevelUpMessageBox : MessageBox
 
 	public override IEnumerator Display(string Title, string Message, bool messageIsTranslated)
 	{
-		Transform visible = base.transform.FindChild("Visible");
-		Transform content = visible.FindChild("Content");
-		FinalPositionOfRankText = content.FindChild("PositionOfRankTextFinal");
+		Transform visible = base.transform.Find("Visible");
+		Transform content = visible.Find("Content");
+		FinalPositionOfRankText = content.Find("PositionOfRankTextFinal");
 		string level = AutoLocalize.Get("S_LEVEL");
 		string prestige = Language.Get("S_PRESTIGE_LEVEL");
 		string newRank = XPManager.Instance.XPLevelName(mNewLevel);

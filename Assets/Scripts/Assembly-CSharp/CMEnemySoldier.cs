@@ -48,18 +48,18 @@ public class CMEnemySoldier : CMSoldier
 		}
 		else if (base.ContextBlip != null)
 		{
-			base.ContextBlip.renderer.enabled = false;
+			base.ContextBlip.GetComponent<Renderer>().enabled = false;
 			mContextBlip.IsAllowedInFirstPerson = false;
 			if (target != null && (target.realCharacter.Location == null || target.realCharacter.Location.ShouldShowInteriorObjects()) && base.ContextBlip.IsOnScreen && GameController.Instance != null && !GameController.Instance.IsFirstPerson)
 			{
-				base.collider.enabled = true;
+				base.GetComponent<Collider>().enabled = true;
 				base.ContextBlip.SwitchOn();
 			}
 			else
 			{
-				base.collider.enabled = false;
+				base.GetComponent<Collider>().enabled = false;
 				base.ContextBlip.SwitchOff();
-				base.ContextBlip.collider.enabled = false;
+				base.ContextBlip.GetComponent<Collider>().enabled = false;
 			}
 		}
 		if (mSuppress != null)
@@ -82,16 +82,16 @@ public class CMEnemySoldier : CMSoldier
 	{
 		if (target.realCharacter.CanBeCarried() && !target.realCharacter.IsBeingCarried && TutorialToggles.CMCarryBodyLockState != TutorialToggles.CMButtonLockState.Hidden)
 		{
-			if (base.collider != null)
+			if (base.GetComponent<Collider>() != null)
 			{
 			}
 			ShowBlip(true);
 		}
 		else
 		{
-			if (base.collider != null)
+			if (base.GetComponent<Collider>() != null)
 			{
-				base.collider.enabled = false;
+				base.GetComponent<Collider>().enabled = false;
 			}
 			ShowBlip(false);
 		}

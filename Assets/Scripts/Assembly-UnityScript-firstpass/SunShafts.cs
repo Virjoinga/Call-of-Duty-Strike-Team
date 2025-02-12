@@ -69,7 +69,7 @@ public class SunShafts : PostEffectsBase
 		}
 		if (useDepthTexture)
 		{
-			camera.depthTextureMode |= DepthTextureMode.Depth;
+			GetComponent<Camera>().depthTextureMode |= DepthTextureMode.Depth;
 		}
 		float num = 4f;
 		if (resolution == SunShaftsResolution.Normal)
@@ -81,7 +81,7 @@ public class SunShafts : PostEffectsBase
 			num = 1f;
 		}
 		Vector3 vector = Vector3.one * 0.5f;
-		vector = ((!sunTransform) ? new Vector3(0.5f, 0.5f, 0f) : camera.WorldToViewportPoint(sunTransform.position));
+		vector = ((!sunTransform) ? new Vector3(0.5f, 0.5f, 0f) : GetComponent<Camera>().WorldToViewportPoint(sunTransform.position));
 		RenderTexture temporary = RenderTexture.GetTemporary((int)((float)source.width / num), (int)((float)source.height / num), 0);
 		RenderTexture temporary2 = RenderTexture.GetTemporary((int)((float)source.width / num), (int)((float)source.height / num), 0);
 		sunShaftsMaterial.SetVector("_BlurRadius4", new Vector4(1f, 1f, 0f, 0f) * sunShaftBlurRadius);
@@ -90,7 +90,7 @@ public class SunShafts : PostEffectsBase
 		if (!useDepthTexture)
 		{
 			RenderTexture renderTexture = (RenderTexture.active = RenderTexture.GetTemporary(source.width, source.height, 0));
-			GL.ClearWithSkybox(false, camera);
+			GL.ClearWithSkybox(false, GetComponent<Camera>());
 			sunShaftsMaterial.SetTexture("_Skybox", renderTexture);
 			Graphics.Blit(source, temporary2, sunShaftsMaterial, 3);
 			RenderTexture.ReleaseTemporary(renderTexture);

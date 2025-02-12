@@ -136,7 +136,7 @@ public class MemoryVisualiser : MonoBehaviour
 		GUILayout.Label("Audio = " + mAudioTotal / 1024 + "kb");
 		GUILayout.Label("Renderers = " + mRendererTotal);
 		GUILayout.Label("Asset Total = " + (mMeshTotal + mTextureTotal + mMaterialTotal + mAnimationTotal + mAudioTotal) / 1048576 + "mb");
-		GUILayout.Label("Heap Size = " + Profiler.usedHeapSize / 1048576 + "mb");
+		GUILayout.Label("Heap Size = " + UnityEngine.Profiling.Profiler.usedHeapSize / 1048576 + "mb");
 		GUILayout.EndHorizontal();
 		scrollPosition = GUILayout.BeginScrollView(scrollPosition);
 		int num3 = 0;
@@ -188,7 +188,7 @@ public class MemoryVisualiser : MonoBehaviour
 				MemoryReportEntry item = default(MemoryReportEntry);
 				item.name = @object.name;
 				item.type = @object.GetType().ToString();
-				item.size = Profiler.GetRuntimeMemorySize(@object);
+				item.size = UnityEngine.Profiling.Profiler.GetRuntimeMemorySize(@object);
 				mMeshTotal += item.size;
 				report.Add(item);
 			}
@@ -202,7 +202,7 @@ public class MemoryVisualiser : MonoBehaviour
 				MemoryReportEntry item2 = default(MemoryReportEntry);
 				item2.name = object2.name;
 				item2.type = object2.GetType().ToString();
-				item2.size = Profiler.GetRuntimeMemorySize(object2);
+				item2.size = UnityEngine.Profiling.Profiler.GetRuntimeMemorySize(object2);
 				mAnimationTotal += item2.size;
 				report.Add(item2);
 			}
@@ -216,7 +216,7 @@ public class MemoryVisualiser : MonoBehaviour
 				MemoryReportEntry item3 = default(MemoryReportEntry);
 				item3.name = object3.name;
 				item3.type = object3.GetType().ToString();
-				item3.size = Profiler.GetRuntimeMemorySize(object3);
+				item3.size = UnityEngine.Profiling.Profiler.GetRuntimeMemorySize(object3);
 				mTextureTotal += item3.size;
 				report.Add(item3);
 			}
@@ -230,7 +230,7 @@ public class MemoryVisualiser : MonoBehaviour
 				MemoryReportEntry item4 = default(MemoryReportEntry);
 				item4.name = object4.name;
 				item4.type = object4.GetType().ToString();
-				item4.size = Profiler.GetRuntimeMemorySize(object4);
+				item4.size = UnityEngine.Profiling.Profiler.GetRuntimeMemorySize(object4);
 				mMaterialTotal += item4.size;
 				report.Add(item4);
 			}
@@ -244,7 +244,7 @@ public class MemoryVisualiser : MonoBehaviour
 				MemoryReportEntry item5 = default(MemoryReportEntry);
 				item5.name = object5.name;
 				item5.type = object5.GetType().ToString();
-				item5.size = Profiler.GetRuntimeMemorySize(object5);
+				item5.size = UnityEngine.Profiling.Profiler.GetRuntimeMemorySize(object5);
 				mAudioTotal += item5.size;
 				report.Add(item5);
 			}

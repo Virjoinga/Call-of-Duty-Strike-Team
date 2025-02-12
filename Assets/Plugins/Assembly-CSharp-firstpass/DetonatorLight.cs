@@ -25,7 +25,7 @@ public class DetonatorLight : DetonatorComponent
 		_light = new GameObject("Light");
 		_light.transform.parent = base.transform;
 		_light.transform.localPosition = localPosition;
-		_lightComponent = (Light)_light.AddComponent("Light");
+		_lightComponent = (Light)_light.AddComponent<Light>();
 		_lightComponent.type = LightType.Point;
 		_lightComponent.enabled = false;
 	}

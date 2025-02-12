@@ -118,8 +118,8 @@ public class MTXMenuOption : MonoBehaviour
 	{
 		if (Button != null)
 		{
-			Button.collider.enabled = !Button.collider.enabled;
-			Button.collider.enabled = !Button.collider.enabled;
+			Button.GetComponent<Collider>().enabled = !Button.GetComponent<Collider>().enabled;
+			Button.GetComponent<Collider>().enabled = !Button.GetComponent<Collider>().enabled;
 		}
 	}
 

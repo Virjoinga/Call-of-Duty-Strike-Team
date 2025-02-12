@@ -29,7 +29,7 @@ public class LoadingScreenImage : MonoBehaviour
 				base.transform.localScale = new Vector3(2f, 2f, 2f);
 			}
 			mMaterial.mainTexture = mTexture;
-			base.renderer.material = mMaterial;
+			base.GetComponent<Renderer>().material = mMaterial;
 			StartCoroutine(SetMissionName());
 		}
 		else

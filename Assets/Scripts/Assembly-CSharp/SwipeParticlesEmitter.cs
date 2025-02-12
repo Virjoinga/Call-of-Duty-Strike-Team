@@ -12,7 +12,7 @@ public class SwipeParticlesEmitter : MonoBehaviour
 	{
 		if (!emitter)
 		{
-			emitter = base.particleEmitter;
+			emitter = base.GetComponent<ParticleEmitter>();
 		}
 		emitter.emit = false;
 	}

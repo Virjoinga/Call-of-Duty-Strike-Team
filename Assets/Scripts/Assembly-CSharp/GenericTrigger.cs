@@ -49,7 +49,7 @@ public class GenericTrigger : MonoBehaviour
 		}
 		for (num = 0; num < cache.Count; num++)
 		{
-			OnTriggerExit(cache[num].collider);
+			OnTriggerExit(cache[num].GetComponent<Collider>());
 		}
 	}
 
@@ -183,7 +183,7 @@ public class GenericTrigger : MonoBehaviour
 
 	public void OnDrawGizmos()
 	{
-		BoxCollider boxCollider = base.collider as BoxCollider;
+		BoxCollider boxCollider = base.GetComponent<Collider>() as BoxCollider;
 		if (boxCollider != null)
 		{
 			Gizmos.matrix = base.transform.localToWorldMatrix;

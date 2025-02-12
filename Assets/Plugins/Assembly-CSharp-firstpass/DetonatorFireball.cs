@@ -72,7 +72,7 @@ public class DetonatorFireball : DetonatorComponent
 	public void BuildFireballA()
 	{
 		_fireballA = new GameObject("FireballA");
-		_fireballAEmitter = (DetonatorBurstEmitter)_fireballA.AddComponent("DetonatorBurstEmitter");
+		_fireballAEmitter = (DetonatorBurstEmitter)_fireballA.AddComponent<DetonatorBurstEmitter>();
 		_fireballA.transform.parent = base.transform;
 		_fireballA.transform.localRotation = Quaternion.identity;
 		_fireballAEmitter.material = fireballAMaterial;
@@ -110,7 +110,7 @@ public class DetonatorFireball : DetonatorComponent
 	public void BuildFireballB()
 	{
 		_fireballB = new GameObject("FireballB");
-		_fireballBEmitter = (DetonatorBurstEmitter)_fireballB.AddComponent("DetonatorBurstEmitter");
+		_fireballBEmitter = (DetonatorBurstEmitter)_fireballB.AddComponent<DetonatorBurstEmitter>();
 		_fireballB.transform.parent = base.transform;
 		_fireballB.transform.localRotation = Quaternion.identity;
 		_fireballBEmitter.material = fireballBMaterial;
@@ -148,7 +148,7 @@ public class DetonatorFireball : DetonatorComponent
 	public void BuildFireShadow()
 	{
 		_fireShadow = new GameObject("FireShadow");
-		_fireShadowEmitter = (DetonatorBurstEmitter)_fireShadow.AddComponent("DetonatorBurstEmitter");
+		_fireShadowEmitter = (DetonatorBurstEmitter)_fireShadow.AddComponent<DetonatorBurstEmitter>();
 		_fireShadow.transform.parent = base.transform;
 		_fireShadow.transform.localRotation = Quaternion.identity;
 		_fireShadowEmitter.material = fireShadowMaterial;

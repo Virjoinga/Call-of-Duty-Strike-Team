@@ -83,9 +83,9 @@ public class MessageBox : MonoBehaviour
 	{
 		mAnimator = GetComponentInChildren<AnimateCommonBackgroundBox>();
 		mBgBox = GetComponentInChildren<CommonBackgroundBox>();
-		mVisible = base.transform.FindChild("Visible");
-		mContents = mVisible.FindChild("Content");
-		mInvisible = base.transform.FindChild("Invisible");
+		mVisible = base.transform.Find("Visible");
+		mContents = mVisible.Find("Content");
+		mInvisible = base.transform.Find("Invisible");
 		UIButton componentInChildren = mInvisible.GetComponentInChildren<UIButton>();
 		BoxCollider component = componentInChildren.GetComponent<BoxCollider>();
 		float num = CommonHelper.CalculatePixelSizeInWorldSpace(base.transform);
@@ -179,7 +179,7 @@ public class MessageBox : MonoBehaviour
 				break;
 			}
 			m_buttons[i] = gameObject.GetComponentInChildren<UIButton>();
-			BoxCollider boxCollider = gameObject.collider as BoxCollider;
+			BoxCollider boxCollider = gameObject.GetComponent<Collider>() as BoxCollider;
 			if (m_buttons[i] != null && boxCollider != null)
 			{
 				m_buttons[i].Start();
@@ -279,8 +279,8 @@ public class MessageBox : MonoBehaviour
 				float y = 0f - (num3 + m_buttons[num5].height * 0.525f);
 				m_buttons[num5].gameObject.transform.position = mBgBox.transform.parent.position + new Vector3(num4, y, -1f);
 				num4 += m_buttons[num5].width * 0.5f;
-				m_buttons[num5].collider.enabled = !m_buttons[num5].collider.enabled;
-				m_buttons[num5].collider.enabled = !m_buttons[num5].collider.enabled;
+				m_buttons[num5].GetComponent<Collider>().enabled = !m_buttons[num5].GetComponent<Collider>().enabled;
+				m_buttons[num5].GetComponent<Collider>().enabled = !m_buttons[num5].GetComponent<Collider>().enabled;
 			}
 		}
 	}

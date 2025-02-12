@@ -571,7 +571,7 @@ public class GameplayController : NanniedBehaviour
 
 	public bool AnySelectedAllowedCMOptionAndCanReach(ContextMenuOptionType cmOptionType, Actor target)
 	{
-		NavMeshPath navMeshPath = new NavMeshPath();
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 		foreach (Actor item in mSelected)
 		{
 			if (cmOptionType == ContextMenuOptionType.HideBody)
@@ -583,7 +583,7 @@ public class GameplayController : NanniedBehaviour
 			{
 				return false;
 			}
-			if (item.realCharacter.Carried == null && (item.realCharacter.CMRules & cmOptionType) != 0 && NavMesh.CalculatePath(item.GetPosition(), target.GetPosition(), item.navAgent.walkableMask, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+			if (item.realCharacter.Carried == null && (item.realCharacter.CMRules & cmOptionType) != 0 && UnityEngine.AI.NavMesh.CalculatePath(item.GetPosition(), target.GetPosition(), item.navAgent.walkableMask, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 			{
 				return true;
 			}
@@ -1610,8 +1610,8 @@ public class GameplayController : NanniedBehaviour
 		{
 			return false;
 		}
-		NavMeshPath navMeshPath = new NavMeshPath();
-		if (WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(selected, destination, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+		if (WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(selected, destination, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 		{
 			return true;
 		}

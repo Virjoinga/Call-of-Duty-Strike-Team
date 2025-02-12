@@ -8,11 +8,11 @@ public class ViewModelBlendTree_Grenade : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_Grenade(GameObject weapon, WeaponCoreAnims coreAnims, GrenadeAnims specificAnims)
 	{
-		mStart = weapon.animation.AddClipSafe(specificAnims.Start, "Start");
+		mStart = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.Start, "Start");
 		mStart.wrapMode = WrapMode.ClampForever;
 		mStart.speed = 0f;
 		mStart.weight = 1f;
-		mEnd = weapon.animation.AddClipSafe(specificAnims.End, "End");
+		mEnd = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.End, "End");
 		mEnd.wrapMode = WrapMode.ClampForever;
 		mEnd.speed = 0f;
 		mEnd.weight = 1f;

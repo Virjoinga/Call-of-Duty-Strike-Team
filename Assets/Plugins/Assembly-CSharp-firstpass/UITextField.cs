@@ -726,11 +726,11 @@ public class UITextField : AutoSpriteControlBase, IKeyFocusable
 		insert = Text.Length;
 		if (Application.isPlaying)
 		{
-			if (base.collider == null)
+			if (base.GetComponent<Collider>() == null)
 			{
 				AddCollider();
 			}
-			if (base.rigidbody == null)
+			if (base.GetComponent<Rigidbody>() == null)
 			{
 				AddRigidBody();
 			}
@@ -774,7 +774,7 @@ public class UITextField : AutoSpriteControlBase, IKeyFocusable
 		{
 			if (caret.spriteMesh != null)
 			{
-				((SpriteMesh)caret.spriteMesh).material = base.renderer.sharedMaterial;
+				((SpriteMesh)caret.spriteMesh).material = base.GetComponent<Renderer>().sharedMaterial;
 			}
 		}
 		else if (manager != null)

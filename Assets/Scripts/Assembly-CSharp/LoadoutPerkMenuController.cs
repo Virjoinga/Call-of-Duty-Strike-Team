@@ -46,7 +46,7 @@ public class LoadoutPerkMenuController : MenuScreenBlade, CarouselDataSource
 	{
 		base.Awake();
 		mEditingSlot = 0;
-		mPerkPanelPosition = base.transform.FindChild("PerkPanelPosition");
+		mPerkPanelPosition = base.transform.Find("PerkPanelPosition");
 		mData = new PurchaseFlowHelper.PurchaseData();
 		mData.ScriptToCallWithResult = this;
 		mData.MethodToCallWithResult = "RefreshScreen";

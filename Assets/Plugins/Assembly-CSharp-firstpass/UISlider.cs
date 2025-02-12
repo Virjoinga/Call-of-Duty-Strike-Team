@@ -266,7 +266,7 @@ public class UISlider : AutoSpriteControlBase
 			{
 				if (knob.spriteMesh != null)
 				{
-					((SpriteMesh)knob.spriteMesh).material = base.renderer.sharedMaterial;
+					((SpriteMesh)knob.spriteMesh).material = base.GetComponent<Renderer>().sharedMaterial;
 				}
 			}
 			else if (manager != null)
@@ -326,7 +326,7 @@ public class UISlider : AutoSpriteControlBase
 			emptySprite.bleedCompensation = bleedCompensation;
 			if (!managed)
 			{
-				emptySprite.renderer.sharedMaterial = base.renderer.sharedMaterial;
+				emptySprite.GetComponent<Renderer>().sharedMaterial = base.GetComponent<Renderer>().sharedMaterial;
 			}
 			else if (manager != null)
 			{

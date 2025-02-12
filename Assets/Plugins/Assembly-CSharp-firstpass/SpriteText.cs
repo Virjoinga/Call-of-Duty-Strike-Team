@@ -1645,7 +1645,7 @@ public class SpriteText : MonoBehaviour, IUseCamera
 	{
 		font = newFont.fontDef;
 		spriteFont = newFont;
-		base.renderer.sharedMaterial = fontMaterial;
+		base.GetComponent<Renderer>().sharedMaterial = fontMaterial;
 		texture = fontMaterial.GetTexture("_MainTex");
 		SetPixelToUV(texture);
 		lineSpaceSize = lineSpacing * (float)spriteFont.LineHeight * worldUnitsPerTexel;

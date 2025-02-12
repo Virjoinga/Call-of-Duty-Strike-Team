@@ -22,7 +22,7 @@ public class AdvancedPinchRotationSample : SampleBase
 	{
 		base.Start();
 		base.UI.StatusText = "Use two fingers anywhere on the screen to rotate and scale the green object.";
-		originalMaterial = target.renderer.sharedMaterial;
+		originalMaterial = target.GetComponent<Renderer>().sharedMaterial;
 		pinchGesture.OnStateChanged += Gesture_OnStateChanged;
 		pinchGesture.OnPinchMove += OnPinchMove;
 		pinchGesture.SetCanBeginDelegate(CanBeginPinch);
@@ -81,6 +81,6 @@ public class AdvancedPinchRotationSample : SampleBase
 	private void UpdateTargetMaterial()
 	{
 		Material sharedMaterial = ((pinchGesture.IsActive && rotationGesture.IsActive) ? pinchAndRotationMaterial : (pinchGesture.IsActive ? pinchMaterial : ((!rotationGesture.IsActive) ? originalMaterial : rotationMaterial)));
-		target.renderer.sharedMaterial = sharedMaterial;
+		target.GetComponent<Renderer>().sharedMaterial = sharedMaterial;
 	}
 }

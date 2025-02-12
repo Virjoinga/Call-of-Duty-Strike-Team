@@ -186,7 +186,7 @@ public class TaskMultiCharacterSetPiece : Task
 					{
 						continue;
 					}
-					NavMeshPath navMeshPath = new NavMeshPath();
+					UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 					if (actor.navAgent.CalculatePath(formationSlot2.Position, navMeshPath))
 					{
 						if (navMeshPath.status != 0)

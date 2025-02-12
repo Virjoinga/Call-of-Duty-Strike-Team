@@ -39,7 +39,7 @@ public class DialogueTrigger : MonoBehaviour
 		}
 		if (transform != null)
 		{
-			Transform transform2 = transform.FindChild("Dialogue Manager");
+			Transform transform2 = transform.Find("Dialogue Manager");
 			if (transform2 != null)
 			{
 				diagManager = transform2.gameObject.GetComponentInChildren<DialogueManager>();
@@ -174,7 +174,7 @@ public class DialogueTrigger : MonoBehaviour
 
 	public void OnDrawGizmos()
 	{
-		BoxCollider boxCollider = base.collider as BoxCollider;
+		BoxCollider boxCollider = base.GetComponent<Collider>() as BoxCollider;
 		if (boxCollider != null)
 		{
 			Gizmos.matrix = base.transform.localToWorldMatrix;

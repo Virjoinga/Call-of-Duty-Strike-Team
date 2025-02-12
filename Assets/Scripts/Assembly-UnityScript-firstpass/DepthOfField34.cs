@@ -154,12 +154,12 @@ public class DepthOfField34 : PostEffectsBase
 
 	public override void OnEnable()
 	{
-		camera.depthTextureMode |= DepthTextureMode.Depth;
+		GetComponent<Camera>().depthTextureMode |= DepthTextureMode.Depth;
 	}
 
 	public virtual float FocalDistance01(float worldDist)
 	{
-		return camera.WorldToViewportPoint((worldDist - camera.nearClipPlane) * camera.transform.forward + camera.transform.position).z / (camera.farClipPlane - camera.nearClipPlane);
+		return GetComponent<Camera>().WorldToViewportPoint((worldDist - GetComponent<Camera>().nearClipPlane) * GetComponent<Camera>().transform.forward + GetComponent<Camera>().transform.position).z / (GetComponent<Camera>().farClipPlane - GetComponent<Camera>().nearClipPlane);
 	}
 
 	public virtual int GetDividerBasedOnQuality()
@@ -209,16 +209,16 @@ public class DepthOfField34 : PostEffectsBase
 		bokeh = num;
 		float num2 = ((!bokeh) ? 1f : BOKEH_EXTRA_BLUR);
 		bool flag = quality > Dof34QualitySetting.OnlyBackground;
-		float num3 = focalSize / (camera.farClipPlane - camera.nearClipPlane);
+		float num3 = focalSize / (GetComponent<Camera>().farClipPlane - GetComponent<Camera>().nearClipPlane);
 		if (simpleTweakMode)
 		{
-			focalDistance01 = ((!objectFocus) ? FocalDistance01(focalPoint) : (camera.WorldToViewportPoint(objectFocus.position).z / camera.farClipPlane));
+			focalDistance01 = ((!objectFocus) ? FocalDistance01(focalPoint) : (GetComponent<Camera>().WorldToViewportPoint(objectFocus.position).z / GetComponent<Camera>().farClipPlane));
 			focalStartCurve = focalDistance01 * smoothness;
 			focalEndCurve = focalStartCurve;
 			bool num4 = flag;
 			if (num4)
 			{
-				num4 = focalPoint > camera.nearClipPlane + float.Epsilon;
+				num4 = focalPoint > GetComponent<Camera>().nearClipPlane + float.Epsilon;
 			}
 			flag = num4;
 		}
@@ -226,8 +226,8 @@ public class DepthOfField34 : PostEffectsBase
 		{
 			if ((bool)objectFocus)
 			{
-				Vector3 vector = camera.WorldToViewportPoint(objectFocus.position);
-				vector.z /= camera.farClipPlane;
+				Vector3 vector = GetComponent<Camera>().WorldToViewportPoint(objectFocus.position);
+				vector.z /= GetComponent<Camera>().farClipPlane;
 				focalDistance01 = vector.z;
 			}
 			else
@@ -239,7 +239,7 @@ public class DepthOfField34 : PostEffectsBase
 			bool num5 = flag;
 			if (num5)
 			{
-				num5 = focalPoint > camera.nearClipPlane + float.Epsilon;
+				num5 = focalPoint > GetComponent<Camera>().nearClipPlane + float.Epsilon;
 			}
 			flag = num5;
 		}

@@ -34,11 +34,11 @@ public class MissionCompleteSoldierPanelController : MenuScreenBlade
 	{
 		base.Awake();
 		mBox = base.transform.GetComponentInChildren<CommonBackgroundBox>();
-		Transform transform = base.transform.FindChild("SoldierPlacement");
-		Transform transform2 = transform.FindChild("Content");
-		Transform transform3 = transform2.FindChild("SoldierImages");
+		Transform transform = base.transform.Find("SoldierPlacement");
+		Transform transform2 = transform.Find("Content");
+		Transform transform3 = transform2.Find("SoldierImages");
 		SoldierImages = transform3.GetComponentsInChildren<PackedSprite>();
-		Transform transform4 = transform2.FindChild("KIAMIA");
+		Transform transform4 = transform2.Find("KIAMIA");
 		MiaKiaImages = transform4.GetComponentsInChildren<PackedSprite>();
 		if (TapToClaimBg != null)
 		{

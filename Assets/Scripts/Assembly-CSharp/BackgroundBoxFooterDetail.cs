@@ -49,7 +49,7 @@ public class BackgroundBoxFooterDetail : MonoBehaviour
 			float num3 = 0f;
 			if (!mSetup)
 			{
-				Texture mainTexture = mSprite.renderer.sharedMaterial.mainTexture;
+				Texture mainTexture = mSprite.GetComponent<Renderer>().sharedMaterial.mainTexture;
 				float num4 = CommonHelper.CalculatePixelSizeInWorldSpace(base.transform);
 				float num5 = mainTexture.width;
 				float num6 = mainTexture.height / NumFrames;
@@ -113,7 +113,7 @@ public class BackgroundBoxFooterDetail : MonoBehaviour
 			gameObject.name = "Detail";
 			gameObject.transform.parent = base.transform;
 			mSprite = (SimpleSprite)gameObject.AddComponent(typeof(SimpleSprite));
-			mSprite.renderer.sharedMaterial = Mat;
+			mSprite.GetComponent<Renderer>().sharedMaterial = Mat;
 			CalculateSimpleSpriteSettings();
 		}
 	}

@@ -80,10 +80,10 @@ public class MissionBriefingFocusItem : MonoBehaviour
 		if (focusImage != null)
 		{
 			mWaiting = true;
-			if (FocusImage != null && FocusImage.renderer != null && FocusImage.renderer.material != null)
+			if (FocusImage != null && FocusImage.GetComponent<Renderer>() != null && FocusImage.GetComponent<Renderer>().material != null)
 			{
-				Resources.UnloadAsset(FocusImage.renderer.material.mainTexture);
-				FocusImage.renderer.material.mainTexture = focusImage;
+				Resources.UnloadAsset(FocusImage.GetComponent<Renderer>().material.mainTexture);
+				FocusImage.GetComponent<Renderer>().material.mainTexture = focusImage;
 			}
 			LayoutComponents(size, direction);
 			StartCoroutine(DoDisplayItem(duration, delay, direction, frame));
@@ -98,9 +98,9 @@ public class MissionBriefingFocusItem : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		if (FocusImage != null && FocusImage.renderer != null && FocusImage.renderer.material != null)
+		if (FocusImage != null && FocusImage.GetComponent<Renderer>() != null && FocusImage.GetComponent<Renderer>().material != null)
 		{
-			Resources.UnloadAsset(FocusImage.renderer.material.mainTexture);
+			Resources.UnloadAsset(FocusImage.GetComponent<Renderer>().material.mainTexture);
 		}
 	}
 

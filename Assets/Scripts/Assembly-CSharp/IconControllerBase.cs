@@ -98,7 +98,7 @@ public class IconControllerBase : MonoBehaviour
 		{
 			int num = mIndex % IconsPerRow;
 			int num2 = mIndex / IconsPerRow;
-			Material sharedMaterial = mSprite.renderer.sharedMaterial;
+			Material sharedMaterial = mSprite.GetComponent<Renderer>().sharedMaterial;
 			Texture mainTexture = sharedMaterial.mainTexture;
 			float num3 = mainTexture.width / IconsPerRow;
 			float num4 = mainTexture.height / IconsPerColum;

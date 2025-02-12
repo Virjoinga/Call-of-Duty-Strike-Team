@@ -84,9 +84,9 @@ public class TaskPeekaboo : Task
 			break;
 		case State.PeekingOn:
 			mWindow.Open();
-			if (mWindow.renderer != null)
+			if (mWindow.GetComponent<Renderer>() != null)
 			{
-				mWindow.renderer.enabled = false;
+				mWindow.GetComponent<Renderer>().enabled = false;
 			}
 			InteractionsManager.Instance.ChangeActionType(mActor.gameObject, this, ActionComponent.ActionType.MustSee);
 			mState = State.Peeking;
@@ -155,9 +155,9 @@ public class TaskPeekaboo : Task
 		{
 			mState = State.PeekComplete;
 			mWindow.Close();
-			if (mWindow.renderer != null)
+			if (mWindow.GetComponent<Renderer>() != null)
 			{
-				mWindow.renderer.enabled = true;
+				mWindow.GetComponent<Renderer>().enabled = true;
 			}
 		}
 	}

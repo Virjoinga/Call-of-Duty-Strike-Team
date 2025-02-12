@@ -14,7 +14,7 @@ public class NavGate : MonoBehaviour
 			Debug.Log("NavGate has not been assigned on object " + base.gameObject.name);
 			return;
 		}
-		m_Interface.m_NavLayerID = 1 << NavMesh.GetNavMeshLayerFromName(m_Interface.m_NavLayer);
+		m_Interface.m_NavLayerID = 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName(m_Interface.m_NavLayer);
 		if (NavGateManager.Instance != null)
 		{
 			NavGateManager.Instance.AddNavGate(this);

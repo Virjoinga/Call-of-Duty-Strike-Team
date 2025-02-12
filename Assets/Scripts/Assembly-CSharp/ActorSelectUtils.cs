@@ -28,7 +28,7 @@ public class ActorSelectUtils
 
 	public static void EnableActorSelectCollider(Actor actor, bool val)
 	{
-		actor.Picker.collider.enabled = val;
+		actor.Picker.GetComponent<Collider>().enabled = val;
 	}
 
 	public static void UpdateActorSelectCollider(Actor actor, PickerColliderSettings settings)

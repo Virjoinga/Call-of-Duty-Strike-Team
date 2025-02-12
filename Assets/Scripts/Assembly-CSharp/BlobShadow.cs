@@ -34,11 +34,11 @@ public class BlobShadow : MonoBehaviour
 		{
 			UnityEngine.Object.Destroy(base.gameObject);
 		}
-		else if (!(base.renderer == null))
+		else if (!(base.GetComponent<Renderer>() == null))
 		{
 			LODGroup lODGroup = base.gameObject.AddComponent<LODGroup>();
 			LOD[] array = new LOD[1];
-			Renderer[] renderers = new Renderer[1] { base.renderer };
+			Renderer[] renderers = new Renderer[1] { base.GetComponent<Renderer>() };
 			array[0] = new LOD(0.01f, renderers);
 			lODGroup.SetLODS(array);
 			lODGroup.RecalculateBounds();
@@ -93,7 +93,7 @@ public class BlobShadow : MonoBehaviour
 		{
 			if (mShadowState == State.Hidden)
 			{
-				base.renderer.enabled = true;
+				base.GetComponent<Renderer>().enabled = true;
 				mFadeAlpha = 0f;
 			}
 			mShadowState = State.FadeIn;
@@ -110,7 +110,7 @@ public class BlobShadow : MonoBehaviour
 		Vector3 position = ShadowCaster.position;
 		position.y = ShadowCasterRoot.position.y + GroundOffset;
 		base.gameObject.transform.position = position;
-		base.gameObject.renderer.material.color = ShadowColour;
+		base.gameObject.GetComponent<Renderer>().material.color = ShadowColour;
 		RaycastHit hitInfo;
 		if (SnapToGround && Physics.Raycast(base.gameObject.transform.position, -Vector3.up, out hitInfo, 3f, 1))
 		{
@@ -125,9 +125,9 @@ public class BlobShadow : MonoBehaviour
 		{
 			mFadeAlpha = 0f;
 		}
-		Color color = base.gameObject.renderer.material.color;
+		Color color = base.gameObject.GetComponent<Renderer>().material.color;
 		color.a = mFadeAlpha;
-		base.gameObject.renderer.material.color = color;
+		base.gameObject.GetComponent<Renderer>().material.color = color;
 		return mFadeAlpha;
 	}
 
@@ -138,9 +138,9 @@ public class BlobShadow : MonoBehaviour
 		{
 			mFadeAlpha = 1f;
 		}
-		Color color = base.gameObject.renderer.material.color;
+		Color color = base.gameObject.GetComponent<Renderer>().material.color;
 		color.a = mFadeAlpha;
-		base.gameObject.renderer.material.color = color;
+		base.gameObject.GetComponent<Renderer>().material.color = color;
 		return mFadeAlpha;
 	}
 
@@ -160,7 +160,7 @@ public class BlobShadow : MonoBehaviour
 			PositionShadow();
 			if (UpdateFadeout() <= 0f)
 			{
-				base.renderer.enabled = false;
+				base.GetComponent<Renderer>().enabled = false;
 				mShadowState = State.Hidden;
 			}
 			break;

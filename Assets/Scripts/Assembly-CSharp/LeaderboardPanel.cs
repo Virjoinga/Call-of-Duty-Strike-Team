@@ -62,7 +62,7 @@ public class LeaderboardPanel : MonoBehaviour
 
 	private void UpdateIconVisibility()
 	{
-		VeteranIcon.renderer.enabled = mShowVeteran;
+		VeteranIcon.GetComponent<Renderer>().enabled = mShowVeteran;
 		RankIcon.Hide(!mShowRank);
 	}
 

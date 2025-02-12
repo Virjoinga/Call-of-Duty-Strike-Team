@@ -12,8 +12,8 @@ public class AnimMover : MonoBehaviour
 
 	private void Start()
 	{
-		base.animation.wrapMode = WrapMode.Loop;
-		base.animation.Stop();
+		base.GetComponent<Animation>().wrapMode = WrapMode.Loop;
+		base.GetComponent<Animation>().Stop();
 		counter = fMoveDist;
 	}
 
@@ -25,7 +25,7 @@ public class AnimMover : MonoBehaviour
 			float num = fMoveSpeed * Time.deltaTime * 50f;
 			counter -= Mathf.Abs(num);
 			position += base.gameObject.transform.forward * num;
-			base.animation.CrossFade("Walk_GunOut");
+			base.GetComponent<Animation>().CrossFade("Walk_GunOut");
 		}
 		else if (bLoop)
 		{
@@ -36,12 +36,12 @@ public class AnimMover : MonoBehaviour
 			}
 			else
 			{
-				base.animation.CrossFade("IdleLookAround");
+				base.GetComponent<Animation>().CrossFade("IdleLookAround");
 			}
 		}
 		else
 		{
-			base.animation.CrossFade("IdleLookAround");
+			base.GetComponent<Animation>().CrossFade("IdleLookAround");
 		}
 		base.gameObject.transform.position = position;
 	}

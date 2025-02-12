@@ -35,9 +35,9 @@ public class MouseOrbit : MonoBehaviour
 		Vector3 eulerAngles = transform.eulerAngles;
 		x = eulerAngles.y;
 		y = eulerAngles.x;
-		if ((bool)rigidbody)
+		if ((bool)GetComponent<Rigidbody>())
 		{
-			rigidbody.freezeRotation = true;
+			GetComponent<Rigidbody>().freezeRotation = true;
 		}
 	}
 

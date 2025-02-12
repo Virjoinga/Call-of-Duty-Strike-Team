@@ -36,7 +36,7 @@ public class LoadoutInventoryPanel : MonoBehaviour
 	private void Awake()
 	{
 		mHighlightedItem = -1;
-		Transform transform = base.transform.FindChild("Content");
+		Transform transform = base.transform.Find("Content");
 		mBox = GetComponentInChildren<CommonBackgroundBox>();
 		int num = transform.childCount - 1;
 		mPlacements = new CommonBackgroundBoxPlacement[num];
@@ -136,10 +136,10 @@ public class LoadoutInventoryPanel : MonoBehaviour
 			}
 			bool tf = true;
 			mLocked[i].Hide(tf);
-			if (mButtons[i] != null && mButtons[i].collider != null)
+			if (mButtons[i] != null && mButtons[i].GetComponent<Collider>() != null)
 			{
-				mButtons[i].collider.enabled = !mButtons[i].collider.enabled;
-				mButtons[i].collider.enabled = !mButtons[i].collider.enabled;
+				mButtons[i].GetComponent<Collider>().enabled = !mButtons[i].GetComponent<Collider>().enabled;
+				mButtons[i].GetComponent<Collider>().enabled = !mButtons[i].GetComponent<Collider>().enabled;
 			}
 		}
 		if (mBox != null)

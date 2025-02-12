@@ -46,8 +46,8 @@ public class ActivateMessageBox : MessageBox
 			UIButton[] buttons = m_buttons;
 			foreach (UIButton button in buttons)
 			{
-				button.collider.enabled = !button.collider.enabled;
-				button.collider.enabled = !button.collider.enabled;
+				button.GetComponent<Collider>().enabled = !button.GetComponent<Collider>().enabled;
+				button.GetComponent<Collider>().enabled = !button.GetComponent<Collider>().enabled;
 			}
 			yield return new WaitForEndOfFrame();
 		}

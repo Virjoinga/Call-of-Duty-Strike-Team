@@ -73,7 +73,7 @@ public class TiltShift : PostEffectsBase
 		renderTextureDivider = ((renderTextureDivider <= 4) ? renderTextureDivider : 4);
 		blurIterations = ((blurIterations >= 1) ? blurIterations : 0);
 		blurIterations = ((blurIterations <= 4) ? blurIterations : 4);
-		float num3 = (distance01 = camera.WorldToViewportPoint(focalPoint * camera.transform.forward + camera.transform.position).z / camera.farClipPlane);
+		float num3 = (distance01 = GetComponent<Camera>().WorldToViewportPoint(focalPoint * GetComponent<Camera>().transform.forward + GetComponent<Camera>().transform.position).z / GetComponent<Camera>().farClipPlane);
 		start01 = 0f;
 		end01 = 1f;
 		start01 = Mathf.Min(num3 - float.Epsilon, start01);

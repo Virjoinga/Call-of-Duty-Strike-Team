@@ -135,7 +135,7 @@ public class StrategyHudController : MonoBehaviour
 
 	private void ResizeLookRegions()
 	{
-		BoxCollider boxCollider = (Look.collider as BoxCollider) ?? Look.gameObject.AddComponent<BoxCollider>();
+		BoxCollider boxCollider = (Look.GetComponent<Collider>() as BoxCollider) ?? Look.gameObject.AddComponent<BoxCollider>();
 		if (boxCollider != null && GUISystem.Instance != null && GUISystem.Instance.m_guiCamera != null)
 		{
 			Vector3 vector = GUISystem.Instance.m_guiCamera.ViewportToWorldPoint(new Vector3(0f, 0f, 0f));

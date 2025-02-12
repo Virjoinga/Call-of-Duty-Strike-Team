@@ -94,7 +94,7 @@ public class SubtitleBackground : MonoBehaviour
 				gameObject.name = string.Format("{0} Grid [{1}]", base.gameObject.name, j);
 				gameObject.transform.parent = base.gameObject.transform;
 				SimpleSprite simpleSprite = (SimpleSprite)gameObject.AddComponent(typeof(SimpleSprite));
-				simpleSprite.renderer.sharedMaterial = Mat;
+				simpleSprite.GetComponent<Renderer>().sharedMaterial = Mat;
 				Sprites[j] = simpleSprite;
 			}
 			Resize();

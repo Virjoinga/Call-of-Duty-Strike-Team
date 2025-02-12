@@ -812,7 +812,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 
 	private void UpdateNavMeshAgent()
 	{
-		NavMeshAgent navAgent = myActor.navAgent;
+		UnityEngine.AI.NavMeshAgent navAgent = myActor.navAgent;
 		if ((bool)navAgent)
 		{
 			navAgent.enabled = mNextFrameNavMesh;
@@ -1035,7 +1035,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 			{
 				CommonHudController.Instance.AmmoReadout.SetColor(color);
 			}
-			CommonHudController.Instance.AmmoProgressBar.renderer.material.color = ((!myActor.weapon.IsReloading()) ? Color.white : Color.red);
+			CommonHudController.Instance.AmmoProgressBar.GetComponent<Renderer>().material.color = ((!myActor.weapon.IsReloading()) ? Color.white : Color.red);
 			Color color2 = ((num > 0) ? ColourChart.HudYellow : Color.red);
 			if (CommonHudController.Instance.GrenadeAmmoReadout.color != color2)
 			{
@@ -1110,7 +1110,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 				if (num4 != currentColliderHeight)
 				{
 					currentColliderHeight = num4;
-					CapsuleCollider capsuleCollider = SimpleHitBounds.collider as CapsuleCollider;
+					CapsuleCollider capsuleCollider = SimpleHitBounds.GetComponent<Collider>() as CapsuleCollider;
 					capsuleCollider.height = num4;
 					capsuleCollider.center = 0.5f * num4 * Vector3.up;
 				}
@@ -1136,10 +1136,10 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 				mCarried.transform.forward = myActor.model.transform.forward;
 				mCarried.Pose.PostModuleUpdate();
 			}
-			if (mCarried.realCharacter.Ragdoll != null && mCarried.realCharacter.Ragdoll.Pelvis != null && mCarried.realCharacter.Ragdoll.Pelvis.rigidbody != null)
+			if (mCarried.realCharacter.Ragdoll != null && mCarried.realCharacter.Ragdoll.Pelvis != null && mCarried.realCharacter.Ragdoll.Pelvis.GetComponent<Rigidbody>() != null)
 			{
 				mCarried.realCharacter.Ragdoll.Pelvis.transform.position = myActor.GetPosition() + new Vector3(0f, 1.5f, 0f);
-				mCarried.realCharacter.Ragdoll.Pelvis.rigidbody.isKinematic = true;
+				mCarried.realCharacter.Ragdoll.Pelvis.GetComponent<Rigidbody>().isKinematic = true;
 			}
 		}
 		else if (!mIsBeingCarried && Ragdoll != null && Ragdoll.Pelvis != null && !Ragdoll.Kinematic)
@@ -1271,7 +1271,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 	{
 		if (SimpleHitBounds != null)
 		{
-			CapsuleCollider capsuleCollider = SimpleHitBounds.collider as CapsuleCollider;
+			CapsuleCollider capsuleCollider = SimpleHitBounds.GetComponent<Collider>() as CapsuleCollider;
 			if (capsuleCollider != null)
 			{
 				return SimpleHitBounds.transform.position + Vector3.up * (capsuleCollider.height - 0.1f);
@@ -1610,9 +1610,9 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 		{
 			myActor.awareness.closestCoverPoint.DeathNearby(myActor);
 		}
-		if (SimpleHitBounds != null && SimpleHitBounds.collider != null)
+		if (SimpleHitBounds != null && SimpleHitBounds.GetComponent<Collider>() != null)
 		{
-			SimpleHitBounds.collider.enabled = false;
+			SimpleHitBounds.GetComponent<Collider>().enabled = false;
 		}
 		HealthComponent.HeathChangeEventArgs heathChangeEventArgs = (HealthComponent.HeathChangeEventArgs)args;
 		if (myActor.awareness.ChDefCharacterType == CharacterType.AutonomousGroundRobot)
@@ -1645,13 +1645,13 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 				myActor.animDirector.enabled = false;
 				myActor.animDirector.AnimationPlayer.enabled = false;
 				Ragdoll.SwitchToRagdoll();
-				if (heathChangeEventArgs.HitLocation != null && heathChangeEventArgs.HitLocation.rigidbody != null)
+				if (heathChangeEventArgs.HitLocation != null && heathChangeEventArgs.HitLocation.GetComponent<Rigidbody>() != null)
 				{
 					if (!myActor.behaviour.PlayerControlled && ForceOnDeathTriggers != null && ForceOnDeathTriggers.Count > 0 && ForceOnDeathTriggers[0].ApplyForce(heathChangeEventArgs.HitLocation, heathChangeEventArgs.Impact))
 					{
 						ForceOnDeathTriggers.RemoveAt(0);
 					}
-					else if (!heathChangeEventArgs.HitLocation.rigidbody.isKinematic)
+					else if (!heathChangeEventArgs.HitLocation.GetComponent<Rigidbody>().isKinematic)
 					{
 						if (myActor.realCharacter != null && myActor.realCharacter.IsSniper)
 						{
@@ -1659,11 +1659,11 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 							if (num > 0.2f)
 							{
 								float num2 = 300f;
-								heathChangeEventArgs.HitLocation.rigidbody.AddForceAtPosition((0f - num2) * -myActor.realCharacter.GetStanceDirection(), heathChangeEventArgs.Impact.position, ForceMode.Impulse);
+								heathChangeEventArgs.HitLocation.GetComponent<Rigidbody>().AddForceAtPosition((0f - num2) * -myActor.realCharacter.GetStanceDirection(), heathChangeEventArgs.Impact.position, ForceMode.Impulse);
 							}
 							else
 							{
-								heathChangeEventArgs.HitLocation.rigidbody.AddForceAtPosition(heathChangeEventArgs.Force, heathChangeEventArgs.Impact.position, ForceMode.Impulse);
+								heathChangeEventArgs.HitLocation.GetComponent<Rigidbody>().AddForceAtPosition(heathChangeEventArgs.Force, heathChangeEventArgs.Impact.position, ForceMode.Impulse);
 							}
 						}
 						else
@@ -1673,12 +1673,12 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 							{
 								for (int i = 0; i < siblingForceFraction.Length; i++)
 								{
-									Ragdoll.Bones[i].rigidbody.AddForceAtPosition(heathChangeEventArgs.Force * siblingForceFraction[i], heathChangeEventArgs.Impact.position, ForceMode.Impulse);
+									Ragdoll.Bones[i].GetComponent<Rigidbody>().AddForceAtPosition(heathChangeEventArgs.Force * siblingForceFraction[i], heathChangeEventArgs.Impact.position, ForceMode.Impulse);
 								}
 							}
 							else
 							{
-								heathChangeEventArgs.HitLocation.rigidbody.AddForceAtPosition(heathChangeEventArgs.Force, heathChangeEventArgs.Impact.position, ForceMode.Impulse);
+								heathChangeEventArgs.HitLocation.GetComponent<Rigidbody>().AddForceAtPosition(heathChangeEventArgs.Force, heathChangeEventArgs.Impact.position, ForceMode.Impulse);
 							}
 						}
 					}
@@ -1686,7 +1686,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 			}
 			else if (!myActor.behaviour.PlayerControlled && Ragdoll != null && KillTypeHelper.IsAStealthKill(heathChangeEventArgs) && ForceOnDeathTriggers != null && ForceOnDeathTriggers.Count > 0)
 			{
-				ForceOnDeathTriggers[0].ApplySilentKillForce(Ragdoll.Bones[0].rigidbody, -myActor.model.transform.forward);
+				ForceOnDeathTriggers[0].ApplySilentKillForce(Ragdoll.Bones[0].GetComponent<Rigidbody>(), -myActor.model.transform.forward);
 			}
 			if (myActor.awareness.ChDefCharacterType == CharacterType.Human && heathChangeEventArgs.DamageType != "SilentNeckSnap")
 			{
@@ -1733,11 +1733,11 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 		GameObject bloodPool2 = null;
 		while (this != null && Ragdoll != null)
 		{
-			if (bloodPool2 == null && Ragdoll.Bones[0].rigidbody != null && Ragdoll.Bones[0].rigidbody.IsSleeping() && !Ragdoll.Kinematic)
+			if (bloodPool2 == null && Ragdoll.Bones[0].GetComponent<Rigidbody>() != null && Ragdoll.Bones[0].GetComponent<Rigidbody>().IsSleeping() && !Ragdoll.Kinematic)
 			{
 				RaycastHit hit;
-				NavMeshHit navHit;
-				if (Physics.Raycast(Ragdoll.Bones[0].transform.position, Vector3.down, out hit, 1f, 1 << LayerMask.NameToLayer("Default")) && NavMesh.SamplePosition(hit.point, out navHit, 0.2f, myActor.navAgent.walkableMask))
+				UnityEngine.AI.NavMeshHit navHit;
+				if (Physics.Raycast(Ragdoll.Bones[0].transform.position, Vector3.down, out hit, 1f, 1 << LayerMask.NameToLayer("Default")) && UnityEngine.AI.NavMesh.SamplePosition(hit.point, out navHit, 0.2f, myActor.navAgent.walkableMask))
 				{
 					bloodPool2 = EffectsController.Instance.GetBloodPool(navHit.position - 0.02f * navHit.normal);
 				}
@@ -2126,7 +2126,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 			}
 			break;
 		case CommandEnum.kAnimatePhysics:
-			myActor.model.animation.animatePhysics = true;
+			myActor.model.GetComponent<Animation>().animatePhysics = true;
 			break;
 		case CommandEnum.kDeRagdoll:
 			if (Ragdoll != null)
@@ -2141,7 +2141,7 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 			myActor.animDirector.AnimationPlayer.enabled = true;
 			break;
 		case CommandEnum.kAnimatePhysicsOff:
-			myActor.model.animation.animatePhysics = false;
+			myActor.model.GetComponent<Animation>().animatePhysics = false;
 			break;
 		case CommandEnum.kThrowGrenade:
 			mWantsToThrowGrenade = true;

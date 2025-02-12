@@ -18,10 +18,10 @@ public class ViewModelBlendTree_XPR50 : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_XPR50(GameObject weapon, WeaponCoreAnims coreAnims, XPR50Anims specificAnims)
 	{
-		mHipsFire = weapon.animation.AddClipSafe(specificAnims.HipsFire, "HipsFire");
-		mSightsFire = weapon.animation.AddClipSafe(specificAnims.SightsFire, "SightsFire");
-		mReloadEmpty = weapon.animation.AddClipSafe(specificAnims.ReloadEmpty, "ReloadEmpty");
-		mReloadTactical = weapon.animation.AddClipSafe(specificAnims.ReloadTactical, "ReloadTactical");
+		mHipsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsFire, "HipsFire");
+		mSightsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsFire, "SightsFire");
+		mReloadEmpty = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadEmpty, "ReloadEmpty");
+		mReloadTactical = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadTactical, "ReloadTactical");
 		mReloadEmpty.wrapMode = WrapMode.Once;
 		ViewModelRig.SetupEventData(out mReloadEventTimes, specificAnims.ReloadEmptyEvents, specificAnims.ReloadTacticalEvents);
 	}

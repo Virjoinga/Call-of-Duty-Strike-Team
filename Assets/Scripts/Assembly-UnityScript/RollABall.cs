@@ -20,7 +20,7 @@ public class RollABall : MonoBehaviour
 
 	public virtual void Start()
 	{
-		circ = (float)Math.PI * 2f * collider.bounds.extents.x;
+		circ = (float)Math.PI * 2f * GetComponent<Collider>().bounds.extents.x;
 		previousPosition = transform.position;
 	}
 
@@ -28,7 +28,7 @@ public class RollABall : MonoBehaviour
 	{
 		tilt.x = 0f - Input.acceleration.y;
 		tilt.z = Input.acceleration.x;
-		rigidbody.AddForce(tilt * speed * Time.deltaTime);
+		GetComponent<Rigidbody>().AddForce(tilt * speed * Time.deltaTime);
 	}
 
 	public virtual void LateUpdate()

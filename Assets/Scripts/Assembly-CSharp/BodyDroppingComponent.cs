@@ -118,8 +118,8 @@ public class BodyDroppingComponent : MonoBehaviour
 		GameplayController gameplayController = GameplayController.Instance();
 		foreach (Actor item in gameplayController.Selected)
 		{
-			NavMeshPath navMeshPath = new NavMeshPath();
-			if (NavMesh.CalculatePath(item.navAgent.transform.position, point, item.navAgent.walkableMask, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+			if (UnityEngine.AI.NavMesh.CalculatePath(item.navAgent.transform.position, point, item.navAgent.walkableMask, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 			{
 				result = true;
 				break;

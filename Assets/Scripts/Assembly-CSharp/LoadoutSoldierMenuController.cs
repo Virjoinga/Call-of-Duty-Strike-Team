@@ -56,7 +56,7 @@ public class LoadoutSoldierMenuController : MenuScreenBlade, CarouselDataSource
 	{
 		base.Awake();
 		mEditingIndex = -1;
-		mSoldierPanelPosition = base.transform.FindChild("SoldierPanelPosition");
+		mSoldierPanelPosition = base.transform.Find("SoldierPanelPosition");
 		MissionListings.eMissionID currentMissionID = ActStructure.Instance.CurrentMissionID;
 		mCurrentMission = MissionListings.Instance.Mission(currentMissionID);
 		mData = new PurchaseFlowHelper.PurchaseData();

@@ -19,14 +19,14 @@ public class ObliqueNear : MonoBehaviour
 
 	public virtual void OnPreCull()
 	{
-		Matrix4x4 projectionMatrix = camera.projectionMatrix;
-		Matrix4x4 worldToCameraMatrix = camera.worldToCameraMatrix;
+		Matrix4x4 projectionMatrix = GetComponent<Camera>().projectionMatrix;
+		Matrix4x4 worldToCameraMatrix = GetComponent<Camera>().worldToCameraMatrix;
 		Vector3 rhs = worldToCameraMatrix.MultiplyPoint(plane.position);
 		Vector3 vector = worldToCameraMatrix.MultiplyVector(-Vector3.up);
 		vector.Normalize();
 		Vector4 clipPlane = vector;
 		clipPlane.w = 0f - Vector3.Dot(vector, rhs);
-		camera.projectionMatrix = CalculateObliqueMatrix(projectionMatrix, clipPlane);
+		GetComponent<Camera>().projectionMatrix = CalculateObliqueMatrix(projectionMatrix, clipPlane);
 	}
 
 	public virtual void Main()

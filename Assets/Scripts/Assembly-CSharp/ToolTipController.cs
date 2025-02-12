@@ -75,7 +75,7 @@ public class ToolTipController : SingletonMonoBehaviour
 		}
 		mTimeToShow -= TimeManager.DeltaTime;
 		bool flag = false;
-		if (mTimeToShow <= 0f || mCurrentToolTip.Over == null || !mCurrentToolTip.Over.activeSelf || (mCurrentToolTip.Over.renderer != null && !mCurrentToolTip.Over.renderer.enabled))
+		if (mTimeToShow <= 0f || mCurrentToolTip.Over == null || !mCurrentToolTip.Over.activeSelf || (mCurrentToolTip.Over.GetComponent<Renderer>() != null && !mCurrentToolTip.Over.GetComponent<Renderer>().enabled))
 		{
 			flag = true;
 		}

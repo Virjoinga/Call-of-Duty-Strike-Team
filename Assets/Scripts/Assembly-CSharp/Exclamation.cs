@@ -21,7 +21,7 @@ public class Exclamation : BaseActorComponent
 			ExclamationsEnabled = true;
 		}
 		topBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		topBox.renderer.material.shader = Shader.Find("VertexLit");
+		topBox.GetComponent<Renderer>().material.shader = Shader.Find("VertexLit");
 		bottomBox = Object.Instantiate(topBox) as GameObject;
 		Object.Destroy(topBox.GetComponent<BoxCollider>());
 		Object.Destroy(bottomBox.GetComponent<BoxCollider>());
@@ -79,10 +79,10 @@ public class Exclamation : BaseActorComponent
 		if (ExclamationsEnabled)
 		{
 			bottomBox.SetActive(true);
-			bottomBox.renderer.material.color = Color.red;
-			topBox.renderer.material.color = Color.red;
-			bottomBox.renderer.material.SetColor("_Emission", Color.red);
-			topBox.renderer.material.SetColor("_Emission", Color.red);
+			bottomBox.GetComponent<Renderer>().material.color = Color.red;
+			topBox.GetComponent<Renderer>().material.color = Color.red;
+			bottomBox.GetComponent<Renderer>().material.SetColor("_Emission", Color.red);
+			topBox.GetComponent<Renderer>().material.SetColor("_Emission", Color.red);
 			bottomBox.name = "ERROR:";
 			if (!topBox.name.Contains(err))
 			{
@@ -97,12 +97,12 @@ public class Exclamation : BaseActorComponent
 		if (ExclamationsEnabled)
 		{
 			bottomBox.SetActive(true);
-			if (bottomBox.renderer.material.color == Color.white)
+			if (bottomBox.GetComponent<Renderer>().material.color == Color.white)
 			{
-				bottomBox.renderer.material.color = Color.yellow;
-				topBox.renderer.material.color = Color.yellow;
-				bottomBox.renderer.material.SetColor("_Emission", Color.yellow);
-				topBox.renderer.material.SetColor("_Emission", Color.yellow);
+				bottomBox.GetComponent<Renderer>().material.color = Color.yellow;
+				topBox.GetComponent<Renderer>().material.color = Color.yellow;
+				bottomBox.GetComponent<Renderer>().material.SetColor("_Emission", Color.yellow);
+				topBox.GetComponent<Renderer>().material.SetColor("_Emission", Color.yellow);
 				bottomBox.name = "WARNING:";
 			}
 			if (!topBox.name.Contains(err))
@@ -118,7 +118,7 @@ public class Exclamation : BaseActorComponent
 		bottomBox.SetActive(false);
 		bottomBox.name = "!";
 		topBox.name = "!";
-		bottomBox.renderer.material.color = Color.white;
+		bottomBox.GetComponent<Renderer>().material.color = Color.white;
 	}
 
 	public void Clear(string err)

@@ -16,7 +16,7 @@ public class SetPieceSignaller : MonoBehaviour
 		{
 			SetPieceLogic setPieceLogic = (SetPieceLogic)array[i];
 			RaycastHit hitInfo;
-			if (base.collider.Raycast(new Ray(setPieceLogic.transform.position + Vector3.down * 3f, Vector3.up), out hitInfo, 6f))
+			if (base.GetComponent<Collider>().Raycast(new Ray(setPieceLogic.transform.position + Vector3.down * 3f, Vector3.up), out hitInfo, 6f))
 			{
 				list.Add(setPieceLogic.GetComponent<SetPieceLogic>());
 			}

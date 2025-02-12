@@ -21,7 +21,7 @@ public class Tank : MonoBehaviour
 
 	private SnapTarget mSnapTarget;
 
-	private NavMeshAgent mNavAgent;
+	private UnityEngine.AI.NavMeshAgent mNavAgent;
 
 	private HealthComponent mHealth;
 
@@ -129,17 +129,17 @@ public class Tank : MonoBehaviour
 
 	private void SetupNavMeshAgent()
 	{
-		NavMeshAgent navMeshAgent = base.gameObject.AddComponent<NavMeshAgent>();
+		UnityEngine.AI.NavMeshAgent navMeshAgent = base.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
 		navMeshAgent.angularSpeed = 90f;
 		navMeshAgent.autoTraverseOffMeshLink = false;
 		navMeshAgent.autoRepath = false;
 		navMeshAgent.radius = 5f;
-		navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
+		navMeshAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.HighQualityObstacleAvoidance;
 		navMeshAgent.avoidancePriority = 0;
 		navMeshAgent.speed = MAX_SPEED;
 		int num = 0;
-		num |= 1 << (NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
-		num |= 1 << (NavMesh.GetNavMeshLayerFromName("EnemyOnly") & 0x1F);
+		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
+		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("EnemyOnly") & 0x1F);
 		navMeshAgent.walkableMask = num;
 		mNavAgent = navMeshAgent;
 	}

@@ -17,7 +17,7 @@ public class CoverPointManager : MonoBehaviour
 
 	private GameObject mNavTester;
 
-	private NavMeshAgent mNavTesterAgent;
+	private UnityEngine.AI.NavMeshAgent mNavTesterAgent;
 
 	public List<CoverPoint> CoverPoints
 	{
@@ -387,12 +387,12 @@ public class CoverPointManager : MonoBehaviour
 		mNavTester.transform.position = start;
 		if (mNavTesterAgent == null)
 		{
-			mNavTesterAgent = mNavTester.AddComponent<NavMeshAgent>();
+			mNavTesterAgent = mNavTester.AddComponent<UnityEngine.AI.NavMeshAgent>();
 			ActorGenerator.ConfigureNavMeshAgent(mNavTesterAgent, 0f, true, 360f);
 		}
 		mNavTesterAgent.enabled = true;
-		NavMeshPath navMeshPath = new NavMeshPath();
-		if (mNavTesterAgent.CalculatePath(coverPoint.GetPosition(), navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+		if (mNavTesterAgent.CalculatePath(coverPoint.GetPosition(), navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 		{
 			num = 0f;
 			for (int i = 0; i < navMeshPath.corners.Length - 1; i++)

@@ -14,11 +14,11 @@ public class TestCollisionTrigger : MonoBehaviour
 		{
 			if (zone.Contains(base.transform.position) != 0)
 			{
-				base.renderer.material.color = Color.green;
+				base.GetComponent<Renderer>().material.color = Color.green;
 			}
 			else
 			{
-				base.renderer.material.color = Color.red;
+				base.GetComponent<Renderer>().material.color = Color.red;
 			}
 		}
 	}

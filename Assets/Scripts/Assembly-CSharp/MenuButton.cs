@@ -24,7 +24,7 @@ public class MenuButton : MonoBehaviour
 		if (mActive != isActive)
 		{
 			mActive = isActive;
-			Cross.renderer.enabled = !mActive;
+			Cross.GetComponent<Renderer>().enabled = !mActive;
 			float alpha = 1f;
 			if (!isActive)
 			{

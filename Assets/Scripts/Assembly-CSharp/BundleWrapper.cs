@@ -63,7 +63,7 @@ public class BundleWrapper
 		get
 		{
 			string text = "http://" + DebugDlcServer.Ip + ":8000/";
-			if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsWebPlayer)
+			if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
 			{
 				return text + "standalonewindows/" + mBundleSubPath + "/";
 			}
@@ -196,7 +196,7 @@ public class BundleWrapper
 		if (File.Exists(text))
 		{
 			byte[] binary = File.ReadAllBytes(text);
-			mBundleCreateRequest = AssetBundle.CreateFromMemory(binary);
+			mBundleCreateRequest = AssetBundle.LoadFromMemoryAsync(binary);
 			return true;
 		}
 		return false;
@@ -244,7 +244,7 @@ public class BundleWrapper
 						if (mPersistantDataBundle != null)
 						{
 							OnScreenLog.Instance.AddLine("Loaded " + mBundleName + " from persistant data");
-							StringHolder toclist = mPersistantDataBundle.Load(mTocfile, typeof(StringHolder)) as StringHolder;
+							StringHolder toclist = mPersistantDataBundle.LoadAsset(mTocfile, typeof(StringHolder)) as StringHolder;
 							mToc = GetTocListFromStringHolder(toclist);
 							mIsReady = true;
 						}
@@ -284,7 +284,7 @@ public class BundleWrapper
 						WriteAssetBundleToPersistantData(mWeb.bytes);
 						OnScreenLog.Instance.AppendToLine("done");
 					}
-					mWwwRequest = mWeb.assetBundle.LoadAsync(mTocfile, typeof(StringHolder));
+					mWwwRequest = mWeb.assetBundle.LoadAssetAsync(mTocfile, typeof(StringHolder));
 				}
 				else if (mWwwRequest.isDone)
 				{
@@ -350,13 +350,13 @@ public class BundleWrapper
 			return new BundleAssetRequest(Resources.Load(mBundleName + "/" + gameObj, type));
 		case BundleType.WebCached:
 		case BundleType.WebUncached:
-			return new BundleAssetRequest(mWeb.assetBundle.LoadAsync(gameObj, type));
+			return new BundleAssetRequest(mWeb.assetBundle.LoadAssetAsync(gameObj, type));
 		case BundleType.WebCustomCached:
 			if (mPersistantDataBundle == null)
 			{
-				return new BundleAssetRequest(mWeb.assetBundle.LoadAsync(gameObj, type));
+				return new BundleAssetRequest(mWeb.assetBundle.LoadAssetAsync(gameObj, type));
 			}
-			return new BundleAssetRequest(mPersistantDataBundle.LoadAsync(gameObj, type));
+			return new BundleAssetRequest(mPersistantDataBundle.LoadAssetAsync(gameObj, type));
 		default:
 			throw new NotImplementedException();
 		}

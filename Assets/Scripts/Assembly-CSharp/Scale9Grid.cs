@@ -142,9 +142,9 @@ public class Scale9Grid : MonoBehaviour
 			gameObject.name = string.Format("{0} Grid [{1},{2}]", base.gameObject.name, num + 1, num2 + 1);
 			gameObject.transform.parent = base.gameObject.transform;
 			SimpleSprite simpleSprite = (SimpleSprite)gameObject.AddComponent(typeof(SimpleSprite));
-			simpleSprite.renderer.sharedMaterial = mat;
-			float num3 = simpleSprite.renderer.sharedMaterial.mainTexture.width;
-			float num4 = simpleSprite.renderer.sharedMaterial.mainTexture.height;
+			simpleSprite.GetComponent<Renderer>().sharedMaterial = mat;
+			float num3 = simpleSprite.GetComponent<Renderer>().sharedMaterial.mainTexture.width;
+			float num4 = simpleSprite.GetComponent<Renderer>().sharedMaterial.mainTexture.height;
 			simpleSprite.lowerLeftPixel = new Vector2((float)num2 * (num3 * 0.25f), (float)(num + 2) * (num4 * 0.25f));
 			simpleSprite.pixelDimensions = new Vector2(num3 * 0.5f, num4 * 0.5f);
 			sprites[j] = simpleSprite;

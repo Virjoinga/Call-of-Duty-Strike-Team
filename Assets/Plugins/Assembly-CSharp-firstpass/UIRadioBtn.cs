@@ -256,7 +256,7 @@ public class UIRadioBtn : AutoSpriteControlBase, IRadioButton
 			break;
 		case POINTER_INFO.INPUT_EVENT.RELEASE:
 		case POINTER_INFO.INPUT_EVENT.TAP:
-			if (ptr.type != POINTER_INFO.POINTER_TYPE.TOUCHPAD && ptr.hitInfo.collider == base.collider && !disableHoverEffect)
+			if (ptr.type != POINTER_INFO.POINTER_TYPE.TOUCHPAD && ptr.hitInfo.collider == base.GetComponent<Collider>() && !disableHoverEffect)
 			{
 				SetLayerState(CONTROL_STATE.Over);
 			}
@@ -417,11 +417,11 @@ public class UIRadioBtn : AutoSpriteControlBase, IRadioButton
 					layers[k].Hide(true);
 				}
 			}
-			if (base.collider == null)
+			if (base.GetComponent<Collider>() == null)
 			{
 				AddCollider();
 			}
-			if (base.rigidbody == null)
+			if (base.GetComponent<Rigidbody>() == null)
 			{
 				AddRigidBody();
 			}
@@ -642,13 +642,15 @@ public class UIRadioBtn : AutoSpriteControlBase, IRadioButton
 		return (UIRadioBtn)gameObject.AddComponent(typeof(UIRadioBtn));
 	}
 
-	virtual string IRadioButton.get_name()
-	{
-		return base.name;
-	}
-
-	virtual void IRadioButton.set_name(string value)
-	{
-		base.name = value;
-	}
+    string IRadioButton.name
+    {
+        get
+        {
+            return base.name;
+        }
+		set
+		{
+			base.name = value;
+		}
+    }
 }

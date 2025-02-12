@@ -4,6 +4,6 @@ public class ObjectSelectionDebug : MonoBehaviour
 {
 	private void Update()
 	{
-		base.renderer.enabled = !GameController.Instance.IsFirstPerson;
+		base.GetComponent<Renderer>().enabled = !GameController.Instance.IsFirstPerson;
 	}
 }

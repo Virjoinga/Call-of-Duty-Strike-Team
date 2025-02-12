@@ -2868,7 +2868,8 @@ public class Bedrock : MonoBehaviour
 
 	public static bool getTaskStatus(short taskHandle, out brTaskStatus status)
 	{
-		return isBedrockActive() && brGetTaskStatus(taskHandle, out status) == brResult.BR_SUCCESS;
+        status = default(brTaskStatus);
+        return isBedrockActive() && brGetTaskStatus(taskHandle, out status) == brResult.BR_SUCCESS;
 	}
 
 	public static void ReleaseTaskHandle(ref short taskHandle)

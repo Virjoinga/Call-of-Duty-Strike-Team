@@ -64,12 +64,12 @@ public class WaypointMarker : MonoBehaviour
 	{
 		type = Type.Undefined;
 		state = State.Undefined;
-		anim = base.animation;
+		anim = base.GetComponent<Animation>();
 		if (anim == null)
 		{
 			anim = GetComponentInChildren<Animation>();
 		}
-		rend = base.renderer;
+		rend = base.GetComponent<Renderer>();
 		if (rend == null)
 		{
 			rend = GetComponentInChildren<Renderer>();
@@ -89,7 +89,7 @@ public class WaypointMarker : MonoBehaviour
 		pathRend.enabled = visible;
 	}
 
-	private Vector3 GetCorner(NavMeshPath path, int index)
+	private Vector3 GetCorner(UnityEngine.AI.NavMeshPath path, int index)
 	{
 		if (index < path.corners.Length)
 		{
@@ -107,7 +107,7 @@ public class WaypointMarker : MonoBehaviour
 		return path.corners[path.corners.Length - 1];
 	}
 
-	private void CalcPath(NavMeshPath path)
+	private void CalcPath(UnityEngine.AI.NavMeshPath path)
 	{
 		Actor actor = ((!(owner != null)) ? null : owner.GetComponent<Actor>());
 		if (!(actor != null))
@@ -233,7 +233,7 @@ public class WaypointMarker : MonoBehaviour
 		}
 	}
 
-	public void SetPathRemainder(NavMeshPath path, int startIndex)
+	public void SetPathRemainder(UnityEngine.AI.NavMeshPath path, int startIndex)
 	{
 		if (startIndex > path.corners.Length - 1)
 		{
@@ -262,8 +262,8 @@ public class WaypointMarker : MonoBehaviour
 			Actor actor = ((!(owner != null)) ? null : owner.GetComponent<Actor>());
 			if (actor != null)
 			{
-				NavMeshPath navMeshPath = new NavMeshPath();
-				if (WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(actor, base.transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+				UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+				if (WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(actor, base.transform.position, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 				{
 					pathRemainder = null;
 					CalcPath(navMeshPath);

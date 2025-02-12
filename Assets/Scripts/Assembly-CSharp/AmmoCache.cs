@@ -53,7 +53,7 @@ public class AmmoCache : MonoBehaviour
 				mCratePlayer.enabled = false;
 				mCratePlayer.enabled = true;
 				mCratePlayer.Play(mTakeAmmoClip.name);
-				mCratePlayer.animation[mTakeAmmoClip.name].speed = 1f;
+				mCratePlayer.GetComponent<Animation>()[mTakeAmmoClip.name].speed = 1f;
 			}
 			else
 			{
@@ -67,7 +67,7 @@ public class AmmoCache : MonoBehaviour
 			Component[] array = componentsInChildren;
 			foreach (Component component2 in array)
 			{
-				if (!component2.rigidbody && !component2.gameObject.isStatic)
+				if (!component2.GetComponent<Rigidbody>() && !component2.gameObject.isStatic)
 				{
 					Rigidbody rigidbody = component2.gameObject.AddComponent<Rigidbody>();
 					rigidbody.isKinematic = true;
@@ -98,7 +98,7 @@ public class AmmoCache : MonoBehaviour
 		if (mTakeAmmoClip != null)
 		{
 			mCratePlayer.Play(mTakeAmmoClip.name);
-			AnimationState animationState = mCratePlayer.animation[mTakeAmmoClip.name];
+			AnimationState animationState = mCratePlayer.GetComponent<Animation>()[mTakeAmmoClip.name];
 			if (animationState != null)
 			{
 				animationState.time = animationState.length;
@@ -129,7 +129,7 @@ public class AmmoCache : MonoBehaviour
 		if (mTakeAmmoClip != null)
 		{
 			mCratePlayer.Play(mTakeAmmoClip.name);
-			mCratePlayer.animation[mTakeAmmoClip.name].speed = 1f;
+			mCratePlayer.GetComponent<Animation>()[mTakeAmmoClip.name].speed = 1f;
 		}
 		mActive = false;
 		if (CheckShouldTimerPause())

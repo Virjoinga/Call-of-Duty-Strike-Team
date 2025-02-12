@@ -125,7 +125,7 @@ public class TaskFollowMovingTarget : TaskRouteTo
 			return;
 		}
 		mActor.navAgent.CalculatePath(mMoveParams.mDestination, mPath);
-		if (mPath.status == NavMeshPathStatus.PathInvalid)
+		if (mPath.status == UnityEngine.AI.NavMeshPathStatus.PathInvalid)
 		{
 			state = State.Done;
 			return;

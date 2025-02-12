@@ -50,7 +50,7 @@ public class StrategyViewCamera : CameraBase
 
 	private Vector3 mPanMove;
 
-	private NavMeshAgent mNavAgent;
+	private UnityEngine.AI.NavMeshAgent mNavAgent;
 
 	public float Distance
 	{
@@ -117,16 +117,16 @@ public class StrategyViewCamera : CameraBase
 			base.transform.position = cameraTarget.transform.position;
 			base.transform.position += new Vector3(0f, initialDistance, 0f);
 		}
-		int navMeshLayerFromName = NavMesh.GetNavMeshLayerFromName("StrategyCamera");
+		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("StrategyCamera");
 		if (!AttachToNavMesh(navMeshLayerFromName))
 		{
 		}
 		mInputEnabled = false;
 		float num2 = (IdealDistance = initialDistance);
 		distance = num2;
-		if ((bool)base.rigidbody)
+		if ((bool)base.GetComponent<Rigidbody>())
 		{
-			base.rigidbody.freezeRotation = true;
+			base.GetComponent<Rigidbody>().freezeRotation = true;
 		}
 		mIsZooming = false;
 		mLastVelocity = Vector3.zero;
@@ -136,7 +136,7 @@ public class StrategyViewCamera : CameraBase
 
 	private bool AttachToNavMesh(int cameraNavMeshLayer)
 	{
-		NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(base.transform.position, 1 << cameraNavMeshLayer);
+		UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(base.transform.position, 1 << cameraNavMeshLayer);
 		if (navMeshHit.hit)
 		{
 			GameObject gameObject = new GameObject("StrategyCamParent");
@@ -145,9 +145,9 @@ public class StrategyViewCamera : CameraBase
 			base.transform.parent = gameObject.transform;
 			base.transform.position = new Vector3(0f, 0f, 0f);
 			base.transform.localPosition = new Vector3(0f, 0f, 0f);
-			mNavAgent = gameObject.AddComponent<NavMeshAgent>();
+			mNavAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
 			mNavAgent.updateRotation = false;
-			mNavAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+			mNavAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.NoObstacleAvoidance;
 			mNavAgent.walkableMask = 1 << cameraNavMeshLayer;
 			mNavAgent.autoRepath = false;
 			mNavAgent.autoTraverseOffMeshLink = false;

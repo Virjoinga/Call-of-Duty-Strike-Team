@@ -15,7 +15,7 @@ public class CombineChildren : MonoBehaviour
 		for (int i = 0; i < componentsInChildren.Length; i++)
 		{
 			MeshFilter meshFilter = (MeshFilter)componentsInChildren[i];
-			Renderer renderer = componentsInChildren[i].renderer;
+			Renderer renderer = componentsInChildren[i].GetComponent<Renderer>();
 			MeshCombineUtility.MeshInstance meshInstance = default(MeshCombineUtility.MeshInstance);
 			meshInstance.mesh = meshFilter.sharedMesh;
 			if (!(renderer != null) || !renderer.enabled || !(meshInstance.mesh != null))
@@ -51,12 +51,12 @@ public class CombineChildren : MonoBehaviour
 				}
 				if (!GetComponent("MeshRenderer"))
 				{
-					base.gameObject.AddComponent("MeshRenderer");
+					base.gameObject.AddComponent<MeshRenderer>();
 				}
 				MeshFilter meshFilter2 = (MeshFilter)GetComponent(typeof(MeshFilter));
 				meshFilter2.mesh = MeshCombineUtility.Combine(combines, generateTriangleStrips);
-				base.renderer.material = (Material)item.Key;
-				base.renderer.enabled = true;
+				base.GetComponent<Renderer>().material = (Material)item.Key;
+				base.GetComponent<Renderer>().enabled = true;
 			}
 			else
 			{
@@ -66,8 +66,8 @@ public class CombineChildren : MonoBehaviour
 				gameObject.transform.localRotation = Quaternion.identity;
 				gameObject.transform.localPosition = Vector3.zero;
 				gameObject.AddComponent(typeof(MeshFilter));
-				gameObject.AddComponent("MeshRenderer");
-				gameObject.renderer.material = (Material)item.Key;
+				gameObject.AddComponent<MeshRenderer>();
+				gameObject.GetComponent<Renderer>().material = (Material)item.Key;
 				MeshFilter meshFilter3 = (MeshFilter)gameObject.GetComponent(typeof(MeshFilter));
 				meshFilter3.mesh = MeshCombineUtility.Combine(combines, generateTriangleStrips);
 			}

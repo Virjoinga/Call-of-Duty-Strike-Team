@@ -599,8 +599,8 @@ public class GMGFlashpointManager : MonoBehaviour
 		for (int i = 0; i < list.Count; i++)
 		{
 			float num = float.MaxValue;
-			NavMeshPath navMeshPath = new NavMeshPath();
-			if (NavMesh.CalculatePath(pathOrigin, Targets[list[i]].transform.position, -1, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+			if (UnityEngine.AI.NavMesh.CalculatePath(pathOrigin, Targets[list[i]].transform.position, -1, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 			{
 				num = 0f;
 				for (int j = 0; j < navMeshPath.corners.Length - 1; j++)

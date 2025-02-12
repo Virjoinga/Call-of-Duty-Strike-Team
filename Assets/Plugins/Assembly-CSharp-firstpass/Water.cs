@@ -42,7 +42,7 @@ public class Water : MonoBehaviour
 
 	public void OnWillRenderObject()
 	{
-		if (!base.enabled || !base.renderer || !base.renderer.sharedMaterial || !base.renderer.enabled)
+		if (!base.enabled || !base.GetComponent<Renderer>() || !base.GetComponent<Renderer>().sharedMaterial || !base.GetComponent<Renderer>().enabled)
 		{
 			return;
 		}
@@ -86,7 +86,7 @@ public class Water : MonoBehaviour
 				reflectionCamera.Render();
 				reflectionCamera.transform.position = position2;
 				GL.SetRevertBackfacing(false);
-				base.renderer.sharedMaterial.SetTexture("_ReflectionTex", m_ReflectionTexture);
+				base.GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex", m_ReflectionTexture);
 			}
 			if (waterMode >= WaterMode.Refractive)
 			{
@@ -100,7 +100,7 @@ public class Water : MonoBehaviour
 				refractionCamera.transform.position = current.transform.position;
 				refractionCamera.transform.rotation = current.transform.rotation;
 				refractionCamera.Render();
-				base.renderer.sharedMaterial.SetTexture("_RefractionTex", m_RefractionTexture);
+				base.GetComponent<Renderer>().sharedMaterial.SetTexture("_RefractionTex", m_RefractionTexture);
 			}
 			if (m_DisablePixelLights)
 			{
@@ -154,9 +154,9 @@ public class Water : MonoBehaviour
 
 	private void Update()
 	{
-		if ((bool)base.renderer)
+		if ((bool)base.GetComponent<Renderer>())
 		{
-			Material sharedMaterial = base.renderer.sharedMaterial;
+			Material sharedMaterial = base.GetComponent<Renderer>().sharedMaterial;
 			if ((bool)sharedMaterial)
 			{
 				Vector4 vector = sharedMaterial.GetVector("WaveSpeed");
@@ -166,7 +166,7 @@ public class Water : MonoBehaviour
 				Vector4 vector3 = new Vector4((float)Math.IEEERemainder((double)(vector.x * vector2.x) * num, 1.0), (float)Math.IEEERemainder((double)(vector.y * vector2.y) * num, 1.0), (float)Math.IEEERemainder((double)(vector.z * vector2.z) * num, 1.0), (float)Math.IEEERemainder((double)(vector.w * vector2.w) * num, 1.0));
 				sharedMaterial.SetVector("_WaveOffset", vector3);
 				sharedMaterial.SetVector("_WaveScale4", vector2);
-				Vector3 size = base.renderer.bounds.size;
+				Vector3 size = base.GetComponent<Renderer>().bounds.size;
 				Matrix4x4 matrix = Matrix4x4.TRS(s: new Vector3(size.x * vector2.x, size.z * vector2.y, 1f), pos: new Vector3(vector3.x, vector3.y, 0f), q: Quaternion.identity);
 				sharedMaterial.SetMatrix("_WaveMatrix", matrix);
 				matrix = Matrix4x4.TRS(s: new Vector3(size.x * vector2.z, size.z * vector2.w, 1f), pos: new Vector3(vector3.z, vector3.w, 0f), q: Quaternion.identity);
@@ -228,11 +228,11 @@ public class Water : MonoBehaviour
 			if (!reflectionCamera)
 			{
 				GameObject gameObject = new GameObject("Water Refl Camera id" + GetInstanceID() + " for " + currentCamera.GetInstanceID(), typeof(Camera), typeof(Skybox));
-				reflectionCamera = gameObject.camera;
+				reflectionCamera = gameObject.GetComponent<Camera>();
 				reflectionCamera.enabled = false;
 				reflectionCamera.transform.position = base.transform.position;
 				reflectionCamera.transform.rotation = base.transform.rotation;
-				reflectionCamera.gameObject.AddComponent("FlareLayer");
+				reflectionCamera.gameObject.AddComponent<FlareLayer>();
 				gameObject.hideFlags = HideFlags.HideAndDontSave;
 				m_ReflectionCameras[currentCamera] = reflectionCamera;
 			}
@@ -257,11 +257,11 @@ public class Water : MonoBehaviour
 		if (!refractionCamera)
 		{
 			GameObject gameObject2 = new GameObject("Water Refr Camera id" + GetInstanceID() + " for " + currentCamera.GetInstanceID(), typeof(Camera), typeof(Skybox));
-			refractionCamera = gameObject2.camera;
+			refractionCamera = gameObject2.GetComponent<Camera>();
 			refractionCamera.enabled = false;
 			refractionCamera.transform.position = base.transform.position;
 			refractionCamera.transform.rotation = base.transform.rotation;
-			refractionCamera.gameObject.AddComponent("FlareLayer");
+			refractionCamera.gameObject.AddComponent<FlareLayer>();
 			gameObject2.hideFlags = HideFlags.HideAndDontSave;
 			m_RefractionCameras[currentCamera] = refractionCamera;
 		}
@@ -278,11 +278,11 @@ public class Water : MonoBehaviour
 
 	private WaterMode FindHardwareWaterSupport()
 	{
-		if (!SystemInfo.supportsRenderTextures || !base.renderer)
+		if (!SystemInfo.supportsRenderTextures || !base.GetComponent<Renderer>())
 		{
 			return WaterMode.Simple;
 		}
-		Material sharedMaterial = base.renderer.sharedMaterial;
+		Material sharedMaterial = base.GetComponent<Renderer>().sharedMaterial;
 		if (!sharedMaterial)
 		{
 			return WaterMode.Simple;

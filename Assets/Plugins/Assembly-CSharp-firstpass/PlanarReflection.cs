@@ -40,7 +40,7 @@ public class PlanarReflection : MonoBehaviour
 		{
 			gameObject.AddComponent(typeof(Camera));
 		}
-		Camera camera = gameObject.camera;
+		Camera camera = gameObject.GetComponent<Camera>();
 		camera.backgroundColor = clearColor;
 		camera.clearFlags = (reflectSkybox ? CameraClearFlags.Skybox : CameraClearFlags.Color);
 		SetStandardCameraParameter(camera, reflectionMask);

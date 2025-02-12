@@ -26,9 +26,9 @@ public class BackDoorLogic : MonoBehaviour
 		{
 			m_NavGate.OpenNavGate();
 		}
-		if (m_DoorToAnimate != null && m_DoorToAnimate.animation != null)
+		if (m_DoorToAnimate != null && m_DoorToAnimate.GetComponent<Animation>() != null)
 		{
-			m_DoorToAnimate.animation.Play(m_AnimationName);
+			m_DoorToAnimate.GetComponent<Animation>().Play(m_AnimationName);
 		}
 	}
 }

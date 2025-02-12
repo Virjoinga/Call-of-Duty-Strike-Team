@@ -283,7 +283,7 @@ public static class Language
 			return LanguageCode.EL;
 		case SystemLanguage.Hebrew:
 			return LanguageCode.HE;
-		case SystemLanguage.Hugarian:
+		case SystemLanguage.Hungarian:
 			return LanguageCode.HU;
 		case SystemLanguage.Icelandic:
 			return LanguageCode.IS;
@@ -330,7 +330,7 @@ public static class Language
 		default:
 			switch (name)
 			{
-			case SystemLanguage.Hugarian:
+			case SystemLanguage.Hungarian:
 				return LanguageCode.HU;
 			case SystemLanguage.Unknown:
 				return LanguageCode.N;

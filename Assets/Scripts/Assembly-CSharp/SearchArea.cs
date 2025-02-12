@@ -25,7 +25,7 @@ public class SearchArea
 
 	private GameObject mNavTester;
 
-	private NavMeshAgent mNavTesterAgent;
+	private UnityEngine.AI.NavMeshAgent mNavTesterAgent;
 
 	public float SqrRadius
 	{
@@ -164,7 +164,7 @@ public class SearchArea
 			zero.x = vector.x;
 			zero.y = 0f;
 			zero.z = vector.y;
-			NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(position + zero);
+			UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(position + zero);
 			if (navMeshHit.hit)
 			{
 				float sqrMagnitude = (navMeshHit.position - mPosition).sqrMagnitude;
@@ -236,7 +236,7 @@ public class SearchArea
 		mNavTester.transform.position = position;
 		if (mNavTesterAgent == null)
 		{
-			mNavTesterAgent = mNavTester.AddComponent<NavMeshAgent>();
+			mNavTesterAgent = mNavTester.AddComponent<UnityEngine.AI.NavMeshAgent>();
 			ActorGenerator.ConfigureNavMeshAgent(mNavTesterAgent, 0f, true, 360f);
 		}
 		mNavTesterAgent.enabled = true;
@@ -246,8 +246,8 @@ public class SearchArea
 			{
 				continue;
 			}
-			NavMeshPath navMeshPath = new NavMeshPath();
-			if (!mNavTesterAgent.CalculatePath(mTarget.GetPosition(), navMeshPath) || navMeshPath.status == NavMeshPathStatus.PathComplete)
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+			if (!mNavTesterAgent.CalculatePath(mTarget.GetPosition(), navMeshPath) || navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 			{
 				float num2 = 0f;
 				if (mDynamicSearchArea)

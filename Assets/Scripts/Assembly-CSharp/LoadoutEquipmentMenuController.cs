@@ -37,7 +37,7 @@ public class LoadoutEquipmentMenuController : MenuScreenBlade, CarouselDataSourc
 	public override void Awake()
 	{
 		base.Awake();
-		mInventoryPanelPosition = base.transform.FindChild("InventoryPanelPosition");
+		mInventoryPanelPosition = base.transform.Find("InventoryPanelPosition");
 		WeaponManager instance = WeaponManager.Instance;
 		mCurrentEquipmentData = instance.LoadoutEquipment;
 		mData = new PurchaseFlowHelper.PurchaseData();

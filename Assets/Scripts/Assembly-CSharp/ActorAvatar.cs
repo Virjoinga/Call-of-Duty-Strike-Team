@@ -27,9 +27,9 @@ public class ActorAvatar : MonoBehaviour
 			if (friendAvatar != null)
 			{
 				mAvatarMaterial = CreateAvatarTexture(friendAvatar);
-				base.renderer.material = mAvatarMaterial;
+				base.GetComponent<Renderer>().material = mAvatarMaterial;
 			}
-			Text.renderer.enabled = true;
+			Text.GetComponent<Renderer>().enabled = true;
 			Text.Text = WaveStats.Instance.GetFriendName(nextClosestScoreFriendId);
 		}
 		else

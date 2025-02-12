@@ -44,8 +44,8 @@ public class LaserSightEffect : MonoBehaviour
 		RaycastHit hitInfo;
 		float z = ((!Physics.Raycast(base.transform.position, base.transform.forward, out hitInfo, MaximumLength, mLayerMask)) ? MaximumLength : hitInfo.distance);
 		m_LineRenderer.SetPosition(1, new Vector3(0f, 0f, z));
-		base.renderer.material.mainTextureOffset += new Vector2(Time.deltaTime * aniDir * scrollSpeed, 0f);
-		base.renderer.material.SetTextureOffset("_NoiseTex", new Vector2((0f - Time.time) * aniDir * scrollSpeed, 0f));
+		base.GetComponent<Renderer>().material.mainTextureOffset += new Vector2(Time.deltaTime * aniDir * scrollSpeed, 0f);
+		base.GetComponent<Renderer>().material.SetTextureOffset("_NoiseTex", new Vector2((0f - Time.time) * aniDir * scrollSpeed, 0f));
 		float b = Mathf.PingPong(Time.time * pulseSpeed, 1f);
 		b = Mathf.Max(minWidth, b) * maxWidth;
 		m_LineRenderer.SetWidth(b, b);

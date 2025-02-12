@@ -164,9 +164,9 @@ public class GlobeCamera : MonoBehaviour
 		mDesiredPosition = target.position - distance * vector.normalized;
 		mDesiredUp = Vector3.up;
 		mLastKnownDirection = -1f;
-		if ((bool)base.rigidbody)
+		if ((bool)base.GetComponent<Rigidbody>())
 		{
-			base.rigidbody.freezeRotation = true;
+			base.GetComponent<Rigidbody>().freezeRotation = true;
 		}
 		ClearDeltaHistory();
 		Apply();
@@ -270,7 +270,7 @@ public class GlobeCamera : MonoBehaviour
 			return;
 		}
 		mTimeSinceLastTouch = 0f;
-		Ray ray = base.camera.ScreenPointToRay(fingerPos);
+		Ray ray = base.GetComponent<Camera>().ScreenPointToRay(fingerPos);
 		RaycastHit hitInfo;
 		if (Physics.Raycast(ray, out hitInfo, float.PositiveInfinity) && (bool)hitInfo.collider.gameObject)
 		{

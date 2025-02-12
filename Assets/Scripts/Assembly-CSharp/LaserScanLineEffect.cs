@@ -123,7 +123,7 @@ public class LaserScanLineEffect : MonoBehaviour
 		mMesh.vertices = array;
 		mMesh.uv = array2;
 		mMesh.colors = array3;
-		mMesh.Optimize();
+		;
 		mMeshFilter = base.gameObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
 		mMeshFilter.mesh = mMesh;
 		mRend = base.gameObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;

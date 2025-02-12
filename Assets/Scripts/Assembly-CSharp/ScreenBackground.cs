@@ -6,7 +6,7 @@ public class ScreenBackground : MonoBehaviour
 
 	private void Awake()
 	{
-		Transform transform = base.transform.FindChild("BackgroundFlatColour");
+		Transform transform = base.transform.Find("BackgroundFlatColour");
 		if (transform != null)
 		{
 			mBackground = transform.GetComponent<SimpleSprite>();

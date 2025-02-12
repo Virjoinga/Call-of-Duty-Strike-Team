@@ -40,7 +40,7 @@ public class GrenadeThrowMarker : MonoBehaviour
 		if (mObjPlacementObj != null)
 		{
 			mObjPlacementObj.transform.parent = base.transform;
-			mObjPlacementObj.renderer.material.color = new Color(1f, 1f, 1f, 0f);
+			mObjPlacementObj.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 0f);
 		}
 		mCurrentState = IconState.Normal;
 	}
@@ -66,7 +66,7 @@ public class GrenadeThrowMarker : MonoBehaviour
 		Color color = ((mCurrentState != IconState.CancelThrow && mCurrentState != IconState.CancelClaymore && mCurrentState != IconState.CancelBody) ? ColourChart.GrenadeThrow : ColourChart.GrenadeCancel);
 		if (mObjPlacementObj != null)
 		{
-			mObjPlacementObj.renderer.material.color = color;
+			mObjPlacementObj.GetComponent<Renderer>().material.color = color;
 		}
 		float num2 = 1f;
 		for (int i = 0; i < Arrows.Length; i++)

@@ -262,13 +262,13 @@ public class SoundManager : SingletonMonoBehaviour
 				float pitch = Mathf.Clamp01(sfxData.m_pitch + UnityEngine.Random.Range(0f - sfxData.m_pitchVariance, sfxData.m_pitchVariance));
 				Volume = volume;
 				Pitch = pitch;
-				m_soundObj.m_audioSource.panLevel = sfxData.m_panLevel;
+				m_soundObj.m_audioSource.spatialBlend = sfxData.m_panLevel;
 				m_soundObj.m_audioSource.spread = sfxData.m_spread;
 				m_soundObj.m_audioSource.dopplerLevel = sfxData.m_dopplerLevel;
 				m_soundObj.m_audioSource.minDistance = sfxData.m_minDistance;
 				m_soundObj.m_audioSource.maxDistance = sfxData.m_maxDistance;
 				m_soundObj.m_audioSource.rolloffMode = sfxData.m_rollOffMode;
-				m_soundObj.m_audioSource.pan = sfxData.m_pan2D;
+				m_soundObj.m_audioSource.panStereo = sfxData.m_pan2D;
 				if (!sfxData.m_play3D)
 				{
 					m_soundObj.m_audioSource.minDistance = 10000f;
@@ -423,7 +423,7 @@ public class SoundManager : SingletonMonoBehaviour
 				{
 					AudioLowPassFilter audioLPF = m_soundObj.m_audioLPF;
 					audioLPF.cutoffFrequency = filter.m_CutoffFrequency;
-					audioLPF.lowpassResonaceQ = filter.m_LowpassResonaceQ;
+					audioLPF.lowpassResonanceQ = filter.m_LowpassResonaceQ;
 					audioLPF.enabled = true;
 					break;
 				}

@@ -137,13 +137,13 @@ public class Grenade : MonoBehaviour
 				UnityEngine.Object.Destroy(base.gameObject);
 				return;
 			}
-			if (!mHasSweepTestCollided && base.rigidbody != null && base.rigidbody.velocity.sqrMagnitude > 100f)
+			if (!mHasSweepTestCollided && base.GetComponent<Rigidbody>() != null && base.GetComponent<Rigidbody>().velocity.sqrMagnitude > 100f)
 			{
-				Vector3 normalized = base.rigidbody.velocity.normalized;
+				Vector3 normalized = base.GetComponent<Rigidbody>().velocity.normalized;
 				RaycastHit hitInfo;
-				if (base.rigidbody.SweepTest(normalized, out hitInfo, base.rigidbody.velocity.magnitude * Time.fixedDeltaTime))
+				if (base.GetComponent<Rigidbody>().SweepTest(normalized, out hitInfo, base.GetComponent<Rigidbody>().velocity.magnitude * Time.fixedDeltaTime))
 				{
-					base.rigidbody.velocity = hitInfo.normal;
+					base.GetComponent<Rigidbody>().velocity = hitInfo.normal;
 					ProcessCollision();
 					mHasSweepTestCollided = true;
 				}
@@ -206,7 +206,7 @@ public class Grenade : MonoBehaviour
 		if (isFake)
 		{
 			mFlags |= Flags.Fake;
-			base.renderer.enabled = false;
+			base.GetComponent<Renderer>().enabled = false;
 		}
 		TrailRenderer component = GetComponent<TrailRenderer>();
 		TBFAssert.DoAssert(component != null, "Grenade prefab should have a Trail Renderer");
@@ -230,13 +230,13 @@ public class Grenade : MonoBehaviour
 		{
 			mOwnerCharacterType = mOwner.awareness.ChDefCharacterType;
 			mOwnerWasPlayerControlled = mOwner.behaviour.PlayerControlled;
-			if (mOwner.collider != null)
+			if (mOwner.GetComponent<Collider>() != null)
 			{
-				Physics.IgnoreCollision(base.collider, mOwner.collider);
+				Physics.IgnoreCollision(base.GetComponent<Collider>(), mOwner.GetComponent<Collider>());
 			}
 			if (mOwner.realCharacter.SimpleHitBounds != null)
 			{
-				Physics.IgnoreCollision(base.collider, mOwner.realCharacter.SimpleHitBounds.collider);
+				Physics.IgnoreCollision(base.GetComponent<Collider>(), mOwner.realCharacter.SimpleHitBounds.GetComponent<Collider>());
 			}
 		}
 		SetThrowingPosition(mOwner);
@@ -267,31 +267,31 @@ public class Grenade : MonoBehaviour
 		{
 			mOwnerCharacterType = mOwner.awareness.ChDefCharacterType;
 			mOwnerWasPlayerControlled = mOwner.behaviour.PlayerControlled;
-			if (mOwner.collider != null)
+			if (mOwner.GetComponent<Collider>() != null)
 			{
-				Physics.IgnoreCollision(base.collider, mOwner.collider);
+				Physics.IgnoreCollision(base.GetComponent<Collider>(), mOwner.GetComponent<Collider>());
 			}
 			if (mOwner.realCharacter.SimpleHitBounds != null)
 			{
-				Physics.IgnoreCollision(base.collider, mOwner.realCharacter.SimpleHitBounds.collider);
+				Physics.IgnoreCollision(base.GetComponent<Collider>(), mOwner.realCharacter.SimpleHitBounds.GetComponent<Collider>());
 			}
 		}
 		SetThrowingPosition(mOwner);
 		mDebugStart = base.transform.position;
 		mDebugDirection = direction;
-		if (base.rigidbody.IsSleeping())
+		if (base.GetComponent<Rigidbody>().IsSleeping())
 		{
-			base.rigidbody.WakeUp();
+			base.GetComponent<Rigidbody>().WakeUp();
 		}
 		float num = 20f;
-		base.rigidbody.velocity = num * direction;
+		base.GetComponent<Rigidbody>().velocity = num * direction;
 	}
 
 	public void Throw(Vector3 target)
 	{
-		if (base.rigidbody.IsSleeping())
+		if (base.GetComponent<Rigidbody>().IsSleeping())
 		{
-			base.rigidbody.WakeUp();
+			base.GetComponent<Rigidbody>().WakeUp();
 		}
 		float num = 1f;
 		float num2 = 1f;
@@ -301,7 +301,7 @@ public class Grenade : MonoBehaviour
 			num2 = 2f;
 		}
 		Vector3 velocity = new Vector3((target.x - base.transform.position.x) * num2 / num, (target.y + 0.5f * (0f - Physics.gravity.y) * (num * num) - base.transform.position.y) / num, (target.z - base.transform.position.z) * num2 / num);
-		base.rigidbody.velocity = velocity;
+		base.GetComponent<Rigidbody>().velocity = velocity;
 	}
 
 	public void SetThrowingPosition(Actor owner)

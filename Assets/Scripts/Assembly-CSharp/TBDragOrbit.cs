@@ -161,9 +161,9 @@ public class TBDragOrbit : MonoBehaviour
 		yaw = num2;
 		num2 = (IdealPitch = eulerAngles.x);
 		pitch = num2;
-		if ((bool)base.rigidbody)
+		if ((bool)base.GetComponent<Rigidbody>())
 		{
-			base.rigidbody.freezeRotation = true;
+			base.GetComponent<Rigidbody>().freezeRotation = true;
 		}
 		Apply();
 	}

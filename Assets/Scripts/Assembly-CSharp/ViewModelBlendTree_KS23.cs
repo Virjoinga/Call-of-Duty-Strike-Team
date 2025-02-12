@@ -30,13 +30,13 @@ public class ViewModelBlendTree_KS23 : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_KS23(GameObject weapon, WeaponCoreAnims coreAnims, KS23Anims specificAnims)
 	{
-		mHipsFire = weapon.animation.AddClipSafe(specificAnims.HipsFire, "HipsFire");
-		mSightsFire = weapon.animation.AddClipSafe(specificAnims.SightsFire, "SightsFire");
-		mReloadStart = weapon.animation.AddClipSafe(specificAnims.ReloadStart, "ReloadStart");
-		mReloadLoop = weapon.animation.AddClipSafe(specificAnims.ReloadLoop, "ReloadLoop");
-		mReloadEnd = weapon.animation.AddClipSafe(specificAnims.ReloadEnd, "ReloadEnd");
-		mHipsRechamber = weapon.animation.AddClipSafe(specificAnims.HipsCocking, "HipsCocking");
-		mSightsRechamber = weapon.animation.AddClipSafe(specificAnims.SightsCocking, "SightsCocking");
+		mHipsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsFire, "HipsFire");
+		mSightsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsFire, "SightsFire");
+		mReloadStart = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadStart, "ReloadStart");
+		mReloadLoop = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadLoop, "ReloadLoop");
+		mReloadEnd = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadEnd, "ReloadEnd");
+		mHipsRechamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsCocking, "HipsCocking");
+		mSightsRechamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsCocking, "SightsCocking");
 		mHipsFire.wrapMode = WrapMode.ClampForever;
 		mSightsFire.wrapMode = WrapMode.ClampForever;
 		mReloadStart.wrapMode = WrapMode.ClampForever;

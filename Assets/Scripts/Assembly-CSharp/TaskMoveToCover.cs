@@ -53,7 +53,7 @@ public class TaskMoveToCover : Task
 
 	private bool ignoreDodgeBecauseFPCanSeeUsAnyway;
 
-	private NavMeshHit myNavMeshHit;
+	private UnityEngine.AI.NavMeshHit myNavMeshHit;
 
 	private bool orderPopDown = true;
 

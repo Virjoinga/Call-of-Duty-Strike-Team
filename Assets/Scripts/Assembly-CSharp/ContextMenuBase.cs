@@ -161,8 +161,8 @@ public class ContextMenuBase : MonoBehaviour
 			for (int i = 0; i < mButtons.Length; i++)
 			{
 				UIButton button = mButtons[i].Button;
-				button.collider.enabled = !button.collider.enabled;
-				button.collider.enabled = !button.collider.enabled;
+				button.GetComponent<Collider>().enabled = !button.GetComponent<Collider>().enabled;
+				button.GetComponent<Collider>().enabled = !button.GetComponent<Collider>().enabled;
 			}
 		}
 	}

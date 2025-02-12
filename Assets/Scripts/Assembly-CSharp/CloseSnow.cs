@@ -100,7 +100,7 @@ public class CloseSnow : MonoBehaviour
 					transform = allCameras[0].transform;
 				}
 			}
-			return transform.camera;
+			return transform.GetComponent<Camera>();
 		}
 	}
 
@@ -147,7 +147,7 @@ public class CloseSnow : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		Object.DestroyImmediate(base.renderer.material);
+		Object.DestroyImmediate(base.GetComponent<Renderer>().material);
 	}
 
 	private void CreatePropertyBlock()
@@ -170,7 +170,7 @@ public class CloseSnow : MonoBehaviour
 
 	private IEnumerator Fade(bool _enable, float _fadeTime)
 	{
-		base.renderer.enabled = true;
+		base.GetComponent<Renderer>().enabled = true;
 		float start = m_snowAlpha;
 		float end = ((!_enable) ? 0f : 1f);
 		float time = 0f;
@@ -180,7 +180,7 @@ public class CloseSnow : MonoBehaviour
 			m_snowAlpha = Mathf.Lerp(start, end, Mathf.Min(time / _fadeTime, 1f));
 			yield return null;
 		}
-		base.renderer.enabled = _enable;
+		base.GetComponent<Renderer>().enabled = _enable;
 	}
 
 	public void Toggle(bool _enable, float _fadeTime)
@@ -189,7 +189,7 @@ public class CloseSnow : MonoBehaviour
 		{
 			if (m_numParticles > 0)
 			{
-				base.renderer.enabled = _enable;
+				base.GetComponent<Renderer>().enabled = _enable;
 			}
 		}
 		else
@@ -204,7 +204,7 @@ public class CloseSnow : MonoBehaviour
 		m_numParticles /= 4;
 		if (m_numParticles <= 0)
 		{
-			base.renderer.enabled = false;
+			base.GetComponent<Renderer>().enabled = false;
 			return;
 		}
 		Mesh mesh = new Mesh();
@@ -270,7 +270,7 @@ public class CloseSnow : MonoBehaviour
 		MeshFilter component = base.gameObject.GetComponent<MeshFilter>();
 		component.mesh = mesh;
 		mesh.bounds = new Bounds(Vector3.zero, new Vector3(100000000f, 100000000f, 100000000f));
-		base.renderer.enabled = true;
+		base.GetComponent<Renderer>().enabled = true;
 	}
 
 	private void LateUpdate()
@@ -286,13 +286,13 @@ public class CloseSnow : MonoBehaviour
 		Transform transform = cameraToUse.transform;
 		s_properties.Clear();
 		Vector3 forward = transform.forward;
-		s_properties.AddVector(g_cameraForward, new Vector4(forward.x, forward.y, forward.z, 0f));
+		s_properties.SetVector(g_cameraForward, new Vector4(forward.x, forward.y, forward.z, 0f));
 		Vector3 right = transform.right;
-		s_properties.AddVector(g_cameraRight, new Vector4(right.x, right.y, right.z, 0f));
+		s_properties.SetVector(g_cameraRight, new Vector4(right.x, right.y, right.z, 0f));
 		Vector3 up = transform.up;
-		s_properties.AddVector(g_cameraUp, new Vector4(up.x, up.y, up.z, 0f));
+		s_properties.SetVector(g_cameraUp, new Vector4(up.x, up.y, up.z, 0f));
 		Vector3 position = transform.position;
-		s_properties.AddVector(g_cameraPos, new Vector4(position.x, position.y, position.z, 1f));
+		s_properties.SetVector(g_cameraPos, new Vector4(position.x, position.y, position.z, 1f));
 		Vector3 vector = position - m_cameraPos;
 		m_cameraPos = position;
 		vector -= (vector - Vector3.Dot(vector, forward) * forward) * 0.5f;
@@ -301,11 +301,11 @@ public class CloseSnow : MonoBehaviour
 		{
 			float num = Mathf.Max(0f, Vector3.Dot(vector, forward));
 			Vector3 vector2 = num * forward;
-			s_properties.AddVector(g_cameraVel, new Vector4(vector2.x, vector2.y, vector2.z, 1f));
+			s_properties.SetVector(g_cameraVel, new Vector4(vector2.x, vector2.y, vector2.z, 1f));
 		}
 		else
 		{
-			s_properties.AddVector(g_cameraVel, new Vector4(vector.x, vector.y, vector.z, 1f));
+			s_properties.SetVector(g_cameraVel, new Vector4(vector.x, vector.y, vector.z, 1f));
 		}
 		float num2 = m_wrapSize * 0.5f;
 		float y = m_wrapSizeY * 0.5f;
@@ -315,9 +315,9 @@ public class CloseSnow : MonoBehaviour
 		Vector3 vector4 = new Vector3(vector3.x * num3, vector3.y * num4, vector3.z * num3);
 		Vector3 vector5 = new Vector3(Mathf.Floor(vector4.x), Mathf.Floor(vector4.y), Mathf.Floor(vector4.z));
 		Vector3 vector6 = ((!m_disableWrapOffset) ? (vector5 - vector4) : Vector3.zero);
-		s_properties.AddVector(g_closeSnowData, new Vector4(vector6.x, vector6.y, vector6.z, num3));
-		s_properties.AddVector(g_closeSnowData2, new Vector4(num4, m_wrapSizeY, 0f, 0f));
-		s_properties.AddVector(g_closeSnowOffset, new Vector4(vector3.x, vector3.y, vector3.z, m_wrapSize));
+		s_properties.SetVector(g_closeSnowData, new Vector4(vector6.x, vector6.y, vector6.z, num3));
+		s_properties.SetVector(g_closeSnowData2, new Vector4(num4, m_wrapSizeY, 0f, 0f));
+		s_properties.SetVector(g_closeSnowOffset, new Vector4(vector3.x, vector3.y, vector3.z, m_wrapSize));
 		bool flag = false;
 		if (GameController.Instance != null && GameController.Instance.mFirstPersonActor != null && GameController.Instance.mFirstPersonActor.realCharacter.Location != null)
 		{
@@ -375,9 +375,9 @@ public class CloseSnow : MonoBehaviour
 		}
 		float num6 = Mathf.Min(m_alpha, m_snowAlpha);
 		Vector4 value = new Vector4(m_snowAlpha - num6, num6, m_fowardRayCutoff * (0f - m_fadeScale), m_fadeScale);
-		s_properties.AddVector(g_closeSnowFade, value);
-		s_properties.AddVector(g_closeSnowWindData, new Vector4(m_windDirTime, m_windSpeed, m_windDirTime, m_windDirTime));
-		base.renderer.SetPropertyBlock(s_properties);
+		s_properties.SetVector(g_closeSnowFade, value);
+		s_properties.SetVector(g_closeSnowWindData, new Vector4(m_windDirTime, m_windSpeed, m_windDirTime, m_windDirTime));
+		base.GetComponent<Renderer>().SetPropertyBlock(s_properties);
 	}
 
 	public static void CutSceneWeatherSwitch(bool bOnOff)

@@ -265,12 +265,12 @@ public class CommonBackgroundBox : MonoBehaviour
 	{
 		if (Background == null)
 		{
-			Transform transform = base.transform.FindChild(mBackgroundName);
+			Transform transform = base.transform.Find(mBackgroundName);
 			Background = ((!(transform != null)) ? null : transform.GetComponent<Scale9Grid>());
 		}
 		if (Foreground == null)
 		{
-			Transform transform2 = base.transform.FindChild(mForegroundName);
+			Transform transform2 = base.transform.Find(mForegroundName);
 			Foreground = ((!(transform2 != null)) ? null : transform2.GetComponent<Scale9Grid>());
 			if (Foreground != null)
 			{
@@ -279,17 +279,17 @@ public class CommonBackgroundBox : MonoBehaviour
 		}
 		if (Title == null)
 		{
-			Transform transform3 = base.transform.FindChild(mTitleName);
+			Transform transform3 = base.transform.Find(mTitleName);
 			Title = ((!(transform3 != null)) ? null : transform3.GetComponent<BackgroundBoxHeader>());
 		}
 		if (Footer == null)
 		{
-			Transform transform4 = base.transform.FindChild(mFooterName);
+			Transform transform4 = base.transform.Find(mFooterName);
 			Footer = ((!(transform4 != null)) ? null : transform4.GetComponent<BackgroundBoxFooter>());
 		}
 		if (FooterDetail == null)
 		{
-			Transform transform5 = base.transform.FindChild(mFooterDetailName);
+			Transform transform5 = base.transform.Find(mFooterDetailName);
 			FooterDetail = ((!(transform5 != null)) ? null : transform5.GetComponent<BackgroundBoxFooterDetail>());
 		}
 	}

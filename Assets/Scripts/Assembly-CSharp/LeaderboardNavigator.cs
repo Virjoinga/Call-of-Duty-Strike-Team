@@ -106,7 +106,7 @@ public class LeaderboardNavigator : FrontEndScreen
 			AnimateCommonBackgroundBox componentInChildren = SidePanel.GetComponentInChildren<AnimateCommonBackgroundBox>();
 			if (componentInChildren != null)
 			{
-				mSideMenuContent = componentInChildren.transform.FindChild("Content");
+				mSideMenuContent = componentInChildren.transform.Find("Content");
 			}
 		}
 		base.Awake();

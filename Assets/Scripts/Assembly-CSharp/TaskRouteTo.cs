@@ -18,7 +18,7 @@ public class TaskRouteTo : Task
 
 	protected InheritableMovementParams mMoveParams;
 
-	protected NavMeshPath mPath;
+	protected UnityEngine.AI.NavMeshPath mPath;
 
 	private State state;
 
@@ -60,7 +60,7 @@ public class TaskRouteTo : Task
 		}
 		TBFAssert.DoAssert(mActor.navAgent != null, string.Format("Character '{0}' has no NavMeshAgent. Unable to move, will crash.", owner.name));
 		mNavZoneLayerMask = 1 << LayerMask.NameToLayer("NavZones");
-		mPath = new NavMeshPath();
+		mPath = new UnityEngine.AI.NavMeshPath();
 		mFailedToExitContainer = false;
 		ActorIdentIterator actorIdentIterator = new ActorIdentIterator(GKM.FriendsMask(mActor) & GKM.AliveMask & ~mActor.ident);
 		Actor a;
@@ -223,7 +223,7 @@ public class TaskRouteTo : Task
 			state = State.Done;
 			return;
 		}
-		if (mPath.status == NavMeshPathStatus.PathInvalid)
+		if (mPath.status == UnityEngine.AI.NavMeshPathStatus.PathInvalid)
 		{
 			state = State.Done;
 			return;

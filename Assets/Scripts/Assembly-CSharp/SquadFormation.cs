@@ -192,10 +192,10 @@ public static class SquadFormation
 		Vector3 result = desiredDestination;
 		if (soldier.navAgent.enabled)
 		{
-			NavMeshPath navMeshPath = new NavMeshPath();
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 			if (WorldHelper.CalculatePath_AvoidingMantlesWhenCarrying(soldier, desiredDestination, navMeshPath))
 			{
-				if (navMeshPath.status == NavMeshPathStatus.PathInvalid)
+				if (navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathInvalid)
 				{
 					result = soldier.GetPosition();
 				}
@@ -203,8 +203,8 @@ public static class SquadFormation
 			}
 			else
 			{
-				int navMeshLayerFromName = NavMesh.GetNavMeshLayerFromName("Default");
-				NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(desiredDestination, 1 << navMeshLayerFromName);
+				int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+				UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(desiredDestination, 1 << navMeshLayerFromName);
 				result = ((!navMeshHit.hit) ? soldier.GetPosition() : navMeshHit.position);
 			}
 		}
@@ -216,8 +216,8 @@ public static class SquadFormation
 		float num = float.MaxValue;
 		if (soldier.navAgent.enabled)
 		{
-			NavMeshPath navMeshPath = new NavMeshPath();
-			if (soldier.navAgent.CalculatePath(desiredDestination, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+			if (soldier.navAgent.CalculatePath(desiredDestination, navMeshPath) && navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 			{
 				num = 0f;
 				for (int i = 0; i < navMeshPath.corners.Length - 1; i++)

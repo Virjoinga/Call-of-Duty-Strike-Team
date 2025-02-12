@@ -28,9 +28,9 @@ public class GMGScorePanes : MonoBehaviour
 	private void Awake()
 	{
 		mPixelSize = CommonHelper.CalculatePixelSizeInWorldSpace(base.transform);
-		mMultiplierRoot = base.transform.FindChild("Multiplier");
-		mFriendScoreRoot = base.transform.FindChild("FriendScore");
-		mPlayerScoreRoot = base.transform.FindChild("PlayerScore");
+		mMultiplierRoot = base.transform.Find("Multiplier");
+		mFriendScoreRoot = base.transform.Find("FriendScore");
+		mPlayerScoreRoot = base.transform.Find("PlayerScore");
 		mNfi = GlobalizationUtils.GetNumberFormat(0);
 		mNfi.NumberDecimalDigits = 0;
 		UpdateVisibility();

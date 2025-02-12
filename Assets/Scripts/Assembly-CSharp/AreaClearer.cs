@@ -8,7 +8,7 @@ public class AreaClearer : MonoBehaviour
 
 	private float mEndTime;
 
-	private NavMeshAgent mNavAgent;
+	private UnityEngine.AI.NavMeshAgent mNavAgent;
 
 	private float mTime;
 
@@ -20,7 +20,7 @@ public class AreaClearer : MonoBehaviour
 
 	private void Start()
 	{
-		mNavAgent = base.gameObject.AddComponent<NavMeshAgent>();
+		mNavAgent = base.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
 		mNavAgent.radius = 0.05f;
 		mTime = 0f;
 		mStartPosition = base.transform.position;

@@ -209,9 +209,9 @@ public class PostProcessGFXInterface : MonoBehaviour
 		{
 			GameObject gameObject = new GameObject();
 			gameObject.name = "RefractionCamera";
-			gameObject.transform.parent = base.camera.transform;
+			gameObject.transform.parent = base.GetComponent<Camera>().transform;
 			RefractionCam = gameObject.AddComponent<Camera>();
-			RefractionCam.CopyFrom(base.camera);
+			RefractionCam.CopyFrom(base.GetComponent<Camera>());
 			RefractionCam.clearFlags = CameraClearFlags.Nothing;
 			RefractionCam.backgroundColor = Color.black;
 			RefractionCam.cullingMask = 1 << LayerMask.NameToLayer("Refraction");

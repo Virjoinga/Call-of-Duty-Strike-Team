@@ -261,9 +261,9 @@ public class SelectableMissionMarker : MonoBehaviour
 			num *= 12f;
 			component2.size = new Vector3(num, num, num);
 		}
-		Color color = Marker3d.renderer.material.GetColor("_Color");
+		Color color = Marker3d.GetComponent<Renderer>().material.GetColor("_Color");
 		color.a = GlobeSelect.GetPositionAlphaPos(base.transform.position);
-		Marker3d.renderer.material.SetColor("_Color", color);
+		Marker3d.GetComponent<Renderer>().material.SetColor("_Color", color);
 		if (Data == null || Data.FlashPointIndex < 0 || !(Blip != null))
 		{
 			return;

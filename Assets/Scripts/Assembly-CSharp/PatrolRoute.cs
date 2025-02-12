@@ -43,7 +43,7 @@ public class PatrolRoute : MonoBehaviour
 		}
 		CreateWanderer();
 		mWanderer.transform.position = PatrolPoints[0].transform.position;
-		NavMeshAgent navMeshAgent = mWanderer.AddComponent<NavMeshAgent>();
+		UnityEngine.AI.NavMeshAgent navMeshAgent = mWanderer.AddComponent<UnityEngine.AI.NavMeshAgent>();
 		ActorGenerator.ConfigureNavMeshAgent(navMeshAgent, 0f, true, 360f);
 		mPositions = new List<Vector3>();
 		for (int i = 0; i < PatrolPoints.Count; i++)
@@ -131,12 +131,12 @@ public class PatrolRoute : MonoBehaviour
 		trailRenderer.gameObject.layer = LayerMask.NameToLayer("StrategyViewModel");
 	}
 
-	private void PathfindBetweenPoints(NavMeshAgent navAgent, int startIndex, int destinationIndex)
+	private void PathfindBetweenPoints(UnityEngine.AI.NavMeshAgent navAgent, int startIndex, int destinationIndex)
 	{
 		navAgent.enabled = false;
 		mWanderer.transform.position = PatrolPoints[startIndex].transform.position;
 		navAgent.enabled = true;
-		NavMeshPath navMeshPath = new NavMeshPath();
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 		if (navAgent.CalculatePath(PatrolPoints[destinationIndex].transform.position, navMeshPath))
 		{
 			for (int i = 1; i < navMeshPath.corners.Length - 1; i++)

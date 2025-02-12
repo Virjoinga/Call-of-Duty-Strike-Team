@@ -126,8 +126,8 @@ public class AmmoDropManager : SingletonMonoBehaviour, iSwrveUpdatable
 				wait = 3f;
 			}
 			Vector3 pos = base.transform.position + Vector3.up;
-			NavMeshHit hit;
-			if (NavMesh.SamplePosition(actorNavPos, out hit, 10f, 1))
+			UnityEngine.AI.NavMeshHit hit;
+			if (UnityEngine.AI.NavMesh.SamplePosition(actorNavPos, out hit, 10f, 1))
 			{
 				pos = hit.position;
 			}

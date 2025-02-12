@@ -47,7 +47,7 @@ public class LoadoutEquipmentPanel : MenuScreenBlade
 		{
 			string text2 = AutoLocalize.Get(item.LongDescription);
 			SelectedItemDescription.Text = text2;
-			SelectedItemDescription.renderer.enabled = true;
+			SelectedItemDescription.GetComponent<UnityEngine.Renderer>().enabled = true;
 		}
 		char c = CommonHelper.HardCurrencySymbol();
 		if (SelectedItemCost != null)

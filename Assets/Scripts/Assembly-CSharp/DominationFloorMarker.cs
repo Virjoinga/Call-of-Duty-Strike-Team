@@ -23,7 +23,7 @@ public class DominationFloorMarker : MonoBehaviour
 	{
 		if (Beacon != null)
 		{
-			Beacon.renderer.material.color = Colour;
+			Beacon.GetComponent<Renderer>().material.color = Colour;
 		}
 	}
 }

@@ -92,9 +92,9 @@ public class MoviePlayer : MonoBehaviour
 		}
 		if (mVideoCamera != null)
 		{
-			if (mVideoCamera.renderer != null)
+			if (mVideoCamera.GetComponent<Renderer>() != null)
 			{
-				mVideoCamera.renderer.enabled = false;
+				mVideoCamera.GetComponent<Renderer>().enabled = false;
 			}
 			UnityEngine.Object.Destroy(mVideoCamera);
 		}
@@ -160,7 +160,7 @@ public class MoviePlayer : MonoBehaviour
 			MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
 			meshFilter.mesh = mesh;
 			MeshRenderer meshRenderer = gameObject.AddComponent<MeshRenderer>();
-			float startAudioVolume = ((!(base.audio != null)) ? 1f : 0f);
+			float startAudioVolume = ((!(base.GetComponent<AudioSource>() != null)) ? 1f : 0f);
 			mVideoTexture = gameObject.AddComponent<MediaPlayerCtrl>();
 			mVideoTexture.Load(MovieName + ".mp4", false, true, startAudioVolume);
 			Material material = new Material(Shader.Find("Unlit/Transparent"));
@@ -169,9 +169,9 @@ public class MoviePlayer : MonoBehaviour
 			MediaPlayerCtrl mediaPlayerCtrl = mVideoTexture;
 			mediaPlayerCtrl.videoDidStartEvent = (Action)Delegate.Combine(mediaPlayerCtrl.videoDidStartEvent, (Action)delegate
 			{
-				if (base.audio != null)
+				if (base.GetComponent<AudioSource>() != null)
 				{
-					base.audio.Play();
+					base.GetComponent<AudioSource>().Play();
 				}
 				mPlayTime = 0f;
 				if (hideAnimatedScreenBackground && AnimatedScreenBackground.Instance != null)

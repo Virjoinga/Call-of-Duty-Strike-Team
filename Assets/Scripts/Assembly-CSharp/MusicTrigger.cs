@@ -25,9 +25,9 @@ public class MusicTrigger : MonoBehaviour
 
 	private void SetTriggerActiveness(bool isActive)
 	{
-		if (base.collider != null)
+		if (base.GetComponent<Collider>() != null)
 		{
-			base.collider.enabled = isActive;
+			base.GetComponent<Collider>().enabled = isActive;
 		}
 	}
 
@@ -69,7 +69,7 @@ public class MusicTrigger : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (!(base.collider == null) && base.collider.enabled)
+		if (!(base.GetComponent<Collider>() == null) && base.GetComponent<Collider>().enabled)
 		{
 			Actor componentInChildren = other.gameObject.GetComponentInChildren<Actor>();
 			if (!(componentInChildren == null) && IsAnEnemy(componentInChildren) && !componentInChildren.realCharacter.IsDead())
@@ -81,7 +81,7 @@ public class MusicTrigger : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (!(base.collider == null) && base.collider.enabled)
+		if (!(base.GetComponent<Collider>() == null) && base.GetComponent<Collider>().enabled)
 		{
 			Actor componentInChildren = other.gameObject.GetComponentInChildren<Actor>();
 			if (!(componentInChildren == null) && IsAnEnemy(componentInChildren))
@@ -184,7 +184,7 @@ public class MusicTrigger : MonoBehaviour
 
 	public void OnDrawGizmoSelected()
 	{
-		BoxCollider boxCollider = base.collider as BoxCollider;
+		BoxCollider boxCollider = base.GetComponent<Collider>() as BoxCollider;
 		if (boxCollider != null && boxCollider.enabled)
 		{
 			Gizmos.matrix = base.transform.localToWorldMatrix;

@@ -149,7 +149,7 @@ public class WaypointMarkerManager : MonoBehaviour
 	{
 		foreach (KeyValuePair<GameObject, GameObject> mMarker in mMarkers)
 		{
-			Renderer componentInChildren = mMarker.Value.renderer;
+			Renderer componentInChildren = mMarker.Value.GetComponent<Renderer>();
 			if (componentInChildren == null)
 			{
 				componentInChildren = mMarker.Value.GetComponentInChildren<Renderer>();
@@ -167,7 +167,7 @@ public class WaypointMarkerManager : MonoBehaviour
 	{
 		foreach (KeyValuePair<GameObject, GameObject> mMarker in mMarkers)
 		{
-			Renderer componentInChildren = mMarker.Value.renderer;
+			Renderer componentInChildren = mMarker.Value.GetComponent<Renderer>();
 			if (componentInChildren == null)
 			{
 				componentInChildren = mMarker.Value.GetComponentInChildren<Renderer>();

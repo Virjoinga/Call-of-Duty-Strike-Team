@@ -22,7 +22,7 @@ public class RagdollCannon : MonoBehaviour
 			HitLocation[] bones = component.Ragdoll.Bones;
 			foreach (HitLocation hitLocation in bones)
 			{
-				hitLocation.rigidbody.AddExplosionForce(600f, base.transform.position - 10f * base.transform.up, 0f);
+				hitLocation.GetComponent<Rigidbody>().AddExplosionForce(600f, base.transform.position - 10f * base.transform.up, 0f);
 			}
 		}
 		mCountdown = 2.5f;

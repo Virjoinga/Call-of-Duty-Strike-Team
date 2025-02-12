@@ -197,7 +197,7 @@ public class SetPieceModule : MonoBehaviour
 	{
 		SPObjectReference sPObjectReference = ActorReferences[Index];
 		sPObjectReference.ObjectTransform = theObject.transform;
-		sPObjectReference.SetActorAnimation(theObject.animation);
+		sPObjectReference.SetActorAnimation(theObject.GetComponent<Animation>());
 		sPObjectReference.ActorRef = null;
 	}
 
@@ -379,8 +379,8 @@ public class SetPieceModule : MonoBehaviour
 				{
 					if (actorReference.ActorAnimation.IsPlaying(actorReference.CurrentAnim.name))
 					{
-						mAnimSpeeds.Add(actorReference.ActorAnimation.animation[actorReference.CurrentAnim.name].speed);
-						actorReference.ActorAnimation.animation[actorReference.CurrentAnim.name].speed = 0f;
+						mAnimSpeeds.Add(actorReference.ActorAnimation.GetComponent<Animation>()[actorReference.CurrentAnim.name].speed);
+						actorReference.ActorAnimation.GetComponent<Animation>()[actorReference.CurrentAnim.name].speed = 0f;
 					}
 					else
 					{
@@ -389,7 +389,7 @@ public class SetPieceModule : MonoBehaviour
 				}
 				else if (num < mAnimSpeeds.Count)
 				{
-					actorReference.ActorAnimation.animation[actorReference.CurrentAnim.name].speed = mAnimSpeeds[num];
+					actorReference.ActorAnimation.GetComponent<Animation>()[actorReference.CurrentAnim.name].speed = mAnimSpeeds[num];
 				}
 				else
 				{
@@ -586,8 +586,8 @@ public class SetPieceModule : MonoBehaviour
 		}
 		if (mCurrentCutIndex < CameraCutTimes.Count && ReferenceMesh != null)
 		{
-			AnimationClip clip = ReferenceMesh.animation.clip;
-			AnimationState animationState = ReferenceMesh.animation[clip.name];
+			AnimationClip clip = ReferenceMesh.GetComponent<Animation>().clip;
+			AnimationState animationState = ReferenceMesh.GetComponent<Animation>()[clip.name];
 			if (!(animationState != null))
 			{
 				return;
@@ -769,7 +769,7 @@ public class SetPieceModule : MonoBehaviour
 		if (GameObj != null)
 		{
 			SPObjectReference sPObjectReference = new SPObjectReference(SPObjectReference.SPObjectType.PlayerCharacter);
-			sPObjectReference.SetActorAnimation(GameObj.animation);
+			sPObjectReference.SetActorAnimation(GameObj.GetComponent<Animation>());
 			sPObjectReference.ObjectTransform = GameObj.transform;
 			sPObjectReference.Position = ReferenceMesh.transform.position;
 			if (Index == -1)

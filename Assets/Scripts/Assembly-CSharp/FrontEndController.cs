@@ -427,7 +427,7 @@ public class FrontEndController : SingletonMonoBehaviour
 		SetupScreen(new FrontEndScreenData(ScreenID.ContinueScreen, "S_MTX_HEAL_REVIVE", false, true, false, false, false, false));
 		SetupScreen(new FrontEndScreenData(ScreenID.BundleSelect, "S_CUSTOM_LOADOUT", true, true, false, true, false, false));
 		SetupScreen(new FrontEndScreenData(ScreenID.HUDEditScreen, string.Empty, false, false, false, false, false, false));
-		Transform transform = base.transform.FindChild("NewsTicker");
+		Transform transform = base.transform.Find("NewsTicker");
 		if (transform != null)
 		{
 			mNewsTicker = transform.GetComponent<MenuScreenBlade>();

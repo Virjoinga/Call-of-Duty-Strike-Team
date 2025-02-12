@@ -24,11 +24,11 @@ public class ViewModelBlendTree_Ballista : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_Ballista(GameObject weapon, WeaponCoreAnims coreAnims, BallistaAnims specificAnims)
 	{
-		mHipsFire = weapon.animation.AddClipSafe(specificAnims.HipsFire, "HipsFire");
-		mSightsFire = weapon.animation.AddClipSafe(specificAnims.SightsFire, "SightsFire");
-		mHipsChamber = weapon.animation.AddClipSafe(specificAnims.HipsChamber, "HipsChamber");
-		mSightsChamber = weapon.animation.AddClipSafe(specificAnims.SightsChamber, "SightsChamber");
-		mReload = weapon.animation.AddClipSafe(specificAnims.Reload, "Reload");
+		mHipsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsFire, "HipsFire");
+		mSightsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsFire, "SightsFire");
+		mHipsChamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsChamber, "HipsChamber");
+		mSightsChamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsChamber, "SightsChamber");
+		mReload = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.Reload, "Reload");
 		mReload.wrapMode = WrapMode.Once;
 		ViewModelRig.SetupEventData(out mReloadEventTimes, specificAnims.ReloadEmptyEvents, specificAnims.RechamberingEvents);
 	}

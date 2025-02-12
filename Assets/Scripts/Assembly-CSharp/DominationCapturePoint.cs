@@ -453,7 +453,7 @@ public class DominationCapturePoint : MonoBehaviour
 		}
 		for (num = 0; num < mEnemyCache.Count; num++)
 		{
-			OnTriggerExit(mEnemyCache[num].collider);
+			OnTriggerExit(mEnemyCache[num].GetComponent<Collider>());
 		}
 	}
 
@@ -508,7 +508,7 @@ public class DominationCapturePoint : MonoBehaviour
 
 	public void OnDrawGizmos()
 	{
-		BoxCollider boxCollider = base.collider as BoxCollider;
+		BoxCollider boxCollider = base.GetComponent<Collider>() as BoxCollider;
 		if (boxCollider != null)
 		{
 			Gizmos.matrix = base.transform.localToWorldMatrix;

@@ -100,10 +100,10 @@ public class Ragdoll : MonoBehaviour
 		HitLocation[] bones = Bones;
 		foreach (HitLocation hitLocation in bones)
 		{
-			if (hitLocation.rigidbody != null)
+			if (hitLocation.GetComponent<Rigidbody>() != null)
 			{
-				hitLocation.rigidbody.isKinematic = true;
-				hitLocation.rigidbody.interpolation = RigidbodyInterpolation.None;
+				hitLocation.GetComponent<Rigidbody>().isKinematic = true;
+				hitLocation.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.None;
 			}
 			hitLocation.transform.localPosition = Vector3.zero;
 			hitLocation.transform.localRotation = Quaternion.identity;
@@ -176,29 +176,29 @@ public class Ragdoll : MonoBehaviour
 		for (int j = 0; j < num; j++)
 		{
 			HitLocation hitLocation = Bones[j];
-			if (hitLocation.rigidbody != null)
+			if (hitLocation.GetComponent<Rigidbody>() != null)
 			{
-				hitLocation.rigidbody.isKinematic = false;
-				hitLocation.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-				hitLocation.rigidbody.freezeRotation = false;
-				hitLocation.rigidbody.constraints = RigidbodyConstraints.None;
-				hitLocation.rigidbody.detectCollisions = true;
-				hitLocation.rigidbody.gameObject.layer = layer;
+				hitLocation.GetComponent<Rigidbody>().isKinematic = false;
+				hitLocation.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
+				hitLocation.GetComponent<Rigidbody>().freezeRotation = false;
+				hitLocation.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+				hitLocation.GetComponent<Rigidbody>().detectCollisions = true;
+				hitLocation.GetComponent<Rigidbody>().gameObject.layer = layer;
 				if (mPreviousTransforms != null && mPreviousTransformsValid)
 				{
 					BoneTransform boneTransform = mPreviousTransforms[j];
-					hitLocation.rigidbody.velocity = (hitLocation.transform.position - boneTransform.Position) / Time.deltaTime;
-					hitLocation.rigidbody.angularVelocity = (float)Math.PI / 180f * (Quaternion.Inverse(boneTransform.Rotation) * hitLocation.transform.rotation).eulerAngles / Time.deltaTime;
+					hitLocation.GetComponent<Rigidbody>().velocity = (hitLocation.transform.position - boneTransform.Position) / Time.deltaTime;
+					hitLocation.GetComponent<Rigidbody>().angularVelocity = (float)Math.PI / 180f * (Quaternion.Inverse(boneTransform.Rotation) * hitLocation.transform.rotation).eulerAngles / Time.deltaTime;
 				}
 				else
 				{
 					if (flag)
 					{
-						hitLocation.rigidbody.velocity = mCachedActorRef.realCharacter.lastVelocity * 1.5f;
+						hitLocation.GetComponent<Rigidbody>().velocity = mCachedActorRef.realCharacter.lastVelocity * 1.5f;
 					}
 					if (hitLocation.Location == "Shield")
 					{
-						hitLocation.rigidbody.angularVelocity = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
+						hitLocation.GetComponent<Rigidbody>().angularVelocity = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
 					}
 				}
 			}
@@ -218,8 +218,8 @@ public class Ragdoll : MonoBehaviour
 		{
 			Bones[i].transform.position = other.Bones[i].transform.position;
 			Bones[i].transform.rotation = other.Bones[i].transform.rotation;
-			Bones[i].rigidbody.velocity = other.Bones[i].rigidbody.velocity;
-			Bones[i].rigidbody.angularVelocity = other.Bones[i].rigidbody.angularVelocity;
+			Bones[i].GetComponent<Rigidbody>().velocity = other.Bones[i].GetComponent<Rigidbody>().velocity;
+			Bones[i].GetComponent<Rigidbody>().angularVelocity = other.Bones[i].GetComponent<Rigidbody>().angularVelocity;
 			if (mPreviousTransformsValid)
 			{
 				mPreviousTransforms[i].Position = other.mPreviousTransforms[i].Position;
@@ -254,7 +254,7 @@ public class Ragdoll : MonoBehaviour
 			Bones[i].Bone.rotation = Bones[i].transform.rotation;
 			if (Bones[i].Location != "Shield")
 			{
-				Bones[i].rigidbody.drag = drag;
+				Bones[i].GetComponent<Rigidbody>().drag = drag;
 			}
 		}
 	}
@@ -264,7 +264,7 @@ public class Ragdoll : MonoBehaviour
 		bool flag = true;
 		for (int i = 0; i < Bones.Length; i++)
 		{
-			if (!Bones[i].rigidbody.IsSleeping())
+			if (!Bones[i].GetComponent<Rigidbody>().IsSleeping())
 			{
 				flag = false;
 				mSleepPreviousFrameCount = 0;
@@ -276,7 +276,7 @@ public class Ragdoll : MonoBehaviour
 			float drag = 0f;
 			if (Pelvis != null)
 			{
-				float sqrMagnitude = Pelvis.rigidbody.velocity.sqrMagnitude;
+				float sqrMagnitude = Pelvis.GetComponent<Rigidbody>().velocity.sqrMagnitude;
 				if (sqrMagnitude > 0f && sqrMagnitude < 0.05f)
 				{
 					drag = 10f;
@@ -451,7 +451,7 @@ public class Ragdoll : MonoBehaviour
 			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			rigidbody.mass = hitLocation.Mass;
 			dictionary[hitLocation.Location] = rigidbody;
-			hitLocation.collider.enabled = true;
+			hitLocation.GetComponent<Collider>().enabled = true;
 			rigidbody.detectCollisions = false;
 		}
 		bodiesCache = dictionary;
@@ -477,10 +477,10 @@ public class Ragdoll : MonoBehaviour
 				configurableJoint.angularXMotion = ConfigurableJointMotion.Limited;
 				configurableJoint.angularYMotion = ConfigurableJointMotion.Limited;
 				configurableJoint.angularZMotion = ConfigurableJointMotion.Limited;
-				configurableJoint.lowAngularXLimit = ActorGenerator.CreateSoftJointStructure(constraint.LowerAngularXLimit);
+				/*configurableJoint.lowAngularXLimit = ActorGenerator.CreateSoftJointStructure(constraint.LowerAngularXLimit);
 				configurableJoint.highAngularXLimit = ActorGenerator.CreateSoftJointStructure(constraint.UpperAngularXLimit);
 				configurableJoint.angularYLimit = ActorGenerator.CreateSoftJointStructure(constraint.AngularYLimit);
-				configurableJoint.angularZLimit = ActorGenerator.CreateSoftJointStructure(constraint.AngularZLimit);
+				configurableJoint.angularZLimit = ActorGenerator.CreateSoftJointStructure(constraint.AngularZLimit);*/
 			}
 		}
 	}

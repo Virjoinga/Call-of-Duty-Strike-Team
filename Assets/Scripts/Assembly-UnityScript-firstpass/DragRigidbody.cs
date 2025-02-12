@@ -122,8 +122,8 @@ public class DragRigidbody : MonoBehaviour
 			if (!springJoint)
 			{
 				GameObject gameObject = new GameObject("Rigidbody dragger");
-				Rigidbody rigidbody = gameObject.AddComponent("Rigidbody") as Rigidbody;
-				springJoint = (SpringJoint)gameObject.AddComponent("SpringJoint");
+				Rigidbody rigidbody = gameObject.AddComponent<Rigidbody>() as Rigidbody;
+				springJoint = (SpringJoint)gameObject.AddComponent<SpringJoint>();
 				rigidbody.isKinematic = true;
 			}
 			springJoint.transform.position = hitInfo.point;
@@ -152,7 +152,7 @@ public class DragRigidbody : MonoBehaviour
 
 	public virtual Camera FindCamera()
 	{
-		return (!camera) ? Camera.main : camera;
+		return (!GetComponent<Camera>()) ? Camera.main : GetComponent<Camera>();
 	}
 
 	public virtual void Main()

@@ -235,10 +235,10 @@ public class ScreenWipe : MonoBehaviour
 		if (!shape)
 		{
 			GameObject gobjShape = new GameObject("Shape");
-			gobjShape.AddComponent("MeshFilter");
-			gobjShape.AddComponent("MeshRenderer");
+			gobjShape.AddComponent<MeshFilter>();
+			gobjShape.AddComponent<MeshRenderer>();
 			shape = gobjShape.transform;
-			shape.renderer.material = shapeMaterial;
+			shape.GetComponent<Renderer>().material = shapeMaterial;
 		}
 		CameraSetup(cam1, cam2, true, false);
 		Camera useCam = ((zoom != ZoomType.Shrink) ? cam2 : cam1);
@@ -372,12 +372,12 @@ public class ScreenWipe : MonoBehaviour
 		Debug.Log("InitializeDreamWipe here!");
 		planeMaterial = new Material("Shader \"Unlit2Pass\" {Properties {\t_Color (\"Main Color\", Color) = (1,1,1,1)\t_Tex1 (\"Base\", Rect) = \"white\" {}\t_Tex2 (\"Base\", Rect) = \"white\" {}}Category {\tZWrite Off Alphatest Greater 0 ColorMask RGB Lighting Off\tTags {\"Queue\"=\"Transparent\" \"IgnoreProjector\"=\"True\" \"RenderType\"=\"Transparent\"}\tBlend SrcAlpha OneMinusSrcAlpha\tSubShader {\t\tPass {SetTexture [_Tex2]}\t\tPass {SetTexture [_Tex1] {constantColor [_Color] Combine texture * constant, texture * constant}}\t}}}");
 		plane = new GameObject("Plane");
-		plane.AddComponent("MeshFilter");
-		plane.AddComponent("MeshRenderer");
-		plane.renderer.material = planeMaterial;
-		plane.renderer.castShadows = false;
-		plane.renderer.receiveShadows = false;
-		plane.renderer.enabled = false;
+		plane.AddComponent<MeshFilter>();
+		plane.AddComponent<MeshRenderer>();
+		plane.GetComponent<Renderer>().material = planeMaterial;
+		plane.GetComponent<Renderer>().castShadows = false;
+		plane.GetComponent<Renderer>().receiveShadows = false;
+		plane.GetComponent<Renderer>().enabled = false;
 		Mesh mesh = new Mesh();
 		plane.GetComponent<MeshFilter>().mesh = mesh;
 		planeResolution = Mathf.Clamp(planeResolution, 1, 16380);
@@ -454,7 +454,7 @@ public class ScreenWipe : MonoBehaviour
 		plane.transform.Translate(Vector3.forward * (cam2Clone.nearClipPlane + 5E-05f));
 		cam2Clone.transform.Translate(Vector3.forward * -1f);
 		cam2Clone.transform.parent = cam2.transform;
-		plane.renderer.enabled = true;
+		plane.GetComponent<Renderer>().enabled = true;
 		float scale = 0f;
 		Mesh planeMesh = plane.GetComponent<MeshFilter>().mesh;
 		cam1.targetTexture = renderTex;
@@ -474,7 +474,7 @@ public class ScreenWipe : MonoBehaviour
 		}
 		Debug.Log("DreamWipe() finished");
 		CameraCleanup(cam1, cam2);
-		plane.renderer.enabled = false;
+		plane.GetComponent<Renderer>().enabled = false;
 		plane.transform.parent = null;
 		UnityEngine.Object.Destroy(cam2Clone.gameObject);
 		RenderTexture targetTexture = (cam2.targetTexture = null);

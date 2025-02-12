@@ -390,7 +390,7 @@ public class UnitsInVolumeObjective : MissionObjective
 
 	public void OnDrawGizmos()
 	{
-		BoxCollider boxCollider = base.collider as BoxCollider;
+		BoxCollider boxCollider = base.GetComponent<Collider>() as BoxCollider;
 		if (boxCollider != null)
 		{
 			Gizmos.matrix = base.transform.localToWorldMatrix;

@@ -69,7 +69,7 @@ public class SpriteMesh_Managed : IEZLinkedListItem<SpriteMesh_Managed>, ISprite
 		set
 		{
 			m_manager = value;
-			m_material = m_manager.renderer.sharedMaterial;
+			m_material = m_manager.GetComponent<Renderer>().sharedMaterial;
 			if (m_material != null)
 			{
 				m_texture = m_material.GetTexture("_MainTex");

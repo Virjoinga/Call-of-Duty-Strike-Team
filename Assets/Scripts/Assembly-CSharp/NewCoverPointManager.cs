@@ -137,8 +137,8 @@ public class NewCoverPointManager : MonoBehaviour
 
 	private void Start()
 	{
-		walkableMaskNoDoors |= 1 << NavMesh.GetNavMeshLayerFromName("Default");
-		walkableMaskNoDoors |= 1 << NavMesh.GetNavMeshLayerFromName("Jump");
+		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
 		CoverPointCore[] array = coverPoints;
 		foreach (CoverPointCore coverPointCore in array)
 		{
@@ -490,8 +490,8 @@ public class NewCoverPointManager : MonoBehaviour
 		routeMatrix_footprint = 0;
 		walkableMask = -1;
 		walkableMaskNoDoors = 0;
-		walkableMaskNoDoors |= 1 << NavMesh.GetNavMeshLayerFromName("Default");
-		walkableMaskNoDoors |= 1 << NavMesh.GetNavMeshLayerFromName("Jump");
+		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
 		baked = ScriptableObject.CreateInstance<NewCoverPointBakedData>();
 		PerformSpeedTests();
 		Savings = 0;
@@ -712,7 +712,7 @@ public class NewCoverPointManager : MonoBehaviour
 				ray.direction = coverPoints[i].snappedNormal * -1f;
 				bool flag = false;
 				float num4 = num;
-				NavMeshHit hit;
+				UnityEngine.AI.NavMeshHit hit;
 				for (int j = 0; j < num3; j++)
 				{
 					ray.origin = coverPoints[i].gamePos + vector + vector2 * num;
@@ -720,7 +720,7 @@ public class NewCoverPointManager : MonoBehaviour
 					{
 						if (num4 == num && ClearToShootOver(coverPoints[i].snappedPos + vector2 * num))
 						{
-							num4 = ((!NavMesh.SamplePosition(ray.origin, out hit, 1f, -1) || !(Mathf.Abs(hit.position.y - coverPoints[i].gamePos.y) < 0.3f) || !((hit.position - ray.origin).xz().sqrMagnitude < 0.0025f)) ? (num4 - 0.2f) : (num4 + 0.2f));
+							num4 = ((!UnityEngine.AI.NavMesh.SamplePosition(ray.origin, out hit, 1f, -1) || !(Mathf.Abs(hit.position.y - coverPoints[i].gamePos.y) < 0.3f) || !((hit.position - ray.origin).xz().sqrMagnitude < 0.0025f)) ? (num4 - 0.2f) : (num4 + 0.2f));
 						}
 						num += 0.2f;
 						continue;
@@ -763,7 +763,7 @@ public class NewCoverPointManager : MonoBehaviour
 					{
 						if (num5 == num && ClearToShootOver(coverPoints[i].snappedPos + vector2 * num))
 						{
-							num5 = ((!NavMesh.SamplePosition(ray.origin, out hit, 1f, -1) || !(Mathf.Abs(hit.position.y - coverPoints[i].gamePos.y) < 0.3f) || !((hit.position - ray.origin).xz().sqrMagnitude < 0.0025f)) ? (num5 + 0.2f) : (num5 - 0.2f));
+							num5 = ((!UnityEngine.AI.NavMesh.SamplePosition(ray.origin, out hit, 1f, -1) || !(Mathf.Abs(hit.position.y - coverPoints[i].gamePos.y) < 0.3f) || !((hit.position - ray.origin).xz().sqrMagnitude < 0.0025f)) ? (num5 + 0.2f) : (num5 - 0.2f));
 						}
 						num -= 0.2f;
 						continue;
@@ -1139,7 +1139,7 @@ public class NewCoverPointManager : MonoBehaviour
 									num3 |= (uint)(1 << i);
 									if (gameObject != null)
 									{
-										gameObject.renderer.material.color = Color.red;
+										gameObject.GetComponent<Renderer>().material.color = Color.red;
 									}
 								}
 								continue;
@@ -1155,7 +1155,7 @@ public class NewCoverPointManager : MonoBehaviour
 								num3 |= (uint)(1 << i);
 								if (gameObject != null)
 								{
-									gameObject.renderer.material.color = Color.green;
+									gameObject.GetComponent<Renderer>().material.color = Color.green;
 								}
 							}
 						}
@@ -1194,8 +1194,8 @@ public class NewCoverPointManager : MonoBehaviour
 					{
 						continue;
 					}
-					NavMeshPath navMeshPath = new NavMeshPath();
-					NavMesh.CalculatePath(coverPoints[i].gamePos, coverPoints[num2].gamePos, walkableMask, navMeshPath);
+					UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+					UnityEngine.AI.NavMesh.CalculatePath(coverPoints[i].gamePos, coverPoints[num2].gamePos, walkableMask, navMeshPath);
 					int num3 = 0;
 					if (navMeshPath.corners.Length < 2)
 					{
@@ -1744,7 +1744,7 @@ public class NewCoverPointManager : MonoBehaviour
 			{ 2, 2 }
 		};
 		RaycastHit hitInfo;
-		NavMeshHit hit;
+		UnityEngine.AI.NavMeshHit hit;
 		for (int j = 0; j <= baked.coverGridXDim; j++)
 		{
 			ShowProgressBar("Creating Cover Grid (2/6: Fine Gridding)", (float)j / (float)baked.coverGridXDim, false);
@@ -1759,7 +1759,7 @@ public class NewCoverPointManager : MonoBehaviour
 				{
 					gridPos[j, k] = hitInfo.point;
 				}
-				if (NavMesh.SamplePosition(gridPos[j, k], out hit, 1f, -1))
+				if (UnityEngine.AI.NavMesh.SamplePosition(gridPos[j, k], out hit, 1f, -1))
 				{
 					gridPos[j, k] = hit.position;
 					array2[j, k] = hit.mask;
@@ -1836,7 +1836,7 @@ public class NewCoverPointManager : MonoBehaviour
 							origin.y = gridPos[j + m, k + n].y + 1f;
 							ray.direction = Vector3.down;
 							ray.origin = origin;
-							if (Physics.Raycast(ray, out hitInfo, 150f, defaultLayerMask) && NavMesh.SamplePosition(hitInfo.point, out hit, 1f, -1) && Mathf.Abs(hit.position.y - gridPos[j, k].y) > 0.1f)
+							if (Physics.Raycast(ray, out hitInfo, 150f, defaultLayerMask) && UnityEngine.AI.NavMesh.SamplePosition(hitInfo.point, out hit, 1f, -1) && Mathf.Abs(hit.position.y - gridPos[j, k].y) > 0.1f)
 							{
 								gridPos[j, k] = hit.position;
 								n = 2;
@@ -1847,7 +1847,7 @@ public class NewCoverPointManager : MonoBehaviour
 									gameObject2 = (GameObject)Object.Instantiate(gameObject);
 									gameObject2.name += "Spreading ran out of iterations here";
 									gameObject2.transform.position = hit.position;
-									gameObject2.renderer.material.color = Color.red;
+									gameObject2.GetComponent<Renderer>().material.color = Color.red;
 								}
 								break;
 							}
@@ -2151,8 +2151,8 @@ public class NewCoverPointManager : MonoBehaviour
 
 	private float CalcNavMeshDistance(Vector3 fr, Vector3 to, out Vector2 vagueDir, int navMeshMask)
 	{
-		NavMeshPath navMeshPath = new NavMeshPath();
-		NavMesh.CalculatePath(fr, to, navMeshMask, navMeshPath);
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+		UnityEngine.AI.NavMesh.CalculatePath(fr, to, navMeshMask, navMeshPath);
 		float num = 0f;
 		vagueDir = Vector2.zero;
 		if (navMeshPath.corners.GetLength(0) < 2 || navMeshPath.status != 0)
@@ -2264,9 +2264,9 @@ public class NewCoverPointManager : MonoBehaviour
 
 	private int FindOutWhichDoorsNeedToBeOpen(Vector3 fr, Vector3 to)
 	{
-		NavMeshPath navMeshPath = new NavMeshPath();
+		UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
 		int num = walkableMaskNoDoors;
-		NavMesh.CalculatePath(fr, to, walkableMaskNoDoors, navMeshPath);
+		UnityEngine.AI.NavMesh.CalculatePath(fr, to, walkableMaskNoDoors, navMeshPath);
 		if (navMeshPath.status != 0)
 		{
 			float num2 = CalculatePathLength(navMeshPath);
@@ -2275,8 +2275,8 @@ public class NewCoverPointManager : MonoBehaviour
 				int num4 = num | (1 << num3);
 				if (num4 != num)
 				{
-					NavMesh.CalculatePath(fr, to, num4, navMeshPath);
-					if (navMeshPath.status == NavMeshPathStatus.PathComplete)
+					UnityEngine.AI.NavMesh.CalculatePath(fr, to, num4, navMeshPath);
+					if (navMeshPath.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
 					{
 						return num4;
 					}
@@ -2294,7 +2294,7 @@ public class NewCoverPointManager : MonoBehaviour
 		return 0;
 	}
 
-	private float CalculatePathLength(NavMeshPath path)
+	private float CalculatePathLength(UnityEngine.AI.NavMeshPath path)
 	{
 		float num = 0f;
 		for (int i = 0; i < path.corners.GetLength(0) - 1; i++)

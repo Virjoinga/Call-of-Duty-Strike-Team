@@ -210,8 +210,8 @@ public class TaskMoveTo : Task
 		case State.GoingThroughDoor:
 		{
 			int num = 0;
-			num |= 1 << (NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
-			NavMeshHit hit;
+			num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
+			UnityEngine.AI.NavMeshHit hit;
 			if (mActor.navAgent.SamplePathPosition(num, 9f, out hit))
 			{
 				pendingDoor = DoorNavigator.GetNavigatorFromLayerMask(hit.mask, hit.position);
@@ -291,8 +291,8 @@ public class TaskMoveTo : Task
 			return;
 		}
 		int num = 0;
-		num |= 1 << (NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
-		NavMeshHit hit;
+		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
+		UnityEngine.AI.NavMeshHit hit;
 		if (!mActor.navAgent.SamplePathPosition(num, 9f, out hit))
 		{
 			return;

@@ -24,7 +24,7 @@ public class HudHeartBeatHealth : MonoBehaviour
 	{
 		int animFrameForHealth = ColourChart.GetAnimFrameForHealth(health);
 		bar.SetFrame(0, animFrameForHealth);
-		bar.renderer.material.color = Color.white;
+		bar.GetComponent<Renderer>().material.color = Color.white;
 		if (mPreviousHealthLevel != (float)animFrameForHealth)
 		{
 			SoundManager.Instance.ForceHealthFilterOntoExistingSFX((int)mPreviousHealthLevel);
@@ -60,10 +60,10 @@ public class HudHeartBeatHealth : MonoBehaviour
 		{
 			num3 = 0;
 		}
-		Color color = BeatBars[num3].renderer.material.color;
+		Color color = BeatBars[num3].GetComponent<Renderer>().material.color;
 		color.a = 1f - mBeatProgress * 4f;
 		color.a = Mathf.Clamp01(color.a);
-		BeatBars[num3].renderer.material.color = color;
+		BeatBars[num3].GetComponent<Renderer>().material.color = color;
 	}
 
 	public void SetupForNewUnit(Actor actor)

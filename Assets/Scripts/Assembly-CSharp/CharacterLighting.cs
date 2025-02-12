@@ -70,7 +70,7 @@ public class CharacterLighting : MonoBehaviour
 			}
 			if (LightmapSettings.lightProbes != null && ProbeAnchor != null)
 			{
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(ProbeAnchor.position, Renderers[0], mCoefficientTemp);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(ProbeAnchor.position, Renderers[0], mCoefficientTemp);
 			}
 			else
 			{

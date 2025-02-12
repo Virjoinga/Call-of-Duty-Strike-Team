@@ -697,18 +697,18 @@ public abstract class AutoSpriteBase : SpriteBase, ISpriteAggregator, ISpritePac
 			{
 				if (manager != null)
 				{
-					return manager.renderer.sharedMaterial;
+					return manager.GetComponent<Renderer>().sharedMaterial;
 				}
 				errString = "Sprite \"" + base.name + "\" is not associated with a SpriteManager, and can therefore not be included in the atlas build.";
 				return null;
 			}
-			return base.renderer.sharedMaterial;
+			return base.GetComponent<Renderer>().sharedMaterial;
 		}
 		if (managed)
 		{
 			if (manager != null)
 			{
-				return manager.renderer.sharedMaterial;
+				return manager.GetComponent<Renderer>().sharedMaterial;
 			}
 			errString = "Sprite \"" + base.name + "\" is not associated with a SpriteManager, and can therefore not be included in the atlas build.";
 			return null;
@@ -751,7 +751,7 @@ public abstract class AutoSpriteBase : SpriteBase, ISpriteAggregator, ISpritePac
 		spriteFrames = list2.ToArray();
 	}
 
-	virtual void ISpriteAggregator.SetUVs(Rect uvs)
+	/*virtual void ISpriteAggregator.SetUVs(Rect uvs)
 	{
 		SetUVs(uvs);
 	}
@@ -779,5 +779,5 @@ public abstract class AutoSpriteBase : SpriteBase, ISpriteAggregator, ISpritePac
 	virtual void ISpritePackable.set_Color(Color value)
 	{
 		base.Color = value;
-	}
+	}*/
 }

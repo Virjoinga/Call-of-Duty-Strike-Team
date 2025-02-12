@@ -45,7 +45,7 @@ public class ViewConeEffect : MonoBehaviour
 			new Vector3(0f - x, y, 0f)
 		};
 		mMesh.vertices = vertices;
-		mMesh.Optimize();
+		;
 		MeshFilter meshFilter = base.gameObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
 		meshFilter.mesh = mMesh;
 		mRend = base.gameObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;

@@ -37,7 +37,7 @@ public class NavGateManager : MonoBehaviour
 		m_NavGates.Remove(navGate);
 	}
 
-	public void SetGatesOnNavAgent(NavMeshAgent agent, bool isnpc, FactionHelper.Category faction)
+	public void SetGatesOnNavAgent(UnityEngine.AI.NavMeshAgent agent, bool isnpc, FactionHelper.Category faction)
 	{
 		foreach (NavGate navGate in m_NavGates)
 		{

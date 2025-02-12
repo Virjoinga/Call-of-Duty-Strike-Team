@@ -81,7 +81,7 @@ public class MysteryCache : MonoBehaviour
 				mCratePlayer.enabled = false;
 				mCratePlayer.enabled = true;
 				mCratePlayer.Play(mOpenBoxClip.name);
-				mCratePlayer.animation[mOpenBoxClip.name].speed = -1f;
+				mCratePlayer.GetComponent<Animation>()[mOpenBoxClip.name].speed = -1f;
 			}
 			else
 			{
@@ -95,7 +95,7 @@ public class MysteryCache : MonoBehaviour
 			Component[] array = componentsInChildren;
 			foreach (Component component2 in array)
 			{
-				if (!component2.rigidbody && !component2.gameObject.isStatic)
+				if (!component2.GetComponent<Rigidbody>() && !component2.gameObject.isStatic)
 				{
 					Rigidbody rigidbody = component2.gameObject.AddComponent<Rigidbody>();
 					rigidbody.isKinematic = true;
@@ -155,7 +155,7 @@ public class MysteryCache : MonoBehaviour
 		if (mOpenBoxClip != null)
 		{
 			mCratePlayer.Play(mOpenBoxClip.name);
-			mCratePlayer.animation[mOpenBoxClip.name].speed = -1f;
+			mCratePlayer.GetComponent<Animation>()[mOpenBoxClip.name].speed = -1f;
 		}
 		mActive = false;
 	}
@@ -169,7 +169,7 @@ public class MysteryCache : MonoBehaviour
 		if (mOpenBoxClip != null)
 		{
 			mCratePlayer.Play(mOpenBoxClip.name);
-			AnimationState animationState = mCratePlayer.animation[mOpenBoxClip.name];
+			AnimationState animationState = mCratePlayer.GetComponent<Animation>()[mOpenBoxClip.name];
 			if (animationState != null)
 			{
 				animationState.time = animationState.length;

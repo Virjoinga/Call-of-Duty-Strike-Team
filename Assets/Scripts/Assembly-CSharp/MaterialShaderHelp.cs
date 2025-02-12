@@ -17,15 +17,15 @@ public class MaterialShaderHelp : MonoBehaviour
 		for (int i = 0; i < array.Length; i++)
 		{
 			MeshRenderer meshRenderer = (MeshRenderer)array[i];
-			if (meshRenderer.renderer.material.shader == shader)
+			if (meshRenderer.GetComponent<Renderer>().material.shader == shader)
 			{
 				Debug.LogWarning("Slow shader found " + shader.ToString() + ", please convert to " + shader4.ToString());
 			}
-			if (meshRenderer.renderer.material.shader == shader3)
+			if (meshRenderer.GetComponent<Renderer>().material.shader == shader3)
 			{
 				Debug.LogWarning("Slow shader found " + shader3.ToString() + ", please convert to " + shader5.ToString());
 			}
-			if (meshRenderer.renderer.material.shader == shader2)
+			if (meshRenderer.GetComponent<Renderer>().material.shader == shader2)
 			{
 				Debug.LogWarning("Slow shader found " + shader2.ToString() + ", please convert to " + shader5.ToString());
 			}

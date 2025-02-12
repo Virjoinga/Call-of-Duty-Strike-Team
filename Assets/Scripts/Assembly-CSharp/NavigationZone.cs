@@ -58,7 +58,7 @@ public class NavigationZone : MonoBehaviour
 		{
 			return;
 		}
-		Transform transform = base.transform.FindChild("OffLinks");
+		Transform transform = base.transform.Find("OffLinks");
 		if (transform == null)
 		{
 			return;
@@ -77,14 +77,14 @@ public class NavigationZone : MonoBehaviour
 
 	public void EnableLinks()
 	{
-		Transform transform = base.transform.FindChild("OffLinks");
+		Transform transform = base.transform.Find("OffLinks");
 		if (transform == null)
 		{
 			transform = base.transform;
 		}
 		foreach (Transform item in transform)
 		{
-			OffMeshLink component = item.GetComponent<OffMeshLink>();
+			UnityEngine.AI.OffMeshLink component = item.GetComponent<UnityEngine.AI.OffMeshLink>();
 			if (component != null)
 			{
 				component.activated = true;
@@ -188,7 +188,7 @@ public class NavigationZone : MonoBehaviour
 
 	public Transform GetReferenceTransform(Vector3 vDetailedPosition)
 	{
-		Transform transform = base.transform.FindChild("ReferenceMesh");
+		Transform transform = base.transform.Find("ReferenceMesh");
 		if (transform != null)
 		{
 			return transform;
@@ -198,7 +198,7 @@ public class NavigationZone : MonoBehaviour
 
 	public void GetReferencePositionRotation(Vector3 vDetailedPosition, out Vector3 pos, out Quaternion rot)
 	{
-		Transform transform = base.transform.FindChild("ReferenceMesh");
+		Transform transform = base.transform.Find("ReferenceMesh");
 		if (transform == null)
 		{
 			transform = base.transform;

@@ -142,42 +142,42 @@ public class Detonator : MonoBehaviour
 		}
 		if (!_fireball && autoCreateFireball)
 		{
-			_fireball = base.gameObject.AddComponent("DetonatorFireball") as DetonatorFireball;
+			_fireball = base.gameObject.AddComponent<DetonatorFireball>() as DetonatorFireball;
 			_fireball.Reset();
 		}
 		if (!_smoke && autoCreateSmoke)
 		{
-			_smoke = base.gameObject.AddComponent("DetonatorSmoke") as DetonatorSmoke;
+			_smoke = base.gameObject.AddComponent<DetonatorSmoke>() as DetonatorSmoke;
 			_smoke.Reset();
 		}
 		if (!_sparks && autoCreateSparks)
 		{
-			_sparks = base.gameObject.AddComponent("DetonatorSparks") as DetonatorSparks;
+			_sparks = base.gameObject.AddComponent<DetonatorSparks>() as DetonatorSparks;
 			_sparks.Reset();
 		}
 		if (!_shockwave && autoCreateShockwave)
 		{
-			_shockwave = base.gameObject.AddComponent("DetonatorShockwave") as DetonatorShockwave;
+			_shockwave = base.gameObject.AddComponent<DetonatorShockwave>() as DetonatorShockwave;
 			_shockwave.Reset();
 		}
 		if (!_glow && autoCreateGlow)
 		{
-			_glow = base.gameObject.AddComponent("DetonatorGlow") as DetonatorGlow;
+			_glow = base.gameObject.AddComponent<DetonatorGlow>() as DetonatorGlow;
 			_glow.Reset();
 		}
 		if (!_light && autoCreateLight)
 		{
-			_light = base.gameObject.AddComponent("DetonatorLight") as DetonatorLight;
+			_light = base.gameObject.AddComponent<DetonatorLight>() as DetonatorLight;
 			_light.Reset();
 		}
 		if (!_force && autoCreateForce)
 		{
-			_force = base.gameObject.AddComponent("DetonatorForce") as DetonatorForce;
+			_force = base.gameObject.AddComponent<DetonatorForce>() as DetonatorForce;
 			_force.Reset();
 		}
 		if (!_heatwave && autoCreateHeatwave && SystemInfo.supportsImageEffects)
 		{
-			_heatwave = base.gameObject.AddComponent("DetonatorHeatwave") as DetonatorHeatwave;
+			_heatwave = base.gameObject.AddComponent<DetonatorHeatwave>() as DetonatorHeatwave;
 			_heatwave.Reset();
 		}
 		components = GetComponents(typeof(DetonatorComponent));

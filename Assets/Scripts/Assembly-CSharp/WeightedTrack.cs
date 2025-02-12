@@ -166,7 +166,7 @@ public class WeightedTrack : MonoBehaviour
 		if (targets[i] != null)
 		{
 			averages[i] = targets[i].position.xz();
-			screenpos[i] = camcon.camera.WorldToViewportPoint(targets[i].position).xy() - new Vector2(0.5f, 0.5f);
+			screenpos[i] = camcon.GetComponent<Camera>().WorldToViewportPoint(targets[i].position).xy() - new Vector2(0.5f, 0.5f);
 			weights[i] = 1f / (1f + screenpos[i].sqrMagnitude * kIndividualWeight);
 		}
 		else

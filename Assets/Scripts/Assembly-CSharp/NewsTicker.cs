@@ -23,8 +23,8 @@ public class NewsTicker : MonoBehaviour
 		if (Background != null)
 		{
 			float num = CommonHelper.CalculatePixelSizeInWorldSpace(base.transform);
-			int width = Background.renderer.material.mainTexture.width;
-			int height = Background.renderer.material.mainTexture.height;
+			int width = Background.GetComponent<Renderer>().material.mainTexture.width;
+			int height = Background.GetComponent<Renderer>().material.mainTexture.height;
 			Background.Setup((float)Screen.width * num, (float)height * num * 0.5f, new Vector2((float)width * 0.5f, height), new Vector2(1f, height));
 			position.y += Background.height * 0.3f;
 			Background.transform.position = position;

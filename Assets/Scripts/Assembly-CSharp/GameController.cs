@@ -808,7 +808,7 @@ public class GameController : MonoBehaviour
 		GameSettings instance = GameSettings.Instance;
 		bool flag = instance != null;
 		mAimimgDownScopeThisFrame = AimingDownScope;
-		PeakHeapUsage = Math.Max(PeakHeapUsage, Profiler.usedHeapSize);
+		PeakHeapUsage = Math.Max(PeakHeapUsage, UnityEngine.Profiling.Profiler.usedHeapSize);
 		if (mPaused || !(deltaTime > 0f))
 		{
 			return;

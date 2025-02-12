@@ -48,8 +48,8 @@ public class BreachActor : MonoBehaviour
 		mSnapTarget = ActorGenerator.CreateEmptySnapTarget(snapPosition);
 		mSnapTarget.SnapPositionOverride = () => snapPosition.position;
 		mSnapTarget.LockOnOverride = () => (!mReact) ? SnapTarget.LockOnType.DontLockOn : SnapTarget.LockOnType.LockOn;
-		Idle.Initialise("Idle", mModel.animation);
-		Reaction.Initialise("Reaction", mModel.animation);
+		Idle.Initialise("Idle", mModel.GetComponent<Animation>());
+		Reaction.Initialise("Reaction", mModel.GetComponent<Animation>());
 		if (LightmapSettings.lightProbes != null)
 		{
 			Renderer[] componentsInChildren = mModel.GetComponentsInChildren<Renderer>(true);
@@ -57,7 +57,7 @@ public class BreachActor : MonoBehaviour
 			{
 				float[] array = new float[27];
 				Transform transform = mModel.transform.FindInHierarchy("Bip002 Pelvis");
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(transform.position, componentsInChildren[0], array);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], array);
 				ProbeUtils.UpdateMaterials(array, componentsInChildren);
 				blobShadow.ShadowColour = ProbeUtils.CalculateShadowColour(array);
 			}
@@ -173,7 +173,7 @@ public class BreachActor : MonoBehaviour
 			{
 				componentInChildren.Drop();
 			}
-			mModel.animation.Stop();
+			mModel.GetComponent<Animation>().Stop();
 			mRagdoll.SwitchToRagdoll();
 			mSnapTarget.gameObject.SetActive(false);
 			ShowHudBlip(false);
@@ -197,9 +197,9 @@ public class BreachActor : MonoBehaviour
 			}
 		}
 		float num = ((!mRagdoll.Kinematic) ? 10f : 100f);
-		if (args.HitLocation != null && args.HitLocation.rigidbody != null)
+		if (args.HitLocation != null && args.HitLocation.GetComponent<Rigidbody>() != null)
 		{
-			args.HitLocation.rigidbody.AddForceAtPosition((0f - num) * args.Impact.direction, args.Impact.position, ForceMode.Impulse);
+			args.HitLocation.GetComponent<Rigidbody>().AddForceAtPosition((0f - num) * args.Impact.direction, args.Impact.position, ForceMode.Impulse);
 		}
 	}
 

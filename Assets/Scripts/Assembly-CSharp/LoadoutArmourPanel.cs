@@ -24,7 +24,7 @@ public class LoadoutArmourPanel : MonoBehaviour
 	private void Awake()
 	{
 		mShowHighlight = false;
-		Transform transform = base.transform.FindChild("Content");
+		Transform transform = base.transform.Find("Content");
 		mBox = GetComponentInChildren<CommonBackgroundBox>();
 		for (int i = 0; i < transform.childCount; i++)
 		{

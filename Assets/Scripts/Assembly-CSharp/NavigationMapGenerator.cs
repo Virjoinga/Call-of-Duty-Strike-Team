@@ -37,7 +37,7 @@ public class NavigationMapGenerator : MonoBehaviour
 				Object.DestroyImmediate(waypointGameObject.gameObject);
 			}
 		}
-		Transform transform = colliderMesh.transform.FindChild(NAVMAP_CONTAINER_NAME);
+		Transform transform = colliderMesh.transform.Find(NAVMAP_CONTAINER_NAME);
 		if (transform != null)
 		{
 			GameObject gameObject = transform.gameObject;
@@ -96,7 +96,7 @@ public class NavigationMapGenerator : MonoBehaviour
 	private static void SetNavMapContainerParent(WaypointGameObject wpObj, GameObject colliderMesh)
 	{
 		GameObject gameObject = null;
-		Transform transform = colliderMesh.transform.FindChild(NAVMAP_CONTAINER_NAME);
+		Transform transform = colliderMesh.transform.Find(NAVMAP_CONTAINER_NAME);
 		if (transform == null)
 		{
 			gameObject = new GameObject(NAVMAP_CONTAINER_NAME);

@@ -74,7 +74,7 @@ public class tapcontrol : MonoBehaviour
 	{
 		thisTransform = transform;
 		zoomCamera = (ZoomCamera)cameraObject.GetComponent(typeof(ZoomCamera));
-		cam = cameraObject.camera;
+		cam = cameraObject.GetComponent<Camera>();
 		character = (CharacterController)GetComponent(typeof(CharacterController));
 		ResetControlState();
 		GameObject gameObject = GameObject.Find("PlayerSpawn");

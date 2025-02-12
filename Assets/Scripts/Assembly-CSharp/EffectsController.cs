@@ -143,8 +143,8 @@ public class EffectsController : MonoBehaviour
 	{
 		GameObject gameObject = BloodPool_pool.Request();
 		gameObject.transform.position = origin;
-		gameObject.transform.particleSystem.Play();
-		float seconds = gameObject.transform.particleSystem.duration + gameObject.transform.particleSystem.startLifetime;
+		gameObject.transform.GetComponent<ParticleSystem>().Play();
+		float seconds = gameObject.transform.GetComponent<ParticleSystem>().duration + gameObject.transform.GetComponent<ParticleSystem>().startLifetime;
 		StartCoroutine(PoolGameObjectAfter(BloodPool_pool, gameObject, seconds));
 		return gameObject;
 	}
@@ -280,8 +280,8 @@ public class EffectsController : MonoBehaviour
 		GameObject gameObject = BloodSpray_pool.Request();
 		gameObject.transform.position = origin;
 		gameObject.transform.forward = direction;
-		gameObject.transform.particleSystem.Play();
-		StartCoroutine(PoolGameObjectAfter(BloodSpray_pool, gameObject, gameObject.transform.particleSystem.duration));
+		gameObject.transform.GetComponent<ParticleSystem>().Play();
+		StartCoroutine(PoolGameObjectAfter(BloodSpray_pool, gameObject, gameObject.transform.GetComponent<ParticleSystem>().duration));
 		return gameObject;
 	}
 
@@ -290,8 +290,8 @@ public class EffectsController : MonoBehaviour
 		GameObject gameObject = MasonrySpray_pool.Request();
 		gameObject.transform.position = origin;
 		gameObject.transform.forward = normal;
-		gameObject.transform.particleSystem.Play(true);
-		StartCoroutine(PoolGameObjectAfter(MasonrySpray_pool, gameObject, gameObject.transform.particleSystem.duration));
+		gameObject.transform.GetComponent<ParticleSystem>().Play(true);
+		StartCoroutine(PoolGameObjectAfter(MasonrySpray_pool, gameObject, gameObject.transform.GetComponent<ParticleSystem>().duration));
 		return gameObject;
 	}
 
@@ -329,7 +329,7 @@ public class EffectsController : MonoBehaviour
 		GameObject gameObject = MetalSpray_pool.Request();
 		gameObject.transform.position = origin;
 		gameObject.transform.forward = normal;
-		gameObject.transform.particleSystem.Play(true);
+		gameObject.transform.GetComponent<ParticleSystem>().Play(true);
 		if (Vector3.Dot(direction, normal) < 0.5f)
 		{
 			ImpactSFX.Instance.BulletRicochetMetal.Play(gameObject);
@@ -338,7 +338,7 @@ public class EffectsController : MonoBehaviour
 		{
 			ImpactSFX.Instance.BulletHitMetal.Play(gameObject);
 		}
-		StartCoroutine(PoolGameObjectAfter(MetalSpray_pool, gameObject, gameObject.transform.particleSystem.duration));
+		StartCoroutine(PoolGameObjectAfter(MetalSpray_pool, gameObject, gameObject.transform.GetComponent<ParticleSystem>().duration));
 		return gameObject;
 	}
 
@@ -352,8 +352,8 @@ public class EffectsController : MonoBehaviour
 		GameObject gameObject = WoodSpray_pool.Request();
 		gameObject.transform.position = origin;
 		gameObject.transform.forward = normal;
-		gameObject.transform.particleSystem.Play(true);
-		StartCoroutine(PoolGameObjectAfter(WoodSpray_pool, gameObject, gameObject.transform.particleSystem.duration));
+		gameObject.transform.GetComponent<ParticleSystem>().Play(true);
+		StartCoroutine(PoolGameObjectAfter(WoodSpray_pool, gameObject, gameObject.transform.GetComponent<ParticleSystem>().duration));
 		return gameObject;
 	}
 

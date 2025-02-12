@@ -168,27 +168,27 @@ public class BuildingWithInterior : MonoBehaviour
 		}
 		if (m_Interface.Exterior != null)
 		{
-			mExternalRenderer = m_Interface.Exterior.renderer;
+			mExternalRenderer = m_Interface.Exterior.GetComponent<Renderer>();
 			if (mExternalRenderer == null)
 			{
-				Transform transform = m_Interface.Exterior.transform.FindChild(m_Interface.Exterior.name + "_geom_LOD0");
+				Transform transform = m_Interface.Exterior.transform.Find(m_Interface.Exterior.name + "_geom_LOD0");
 				if (transform != null)
 				{
-					mExternalRenderer = transform.gameObject.renderer;
+					mExternalRenderer = transform.gameObject.GetComponent<Renderer>();
 				}
 				else
 				{
-					Transform transform2 = m_Interface.Exterior.transform.FindChild(m_Interface.Exterior.name + "_geom");
+					Transform transform2 = m_Interface.Exterior.transform.Find(m_Interface.Exterior.name + "_geom");
 					if (transform2 != null)
 					{
-						mExternalRenderer = transform2.gameObject.renderer;
+						mExternalRenderer = transform2.gameObject.GetComponent<Renderer>();
 					}
 					else
 					{
-						transform2 = m_Interface.Exterior.transform.FindChild(m_Interface.Exterior.name);
+						transform2 = m_Interface.Exterior.transform.Find(m_Interface.Exterior.name);
 						if (transform2 != null)
 						{
-							mExternalRenderer = transform2.gameObject.renderer;
+							mExternalRenderer = transform2.gameObject.GetComponent<Renderer>();
 						}
 					}
 				}

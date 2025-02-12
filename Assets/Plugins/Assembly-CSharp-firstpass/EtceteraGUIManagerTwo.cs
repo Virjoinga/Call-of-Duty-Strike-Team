@@ -118,7 +118,7 @@ public class EtceteraGUIManagerTwo : MonoBehaviour
 
 	public void textureLoaded(Texture2D texture)
 	{
-		testPlane.renderer.material.mainTexture = texture;
+		testPlane.GetComponent<Renderer>().material.mainTexture = texture;
 	}
 
 	public void textureLoadFailed(string error)

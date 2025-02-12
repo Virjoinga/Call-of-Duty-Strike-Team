@@ -440,7 +440,7 @@ public static class WorldHelper
 	{
 		while (true)
 		{
-			Transform transform = go.transform.FindChild(name);
+			Transform transform = go.transform.Find(name);
 			if (transform != null)
 			{
 				if (Application.isPlaying)
@@ -462,7 +462,7 @@ public static class WorldHelper
 	{
 		if (noMantlingMask == 0)
 		{
-			mantlingLayer = 1 << NavMesh.GetNavMeshLayerFromName("Jump");
+			mantlingLayer = 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
 			noMantlingMask = ~mantlingLayer;
 		}
 		a.navAgent.walkableMask = a.navAgent.walkableMask | mantlingLayer;
@@ -472,13 +472,13 @@ public static class WorldHelper
 	{
 		if (noMantlingMask == 0)
 		{
-			mantlingLayer = 1 << NavMesh.GetNavMeshLayerFromName("Jump");
+			mantlingLayer = 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
 			noMantlingMask = ~mantlingLayer;
 		}
 		a.navAgent.walkableMask = a.navAgent.walkableMask & noMantlingMask;
 	}
 
-	public static bool CalculatePath_AvoidingMantlesWhenCarrying(Actor a, Vector3 destination, NavMeshPath path)
+	public static bool CalculatePath_AvoidingMantlesWhenCarrying(Actor a, Vector3 destination, UnityEngine.AI.NavMeshPath path)
 	{
 		if (!a.navAgent.enabled)
 		{
@@ -494,7 +494,7 @@ public static class WorldHelper
 		{
 			return false;
 		}
-		if (path.status == NavMeshPathStatus.PathPartial)
+		if (path.status == UnityEngine.AI.NavMeshPathStatus.PathPartial)
 		{
 			SetCanMantle(a);
 			return a.navAgent.CalculatePath(destination, path);

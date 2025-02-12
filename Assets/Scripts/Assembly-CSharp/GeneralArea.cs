@@ -28,8 +28,8 @@ public class GeneralArea : MonoBehaviour
 			if (!(base.transform.GetChild(i).name == "General Area(Clone)"))
 			{
 				Vector3 position = base.transform.GetChild(i).position;
-				NavMeshHit hit;
-				if (NavMesh.SamplePosition(position, out hit, 1f, 1))
+				UnityEngine.AI.NavMeshHit hit;
+				if (UnityEngine.AI.NavMesh.SamplePosition(position, out hit, 1f, 1))
 				{
 					locations[locationCount++] = hit.position;
 				}
@@ -49,8 +49,8 @@ public class GeneralArea : MonoBehaviour
 			num2 *= num2;
 			num2 = Radius - num2;
 			Vector3 sourcePosition = base.transform.position + quaternion * new Vector3(num2, 0f, 0f);
-			NavMeshHit hit2;
-			if (NavMesh.SamplePosition(sourcePosition, out hit2, 2f, 1))
+			UnityEngine.AI.NavMeshHit hit2;
+			if (UnityEngine.AI.NavMesh.SamplePosition(sourcePosition, out hit2, 2f, 1))
 			{
 				locations[locationCount++] = hit2.position;
 				if (locationCount >= locations.Length)

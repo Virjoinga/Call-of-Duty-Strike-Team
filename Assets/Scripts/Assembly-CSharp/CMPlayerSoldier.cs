@@ -49,16 +49,16 @@ public class CMPlayerSoldier : CMSoldier
 			if (mContextBlip != null)
 			{
 				mContextBlip.IsAllowedInFirstPerson = true;
-				mContextBlip.renderer.enabled = true;
+				mContextBlip.GetComponent<Renderer>().enabled = true;
 				mContextBlip.OffsetTarget = target.baseCharacter.Ragdoll.Pelvis.Bone.transform;
 				mContextBlip.OffsetTargetOffset = Vector3.zero;
 				CanBeTurnedOn = true;
 				TurnOn();
 			}
 		}
-		else if (!target.health.IsMortallyWounded() && base.collider != null)
+		else if (!target.health.IsMortallyWounded() && base.GetComponent<Collider>() != null)
 		{
-			base.collider.enabled = true;
+			base.GetComponent<Collider>().enabled = true;
 		}
 	}
 
@@ -66,7 +66,7 @@ public class CMPlayerSoldier : CMSoldier
 	{
 		if (base.ContextBlip != null)
 		{
-			base.ContextBlip.renderer.enabled = false;
+			base.ContextBlip.GetComponent<Renderer>().enabled = false;
 		}
 	}
 
@@ -76,7 +76,7 @@ public class CMPlayerSoldier : CMSoldier
 		{
 			if ((target.realCharacter.CanBeCarried() || target.realCharacter.CanBeHealed()) && !target.realCharacter.IsBeingCarried && !target.health.IsReviving)
 			{
-				if (base.collider != null)
+				if (base.GetComponent<Collider>() != null)
 				{
 				}
 				UseBlip = true;
@@ -84,9 +84,9 @@ public class CMPlayerSoldier : CMSoldier
 			}
 			else
 			{
-				if (base.collider != null)
+				if (base.GetComponent<Collider>() != null)
 				{
-					base.collider.enabled = false;
+					base.GetComponent<Collider>().enabled = false;
 				}
 				ShowBlip(false);
 				UseBlip = false;
@@ -95,10 +95,10 @@ public class CMPlayerSoldier : CMSoldier
 		}
 		else if (base.ContextBlip != null)
 		{
-			base.ContextBlip.renderer.enabled = false;
+			base.ContextBlip.GetComponent<Renderer>().enabled = false;
 			if (!base.ContextBlip.IsOnScreen)
 			{
-				base.ContextBlip.collider.enabled = false;
+				base.ContextBlip.GetComponent<Collider>().enabled = false;
 			}
 		}
 		AdjustCollider(target);

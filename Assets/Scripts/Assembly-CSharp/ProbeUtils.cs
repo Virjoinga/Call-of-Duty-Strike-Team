@@ -73,15 +73,15 @@ public class ProbeUtils
 		smMaterialCoefficients[6].w = 1f;
 		smMaterialCoefficients[7] = num * new Vector4(coefficients[0], coefficients[1], coefficients[2], 0f);
 		smPropertyBlock.Clear();
-		smPropertyBlock.AddVector(smPropertyAr, smMaterialCoefficients[0]);
-		smPropertyBlock.AddVector(smPropertyAg, smMaterialCoefficients[1]);
-		smPropertyBlock.AddVector(smPropertyAb, smMaterialCoefficients[2]);
-		smPropertyBlock.AddVector(smPropertyBr, smMaterialCoefficients[3]);
-		smPropertyBlock.AddVector(smPropertyBg, smMaterialCoefficients[4]);
-		smPropertyBlock.AddVector(smPropertyBb, smMaterialCoefficients[5]);
-		smPropertyBlock.AddVector(smPropertyC, smMaterialCoefficients[6]);
-		smPropertyBlock.AddVector(smProperty0, smMaterialCoefficients[7]);
-		smPropertyBlock.AddVector(smPropertySpecDir, SpecularSource.specdir);
+		smPropertyBlock.SetVector(smPropertyAr, smMaterialCoefficients[0]);
+		smPropertyBlock.SetVector(smPropertyAg, smMaterialCoefficients[1]);
+		smPropertyBlock.SetVector(smPropertyAb, smMaterialCoefficients[2]);
+		smPropertyBlock.SetVector(smPropertyBr, smMaterialCoefficients[3]);
+		smPropertyBlock.SetVector(smPropertyBg, smMaterialCoefficients[4]);
+		smPropertyBlock.SetVector(smPropertyBb, smMaterialCoefficients[5]);
+		smPropertyBlock.SetVector(smPropertyC, smMaterialCoefficients[6]);
+		smPropertyBlock.SetVector(smProperty0, smMaterialCoefficients[7]);
+		smPropertyBlock.SetVector(smPropertySpecDir, SpecularSource.specdir);
 		foreach (Renderer renderer in renderers)
 		{
 			if (renderer != null)

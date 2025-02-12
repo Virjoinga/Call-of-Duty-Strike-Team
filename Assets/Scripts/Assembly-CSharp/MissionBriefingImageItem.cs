@@ -64,10 +64,10 @@ public class MissionBriefingImageItem : MonoBehaviour
 		if (focusImage != null)
 		{
 			mBusy = true;
-			if (FocusImage != null && FocusImage.renderer != null && FocusImage.renderer.material != null)
+			if (FocusImage != null && FocusImage.GetComponent<Renderer>() != null && FocusImage.GetComponent<Renderer>().material != null)
 			{
-				Resources.UnloadAsset(FocusImage.renderer.material.mainTexture);
-				FocusImage.renderer.material.mainTexture = focusImage;
+				Resources.UnloadAsset(FocusImage.GetComponent<Renderer>().material.mainTexture);
+				FocusImage.GetComponent<Renderer>().material.mainTexture = focusImage;
 			}
 			bool flag = true;
 			bool resizeForAlternateLayout = true;
@@ -83,10 +83,10 @@ public class MissionBriefingImageItem : MonoBehaviour
 		{
 			mBusy = true;
 			mWaiting = true;
-			if (FocusImage != null && FocusImage.renderer != null && FocusImage.renderer.material != null)
+			if (FocusImage != null && FocusImage.GetComponent<Renderer>() != null && FocusImage.GetComponent<Renderer>().material != null)
 			{
-				Resources.UnloadAsset(FocusImage.renderer.material.mainTexture);
-				FocusImage.renderer.material.mainTexture = focusImage;
+				Resources.UnloadAsset(FocusImage.GetComponent<Renderer>().material.mainTexture);
+				FocusImage.GetComponent<Renderer>().material.mainTexture = focusImage;
 			}
 			bool resizeForAlternateLayout = false;
 			LayoutComponents(size, adjustForRetina, resizeForAlternateLayout);
@@ -97,9 +97,9 @@ public class MissionBriefingImageItem : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		if (FocusImage != null && FocusImage.renderer != null && FocusImage.renderer.material != null)
+		if (FocusImage != null && FocusImage.GetComponent<Renderer>() != null && FocusImage.GetComponent<Renderer>().material != null)
 		{
-			Resources.UnloadAsset(FocusImage.renderer.material.mainTexture);
+			Resources.UnloadAsset(FocusImage.GetComponent<Renderer>().material.mainTexture);
 		}
 	}
 

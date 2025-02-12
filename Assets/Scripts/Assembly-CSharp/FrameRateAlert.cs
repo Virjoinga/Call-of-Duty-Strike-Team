@@ -42,7 +42,7 @@ public class FrameRateAlert : MonoBehaviour
 			GameObject gameObject = GameObject.Find("PauseIcon");
 			if (gameObject != null)
 			{
-				mMatRef = gameObject.renderer.sharedMaterial;
+				mMatRef = gameObject.GetComponent<Renderer>().sharedMaterial;
 			}
 		}
 		if (num < AlertNumber)

@@ -18,7 +18,7 @@ public class CommonHelper
 		Vector2 result = default(Vector2);
 		if (sprite != null)
 		{
-			Texture mainTexture = sprite.renderer.sharedMaterial.mainTexture;
+			Texture mainTexture = sprite.GetComponent<Renderer>().sharedMaterial.mainTexture;
 			Rect uVs = sprite.GetUVs();
 			result.x = (float)mainTexture.width * uVs.width;
 			result.y = (float)mainTexture.height * uVs.height;

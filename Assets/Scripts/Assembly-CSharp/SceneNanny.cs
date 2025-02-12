@@ -186,7 +186,7 @@ public class SceneNanny : MonoBehaviour
 		{
 			new GameObject("SceneNanny", typeof(SceneNanny));
 		}
-		ref ApronString reference = ref smInstance.apronStrings[(int)smInstance.activeScene];
+		ApronString reference = smInstance.apronStrings[(int)smInstance.activeScene];
 		reference = (ApronString)Delegate.Combine(reference, a);
 	}
 

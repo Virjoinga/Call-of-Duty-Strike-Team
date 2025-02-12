@@ -86,7 +86,7 @@ public class ProgressBar : MonoBehaviour
 		mPixelSize = CommonHelper.CalculatePixelSizeInWorldSpace(base.transform);
 		if (ForegroundBar != null)
 		{
-			Texture mainTexture = ForegroundBar.renderer.material.mainTexture;
+			Texture mainTexture = ForegroundBar.GetComponent<Renderer>().material.mainTexture;
 			Rect uVs = ForegroundBar.GetUVs();
 			if (RightPin == null)
 			{

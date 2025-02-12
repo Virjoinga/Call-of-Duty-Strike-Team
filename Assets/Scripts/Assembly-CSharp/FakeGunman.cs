@@ -70,27 +70,27 @@ public class FakeGunman : MonoBehaviour
 		mMuzzleLocator = mModel.transform.FindInHierarchy(MuzzleLocatorName);
 		if (CoverIdleAnimation != null)
 		{
-			mCoverIdleState = mModel.animation.AddClipSafe(CoverIdleAnimation, CoverIdleAnimation.name);
+			mCoverIdleState = mModel.GetComponent<Animation>().AddClipSafe(CoverIdleAnimation, CoverIdleAnimation.name);
 		}
 		if (CoverToAimingAnimation != null)
 		{
-			mCoverToAimingState = mModel.animation.AddClipSafe(CoverToAimingAnimation, CoverToAimingAnimation.name);
+			mCoverToAimingState = mModel.GetComponent<Animation>().AddClipSafe(CoverToAimingAnimation, CoverToAimingAnimation.name);
 		}
 		if (FiringAnimation != null)
 		{
-			mFiringState = mModel.animation.AddClipSafe(FiringAnimation, FiringAnimation.name);
+			mFiringState = mModel.GetComponent<Animation>().AddClipSafe(FiringAnimation, FiringAnimation.name);
 		}
 		if (AimingToCoverAnimation != null)
 		{
-			mAimingToCoverState = mModel.animation.AddClipSafe(AimingToCoverAnimation, AimingToCoverAnimation.name);
+			mAimingToCoverState = mModel.GetComponent<Animation>().AddClipSafe(AimingToCoverAnimation, AimingToCoverAnimation.name);
 		}
 		if (AimingHitToCoverAnimation != null)
 		{
-			mAimingHitToCoverState = mModel.animation.AddClipSafe(AimingHitToCoverAnimation, AimingHitToCoverAnimation.name);
+			mAimingHitToCoverState = mModel.GetComponent<Animation>().AddClipSafe(AimingHitToCoverAnimation, AimingHitToCoverAnimation.name);
 		}
 		if (DeathAnimation != null)
 		{
-			mDeathState = mModel.animation.AddClipSafe(DeathAnimation, DeathAnimation.name);
+			mDeathState = mModel.GetComponent<Animation>().AddClipSafe(DeathAnimation, DeathAnimation.name);
 		}
 		if (LightmapSettings.lightProbes != null)
 		{
@@ -99,7 +99,7 @@ public class FakeGunman : MonoBehaviour
 			{
 				float[] coefficients = new float[27];
 				Transform transform = mModel.transform.FindInHierarchy(ProbeAnchorName);
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(transform.position, componentsInChildren[0], coefficients);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
 				ProbeUtils.UpdateMaterials(coefficients, componentsInChildren);
 				mRenderers = componentsInChildren;
 			}

@@ -87,7 +87,7 @@ public class TaskReactToGrenade : Task
 			break;
 		case State.CatchingGrenade:
 			mHoldTime -= Time.deltaTime;
-			if (mGrenade.rigidbody.IsSleeping() && mHoldTime <= 0f)
+			if (mGrenade.GetComponent<Rigidbody>().IsSleeping() && mHoldTime <= 0f)
 			{
 				ThrowGrenadeBack();
 				mState = State.ThrowGrenadeBack;
@@ -131,8 +131,8 @@ public class TaskReactToGrenade : Task
 		}
 		Vector3 normalized = (mActor.GetPosition() - mGrenade.transform.position).normalized;
 		Vector3 position = mGrenade.transform.position + normalized * (mGrenade.DamageRadius * 1.5f);
-		int navMeshLayerFromName = NavMesh.GetNavMeshLayerFromName("Default");
-		NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(position, 1 << navMeshLayerFromName);
+		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+		UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(position, 1 << navMeshLayerFromName);
 		if (navMeshHit.hit)
 		{
 			Vector3 position2 = navMeshHit.position;
@@ -179,8 +179,8 @@ public class TaskReactToGrenade : Task
 
 	private void CatchGrenade()
 	{
-		mGrenade.rigidbody.Sleep();
-		mGrenade.renderer.enabled = false;
+		mGrenade.GetComponent<Rigidbody>().Sleep();
+		mGrenade.GetComponent<Renderer>().enabled = false;
 		mHoldTime = 0.2f;
 	}
 
@@ -202,13 +202,13 @@ public class TaskReactToGrenade : Task
 
 	private void LetGoNow()
 	{
-		if (mActor.collider != null)
+		if (mActor.GetComponent<Collider>() != null)
 		{
-			Physics.IgnoreCollision(mGrenade.collider, mActor.collider);
+			Physics.IgnoreCollision(mGrenade.GetComponent<Collider>(), mActor.GetComponent<Collider>());
 		}
 		if (mActor.realCharacter.SimpleHitBounds != null)
 		{
-			Physics.IgnoreCollision(mGrenade.collider, mActor.realCharacter.SimpleHitBounds.collider);
+			Physics.IgnoreCollision(mGrenade.GetComponent<Collider>(), mActor.realCharacter.SimpleHitBounds.GetComponent<Collider>());
 		}
 		mGrenade.SetThrowingPosition(mActor);
 		mGrenade.Throw(mGrenade.Owner.GetPosition());

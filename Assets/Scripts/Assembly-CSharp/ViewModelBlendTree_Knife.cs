@@ -6,7 +6,7 @@ public class ViewModelBlendTree_Knife : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_Knife(GameObject weapon, WeaponCoreAnims coreAnims, KnifeAnims specificAnims)
 	{
-		mStab = weapon.animation.AddClipSafe(specificAnims.Stab, "Stab");
+		mStab = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.Stab, "Stab");
 		mStab.wrapMode = WrapMode.ClampForever;
 		mStab.speed = 0f;
 		mStab.weight = 1f;

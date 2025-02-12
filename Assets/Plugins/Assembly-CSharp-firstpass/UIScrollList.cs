@@ -485,7 +485,7 @@ public class UIScrollList : MonoBehaviour, IEZDragDrop, IUIObject
 			slider.AddValueChangedDelegate(SliderMoved);
 			slider.AddInputDelegate(SliderInputDel);
 		}
-		if (base.collider == null && touchScroll)
+		if (base.GetComponent<Collider>() == null && touchScroll)
 		{
 			BoxCollider boxCollider = (BoxCollider)base.gameObject.AddComponent(typeof(BoxCollider));
 			boxCollider.size = new Vector3(viewableAreaActual.x, viewableAreaActual.y, 0.001f);
@@ -558,7 +558,7 @@ public class UIScrollList : MonoBehaviour, IEZDragDrop, IUIObject
 		}
 		if (touchScroll)
 		{
-			BoxCollider boxCollider = ((!(base.collider == null)) ? ((BoxCollider)base.collider) : ((BoxCollider)base.gameObject.AddComponent(typeof(BoxCollider))));
+			BoxCollider boxCollider = ((!(base.GetComponent<Collider>() == null)) ? ((BoxCollider)base.GetComponent<Collider>()) : ((BoxCollider)base.gameObject.AddComponent(typeof(BoxCollider))));
 			boxCollider.size = new Vector3(viewableAreaActual.x, viewableAreaActual.y, 0.001f);
 			boxCollider.center = Vector3.forward * 0.01f;
 			boxCollider.isTrigger = true;
@@ -2381,18 +2381,27 @@ public class UIScrollList : MonoBehaviour, IEZDragDrop, IUIObject
 		}
 	}
 
-	virtual GameObject IUIObject.get_gameObject()
-	{
-		return base.gameObject;
-	}
+    GameObject IUIObject.gameObject
+    {
+        get
+        {
+            return base.gameObject;
+        }
+    }
 
-	virtual Transform IUIObject.get_transform()
-	{
-		return base.transform;
-	}
+    Transform IUIObject.transform
+    {
+        get
+        {
+            return base.transform;
+        }
+    }
 
-	virtual string IUIObject.get_name()
-	{
-		return base.name;
-	}
+    string IUIObject.name
+    {
+        get
+        {
+            return base.name;
+        }
+    }
 }

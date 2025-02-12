@@ -60,7 +60,7 @@ public abstract class TBComponent : MonoBehaviour
 
 	protected virtual void Start()
 	{
-		if (!base.collider)
+		if (!base.GetComponent<Collider>())
 		{
 			Debug.LogError(base.name + " must have a valid collider.");
 			base.enabled = false;

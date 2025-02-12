@@ -51,7 +51,7 @@ public class HaloEffect : MonoBehaviour
 		HaloModel = Object.Instantiate(HaloModel, Vector3.zero, new Quaternion(0f, 180f, 0f, 1f)) as GameObject;
 		if (HaloModel != null)
 		{
-			HaloModel.renderer.enabled = true;
+			HaloModel.GetComponent<Renderer>().enabled = true;
 			HaloModel.transform.parent = AttachPoint.transform;
 			HaloModel.transform.localPosition = Vector3.zero;
 			HaloModel.transform.localScale = new Vector3(Size, Size, Size);
@@ -72,25 +72,25 @@ public class HaloEffect : MonoBehaviour
 		switch (Colour)
 		{
 		case HaloColour.Red:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(1f, 0f, 0f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 0f, 0f, 1f));
 			break;
 		case HaloColour.Green:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(0f, 1f, 0f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0f, 1f, 0f, 1f));
 			break;
 		case HaloColour.Cyan:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(0f, 0.8f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0f, 0.8f, 1f, 1f));
 			break;
 		default:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
 			break;
 		case HaloColour.Orange:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(0.88f, 0.6f, 0.31f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0.88f, 0.6f, 0.31f, 1f));
 			break;
 		case HaloColour.MintGreen:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(0.5f, 0.79f, 0.69f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0.5f, 0.79f, 0.69f, 1f));
 			break;
 		case HaloColour.Yellowish:
-			HaloModel.renderer.material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
 			break;
 		}
 	}
@@ -98,13 +98,13 @@ public class HaloEffect : MonoBehaviour
 	public void SetBlinkPattern(BlinkPattern pattern)
 	{
 		Pattern = pattern;
-		HaloModel.renderer.enabled = true;
+		HaloModel.GetComponent<Renderer>().enabled = true;
 		switch (Pattern)
 		{
 		case BlinkPattern.On:
 			break;
 		case BlinkPattern.Off:
-			HaloModel.renderer.enabled = false;
+			HaloModel.GetComponent<Renderer>().enabled = false;
 			break;
 		case BlinkPattern.BlinkSlow:
 			SetBlinkSpeed(1f);
@@ -150,10 +150,10 @@ public class HaloEffect : MonoBehaviour
 			}
 			if (mBlinkTimer > OnTime)
 			{
-				HaloModel.renderer.enabled = false;
+				HaloModel.GetComponent<Renderer>().enabled = false;
 				break;
 			}
-			HaloModel.renderer.enabled = true;
+			HaloModel.GetComponent<Renderer>().enabled = true;
 			UpdateHalo();
 			break;
 		}

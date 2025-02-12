@@ -137,9 +137,9 @@ public static class RulesSystem
 			HitLocation[] bones = a.realCharacter.Ragdoll.Bones;
 			foreach (HitLocation hitLocation in bones)
 			{
-				if (hitLocation.rigidbody != null)
+				if (hitLocation.GetComponent<Rigidbody>() != null)
 				{
-					hitLocation.rigidbody.AddExplosionForce(25f, origin, radius * 2f, 0.5f * radius, ForceMode.Impulse);
+					hitLocation.GetComponent<Rigidbody>().AddExplosionForce(25f, origin, radius * 2f, 0.5f * radius, ForceMode.Impulse);
 				}
 			}
 		}

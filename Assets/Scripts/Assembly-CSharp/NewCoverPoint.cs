@@ -294,8 +294,8 @@ public class NewCoverPoint : MonoBehaviour
 				num = -0.3f;
 			}
 			cpc.gamePos += vector * num;
-			NavMeshHit hit;
-			if (NavMesh.SamplePosition(cpc.gamePos, out hit, 0.5f, -1))
+			UnityEngine.AI.NavMeshHit hit;
+			if (UnityEngine.AI.NavMesh.SamplePosition(cpc.gamePos, out hit, 0.5f, -1))
 			{
 				cpc.gamePos = hit.position;
 			}

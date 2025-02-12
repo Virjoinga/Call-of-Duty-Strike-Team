@@ -101,13 +101,13 @@ public class IconController : MonoBehaviour
 
 	private void Awake()
 	{
-		BackgroundTransform = base.transform.FindChild("backgrounds");
+		BackgroundTransform = base.transform.Find("backgrounds");
 		Backgrounds = BackgroundTransform.GetComponentsInChildren<PackedSprite>();
-		IconTransform = base.transform.FindChild("icons");
+		IconTransform = base.transform.Find("icons");
 		Icons = IconTransform.GetComponentsInChildren<PackedSprite>();
-		SubIconBackgroundTransform = base.transform.FindChild("subicons_backgrounds");
+		SubIconBackgroundTransform = base.transform.Find("subicons_backgrounds");
 		SubIconBackgrounds = SubIconBackgroundTransform.GetComponentsInChildren<PackedSprite>();
-		SubIconTransform = base.transform.FindChild("subicons");
+		SubIconTransform = base.transform.Find("subicons");
 		SubIcons = SubIconTransform.GetComponentsInChildren<PackedSprite>();
 		PackedSprite[] componentsInChildren = GetComponentsInChildren<PackedSprite>();
 		PackedSprite[] array = componentsInChildren;

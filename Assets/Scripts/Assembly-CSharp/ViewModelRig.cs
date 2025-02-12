@@ -183,27 +183,27 @@ public class ViewModelRig : MonoBehaviour
 		{
 			return;
 		}
-		weaponRig.root.animation.Stop();
+		weaponRig.root.GetComponent<Animation>().Stop();
 		mCameraLocator = ((mOverrideId == null) ? null : weaponRig.root.transform.FindInHierarchy("CameraAim"));
 		if (mOverrideId == null)
 		{
-			AnimationState animationState = weaponRig.root.animation["PutAway"];
-			AnimationState animationState2 = weaponRig.root.animation["TakeOut"];
+			AnimationState animationState = weaponRig.root.GetComponent<Animation>()["PutAway"];
+			AnimationState animationState2 = weaponRig.root.GetComponent<Animation>()["TakeOut"];
 			AnimationState animationState3 = null;
 			float normalizedTime = 0f;
 			if (weaponADS != null)
 			{
 				if (weaponADS.GetADSState() == ADSState.ADS)
 				{
-					animationState3 = weaponRig.root.animation["SightsIdle"];
+					animationState3 = weaponRig.root.GetComponent<Animation>()["SightsIdle"];
 				}
 				else if (weaponADS.GetADSState() == ADSState.Hips)
 				{
-					animationState3 = weaponRig.root.animation["HipsIdle"];
+					animationState3 = weaponRig.root.GetComponent<Animation>()["HipsIdle"];
 				}
 				normalizedTime = weaponADS.GetHipsToSightsBlendAmount();
 			}
-			AnimationState animationState4 = weaponRig.root.animation["HipsToSights"];
+			AnimationState animationState4 = weaponRig.root.GetComponent<Animation>()["HipsToSights"];
 			if (animationState != null)
 			{
 				animationState.layer = 1;
@@ -260,14 +260,14 @@ public class ViewModelRig : MonoBehaviour
 		}
 		else
 		{
-			AnimationState animationState5 = weaponRig.root.animation.AddClipSafe(mOverrideClip, mOverrideClip.name);
+			AnimationState animationState5 = weaponRig.root.GetComponent<Animation>().AddClipSafe(mOverrideClip, mOverrideClip.name);
 			animationState5.wrapMode = WrapMode.ClampForever;
 			animationState5.weight = 1f;
 			animationState5.speed = 0f;
 			animationState5.enabled = true;
 			animationState5.time = mOverrideTime;
 		}
-		weaponRig.root.animation.Sample();
+		weaponRig.root.GetComponent<Animation>().Sample();
 		if (mOverrideId != null)
 		{
 			weaponRig.root.transform.position = mOverrideLocatorPosition;
@@ -527,7 +527,7 @@ public class ViewModelRig : MonoBehaviour
 		gameObject.transform.parent = base.transform;
 		Transform transform2 = new GameObject("OffsetCamera").transform;
 		transform2.parent = gameObject.transform.FindInHierarchy("CameraAim");
-		Animation animation = gameObject.animation;
+		Animation animation = gameObject.GetComponent<Animation>();
 		if (anims != null)
 		{
 			animation.AddClipSafe(anims.HipsIdle, "HipsIdle");
@@ -592,7 +592,7 @@ public class ViewModelRig : MonoBehaviour
 	{
 		Vector3 position = new Vector3(0f, 5000f, 0f);
 		rig.root.transform.position = position;
-		rig.root.animation.enabled = false;
+		rig.root.GetComponent<Animation>().enabled = false;
 	}
 
 	private void SetupAmmo(WeaponRig weapon, ViewModelData data)

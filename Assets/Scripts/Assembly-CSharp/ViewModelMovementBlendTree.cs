@@ -27,7 +27,7 @@ internal class ViewModelMovementBlendTree
 
 	public ViewModelMovementBlendTree(GameObject weapon, WeaponLookAnims hipsAnims, WeaponLookAnims sightsAnims)
 	{
-		Animation animation = weapon.animation;
+		Animation animation = weapon.GetComponent<Animation>();
 		mHipsMove = animation["Move"];
 		mHipsLookUp = animation.AddClipSafe(hipsAnims.Up, "Hips_LookUp");
 		mHipsLookDown = animation.AddClipSafe(hipsAnims.Down, "Hips_LookDown");

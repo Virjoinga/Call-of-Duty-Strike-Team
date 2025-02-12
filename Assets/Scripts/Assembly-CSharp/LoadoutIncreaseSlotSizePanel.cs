@@ -12,7 +12,7 @@ public class LoadoutIncreaseSlotSizePanel : MonoBehaviour
 
 	private void Awake()
 	{
-		Transform transform = Button.transform.parent.FindChild("control_text");
+		Transform transform = Button.transform.parent.Find("control_text");
 		if (transform != null)
 		{
 			transform.parent = Button.transform;

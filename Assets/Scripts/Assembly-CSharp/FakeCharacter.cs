@@ -33,7 +33,7 @@ public class FakeCharacter : BaseCharacter
 
 	private void Update()
 	{
-		NavMeshAgent component = GetComponent<NavMeshAgent>();
+		UnityEngine.AI.NavMeshAgent component = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		component.enabled = mNextFrameNavMesh;
 		if (component.isOnOffMeshLink)
 		{

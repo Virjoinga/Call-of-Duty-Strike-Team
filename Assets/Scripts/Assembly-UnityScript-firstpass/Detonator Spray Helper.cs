@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Detonator Spray Helper : MonoBehaviour
+/*public class Detonator Spray Helper : MonoBehaviour
 {
-	/*
+
 	Dummy class. This could have happened for several reasons:
 	
 	1. No dll files were provided to AssetRipper.
@@ -46,5 +46,5 @@ public class Detonator Spray Helper : MonoBehaviour
 		This is an upstream problem, and the AssetRipper developer has very little control over it.
 		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
 	
-	*/
-}
+	
+}*/

@@ -69,17 +69,17 @@ public class ActivateButton : MonoBehaviour
 	private void Awake()
 	{
 		mButton = base.gameObject.GetComponentInChildren<UIButton>();
-		Transform transform = base.transform.FindChild("Exclamation");
+		Transform transform = base.transform.Find("Exclamation");
 		if (transform != null)
 		{
 			mExclamation = transform.GetComponent<PackedSprite>();
 		}
-		Transform transform2 = base.transform.FindChild("Glow");
+		Transform transform2 = base.transform.Find("Glow");
 		if (transform2 != null)
 		{
 			mGlow = transform2.GetComponent<PackedSprite>();
 		}
-		Transform transform3 = base.transform.FindChild("Highlight");
+		Transform transform3 = base.transform.Find("Highlight");
 		if (transform3 != null)
 		{
 			mHighlight = transform3.GetComponent<PackedSprite>();

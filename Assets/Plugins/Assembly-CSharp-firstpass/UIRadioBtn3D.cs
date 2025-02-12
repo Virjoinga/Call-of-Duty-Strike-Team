@@ -271,11 +271,11 @@ public class UIRadioBtn3D : ControlBase, IRadioButton
 			}
 			int num = ((!btnValue) ? 1 : 0);
 			num = ((!m_controlIsEnabled) ? 2 : num);
-			if (base.collider == null)
+			if (base.GetComponent<Collider>() == null)
 			{
 				AddCollider();
 			}
-			if (base.rigidbody == null)
+			if (base.GetComponent<Rigidbody>() == null)
 			{
 				AddRigidBody();
 			}
@@ -437,13 +437,15 @@ public class UIRadioBtn3D : ControlBase, IRadioButton
 		return (UIRadioBtn3D)gameObject.AddComponent(typeof(UIRadioBtn3D));
 	}
 
-	virtual string IRadioButton.get_name()
-	{
-		return base.name;
-	}
-
-	virtual void IRadioButton.set_name(string value)
-	{
-		base.name = value;
-	}
+    string IRadioButton.name
+    {
+        get
+        {
+            return base.name;
+        }
+		set
+		{
+			base.name = value;
+		}
+    }
 }

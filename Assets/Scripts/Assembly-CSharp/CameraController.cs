@@ -33,17 +33,17 @@ public class CameraController : MonoBehaviour
 	private void Awake()
 	{
 		mCurrentCamera = StartCamera;
-		base.camera.rect = new Rect(0f, 0f, 1f, 1f);
+		base.GetComponent<Camera>().rect = new Rect(0f, 0f, 1f, 1f);
 	}
 
 	public void UpdateFromSingleSource(CameraBase cam)
 	{
 		if ((bool)cam)
 		{
-			base.camera.transform.position = cam.Position;
-			base.camera.transform.rotation = cam.Rotation;
-			base.camera.fieldOfView = cam.Fov;
-			base.camera.nearClipPlane = cam.NearClip;
+			base.GetComponent<Camera>().transform.position = cam.Position;
+			base.GetComponent<Camera>().transform.rotation = cam.Rotation;
+			base.GetComponent<Camera>().fieldOfView = cam.Fov;
+			base.GetComponent<Camera>().nearClipPlane = cam.NearClip;
 		}
 	}
 
@@ -79,10 +79,10 @@ public class CameraController : MonoBehaviour
 			cameraTransitionData.UpdateProgress();
 			if (cameraTransitionData.CameraTo != null)
 			{
-				base.camera.transform.position = Vector3.Slerp(mCurrentCamera.Position, cameraTransitionData.CameraTo.Position, cameraTransitionData.Progress);
-				base.camera.transform.rotation = Quaternion.Slerp(mCurrentCamera.Rotation, cameraTransitionData.CameraTo.Rotation, cameraTransitionData.Progress);
-				base.camera.fieldOfView = Mathf.Lerp(mCurrentCamera.Fov, cameraTransitionData.CameraTo.Fov, cameraTransitionData.Progress);
-				base.camera.nearClipPlane = Mathf.Lerp(mCurrentCamera.NearClip, cameraTransitionData.CameraTo.NearClip, cameraTransitionData.Progress);
+				base.GetComponent<Camera>().transform.position = Vector3.Slerp(mCurrentCamera.Position, cameraTransitionData.CameraTo.Position, cameraTransitionData.Progress);
+				base.GetComponent<Camera>().transform.rotation = Quaternion.Slerp(mCurrentCamera.Rotation, cameraTransitionData.CameraTo.Rotation, cameraTransitionData.Progress);
+				base.GetComponent<Camera>().fieldOfView = Mathf.Lerp(mCurrentCamera.Fov, cameraTransitionData.CameraTo.Fov, cameraTransitionData.Progress);
+				base.GetComponent<Camera>().nearClipPlane = Mathf.Lerp(mCurrentCamera.NearClip, cameraTransitionData.CameraTo.NearClip, cameraTransitionData.Progress);
 			}
 			if (cameraTransitionData.Progress >= 1f)
 			{

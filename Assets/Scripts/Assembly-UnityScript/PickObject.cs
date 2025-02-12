@@ -1,5 +1,5 @@
 using System;
-using Boo.Lang.Runtime;
+//using Boo.Lang.Runtime;
 using UnityEngine;
 
 [Serializable]
@@ -19,7 +19,7 @@ public class PickObject : MonoBehaviour
 
 	public virtual void FingerGestures_OnFingerDown(int fingerIndex, Vector2 fingerPos)
 	{
-		GameObject gameObject = PickObject(fingerPos);
+		GameObject gameObject = PickObjectMember(fingerPos);
 		if ((bool)gameObject)
 		{
 			DisplayText("You pressed " + gameObject.name);
@@ -38,7 +38,7 @@ public class PickObject : MonoBehaviour
 			object obj = text;
 			if (!(obj is string))
 			{
-				obj = RuntimeServices.Coerce(obj, typeof(string));
+				//obj = RuntimeServices.Coerce(obj, typeof(string));
 			}
 			textMesh.text = (string)obj;
 		}
@@ -48,7 +48,7 @@ public class PickObject : MonoBehaviour
 		}
 	}
 
-	public virtual GameObject PickObject(Vector2 screenPos)
+	public virtual GameObject PickObjectMember(Vector2 screenPos)
 	{
 		Ray ray = Camera.main.ScreenPointToRay(screenPos);
 		RaycastHit hitInfo = default(RaycastHit);

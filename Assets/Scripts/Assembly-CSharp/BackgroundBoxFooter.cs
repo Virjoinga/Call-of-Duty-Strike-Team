@@ -100,9 +100,9 @@ public class BackgroundBoxFooter : MonoBehaviour
 				gameObject.name = string.Format("{0} Grid [{1}]", base.gameObject.name, j);
 				gameObject.transform.parent = base.gameObject.transform;
 				SimpleSprite simpleSprite = (SimpleSprite)gameObject.AddComponent(typeof(SimpleSprite));
-				simpleSprite.renderer.sharedMaterial = Mat;
-				float num = simpleSprite.renderer.sharedMaterial.mainTexture.width;
-				float y = simpleSprite.renderer.sharedMaterial.mainTexture.height;
+				simpleSprite.GetComponent<Renderer>().sharedMaterial = Mat;
+				float num = simpleSprite.GetComponent<Renderer>().sharedMaterial.mainTexture.width;
+				float y = simpleSprite.GetComponent<Renderer>().sharedMaterial.mainTexture.height;
 				simpleSprite.lowerLeftPixel = new Vector2((float)j * (num * 0.2f), y);
 				simpleSprite.pixelDimensions = new Vector2(num * 0.2f, y);
 				Sprites[j] = simpleSprite;

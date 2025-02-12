@@ -70,7 +70,7 @@ public class ReflectionFx : MonoBehaviour
 		{
 			gameObject.AddComponent(typeof(Camera));
 		}
-		Camera camera = gameObject.camera;
+		Camera camera = gameObject.GetComponent<Camera>();
 		camera.backgroundColor = clearColor;
 		camera.clearFlags = CameraClearFlags.Color;
 		SetStandardCameraParameter(camera, reflectionMask);
@@ -141,7 +141,7 @@ public class ReflectionFx : MonoBehaviour
 		Transform[] array = reflectiveObjects;
 		foreach (Transform transform2 in array)
 		{
-			if (transform2.renderer.isVisible)
+			if (transform2.GetComponent<Renderer>().isVisible)
 			{
 				float sqrMagnitude = (position - transform2.position).sqrMagnitude;
 				if (sqrMagnitude < num)

@@ -121,7 +121,7 @@ public class VtolTestKM : MonoBehaviour
 		Collider[] componentsInChildren = GetComponentsInChildren<Collider>();
 		foreach (Collider collider in componentsInChildren)
 		{
-			if (collider.gameObject.rigidbody == null)
+			if (collider.gameObject.GetComponent<Rigidbody>() == null)
 			{
 				Rigidbody rigidbody = collider.gameObject.AddComponent<Rigidbody>();
 				rigidbody.isKinematic = true;

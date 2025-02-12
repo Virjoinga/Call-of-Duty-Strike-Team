@@ -33,14 +33,14 @@ public class TaskDropClaymore : Task
 		mTarget = target;
 		if (GameController.Instance.IsFirstPerson && mActor == GameController.Instance.mFirstPersonActor)
 		{
-			NavMeshHit hit;
-			if (NavMesh.Raycast(mActor.transform.position, mTarget, out hit, mActor.navAgent.walkableMask))
+			UnityEngine.AI.NavMeshHit hit;
+			if (UnityEngine.AI.NavMesh.Raycast(mActor.transform.position, mTarget, out hit, mActor.navAgent.walkableMask))
 			{
 				mTarget = hit.position;
 			}
 			else
 			{
-				if (!NavMesh.SamplePosition(mTarget, out hit, 1f, mActor.navAgent.walkableMask))
+				if (!UnityEngine.AI.NavMesh.SamplePosition(mTarget, out hit, 1f, mActor.navAgent.walkableMask))
 				{
 					Debug.LogWarning(string.Format("TaskDropClaymore - FPP Placement validation has failed to find a suitable Navmesh point"));
 					mActor.tasks.CancelTasks<TaskDropClaymore>();
@@ -59,8 +59,8 @@ public class TaskDropClaymore : Task
 		}
 		else
 		{
-			NavMeshHit hit2;
-			if (!NavMesh.SamplePosition(mTarget, out hit2, 3f, mActor.navAgent.walkableMask))
+			UnityEngine.AI.NavMeshHit hit2;
+			if (!UnityEngine.AI.NavMesh.SamplePosition(mTarget, out hit2, 3f, mActor.navAgent.walkableMask))
 			{
 				Debug.LogWarning(string.Format("TaskDropClaymore - TPP Target position {0} unable to sample navmesh position", mTarget));
 				mActor.tasks.CancelTasks<TaskDropClaymore>();
@@ -72,8 +72,8 @@ public class TaskDropClaymore : Task
 			{
 				mTarget = hitInfo.point;
 			}
-			NavMeshPath navMeshPath = new NavMeshPath();
-			if (NavMesh.CalculatePath(mActor.GetPosition(), mTarget, mActor.navAgent.walkableMask, navMeshPath) && navMeshPath.status != 0)
+			UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+			if (UnityEngine.AI.NavMesh.CalculatePath(mActor.GetPosition(), mTarget, mActor.navAgent.walkableMask, navMeshPath) && navMeshPath.status != 0)
 			{
 				Debug.LogWarning(string.Format("TaskDropClaymore - TPP Target position cannot be pathed-to by Agent: ({0})", mTarget));
 				mActor.tasks.CancelTasks<TaskDropClaymore>();
@@ -205,8 +205,8 @@ public class TaskDropClaymore : Task
 			if (GameController.Instance.IsFirstPerson)
 			{
 				Transform characterStartNode = setPiece.GetCharacterStartNode(0);
-				NavMeshHit hit;
-				if (characterStartNode != null && !NavMesh.SamplePosition(characterStartNode.position, out hit, 0.5f, mActor.navAgent.walkableMask))
+				UnityEngine.AI.NavMeshHit hit;
+				if (characterStartNode != null && !UnityEngine.AI.NavMesh.SamplePosition(characterStartNode.position, out hit, 0.5f, mActor.navAgent.walkableMask))
 				{
 					Debug.LogWarning(string.Format("TaskDropClaymore - FPP Set-piece failed because it wants to place us off the Navmesh: {0}", characterStartNode.position));
 					mInvalidate = true;
@@ -217,8 +217,8 @@ public class TaskDropClaymore : Task
 				Transform characterStartNode2 = setPiece.GetCharacterStartNode(0);
 				if (characterStartNode2 != null)
 				{
-					NavMeshPath navMeshPath = new NavMeshPath();
-					if (NavMesh.CalculatePath(mActor.GetPosition(), characterStartNode2.position, mActor.navAgent.walkableMask, navMeshPath) && navMeshPath.status != 0)
+					UnityEngine.AI.NavMeshPath navMeshPath = new UnityEngine.AI.NavMeshPath();
+					if (UnityEngine.AI.NavMesh.CalculatePath(mActor.GetPosition(), characterStartNode2.position, mActor.navAgent.walkableMask, navMeshPath) && navMeshPath.status != 0)
 					{
 						Debug.LogWarning(string.Format("TaskDropClaymore - TPP Target position cannot be pathed-to by Agent: ({0})", mTarget));
 						mInvalidate = true;

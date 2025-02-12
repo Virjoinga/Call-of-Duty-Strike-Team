@@ -130,7 +130,7 @@ public class FrontEndButton : MonoBehaviour
 			{
 				if (mButton != null)
 				{
-					mButton.gameObject.renderer.material.color = ColourChart.FrontEndButtonNormal;
+					mButton.gameObject.GetComponent<Renderer>().material.color = ColourChart.FrontEndButtonNormal;
 					if (HighlightWhileMessageBoxActive || (!HighlightWhileMessageBoxActive && !MessageBoxController.Instance.IsAnyMessageActive))
 					{
 						mButton.gameObject.ColorFrom_FrontEndButton(ColourChart.FrontEndButtonHighlight, 0.2f);
@@ -138,7 +138,7 @@ public class FrontEndButton : MonoBehaviour
 				}
 				if (mSprite != null)
 				{
-					mSprite.gameObject.renderer.material.color = ColourChart.FrontEndButtonNormal;
+					mSprite.gameObject.GetComponent<Renderer>().material.color = ColourChart.FrontEndButtonNormal;
 					if (HighlightWhileMessageBoxActive || (!HighlightWhileMessageBoxActive && !MessageBoxController.Instance.IsAnyMessageActive))
 					{
 						mSprite.gameObject.ColorFrom_FrontEndButton(ColourChart.FrontEndButtonHighlight, 0.2f);
@@ -224,23 +224,23 @@ public class FrontEndButton : MonoBehaviour
 			{
 			case State.Normal:
 				mButton.SetColor(ColourChart.FrontEndButtonNormal);
-				mButton.gameObject.renderer.material.color = Color.white;
+				mButton.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Active:
 				mButton.SetColor(ColourChart.FrontEndButtonActive);
-				mButton.gameObject.renderer.material.color = Color.white;
+				mButton.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Selected:
 				mButton.SetColor(ColourChart.FrontEndButtonSelected);
-				mButton.gameObject.renderer.material.color = Color.white;
+				mButton.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Disabled:
 				mButton.SetColor(mDisabledColour);
-				mButton.gameObject.renderer.material.color = Color.white;
+				mButton.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Highlighted:
 				mButton.SetColor(Color.white);
-				mButton.gameObject.renderer.material.color = ColourChart.FrontEndButtonNormal;
+				mButton.gameObject.GetComponent<Renderer>().material.color = ColourChart.FrontEndButtonNormal;
 				break;
 			}
 		}
@@ -255,23 +255,23 @@ public class FrontEndButton : MonoBehaviour
 			{
 			case State.Normal:
 				mSprite.SetColor(ColourChart.FrontEndButtonNormal);
-				mSprite.gameObject.renderer.material.color = Color.white;
+				mSprite.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Active:
 				mSprite.SetColor(ColourChart.FrontEndButtonActive);
-				mSprite.gameObject.renderer.material.color = Color.white;
+				mSprite.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Selected:
 				mSprite.SetColor(ColourChart.FrontEndButtonSelected);
-				mSprite.gameObject.renderer.material.color = Color.white;
+				mSprite.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Disabled:
 				mSprite.SetColor(mDisabledColour);
-				mSprite.gameObject.renderer.material.color = Color.white;
+				mSprite.gameObject.GetComponent<Renderer>().material.color = Color.white;
 				break;
 			case State.Highlighted:
 				mSprite.SetColor(Color.white);
-				mSprite.gameObject.renderer.material.color = ColourChart.FrontEndButtonNormal;
+				mSprite.gameObject.GetComponent<Renderer>().material.color = ColourChart.FrontEndButtonNormal;
 				break;
 			}
 		}

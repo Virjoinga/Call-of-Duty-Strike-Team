@@ -337,7 +337,7 @@ public class MissionBriefingController : SingletonMonoBehaviour
 				mStratergyCamera.AllowInput(true);
 				Invoke("DestroyCameras", 0.5f);
 			}
-			Camera strategy = cameras.StrategyCamera.camera;
+			Camera strategy = cameras.StrategyCamera.GetComponent<Camera>();
 			strategy.cullingMask = mOldCullingMask;
 		}
 		GameController game = GameController.Instance;

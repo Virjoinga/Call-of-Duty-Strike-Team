@@ -822,18 +822,27 @@ public class UIPanelManager : MonoBehaviour, IEZDragDrop, IUIContainer, IUIObjec
 		return (UIPanelManager)gameObject.AddComponent(typeof(UIPanelManager));
 	}
 
-	virtual GameObject IUIObject.get_gameObject()
-	{
-		return base.gameObject;
-	}
+    GameObject IUIObject.gameObject
+    {
+        get
+        {
+            return base.gameObject;
+        }
+    }
 
-	virtual Transform IUIObject.get_transform()
-	{
-		return base.transform;
-	}
+    Transform IUIObject.transform
+    {
+        get
+        {
+            return base.transform;
+        }
+    }
 
-	virtual string IUIObject.get_name()
-	{
-		return base.name;
-	}
+    string IUIObject.name
+    {
+        get
+        {
+            return base.name;
+        }
+    }
 }

@@ -13,7 +13,7 @@ public class MoveToDescriptor : TaskDescriptor
 
 	public TaskDescriptor ExecuteOnCompletion;
 
-	protected NavMeshPath mPath;
+	protected UnityEngine.AI.NavMeshPath mPath;
 
 	public override Task CreateTask(TaskManager owner, TaskManager.Priority priority, Task.Config flags)
 	{

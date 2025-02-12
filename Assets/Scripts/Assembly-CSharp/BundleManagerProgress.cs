@@ -4,16 +4,16 @@ public class BundleManagerProgress : MonoBehaviour
 {
 	private void Start()
 	{
-		if (!base.guiText)
+		if (!base.GetComponent<GUIText>())
 		{
 			Debug.Log("BundleManagerProgress needs a GUIText component!");
 			base.enabled = false;
 		}
 		else
 		{
-			Vector2 pixelOffset = base.guiText.pixelOffset;
+			Vector2 pixelOffset = base.GetComponent<GUIText>().pixelOffset;
 			pixelOffset.y = (float)Screen.height / 2f;
-			base.guiText.pixelOffset = pixelOffset;
+			base.GetComponent<GUIText>().pixelOffset = pixelOffset;
 		}
 	}
 
@@ -21,13 +21,13 @@ public class BundleManagerProgress : MonoBehaviour
 	{
 		if (BundleManager.Instance.IsReady())
 		{
-			base.guiText.text = "DLC bundles downloaded!";
-			base.guiText.material.color = Color.green;
+			base.GetComponent<GUIText>().text = "DLC bundles downloaded!";
+			base.GetComponent<GUIText>().material.color = Color.green;
 		}
 		else
 		{
-			base.guiText.text = "DLC bundles downloading...";
-			base.guiText.material.color = Color.red;
+			base.GetComponent<GUIText>().text = "DLC bundles downloading...";
+			base.GetComponent<GUIText>().material.color = Color.red;
 		}
 	}
 }

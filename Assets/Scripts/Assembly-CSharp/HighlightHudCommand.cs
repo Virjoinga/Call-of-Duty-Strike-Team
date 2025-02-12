@@ -504,7 +504,7 @@ public class HighlightHudCommand : Command
 		{
 			TPPUnitNumber = 4;
 		}
-		if (!CommonHudController.Instance.TPPUnitSelecter.Units[TPPUnitNumber - 1].renderer.enabled)
+		if (!CommonHudController.Instance.TPPUnitSelecter.Units[TPPUnitNumber - 1].GetComponent<Renderer>().enabled)
 		{
 			yield break;
 		}

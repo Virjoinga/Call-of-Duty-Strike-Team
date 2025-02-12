@@ -26,8 +26,8 @@ public class FirstPersonAnimationCommand : Command
 			yield return null;
 		}
 		Transform cameraLocator = ViewModelRig.Instance().GetCameraLocator();
-		NavMeshHit navMeshHit;
-		if (actor != null && actor.realCharacter != null && actor.realCharacter.FirstPersonCamera != null && cameraLocator != null && NavMesh.SamplePosition(cameraLocator.position, out navMeshHit, 2f, actor.navAgent.walkableMask))
+		UnityEngine.AI.NavMeshHit navMeshHit;
+		if (actor != null && actor.realCharacter != null && actor.realCharacter.FirstPersonCamera != null && cameraLocator != null && UnityEngine.AI.NavMesh.SamplePosition(cameraLocator.position, out navMeshHit, 2f, actor.navAgent.walkableMask))
 		{
 			actor.SetPosition(navMeshHit.position);
 			Vector3 angles = cameraLocator.eulerAngles;

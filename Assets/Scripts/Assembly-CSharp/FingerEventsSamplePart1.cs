@@ -86,8 +86,8 @@ public class FingerEventsSamplePart1 : SampleBase
 			{
 				base.UI.StatusText = "Begin stationary on finger " + fingerIndex;
 				stationaryFingerIndex = fingerIndex;
-				originalMaterial = gameObject.renderer.sharedMaterial;
-				gameObject.renderer.sharedMaterial = stationaryMaterial;
+				originalMaterial = gameObject.GetComponent<Renderer>().sharedMaterial;
+				gameObject.GetComponent<Renderer>().sharedMaterial = stationaryMaterial;
 			}
 		}
 	}
@@ -115,7 +115,7 @@ public class FingerEventsSamplePart1 : SampleBase
 		{
 			base.UI.StatusText = "Stationary ended on finger " + fingerIndex + " - " + elapsedTime.ToString("N1") + " seconds elapsed";
 			StopStationaryParticleEmitter();
-			fingerStationaryObject.renderer.sharedMaterial = originalMaterial;
+			fingerStationaryObject.GetComponent<Renderer>().sharedMaterial = originalMaterial;
 			stationaryFingerIndex = -1;
 		}
 	}

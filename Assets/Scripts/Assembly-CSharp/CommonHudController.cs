@@ -1476,8 +1476,8 @@ public class CommonHudController : MonoBehaviour
 
 	private void ResizeLookAndMoveRegions()
 	{
-		BoxCollider boxCollider = (Look.collider as BoxCollider) ?? Look.gameObject.AddComponent<BoxCollider>();
-		BoxCollider boxCollider2 = (Move.collider as BoxCollider) ?? Move.gameObject.AddComponent<BoxCollider>();
+		BoxCollider boxCollider = (Look.GetComponent<Collider>() as BoxCollider) ?? Look.gameObject.AddComponent<BoxCollider>();
+		BoxCollider boxCollider2 = (Move.GetComponent<Collider>() as BoxCollider) ?? Move.gameObject.AddComponent<BoxCollider>();
 		if (boxCollider != null && boxCollider2 != null && GUISystem.Instance != null && GUISystem.Instance.m_guiCamera != null)
 		{
 			Vector3 vector = GUISystem.Instance.m_guiCamera.ViewportToWorldPoint(new Vector3(0f, 0f, 0f));
@@ -1557,7 +1557,7 @@ public class CommonHudController : MonoBehaviour
 	{
 		Rect rect = new Rect((float)lastScreenWidth - 0.4f * (float)lastScreenWidth, 0.15f * (float)lastScreenHeight, 0.4f * (float)lastScreenWidth, 0.7f * (float)lastScreenHeight);
 		float num = CommonHelper.CalculatePixelSizeInWorldSpace(TriggerButton.transform);
-		Vector3 vector = TriggerButton.collider.bounds.size * 0.5f / num;
+		Vector3 vector = TriggerButton.GetComponent<Collider>().bounds.size * 0.5f / num;
 		Vector3 vector2 = position + new Vector2(0f - vector.x, 0f - vector.y);
 		Vector3 vector3 = position + new Vector2(vector.x, 0f - vector.y);
 		Vector3 vector4 = position + new Vector2(0f - vector.x, vector.y);
@@ -1864,13 +1864,13 @@ public class CommonHudController : MonoBehaviour
 			if (ChangeUnitLeftButton != null)
 			{
 				ChangeUnitLeftButton.Hide(hide);
-				BoxCollider boxCollider = ChangeUnitLeftButton.collider as BoxCollider;
+				BoxCollider boxCollider = ChangeUnitLeftButton.GetComponent<Collider>() as BoxCollider;
 				boxCollider.size = Vector3.zero;
 			}
 			if (ChangeUnitRightButton != null)
 			{
 				ChangeUnitRightButton.Hide(hide);
-				BoxCollider boxCollider2 = ChangeUnitRightButton.collider as BoxCollider;
+				BoxCollider boxCollider2 = ChangeUnitRightButton.GetComponent<Collider>() as BoxCollider;
 				boxCollider2.size = Vector3.zero;
 			}
 		}
@@ -2688,12 +2688,12 @@ public class CommonHudController : MonoBehaviour
 
 	public void ClearSoftLock()
 	{
-		Crosshair.StaticCrosshair.renderer.enabled = false;
+		Crosshair.StaticCrosshair.GetComponent<Renderer>().enabled = false;
 	}
 
 	public void SetSoftLockPosition(Vector3 position)
 	{
-		Crosshair.StaticCrosshair.renderer.enabled = InputSettings.ShowSoftLockIndicator;
+		Crosshair.StaticCrosshair.GetComponent<Renderer>().enabled = InputSettings.ShowSoftLockIndicator;
 		Crosshair.StaticCrosshair.transform.position = position;
 	}
 

@@ -42,7 +42,7 @@ public class Actor : MonoBehaviour
 
 	public AnimDirector animDirector;
 
-	public NavMeshAgent navAgent;
+	public UnityEngine.AI.NavMeshAgent navAgent;
 
 	public TaskManager tasks;
 

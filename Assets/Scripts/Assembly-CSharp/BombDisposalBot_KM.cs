@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BombDisposalBot_KM : MonoBehaviour
 {
-	private NavMeshAgent agent;
+	private UnityEngine.AI.NavMeshAgent agent;
 
 	public GameObject Target;
 
@@ -25,7 +25,7 @@ public class BombDisposalBot_KM : MonoBehaviour
 
 	private void Start()
 	{
-		agent = GetComponent<NavMeshAgent>();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.SetDestination(Target.transform.position);
 		if (!(ProgressBlipRef != null))
 		{

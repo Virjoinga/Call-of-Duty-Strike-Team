@@ -331,19 +331,19 @@ public class iTween : MonoBehaviour
 		}
 		if ((bool)target.GetComponent(typeof(GUITexture)))
 		{
-			color2 = (color = target.guiTexture.color);
+			color2 = (color = target.GetComponent<GUITexture>().color);
 		}
 		else if ((bool)target.GetComponent(typeof(GUIText)))
 		{
-			color2 = (color = target.guiText.material.color);
+			color2 = (color = target.GetComponent<GUIText>().material.color);
 		}
-		else if ((bool)target.renderer)
+		else if ((bool)target.GetComponent<Renderer>())
 		{
-			color2 = (color = target.renderer.material.color);
+			color2 = (color = target.GetComponent<Renderer>().material.color);
 		}
-		else if ((bool)target.light)
+		else if ((bool)target.GetComponent<Light>())
 		{
-			color2 = (color = target.light.color);
+			color2 = (color = target.GetComponent<Light>().color);
 		}
 		if (args.Contains("color"))
 		{
@@ -380,19 +380,19 @@ public class iTween : MonoBehaviour
 		}
 		if ((bool)target.GetComponent(typeof(GUITexture)))
 		{
-			target.guiTexture.color = color;
+			target.GetComponent<GUITexture>().color = color;
 		}
 		else if ((bool)target.GetComponent(typeof(GUIText)))
 		{
-			target.guiText.material.color = color;
+			target.GetComponent<GUIText>().material.color = color;
 		}
-		else if ((bool)target.renderer)
+		else if ((bool)target.GetComponent<Renderer>())
 		{
-			target.renderer.material.color = color;
+			target.GetComponent<Renderer>().material.color = color;
 		}
-		else if ((bool)target.light)
+		else if ((bool)target.GetComponent<Light>())
 		{
-			target.light.color = color;
+			target.GetComponent<Light>().color = color;
 		}
 		args["color"] = color2;
 		args["type"] = "color";
@@ -446,7 +446,7 @@ public class iTween : MonoBehaviour
 				Debug.LogError("iTween Error: AudioFrom requires an AudioSource.");
 				return;
 			}
-			audioSource = target.audio;
+			audioSource = target.GetComponent<AudioSource>();
 		}
 		Vector2 vector = default(Vector2);
 		Vector2 vector2 = default(Vector2);
@@ -1197,26 +1197,26 @@ public class iTween : MonoBehaviour
 		if ((bool)GetComponent(typeof(GUITexture)))
 		{
 			colors = new Color[1, 3];
-			colors[0, 0] = (colors[0, 1] = base.guiTexture.color);
+			colors[0, 0] = (colors[0, 1] = base.GetComponent<GUITexture>().color);
 		}
 		else if ((bool)GetComponent(typeof(GUIText)))
 		{
 			colors = new Color[1, 3];
-			colors[0, 0] = (colors[0, 1] = base.guiText.material.color);
+			colors[0, 0] = (colors[0, 1] = base.GetComponent<GUIText>().material.color);
 		}
-		else if ((bool)base.renderer)
+		else if ((bool)base.GetComponent<Renderer>())
 		{
-			colors = new Color[base.renderer.materials.Length, 3];
-			for (int i = 0; i < base.renderer.materials.Length; i++)
+			colors = new Color[base.GetComponent<Renderer>().materials.Length, 3];
+			for (int i = 0; i < base.GetComponent<Renderer>().materials.Length; i++)
 			{
-				colors[i, 0] = base.renderer.materials[i].GetColor(namedcolorvalue.ToString());
-				colors[i, 1] = base.renderer.materials[i].GetColor(namedcolorvalue.ToString());
+				colors[i, 0] = base.GetComponent<Renderer>().materials[i].GetColor(namedcolorvalue.ToString());
+				colors[i, 1] = base.GetComponent<Renderer>().materials[i].GetColor(namedcolorvalue.ToString());
 			}
 		}
-		else if ((bool)base.light)
+		else if ((bool)base.GetComponent<Light>())
 		{
 			colors = new Color[1, 3];
-			colors[0, 0] = (colors[0, 1] = base.light.color);
+			colors[0, 0] = (colors[0, 1] = base.GetComponent<Light>().color);
 		}
 		else
 		{
@@ -1285,7 +1285,7 @@ public class iTween : MonoBehaviour
 		}
 		else if ((bool)GetComponent(typeof(AudioSource)))
 		{
-			audioSource = base.audio;
+			audioSource = base.GetComponent<AudioSource>();
 		}
 		else
 		{
@@ -1311,12 +1311,12 @@ public class iTween : MonoBehaviour
 		}
 		else if ((bool)GetComponent(typeof(AudioSource)))
 		{
-			audioSource = base.audio;
+			audioSource = base.GetComponent<AudioSource>();
 		}
 		else
 		{
 			base.gameObject.AddComponent(typeof(AudioSource));
-			audioSource = base.audio;
+			audioSource = base.GetComponent<AudioSource>();
 			audioSource.playOnAwake = false;
 		}
 		audioSource.clip = (AudioClip)tweenArguments["audioclip"];
@@ -1967,22 +1967,22 @@ public class iTween : MonoBehaviour
 		}
 		if ((bool)GetComponent(typeof(GUITexture)))
 		{
-			base.guiTexture.color = colors[0, 2];
+			base.GetComponent<GUITexture>().color = colors[0, 2];
 		}
 		else if ((bool)GetComponent(typeof(GUIText)))
 		{
-			base.guiText.material.color = colors[0, 2];
+			base.GetComponent<GUIText>().material.color = colors[0, 2];
 		}
-		else if ((bool)base.renderer)
+		else if ((bool)base.GetComponent<Renderer>())
 		{
 			for (int j = 0; j < colors.GetLength(0); j++)
 			{
-				base.renderer.materials[j].SetColor(namedcolorvalue.ToString(), colors[j, 2]);
+				base.GetComponent<Renderer>().materials[j].SetColor(namedcolorvalue.ToString(), colors[j, 2]);
 			}
 		}
-		else if ((bool)base.light)
+		else if ((bool)base.GetComponent<Light>())
 		{
-			base.light.color = colors[0, 2];
+			base.GetComponent<Light>().color = colors[0, 2];
 		}
 		if (percentage != 1f)
 		{
@@ -1990,22 +1990,22 @@ public class iTween : MonoBehaviour
 		}
 		if ((bool)GetComponent(typeof(GUITexture)))
 		{
-			base.guiTexture.color = colors[0, 1];
+			base.GetComponent<GUITexture>().color = colors[0, 1];
 		}
 		else if ((bool)GetComponent(typeof(GUIText)))
 		{
-			base.guiText.material.color = colors[0, 1];
+			base.GetComponent<GUIText>().material.color = colors[0, 1];
 		}
-		else if ((bool)base.renderer)
+		else if ((bool)base.GetComponent<Renderer>())
 		{
 			for (int k = 0; k < colors.GetLength(0); k++)
 			{
-				base.renderer.materials[k].SetColor(namedcolorvalue.ToString(), colors[k, 1]);
+				base.GetComponent<Renderer>().materials[k].SetColor(namedcolorvalue.ToString(), colors[k, 1]);
 			}
 		}
-		else if ((bool)base.light)
+		else if ((bool)base.GetComponent<Light>())
 		{
-			base.light.color = colors[0, 1];
+			base.GetComponent<Light>().color = colors[0, 1];
 		}
 	}
 
@@ -2048,7 +2048,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.position = preUpdate;
-			base.rigidbody.MovePosition(postUpdate);
+			base.GetComponent<Rigidbody>().MovePosition(postUpdate);
 		}
 	}
 
@@ -2081,7 +2081,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.position = preUpdate;
-			base.rigidbody.MovePosition(postUpdate);
+			base.GetComponent<Rigidbody>().MovePosition(postUpdate);
 		}
 	}
 
@@ -2107,7 +2107,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.position = preUpdate;
-			base.rigidbody.MovePosition(postUpdate);
+			base.GetComponent<Rigidbody>().MovePosition(postUpdate);
 		}
 	}
 
@@ -2167,7 +2167,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.eulerAngles = preUpdate;
-			base.rigidbody.MoveRotation(Quaternion.Euler(postUpdate));
+			base.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(postUpdate));
 		}
 	}
 
@@ -2183,7 +2183,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.eulerAngles = preUpdate;
-			base.rigidbody.MoveRotation(Quaternion.Euler(postUpdate));
+			base.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(postUpdate));
 		}
 	}
 
@@ -2235,7 +2235,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.position = preUpdate;
-			base.rigidbody.MovePosition(postUpdate);
+			base.GetComponent<Rigidbody>().MovePosition(postUpdate);
 		}
 	}
 
@@ -2270,7 +2270,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.eulerAngles = preUpdate;
-			base.rigidbody.MoveRotation(Quaternion.Euler(postUpdate));
+			base.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(postUpdate));
 		}
 	}
 
@@ -2317,7 +2317,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.position = preUpdate;
-			base.rigidbody.MovePosition(postUpdate);
+			base.GetComponent<Rigidbody>().MovePosition(postUpdate);
 		}
 	}
 
@@ -2354,7 +2354,7 @@ public class iTween : MonoBehaviour
 		if (physics)
 		{
 			base.transform.eulerAngles = preUpdate;
-			base.rigidbody.MoveRotation(Quaternion.Euler(postUpdate));
+			base.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(postUpdate));
 		}
 	}
 
@@ -2541,19 +2541,19 @@ public class iTween : MonoBehaviour
 		}
 		if ((bool)target.GetComponent(typeof(GUITexture)))
 		{
-			array[0] = (array[1] = target.guiTexture.color);
+			array[0] = (array[1] = target.GetComponent<GUITexture>().color);
 		}
 		else if ((bool)target.GetComponent(typeof(GUIText)))
 		{
-			array[0] = (array[1] = target.guiText.material.color);
+			array[0] = (array[1] = target.GetComponent<GUIText>().material.color);
 		}
-		else if ((bool)target.renderer)
+		else if ((bool)target.GetComponent<Renderer>())
 		{
-			array[0] = (array[1] = target.renderer.material.color);
+			array[0] = (array[1] = target.GetComponent<Renderer>().material.color);
 		}
-		else if ((bool)target.light)
+		else if ((bool)target.GetComponent<Light>())
 		{
-			array[0] = (array[1] = target.light.color);
+			array[0] = (array[1] = target.GetComponent<Light>().color);
 		}
 		if (args.Contains("color"))
 		{
@@ -2584,19 +2584,19 @@ public class iTween : MonoBehaviour
 		array[3].a = Mathf.SmoothDamp(array[0].a, array[1].a, ref array[2].a, num);
 		if ((bool)target.GetComponent(typeof(GUITexture)))
 		{
-			target.guiTexture.color = array[3];
+			target.GetComponent<GUITexture>().color = array[3];
 		}
 		else if ((bool)target.GetComponent(typeof(GUIText)))
 		{
-			target.guiText.material.color = array[3];
+			target.GetComponent<GUIText>().material.color = array[3];
 		}
-		else if ((bool)target.renderer)
+		else if ((bool)target.GetComponent<Renderer>())
 		{
-			target.renderer.material.color = array[3];
+			target.GetComponent<Renderer>().material.color = array[3];
 		}
-		else if ((bool)target.light)
+		else if ((bool)target.GetComponent<Light>())
 		{
-			target.light.color = array[3];
+			target.GetComponent<Light>().color = array[3];
 		}
 	}
 
@@ -2631,7 +2631,7 @@ public class iTween : MonoBehaviour
 				Debug.LogError("iTween Error: AudioUpdate requires an AudioSource.");
 				return;
 			}
-			audioSource = target.audio;
+			audioSource = target.GetComponent<AudioSource>();
 		}
 		array[0] = (array[1] = new Vector2(audioSource.volume, audioSource.pitch));
 		if (args.Contains("volume"))
@@ -2700,11 +2700,11 @@ public class iTween : MonoBehaviour
 		{
 			target.transform.eulerAngles = array[3];
 		}
-		if (target.rigidbody != null)
+		if (target.GetComponent<Rigidbody>() != null)
 		{
 			Vector3 eulerAngles2 = target.transform.eulerAngles;
 			target.transform.eulerAngles = eulerAngles;
-			target.rigidbody.MoveRotation(Quaternion.Euler(eulerAngles2));
+			target.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(eulerAngles2));
 		}
 	}
 
@@ -2836,11 +2836,11 @@ public class iTween : MonoBehaviour
 		{
 			target.transform.position = array[3];
 		}
-		if (target.rigidbody != null)
+		if (target.GetComponent<Rigidbody>() != null)
 		{
 			Vector3 position2 = target.transform.position;
 			target.transform.position = position;
-			target.rigidbody.MovePosition(position2);
+			target.GetComponent<Rigidbody>().MovePosition(position2);
 		}
 	}
 
@@ -3290,7 +3290,7 @@ public class iTween : MonoBehaviour
 	{
 		if ((bool)cameraFade)
 		{
-			cameraFade.guiTexture.texture = texture;
+			cameraFade.GetComponent<GUITexture>().texture = texture;
 		}
 	}
 
@@ -3302,9 +3302,9 @@ public class iTween : MonoBehaviour
 		}
 		cameraFade = new GameObject("iTween Camera Fade");
 		cameraFade.transform.position = new Vector3(0.5f, 0.5f, depth);
-		cameraFade.AddComponent("GUITexture");
-		cameraFade.guiTexture.texture = texture;
-		cameraFade.guiTexture.color = new Color(0.5f, 0.5f, 0.5f, 0f);
+		cameraFade.AddComponent<GUITexture>();
+		cameraFade.GetComponent<GUITexture>().texture = texture;
+		cameraFade.GetComponent<GUITexture>().color = new Color(0.5f, 0.5f, 0.5f, 0f);
 		return cameraFade;
 	}
 
@@ -3316,9 +3316,9 @@ public class iTween : MonoBehaviour
 		}
 		cameraFade = new GameObject("iTween Camera Fade");
 		cameraFade.transform.position = new Vector3(0.5f, 0.5f, Defaults.cameraFadeDepth);
-		cameraFade.AddComponent("GUITexture");
-		cameraFade.guiTexture.texture = texture;
-		cameraFade.guiTexture.color = new Color(0.5f, 0.5f, 0.5f, 0f);
+		cameraFade.AddComponent<GUITexture>();
+		cameraFade.GetComponent<GUITexture>().texture = texture;
+		cameraFade.GetComponent<GUITexture>().color = new Color(0.5f, 0.5f, 0.5f, 0f);
 		return cameraFade;
 	}
 
@@ -3330,9 +3330,9 @@ public class iTween : MonoBehaviour
 		}
 		cameraFade = new GameObject("iTween Camera Fade");
 		cameraFade.transform.position = new Vector3(0.5f, 0.5f, Defaults.cameraFadeDepth);
-		cameraFade.AddComponent("GUITexture");
-		cameraFade.guiTexture.texture = CameraTexture(Color.black);
-		cameraFade.guiTexture.color = new Color(0.5f, 0.5f, 0.5f, 0f);
+		cameraFade.AddComponent<GUITexture>();
+		cameraFade.GetComponent<GUITexture>().texture = CameraTexture(Color.black);
+		cameraFade.GetComponent<GUITexture>().color = new Color(0.5f, 0.5f, 0.5f, 0f);
 		return cameraFade;
 	}
 
@@ -3912,7 +3912,7 @@ public class iTween : MonoBehaviour
 			args["target"] = target;
 		}
 		tweens.Insert(0, args);
-		target.AddComponent("iTween");
+		target.AddComponent<iTween>();
 	}
 
 	private static Hashtable CleanArgs(Hashtable args)
@@ -3990,7 +3990,7 @@ public class iTween : MonoBehaviour
 		{
 			time = Defaults.time;
 		}
-		if (base.rigidbody != null && !base.rigidbody.isKinematic)
+		if (base.GetComponent<Rigidbody>() != null && !base.GetComponent<Rigidbody>().isKinematic)
 		{
 			physics = true;
 		}

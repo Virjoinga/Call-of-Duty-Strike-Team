@@ -546,7 +546,7 @@ public abstract class SpriteRoot : MonoBehaviour, IEZLinkedListItem<ISpriteAnima
 			}
 			else if (!s.managed)
 			{
-				base.renderer.sharedMaterial = s.renderer.sharedMaterial;
+				base.GetComponent<Renderer>().sharedMaterial = s.GetComponent<Renderer>().sharedMaterial;
 			}
 		}
 		drawLayer = s.drawLayer;
@@ -566,7 +566,7 @@ public abstract class SpriteRoot : MonoBehaviour, IEZLinkedListItem<ISpriteAnima
 			}
 			else if (!managed)
 			{
-				((SpriteMesh)m_spriteMesh).material = base.renderer.sharedMaterial;
+				((SpriteMesh)m_spriteMesh).material = base.GetComponent<Renderer>().sharedMaterial;
 				SetPixelToUV(m_spriteMesh.texture);
 			}
 		}
@@ -1078,17 +1078,17 @@ public abstract class SpriteRoot : MonoBehaviour, IEZLinkedListItem<ISpriteAnima
 				SetPixelToUV(spriteMesh.material.mainTexture);
 			}
 		}
-		else if (base.renderer != null && base.renderer.sharedMaterial != null && base.renderer.sharedMaterial.mainTexture != null)
+		else if (base.GetComponent<Renderer>() != null && base.GetComponent<Renderer>().sharedMaterial != null && base.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 		{
-			SetPixelToUV(base.renderer.sharedMaterial.mainTexture);
+			SetPixelToUV(base.GetComponent<Renderer>().sharedMaterial.mainTexture);
 		}
 	}
 
 	public void SetTexture(Texture2D tex)
 	{
-		if (!managed && !(base.renderer == null))
+		if (!managed && !(base.GetComponent<Renderer>() == null))
 		{
-			base.renderer.material.mainTexture = tex;
+			base.GetComponent<Renderer>().material.mainTexture = tex;
 			SetPixelToUV(tex);
 			SetCamera();
 		}
@@ -1096,9 +1096,9 @@ public abstract class SpriteRoot : MonoBehaviour, IEZLinkedListItem<ISpriteAnima
 
 	public void SetMaterial(Material mat)
 	{
-		if (!managed && !(base.renderer == null))
+		if (!managed && !(base.GetComponent<Renderer>() == null))
 		{
-			base.renderer.sharedMaterial = mat;
+			base.GetComponent<Renderer>().sharedMaterial = mat;
 			SetPixelToUV(mat.mainTexture);
 			SetCamera();
 		}
@@ -1176,15 +1176,15 @@ public abstract class SpriteRoot : MonoBehaviour, IEZLinkedListItem<ISpriteAnima
 			m_spriteMesh.sprite = null;
 		}
 		m_spriteMesh = null;
-		if (base.renderer != null)
+		if (base.GetComponent<Renderer>() != null)
 		{
 			if (Application.isPlaying)
 			{
-				UnityEngine.Object.Destroy(base.renderer);
+				UnityEngine.Object.Destroy(base.GetComponent<Renderer>());
 			}
 			else
 			{
-				UnityEngine.Object.DestroyImmediate(base.renderer);
+				UnityEngine.Object.DestroyImmediate(base.GetComponent<Renderer>());
 			}
 		}
 		UnityEngine.Object component = base.gameObject.GetComponent(typeof(MeshFilter));

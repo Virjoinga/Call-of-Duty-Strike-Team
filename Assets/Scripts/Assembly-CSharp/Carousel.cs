@@ -103,7 +103,7 @@ public class Carousel : MonoBehaviour
 				float num3 = 0f;
 				float num4 = 0f;
 				Vector3 vector = Camera.main.WorldToScreenPoint(mItemPositions[i]);
-				Transform transform = carouselItem.transform.FindChild("background");
+				Transform transform = carouselItem.transform.Find("background");
 				PackedSprite component = transform.GetComponent<PackedSprite>();
 				if (component != null)
 				{

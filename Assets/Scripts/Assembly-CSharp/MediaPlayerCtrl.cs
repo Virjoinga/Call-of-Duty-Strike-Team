@@ -51,8 +51,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 	{
 		GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Quad);
 		gameObject.transform.position = base.transform.position + new Vector3(0f, 0f, 0.5f);
-		gameObject.renderer.material = new Material(Shader.Find("Diffuse"));
-		gameObject.renderer.material.color = Color.black;
+		gameObject.GetComponent<Renderer>().material = new Material(Shader.Find("Diffuse"));
+		gameObject.GetComponent<Renderer>().material.color = Color.black;
 	}
 
 	private void Update()
@@ -211,7 +211,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 		texture = new Texture2D(0, 0, TextureFormat.RGB565, false);
 		texture.filterMode = FilterMode.Bilinear;
 		texture.wrapMode = TextureWrapMode.Clamp;
-		base.renderer.material.mainTexture = texture;
+		base.GetComponent<Renderer>().material.mainTexture = texture;
 		Call_SetUnityActivity();
 		Call_SetUnityTexture(texture.GetNativeTextureID());
 		mCheckFBO = false;

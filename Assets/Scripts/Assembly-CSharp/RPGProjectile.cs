@@ -95,13 +95,13 @@ public class RPGProjectile : MonoBehaviour
 			return;
 		}
 		Vector3 force = GetFacing() * Acceleration * (Time.deltaTime * 50f);
-		base.rigidbody.AddForce(force);
-		if (!base.rigidbody.collider.enabled)
+		base.GetComponent<Rigidbody>().AddForce(force);
+		if (!base.GetComponent<Rigidbody>().GetComponent<Collider>().enabled)
 		{
 			float sqrMagnitude = (mOrigin - base.transform.position).sqrMagnitude;
 			if (sqrMagnitude >= mDistanceToStartCollisionSq)
 			{
-				base.rigidbody.collider.enabled = true;
+				base.GetComponent<Rigidbody>().GetComponent<Collider>().enabled = true;
 			}
 		}
 		mTimeToDetonation -= Time.deltaTime;
@@ -136,7 +136,7 @@ public class RPGProjectile : MonoBehaviour
 		{
 			Heli = mOwner.transform.parent.GetComponentInChildren<Helicopter>();
 		}
-		AddBlip(base.rigidbody.gameObject);
+		AddBlip(base.GetComponent<Rigidbody>().gameObject);
 		if (mOwner != null)
 		{
 		}
@@ -155,7 +155,7 @@ public class RPGProjectile : MonoBehaviour
 		}
 		mDebugDirection = vector;
 		Throw(aimDir, mLaunchSpeed);
-		base.rigidbody.collider.enabled = false;
+		base.GetComponent<Rigidbody>().GetComponent<Collider>().enabled = false;
 		if (TrailParticles != null)
 		{
 			TrailParticles.gameObject.SetActive(true);
@@ -165,12 +165,12 @@ public class RPGProjectile : MonoBehaviour
 
 	public void Throw(Vector3 direction, float speed)
 	{
-		if (base.rigidbody.IsSleeping())
+		if (base.GetComponent<Rigidbody>().IsSleeping())
 		{
-			base.rigidbody.WakeUp();
+			base.GetComponent<Rigidbody>().WakeUp();
 		}
 		Vector3 force = direction * speed;
-		base.rigidbody.AddForce(force);
+		base.GetComponent<Rigidbody>().AddForce(force);
 		mDebugForce = force;
 	}
 
@@ -245,7 +245,7 @@ public class RPGProjectile : MonoBehaviour
 			{
 				TrailParticles.enableEmission = false;
 			}
-			base.rigidbody.Sleep();
+			base.GetComponent<Rigidbody>().Sleep();
 			StartCoroutine(WaitForParticlesThenDestroy(3f));
 			mExploded = true;
 			if (Heli != null)

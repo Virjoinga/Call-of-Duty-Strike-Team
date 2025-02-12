@@ -107,7 +107,7 @@ public class AnimateCommonBackgroundBox : MonoBehaviour
 			mCurrentHeight = 0f;
 			Box.ForegroundHeightInUnits = mCurrentHeight;
 			Box.Resize();
-			Transform transform = base.transform.FindChild("Content");
+			Transform transform = base.transform.Find("Content");
 			if (transform != null)
 			{
 				ImageContent = transform.GetComponentsInChildren<SpriteRoot>();
@@ -129,7 +129,7 @@ public class AnimateCommonBackgroundBox : MonoBehaviour
 			{
 				Debug.LogWarning("No content found for CommonBackgroundBox " + base.name);
 			}
-			Transform transform2 = base.transform.FindChild("Icons");
+			Transform transform2 = base.transform.Find("Icons");
 			if (transform2 != null)
 			{
 				IconContent = transform2.GetComponentsInChildren<IconControllerBase>();

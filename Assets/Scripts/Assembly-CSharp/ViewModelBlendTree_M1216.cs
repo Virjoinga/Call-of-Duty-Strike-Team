@@ -26,12 +26,12 @@ public class ViewModelBlendTree_M1216 : IViewModelWeaponBlendTree
 
 	public ViewModelBlendTree_M1216(GameObject weapon, WeaponCoreAnims coreAnims, M1216Anims specificAnims)
 	{
-		mHipsFire = weapon.animation.AddClipSafe(specificAnims.HipsFire, "HipsFire");
-		mSightsFire = weapon.animation.AddClipSafe(specificAnims.SightsFire, "SightsFire");
-		mHipsRechamber = weapon.animation.AddClipSafe(specificAnims.HipsRechamber, "HipsRechamber");
-		mSightsRechamber = weapon.animation.AddClipSafe(specificAnims.SightsRechamber, "SightsRechamber");
-		mReloadEmpty = weapon.animation.AddClipSafe(specificAnims.ReloadEmpty, "ReloadEmpty");
-		mReloadTactical = weapon.animation.AddClipSafe(specificAnims.ReloadTactical, "ReloadTactical");
+		mHipsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsFire, "HipsFire");
+		mSightsFire = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsFire, "SightsFire");
+		mHipsRechamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.HipsRechamber, "HipsRechamber");
+		mSightsRechamber = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.SightsRechamber, "SightsRechamber");
+		mReloadEmpty = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadEmpty, "ReloadEmpty");
+		mReloadTactical = weapon.GetComponent<Animation>().AddClipSafe(specificAnims.ReloadTactical, "ReloadTactical");
 		mReloadEmpty.wrapMode = WrapMode.Once;
 		ViewModelRig.SetupEventData(out mReloadEventTimes, specificAnims.ReloadEmptyEvents, specificAnims.RechamberingEvents);
 	}
