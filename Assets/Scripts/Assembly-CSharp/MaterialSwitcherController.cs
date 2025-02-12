@@ -8,10 +8,10 @@ public class MaterialSwitcherController : MonoBehaviour
 
 	private void Awake()
 	{
-		MaterialTextureSwitcher obj = Object.Instantiate(MaterialSwitcherPrefabRef) as MaterialTextureSwitcher;
-		Object.DestroyImmediate(obj);
-		FontManager obj2 = Object.Instantiate(FontSwitcherPrefabRef) as FontManager;
-		Object.DestroyImmediate(obj2);
+		//MaterialTextureSwitcher obj = Object.Instantiate(MaterialSwitcherPrefabRef) as MaterialTextureSwitcher;
+		//Object.DestroyImmediate(obj);
+		//FontManager obj2 = Object.Instantiate(FontSwitcherPrefabRef) as FontManager;
+		//Object.DestroyImmediate(obj2);
 	}
 
 	private void Start()

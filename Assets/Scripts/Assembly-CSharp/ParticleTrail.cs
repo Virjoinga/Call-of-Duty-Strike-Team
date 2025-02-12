@@ -267,7 +267,7 @@ public class ParticleTrail : MonoBehaviour
 		LightProbes lightProbes = LightmapSettings.lightProbes;
 		if (lightProbes != null)
 		{
-			lightProbes.GetInterpolatedLightProbe(m_transform.position, m_lightProbeHint, s_sampleBuffer);
+			//lightProbes.GetInterpolatedProbe(m_transform.position, m_lightProbeHint, s_sampleBuffer);
 			Color colour = m_colour;
 			Color ambientLight = RenderSettings.ambientLight;
 			colour.r *= s_sampleBuffer[0] + ambientLight.r;

@@ -79,17 +79,17 @@ public class HostageSequence : MonoBehaviour
 		string theme = ((!(MissionSetup.Instance != null)) ? null : MissionSetup.Instance.Theme);
 		mHostage = CreateModel(Hostage, theme, null, mSeed);
 		mHostageTaker = CreateModel(HostageTaker, theme, HostageTaker.DefaultPrimaryWeapon ?? HostageTakerWeapon, mSeed);
-		HostageReadyLoop.Initialise("ReadyLoop", mHostage.animation);
-		HostageTakerReadyLoop.Initialise("ReadyLoop", mHostageTaker.animation);
-		HostagePullUp.Initialise("PullUp", mHostage.animation);
-		HostageTakerPullUp.Initialise("PullUp", mHostageTaker.animation);
-		HostageHold.Initialise("Hold", mHostage.animation);
-		HostageTakerHold.Initialise("Hold", mHostageTaker.animation);
-		HostageReleased.Initialise("Released", mHostage.animation);
-		HostageExecuted.Initialise("Executed", mHostage.animation);
-		HostageShotByPlayer.Initialise("ShotByPlayer", mHostage.animation);
-		HostageTakerFlinches.Initialise("Flinch", mHostageTaker.animation);
-		HostageTakerShoots.Initialise("Shoot", mHostageTaker.animation);
+		HostageReadyLoop.Initialise("ReadyLoop", mHostage.GetComponent<Animation>());
+		HostageTakerReadyLoop.Initialise("ReadyLoop", mHostageTaker.GetComponent<Animation>());
+		HostagePullUp.Initialise("PullUp", mHostage.GetComponent<Animation>());
+		HostageTakerPullUp.Initialise("PullUp", mHostageTaker.GetComponent<Animation>());
+		HostageHold.Initialise("Hold", mHostage.GetComponent<Animation>());
+		HostageTakerHold.Initialise("Hold", mHostageTaker.GetComponent<Animation>());
+		HostageReleased.Initialise("Released", mHostage.GetComponent<Animation>());
+		HostageExecuted.Initialise("Executed", mHostage.GetComponent<Animation>());
+		HostageShotByPlayer.Initialise("ShotByPlayer", mHostage.GetComponent<Animation>());
+		HostageTakerFlinches.Initialise("Flinch", mHostageTaker.GetComponent<Animation>());
+		HostageTakerShoots.Initialise("Shoot", mHostageTaker.GetComponent<Animation>());
 		mHostageTakerHudBlip = ActorGenerator.AddBlip(mHostageTaker, HostageTaker, mHostageTaker);
 		ShowHudBlips(m_Interface.VisibleBeforeFinalSequence);
 		Transform hostageTakerHead = mHostageTaker.transform.FindInHierarchy("Bip002 Head");
@@ -101,13 +101,13 @@ public class HostageSequence : MonoBehaviour
 	private void OnEnable()
 	{
 		mPlayFinishSequence = false;
-		if (mHostage != null && mHostage.animation != null)
+		if (mHostage != null && mHostage.GetComponent<Animation>() != null)
 		{
-			mHostage.animation.Stop();
+			mHostage.GetComponent<Animation>().Stop();
 		}
-		if (mHostageTaker != null && mHostageTaker.animation != null)
+		if (mHostageTaker != null && mHostageTaker.GetComponent<Animation>() != null)
 		{
-			mHostageTaker.animation.Stop();
+			mHostageTaker.GetComponent<Animation>().Stop();
 		}
 		StartCoroutine(UpdateState());
 	}
@@ -380,7 +380,7 @@ public class HostageSequence : MonoBehaviour
 			{
 				float[] array = new float[27];
 				Transform transform = gameObject.transform.FindInHierarchy("Bip002 Pelvis");
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(transform.position, componentsInChildren[0], array);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], array);
 				ProbeUtils.UpdateMaterials(array, componentsInChildren);
 				blobShadow.ShadowColour = ProbeUtils.CalculateShadowColour(array);
 			}
@@ -431,7 +431,7 @@ public class HostageSequence : MonoBehaviour
 			{
 				componentInChildren.Drop();
 			}
-			mHostageTaker.animation.Stop();
+			mHostageTaker.GetComponent<Animation>().Stop();
 			mHostageTakerRagdoll.SwitchToRagdoll();
 			mSnapTarget.gameObject.SetActive(false);
 			ShowHudBlips(false);

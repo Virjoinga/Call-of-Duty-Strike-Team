@@ -41,7 +41,7 @@ public class ParticleLightProbeSampler : MonoBehaviour
 		LightProbes lightProbes = LightmapSettings.lightProbes;
 		if (lightProbes != null)
 		{
-			lightProbes.GetInterpolatedLightProbe(m_transform.position, m_lightProbeHint, s_sampleBuffer);
+			//lightProbes.GetInterpolatedProbe(m_transform.position, m_lightProbeHint, s_sampleBuffer);
 			Color initialColour = m_initialColour;
 			Color ambientLight = RenderSettings.ambientLight;
 			initialColour.r *= s_sampleBuffer[0] + ambientLight.r;

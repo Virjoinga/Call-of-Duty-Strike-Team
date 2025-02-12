@@ -121,7 +121,7 @@ public class ImpactEffectManager : MonoBehaviour
 			Color color = Color.white;
 			if (lightProbes != null)
 			{
-				LightmapSettings.lightProbes.GetInterpolatedLightProbe(position, null, s_lightProbeData);
+				//LightmapSettings.lightProbes.GetInterpolatedProbe(position, null, s_lightProbeData);
 				color.r = s_lightProbeData[0];
 				color.g = s_lightProbeData[1];
 				color.b = s_lightProbeData[2];
