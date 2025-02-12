@@ -1,4 +1,4 @@
-ËDShader "Sprite/Vertex Colored, Split Channels" {
+Shader "Sprite/Vertex Colored, Split Channels" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _MainTex ("Base (RGB)", 2D) = "white" {}

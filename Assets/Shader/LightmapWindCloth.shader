@@ -1,4 +1,4 @@
-®•Shader "Corona/Lightmap/[WindCloth]" {
+Shader "Corona/Lightmap/[WindCloth]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _WindAmount ("Wind Amount", Float) = 0.08

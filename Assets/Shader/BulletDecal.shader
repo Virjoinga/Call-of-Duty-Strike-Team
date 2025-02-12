@@ -1,4 +1,4 @@
-»LShader "Corona/Effects/BulletDecal" {
+Shader "Corona/Effects/BulletDecal" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _TintColor ("TintColor", Color) = (1,1,1,1)

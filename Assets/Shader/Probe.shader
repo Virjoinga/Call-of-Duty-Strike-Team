@@ -1,4 +1,4 @@
-ºÜShader "Corona/Probe/Base" {
+Shader "Corona/Probe/Base" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

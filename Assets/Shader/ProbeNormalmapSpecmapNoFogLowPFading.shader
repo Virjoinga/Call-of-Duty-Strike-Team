@@ -1,4 +1,4 @@
-›‘Shader "Hidden/ProbeNormalmapSpecmap NoFog LowPFading" {
+Shader "Hidden/ProbeNormalmapSpecmap NoFog LowPFading" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

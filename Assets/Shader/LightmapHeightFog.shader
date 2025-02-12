@@ -1,4 +1,4 @@
-ºjShader "Corona/Lightmap/[HeightFog]" {
+Shader "Corona/Lightmap/[HeightFog]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

@@ -1,4 +1,4 @@
-ÁCShader "Corona/HUD/Scope" {
+Shader "Corona/HUD/Scope" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _ScopeTex ("Scope (RGB)", 2D) = "white" {}

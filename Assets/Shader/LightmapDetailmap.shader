@@ -1,4 +1,4 @@
-Å”Shader "Corona/Lightmap/[Detail]" {
+ÅShader "Corona/Lightmap/[Detail]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _DetailTex ("DetailMap(RGB)", 2D) = "white" {}

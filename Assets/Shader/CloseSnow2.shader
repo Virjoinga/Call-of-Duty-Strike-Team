@@ -1,4 +1,4 @@
-̋Shader "Corona/Effects/CloseSnow2" {
+Shader "Corona/Effects/CloseSnow2" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _Size ("Size", Float) = 0.01

@@ -1,4 +1,4 @@
-ÊbShader "Corona/Effects/RainSplashes" {
+Shader "Corona/Effects/RainSplashes" {
 Properties {
  _MainTex ("Mask Texture", 2D) = "white" {}
  _Ripples ("Ripples", 2D) = "white" {}

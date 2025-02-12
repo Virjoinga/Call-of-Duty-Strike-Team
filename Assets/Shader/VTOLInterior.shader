@@ -1,4 +1,4 @@
-ÓpShader "Corona/Effects/VTOL Interior" {
+Shader "Corona/Effects/VTOL Interior" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _EmissiveTex ("Emissive Mask (RGB)", 2D) = "black" {}

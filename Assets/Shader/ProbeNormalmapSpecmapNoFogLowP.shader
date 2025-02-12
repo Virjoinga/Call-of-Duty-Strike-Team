@@ -1,4 +1,4 @@
-∫èShader "Hidden/Probe/[Normal] [Spec] [NoFog] [LowP]" {
+Shader "Hidden/Probe/[Normal] [Spec] [NoFog] [LowP]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

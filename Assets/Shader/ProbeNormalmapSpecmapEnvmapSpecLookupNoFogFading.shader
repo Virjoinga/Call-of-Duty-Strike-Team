@@ -1,4 +1,4 @@
-³šShader "Hidden/ProbeNormalmapSpecmapSpecLookupEnvmap NoFogFading" {
+Shader "Hidden/ProbeNormalmapSpecmapSpecLookupEnvmap NoFogFading" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

@@ -1,4 +1,4 @@
-ÁlShader "Corona/Lightmap/[Emissive] [HeightFog]" {
+Shader "Corona/Lightmap/[Emissive] [HeightFog]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _EmissiveTex ("Emissive Mask (RGB)", 2D) = "black" {}

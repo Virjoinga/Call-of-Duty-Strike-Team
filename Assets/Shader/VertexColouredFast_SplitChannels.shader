@@ -1,4 +1,4 @@
-úBShader "Sprite/Vertex Colored, Fast, Split Channels" {
+Shader "Sprite/Vertex Colored, Fast, Split Channels" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _AlphaTex ("Base (A)", 2D) = "white" {}

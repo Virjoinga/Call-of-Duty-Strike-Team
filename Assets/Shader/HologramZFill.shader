@@ -1,4 +1,4 @@
-Â<Shader "Corona/Effects/HologramZFill" {
+Shader "Corona/Effects/HologramZFill" {
 SubShader { 
  Tags { "QUEUE"="Transparent-2" }
  Pass {

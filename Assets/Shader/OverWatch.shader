@@ -1,4 +1,4 @@
-¯OShader "Corona/OverWatch" {
+Shader "Corona/OverWatch" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _GrainTex ("Base (RGB)", 2D) = "gray" {}

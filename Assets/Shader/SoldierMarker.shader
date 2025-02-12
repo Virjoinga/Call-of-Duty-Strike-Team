@@ -1,4 +1,4 @@
-ÿXShader "Corona/Effects/SoldierMarker" {
+Shader "Corona/Effects/SoldierMarker" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _Color ("Main Color", Color) = (0.5,0.5,0.5,1)

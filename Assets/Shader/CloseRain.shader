@@ -1,4 +1,4 @@
-ÔrShader "Corona/Effects/CloseRain" {
+Shader "Corona/Effects/CloseRain" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _Size ("Size", Float) = 0.01

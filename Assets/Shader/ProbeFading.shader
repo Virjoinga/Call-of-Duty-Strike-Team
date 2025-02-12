@@ -1,4 +1,4 @@
-üqShader "Hidden/ProbeFading" {
+Shader "Hidden/ProbeFading" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _Opacity ("Opacity", Range(0,1)) = 1

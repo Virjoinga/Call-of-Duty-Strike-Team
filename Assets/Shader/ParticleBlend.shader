@@ -1,4 +1,4 @@
-ÆLShader "Corona/Particle/AlphaBlend" {
+Shader "Corona/Particle/AlphaBlend" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _TintColor ("TintColor", Color) = (1,1,1,1)

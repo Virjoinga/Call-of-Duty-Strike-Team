@@ -1,4 +1,4 @@
-›dShader "Corona/Lightmap/[Transparent]" {
+Shader "Corona/Lightmap/[Transparent]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

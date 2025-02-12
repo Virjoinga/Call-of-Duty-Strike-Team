@@ -1,4 +1,4 @@
-ºDShader "Corona/Sky/Sky" {
+Shader "Corona/Sky/Sky" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

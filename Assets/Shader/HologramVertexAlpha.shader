@@ -1,4 +1,4 @@
-ÐnShader "Corona/Effects/Hologram Vertex Alpha" {
+Shader "Corona/Effects/Hologram Vertex Alpha" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _NoiseTex ("Noise Texture", 2D) = "white" {}

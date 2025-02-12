@@ -1,4 +1,4 @@
-ÍEShader "Corona/Unlit" {
+Shader "Corona/Unlit" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

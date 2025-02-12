@@ -1,4 +1,4 @@
-•ðShader "Corona/Lightmap/[Spec] [Env]" {
+Shader "Corona/Lightmap/[Spec] [Env]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

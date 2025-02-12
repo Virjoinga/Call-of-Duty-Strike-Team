@@ -1,4 +1,4 @@
-ÎMShader "Corona/Particle/AdditiveBlend" {
+Shader "Corona/Particle/AdditiveBlend" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _TintColor ("TintColor", Color) = (1,1,1,1)

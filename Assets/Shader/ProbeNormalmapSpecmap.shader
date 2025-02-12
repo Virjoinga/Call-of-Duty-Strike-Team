@@ -1,4 +1,4 @@
-ËÿShader "Corona/Probe/[Normal] [Spec]" {
+Shader "Corona/Probe/[Normal] [Spec]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

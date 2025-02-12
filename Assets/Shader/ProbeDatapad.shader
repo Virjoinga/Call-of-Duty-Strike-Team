@@ -1,4 +1,4 @@
-°’Shader "Corona/Effects/Datapad [ViewModel]" {
+Shader "Corona/Effects/Datapad [ViewModel]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

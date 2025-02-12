@@ -1,4 +1,4 @@
-ú]Shader "Corona/Effects/RainStrip" {
+Shader "Corona/Effects/RainStrip" {
 Properties {
  _MainTex ("Drops Texture", 2D) = "white" {}
  _Drips ("Drip Texture", 2D) = "white" {}

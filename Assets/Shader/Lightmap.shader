@@ -1,4 +1,4 @@
-ðbShader "Corona/Lightmap/Base" {
+Shader "Corona/Lightmap/Base" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

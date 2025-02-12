@@ -1,4 +1,4 @@
-Þ:Shader "Hidden/FirstPersonTransition" {
+Shader "Hidden/FirstPersonTransition" {
 Properties {
  _Color ("Color", Color) = (1,1,1,1)
 }

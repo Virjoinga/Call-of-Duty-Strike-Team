@@ -1,4 +1,4 @@
-ËKShader "Corona/Effects/BloodEffect" {
+Shader "Corona/Effects/BloodEffect" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _MaskTex ("Mask", 2D) = "white" {}

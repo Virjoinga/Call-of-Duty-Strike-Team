@@ -1,4 +1,4 @@
-’lShader "Corona/Effects/MonitorScreen" {
+Shader "Corona/Effects/MonitorScreen" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _NoiseTex ("Noise Texture", 2D) = "white" {}

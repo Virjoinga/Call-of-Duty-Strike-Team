@@ -1,4 +1,4 @@
-τShader "Corona/Effects/CloseSnowVolume" {
+Shader "Corona/Effects/CloseSnowVolume" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _Size ("Size", Float) = 0.01

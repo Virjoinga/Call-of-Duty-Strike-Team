@@ -1,4 +1,4 @@
-ùMShader "Corona/Effects/BoatSplash" {
+Shader "Corona/Effects/BoatSplash" {
 Properties {
  _MainTex ("Base", 2D) = "white" {}
  _TintColor ("TintColor", Color) = (1,1,1,1)

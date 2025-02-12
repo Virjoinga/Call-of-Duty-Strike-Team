@@ -1,4 +1,4 @@
-òdShader "Corona/Lightmap/[Emissive]" {
+Shader "Corona/Lightmap/[Emissive]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _EmissiveTex ("Emissive Mask (RGB)", 2D) = "black" {}

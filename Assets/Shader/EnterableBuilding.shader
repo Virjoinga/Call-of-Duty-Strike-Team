@@ -1,4 +1,4 @@
- oShader "Corona/Effects/Enterable Building" {
+Shader "Corona/Effects/Enterable Building" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _MainTex ("Base (RGB)", 2D) = "white" {}

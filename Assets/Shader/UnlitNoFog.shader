@@ -1,4 +1,4 @@
-…FShader "Corona/Unlit [NoFog]" {
+Shader "Corona/Unlit [NoFog]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }

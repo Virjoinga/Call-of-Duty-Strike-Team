@@ -1,4 +1,4 @@
-ДоShader "Corona/Probe/[Normal] [Spec] [NoFog]" {
+Shader "Corona/Probe/[Normal] [Spec] [NoFog]" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
  _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}

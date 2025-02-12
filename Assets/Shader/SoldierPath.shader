@@ -1,4 +1,4 @@
-каShader "Corona/Effects/SoldierPath" {
+Shader "Corona/Effects/SoldierPath" {
 Properties {
  _MainTex ("Base (RGB)", 2D) = "white" {}
 }
