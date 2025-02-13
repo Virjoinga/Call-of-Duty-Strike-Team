@@ -901,7 +901,7 @@ public class Bedrock : MonoBehaviour
 
 		public static void RestartJavaBridge()
 		{
-			BedrockInterface_plugin.Call("resetBedrockInterface");
+			//BedrockInterface_plugin.Call("resetBedrockInterface");
 		}
 
 		public static bool GetBridgePreviouslyStarted()
@@ -1526,10 +1526,10 @@ public class Bedrock : MonoBehaviour
 
 	public static bool isBedrockActive()
 	{
-		if (isSupportedPlatform() && !_bedrockActive)
+		/*if (isSupportedPlatform() && !_bedrockActive)
 		{
 			Debug.LogError("Bedrock was called before it was activated.");
-		}
+		}*/
 		return isSupportedPlatform() && _bedrockActive;
 	}
 
@@ -1679,8 +1679,8 @@ public class Bedrock : MonoBehaviour
 		{
 			BedrockAndroidJavaBridge.RestartJavaBridge();
 		}
-		initBedrock(ref settings);
-		brFacebookInitAppRequest(Language.Get(_facebookJoinMeRequestTitle), Language.Get(_facebookJoinMeRequestMessage));
+		//initBedrock(ref settings);
+		//brFacebookInitAppRequest(Language.Get(_facebookJoinMeRequestTitle), Language.Get(_facebookJoinMeRequestMessage));
 	}
 
 	private void Update()
@@ -2120,7 +2120,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isSupportedPlatform())
 		{
-			result = brHasUserCacheVariable(key);
+			//result = brHasUserCacheVariable(key);
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2166,20 +2166,20 @@ public class Bedrock : MonoBehaviour
 			uint num = 1024u;
 			uint byteBufferSize = num;
 			byte[] array = new byte[byteBufferSize];
-			brResult brResult = brGetUserCacheVariableAsString(key, array, ref byteBufferSize);
+			//brResult brResult = brGetUserCacheVariableAsString(key, array, ref byteBufferSize);
 			if (byteBufferSize > num)
 			{
 				array = new byte[byteBufferSize];
-				brResult = brGetUserCacheVariableAsString(key, array, ref byteBufferSize);
+				//brResult = brGetUserCacheVariableAsString(key, array, ref byteBufferSize);
 			}
-			if (brResult == brResult.BR_SUCCESS)
-			{
+			//if (brResult == brResult.BR_SUCCESS)
+			//{
 				string text = DecodeText(array);
 				if (!string.IsNullOrEmpty(text))
 				{
 					return text;
 				}
-			}
+			//}
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms && PlayerPrefs.HasKey(key))
 		{
@@ -2193,10 +2193,10 @@ public class Bedrock : MonoBehaviour
 		if (isSupportedPlatform())
 		{
 			int val = defaultValue;
-			if (brGetUserCacheVariableAsInt(key, out val) == brResult.BR_SUCCESS)
+			/*if (brGetUserCacheVariableAsInt(key, out val) == brResult.BR_SUCCESS)
 			{
 				return val;
-			}
+			}*/
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2210,10 +2210,10 @@ public class Bedrock : MonoBehaviour
 		if (isSupportedPlatform())
 		{
 			float val = defaultValue;
-			if (brGetUserCacheVariableAsFloat(key, out val) == brResult.BR_SUCCESS)
+			/*if (brGetUserCacheVariableAsFloat(key, out val) == brResult.BR_SUCCESS)
 			{
 				return val;
-			}
+			}*/
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2256,7 +2256,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isSupportedPlatform())
 		{
-			result = brSetUserCacheVariableAsString(key, val) == brResult.BR_SUCCESS;
+			//result = brSetUserCacheVariableAsString(key, val) == brResult.BR_SUCCESS;
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2271,7 +2271,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isSupportedPlatform())
 		{
-			result = brSetUserCacheVariableAsInt(key, val) == brResult.BR_SUCCESS;
+			//result = brSetUserCacheVariableAsInt(key, val) == brResult.BR_SUCCESS;
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2286,7 +2286,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isSupportedPlatform())
 		{
-			result = brSetUserCacheVariableAsFloat(key, val) == brResult.BR_SUCCESS;
+			//result = brSetUserCacheVariableAsFloat(key, val) == brResult.BR_SUCCESS;
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2301,7 +2301,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isSupportedPlatform())
 		{
-			result = brSetUserCacheVariableAsString(key, val.ToString()) == brResult.BR_SUCCESS;
+			//result = brSetUserCacheVariableAsString(key, val.ToString()) == brResult.BR_SUCCESS;
 		}
 		else if (_UsePlayerPrefsOnUnsupportedPlatforms)
 		{
@@ -2705,7 +2705,7 @@ public class Bedrock : MonoBehaviour
 		bool result = false;
 		if (isBedrockActive())
 		{
-			result = brSetCloudStorageParameters(ref cloudStorageParameters) == brResult.BR_SUCCESS;
+			//result = brSetCloudStorageParameters(ref cloudStorageParameters) == brResult.BR_SUCCESS;
 		}
 		return result;
 	}
@@ -2761,8 +2761,8 @@ public class Bedrock : MonoBehaviour
 	{
 		if (isBedrockActive())
 		{
-			brResult brResult = brSetInAppPurchasingReceiptVerificationBehavior(receiptBehavior);
-			return brResult == brResult.BR_SUCCESS;
+			//brResult brResult = brSetInAppPurchasingReceiptVerificationBehavior(receiptBehavior);
+			//return brResult == brResult.BR_SUCCESS;
 		}
 		return false;
 	}
