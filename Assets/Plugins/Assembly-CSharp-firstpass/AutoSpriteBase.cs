@@ -386,7 +386,7 @@ public abstract class AutoSpriteBase : SpriteBase, ISpriteAggregator, ISpritePac
 	{
 		if (index >= animations.Length)
 		{
-			Debug.LogError("ERROR: Animation index " + index + " is out of bounds!");
+			Debug.LogError("ERROR: Animation index " + index + " is out of bounds!" + gameObject.name);
 		}
 		else
 		{
