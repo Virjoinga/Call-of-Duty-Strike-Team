@@ -5,7 +5,6 @@ Shader "Sprite/Vertex Colored, Fast" {
 	SubShader { 
 		Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
 		Pass {
-			Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
 			BindChannels {
 				Bind "vertex", Vertex
 				Bind "color", Color
@@ -17,7 +16,9 @@ Shader "Sprite/Vertex Colored, Fast" {
 				Color (0,0,0,0)
 			}
 			Blend SrcAlpha OneMinusSrcAlpha
-			SetTexture [_MainTex] { combine texture * primary }
+			SetTexture [_MainTex] {
+				combine texture * primary
+			}
 		}
 	}
 }

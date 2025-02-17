@@ -14,8 +14,12 @@ Shader "Sprite/Vertex Colored" {
 			Cull Off
 			Blend SrcAlpha OneMinusSrcAlpha
 			ColorMaterial AmbientAndDiffuse
-			SetTexture [_MainTex] { combine texture * primary, texture alpha * primary alpha }
-			SetTexture [_MainTex] { ConstantColor [_Color] combine previous * constant double, previous alpha * constant alpha }
+			SetTexture [_MainTex] {
+				combine texture * primary, texture alpha * primary alpha
+			}
+			SetTexture [_MainTex] {
+				ConstantColor [_Color] combine previous * constant double, previous alpha * constant alpha 
+			}
 		}
 	}
 }
