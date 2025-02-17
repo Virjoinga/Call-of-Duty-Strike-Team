@@ -158,7 +158,9 @@ public class TBFUtils
 	{
 		if (TBFUtilsObject == null)
 		{
+#if UNITY_ANDROID
 			TBFUtilsObject = new AndroidJavaObject("com.activision.TBFUtils");
+#endif
 			if (TBFUtilsObject == null)
 			{
 				DebugLog("Could not create java object for TBFUtils");

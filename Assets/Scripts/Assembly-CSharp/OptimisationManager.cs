@@ -210,6 +210,8 @@ public class OptimisationManager : ScriptableObject, iSwrveUpdatable
 
 	public static HardwareType GetCurrentHardware()
 	{
+		return HardwareType.High;
+
 		if (Instance.PhoneModel == string.Empty)
 		{
 			string text = SystemInfo.deviceModel.ToLowerInvariant();

@@ -27,8 +27,10 @@ public static class Language
 		LanguageCode code = LocalizationSettings.GetLanguageEnum(settings.defaultLangCode);
 		if (useSystemLanguagePerDefault)
 		{
-			AndroidJavaObject androidJavaObject = new AndroidJavaClass("java/util/Locale").CallStatic<AndroidJavaObject>("getDefault", new object[0]);
-			string langCode = androidJavaObject.Call<string>("getLanguage", new object[0]);
+			//AndroidJavaObject androidJavaObject = new AndroidJavaClass("java/util/Locale").CallStatic<AndroidJavaObject>("getDefault", new object[0]);
+			//string langCode = androidJavaObject.Call<string>("getLanguage", new object[0]);
+			string langCode1 = Application.systemLanguage.ToString();
+            string langCode = langCode1.Substring(0, 2);
 			LanguageCode languageEnum = LocalizationSettings.GetLanguageEnum(langCode);
 			if (languageEnum == LanguageCode.N)
 			{
