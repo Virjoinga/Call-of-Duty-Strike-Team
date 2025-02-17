@@ -1932,7 +1932,7 @@ public class UIScrollList : MonoBehaviour, IEZDragDrop, IUIObject
 		PositionItems();
 	}
 
-	public void OnInput(POINTER_INFO ptr)
+    public void OnInput(POINTER_INFO ptr)
 	{
 		if (!m_controlIsEnabled)
 		{

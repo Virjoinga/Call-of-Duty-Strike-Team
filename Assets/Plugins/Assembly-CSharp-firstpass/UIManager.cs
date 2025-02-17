@@ -383,6 +383,9 @@ public class UIManager : MonoBehaviour
 	protected void SetupPointers()
 	{
 		Start();
+#if UNITY_STANDALONE || UNITY_EDITOR
+		pointerType = POINTER_TYPE.MOUSE_AND_RAY;
+#endif
 		pointers = new POINTER_INFO[uiCameras.Length, numTouches];
 		try
 		{

@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
 public class UnstaticObject : EditorWindow
 {
+    public static Vector2 scroll;
+
     [MenuItem("AntiRetardation/Menu")]
     static void GetMe()
     {
@@ -14,6 +15,8 @@ public class UnstaticObject : EditorWindow
 
     void OnGUI()
     {
+        if (GUILayout.Button("Load Splash")) EditorSceneManager.OpenScene(Application.dataPath +"/Scenes/FrontEnd/Splash.unity");
+
         GameObject[] realList = FindObjectsOfType<GameObject>();
 
 
@@ -26,7 +29,7 @@ public class UnstaticObject : EditorWindow
 
             foreach (GameObject go in realList)
             {
-                if (go.isStatic && (go.GetComponent(typeof(SpriteRoot)) != null || go.GetComponent(typeof(SpriteText)) != null))
+                if (go.isStatic && (go.GetComponent(typeof(SpriteRoot)) != null || go.GetComponent(typeof(SpriteText)) != null || go.GetComponent(typeof(AutoSpriteBase)) != null))
                 {
                     count++;
                     go.isStatic = false;
@@ -36,6 +39,18 @@ public class UnstaticObject : EditorWindow
             EditorUtility.DisplayDialog("E", "Unretarded " + count.ToString() + " Meshes With SpriteRoot", "ok");
             EditorSceneManager.MarkAllScenesDirty();
         }
+
+        scroll = EditorGUILayout.BeginScrollView(scroll);
+
+        foreach (GameObject go in realList)
+        {
+            if (go.isStatic && (go.GetComponent(typeof(SpriteRoot)) != null || go.GetComponent(typeof(SpriteText)) != null || go.GetComponent(typeof(AutoSpriteBase)) != null))
+            {
+                if (GUILayout.Button(go.name)) EditorGUIUtility.PingObject(go);
+            }
+        }
+
+        EditorGUILayout.EndScrollView();
     }
 
     List<GameObject> GetChilds(GameObject obj)
