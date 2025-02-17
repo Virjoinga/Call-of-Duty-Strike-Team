@@ -204,6 +204,16 @@ public class UIButton : AutoSpriteControlBase
 		OnInput(myInfo);
 	}
 
+	void OnMouseDrag()
+	{
+		if (!set) myInfo = new POINTER_INFO();
+
+		set = true;
+
+		myInfo.evt = POINTER_INFO.INPUT_EVENT.DRAG;
+		OnInput(myInfo);
+	}
+
 	public override void OnInput(ref POINTER_INFO ptr)
 	{
 		if (deleted)
