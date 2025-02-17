@@ -26,7 +26,7 @@ public class UnstaticObject : EditorWindow
 
             foreach (GameObject go in realList)
             {
-                if (go.isStatic && go.GetComponent(typeof(SpriteRoot)) != null)
+                if (go.isStatic && (go.GetComponent(typeof(SpriteRoot)) != null || go.GetComponent(typeof(SpriteText)) != null))
                 {
                     count++;
                     go.isStatic = false;
