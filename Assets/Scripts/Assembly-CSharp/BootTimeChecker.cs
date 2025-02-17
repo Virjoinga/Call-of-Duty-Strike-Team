@@ -18,18 +18,7 @@ public class BootTimeChecker : MonoBehaviour
 			LVLChecker instance = LVLChecker.Instance;
 			instance.OnGotLicenseStatus = (LVLChecker.LVLCheckerEventHandler)Delegate.Combine(instance.OnGotLicenseStatus, new LVLChecker.LVLCheckerEventHandler(OnGotLicenseStatus));
 			LVLChecker.Instance.StartCheckLicense();
-			GooglePlayDownloader.Init(AndroidKeys.Instance.LVLKey);
-			expPath = GooglePlayDownloader.GetExpansionFilePath();
-			mainPath = GooglePlayDownloader.GetMainOBBPath(expPath);
-			if (mainPath == null)
-			{
-				GooglePlayDownloader.FetchOBB();
-				StartCoroutine("WaitForOBB");
-			}
-			else
-			{
-				MoveToNextScreen();
-			}
+			MoveToNextScreen();
 		}
 	}
 
@@ -63,7 +52,6 @@ public class BootTimeChecker : MonoBehaviour
 		while (true)
 		{
 			Debug.Log("Waiting for OBB");
-			mainPath = GooglePlayDownloader.GetMainOBBPath(expPath);
 			if (mainPath != null)
 			{
 				MoveToNextScreen();
@@ -80,13 +68,5 @@ public class BootTimeChecker : MonoBehaviour
 	private void OnApplicationFocus(bool focused)
 	{
 		Debug.Log(focused);
-		if (started && focused)
-		{
-			mainPath = GooglePlayDownloader.GetMainOBBPath(expPath);
-			if (mainPath == null)
-			{
-				GooglePlayDownloader.FetchOBB();
-			}
-		}
 	}
 }
