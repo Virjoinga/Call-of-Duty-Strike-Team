@@ -181,6 +181,28 @@ public class UIButton : AutoSpriteControlBase
 			UseStateLabel(index);
 		}
 	}
+	POINTER_INFO myInfo;
+	bool set = false;
+
+	void OnMouseDown()
+	{
+		if (!set) myInfo = new POINTER_INFO();
+
+		set = true;
+
+		myInfo.evt = POINTER_INFO.INPUT_EVENT.PRESS;
+		OnInput(myInfo);
+	}
+
+	void OnMouseUp()
+	{
+		if (!set) myInfo = new POINTER_INFO();
+
+		set = true;
+
+		myInfo.evt = POINTER_INFO.INPUT_EVENT.RELEASE;
+		OnInput(myInfo);
+	}
 
 	public override void OnInput(ref POINTER_INFO ptr)
 	{
