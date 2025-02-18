@@ -49,7 +49,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Awake()
 	{
-		GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        Application.LoadLevel("01_Arc_Mission_S1_Baked");
+        GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Quad);
 		gameObject.transform.position = base.transform.position + new Vector3(0f, 0f, 0.5f);
 		gameObject.GetComponent<Renderer>().material = new Material(Shader.Find("Diffuse"));
 		gameObject.GetComponent<Renderer>().material.color = Color.black;
@@ -71,11 +72,11 @@ public class MediaPlayerCtrl : MonoBehaviour
 			Call_UpdateVideoTexture();
 			mCurrentSeekPosition = Call_GetSeekPosition();
 		}
-		if (mCurrentState == Call_GetStatus())
+		/*if (mCurrentState == Call_GetStatus())
 		{
 			return;
 		}
-		mCurrentState = Call_GetStatus();
+		mCurrentState = Call_GetStatus();*/
 		if (mCurrentState == MediaPlayerState.READY)
 		{
 			if (mAutoPlay)
@@ -266,10 +267,10 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private AndroidJavaObject GetJavaObject()
 	{
-		if (javaObj == null)
+		/*if (javaObj == null)
 		{
 			javaObj = new AndroidJavaObject("com.EasyMovieTexture.EasyMovieTexture");
-		}
+		}*/
 		return javaObj;
 	}
 
@@ -285,7 +286,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private bool Call_Load(string strFileName, int iSeek)
 	{
-		return GetJavaObject().Call<bool>("Load", new object[2] { strFileName, iSeek });
+		//return GetJavaObject().Call<bool>("Load", new object[2] { strFileName, iSeek });
+		return true;
 	}
 
 	private void Call_UpdateVideoTexture()
@@ -295,7 +297,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Call_SetVolume(float fVolume)
 	{
-		GetJavaObject().Call("SetVolume", fVolume);
+		//GetJavaObject().Call("SetVolume", fVolume);
 	}
 
 	private void Call_SetSeekPosition(int iSeek)
@@ -330,7 +332,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Call_Pause()
 	{
-		GetJavaObject().Call("Pause");
+		//GetJavaObject().Call("Pause");
 	}
 
 	private int Call_GetVideoWidth()
@@ -345,7 +347,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Call_SetUnityTexture(int iTextureID)
 	{
-		GetJavaObject().Call("SetUnityTexture", iTextureID);
+		//GetJavaObject().Call("SetUnityTexture", iTextureID);
 	}
 
 	private void Call_SetWindowSize()
@@ -375,13 +377,13 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Call_SetUnityActivity()
 	{
-		AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-		AndroidJavaObject @static = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
-		GetJavaObject().Call("SetUnityActivity", @static);
+		//AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+		//AndroidJavaObject @static = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
+		//GetJavaObject().Call("SetUnityActivity", @static);
 	}
 
-	private MediaPlayerState Call_GetStatus()
+	/*private MediaPlayerState Call_GetStatus()
 	{
 		return (MediaPlayerState)GetJavaObject().Call<int>("GetStatus", new object[0]);
-	}
+	}*/
 }
