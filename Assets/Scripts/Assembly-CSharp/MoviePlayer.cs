@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class MoviePlayer : MonoBehaviour
 {
@@ -28,7 +29,9 @@ public class MoviePlayer : MonoBehaviour
 
 	private SrtLoader mSubtitles;
 
-	private float mPlayTime = float.MinValue;
+	private float mPlayTime;
+
+	public VideoPlayer player;
 
 	public void Start()
 	{
@@ -44,8 +47,14 @@ public class MoviePlayer : MonoBehaviour
 
 	private void PlayMovie()
 	{
-		PlayHandheld();
-	}
+		//PlayHandheld();
+		player.Play();
+
+        if (!string.IsNullOrEmpty(SubtitlesFile))
+        {
+            mSubtitles = new SrtLoader(SubtitlesFile);
+        }
+    }
 
 	private void Update()
 	{
@@ -65,7 +74,7 @@ public class MoviePlayer : MonoBehaviour
 			}
 			return;
 		}
-		mPlayTime += Time.deltaTime;
+		mPlayTime = (float)player.time;
 		if (SubtitleText != null && mSubtitles != null)
 		{
 			SubtitleText.Text = mSubtitles.GetTextForTime(mPlayTime);
@@ -86,7 +95,8 @@ public class MoviePlayer : MonoBehaviour
 
 	private void Stop()
 	{
-		if (mVideoTexture != null)
+		player.Pause();
+		/*if (mVideoTexture != null)
 		{
 			mVideoTexture.stop();
 		}
@@ -97,7 +107,7 @@ public class MoviePlayer : MonoBehaviour
 				mVideoCamera.GetComponent<Renderer>().enabled = false;
 			}
 			UnityEngine.Object.Destroy(mVideoCamera);
-		}
+		}*/
 	}
 
 	private IEnumerator WaitRoutine()
