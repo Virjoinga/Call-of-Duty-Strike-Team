@@ -33,6 +33,8 @@ public class MoviePlayer : MonoBehaviour
 
 	public VideoPlayer player;
 
+	bool hasStarted;
+
 	public void Start()
 	{
 		if (Wait)
@@ -49,6 +51,7 @@ public class MoviePlayer : MonoBehaviour
 	{
 		//PlayHandheld();
 		player.Play();
+		hasStarted = true;
 
         if (!string.IsNullOrEmpty(SubtitlesFile))
         {
@@ -79,7 +82,10 @@ public class MoviePlayer : MonoBehaviour
 		{
 			SubtitleText.Text = mSubtitles.GetTextForTime(mPlayTime);
 		}
-		for (int i = 0; i < Input.touchCount; i++)
+
+		if (hasStarted && !player.isPlaying) mLoadNextSection = true;
+
+        for (int i = 0; i < Input.touchCount; i++)
 		{
 			if (mLoadNextSection)
 			{
