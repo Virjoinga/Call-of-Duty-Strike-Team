@@ -89,6 +89,8 @@ public class MoviePlayer : MonoBehaviour
 
 		if (!player.isPlaying) mLoadNextSection = true;
 
+		if (Input.GetMouseButton(0)) mLoadNextSection = true;
+
         for (int i = 0; i < Input.touchCount; i++)
 		{
 			if (mLoadNextSection)
