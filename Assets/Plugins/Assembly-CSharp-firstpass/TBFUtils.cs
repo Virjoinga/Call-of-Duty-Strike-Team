@@ -280,7 +280,7 @@ public class TBFUtils
 
 	public static int GetAndroidSystemMemory()
 	{
-		return CallTBFJar<int>("readTotalRam");
+		return 2400; // CallTBFJar<int>("readTotalRam");
 	}
 
 	public static bool IsSmallScreenDevice()

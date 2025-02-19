@@ -1201,8 +1201,6 @@ public class Bedrock : MonoBehaviour
 
 	public static event EventHandler<brUserInterfaceReasonForCloseEventArgs> BedrockUIClosed;
 
-	[DllImport("bedrock")]
-	private static extern void initBedrock(ref brUnityInitSettings settings);
 
 	[DllImport("bedrock")]
 	private static extern brResult brDisplayUserInterfaceUnity(int uiScreen);
@@ -1521,7 +1519,7 @@ public class Bedrock : MonoBehaviour
 
 	private static bool isSupportedPlatform()
 	{
-		return Application.platform == RuntimePlatform.WP8Player || Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor;
+		return false; // Application.platform == RuntimePlatform.WP8Player || Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor;
 	}
 
 	public static bool isBedrockActive()
