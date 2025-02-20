@@ -37,9 +37,20 @@ namespace ULegacyRipper
 			sceneNode.table.Add("type", "3");
 
 			YAMLNode lightmapsNode = lightingDataAsset.AddNode("m_Lightmaps");
-			YAMLNode oldLightmaps = yaml.FindNode("LightmapSettings");
+			YAMLNode oldLightmaps = null;
 
-			foreach (YAMLNode lightmapNode in oldLightmaps.childNodes["m_Lightmaps"].nodeList)
+			if (!yaml.TryFindNode("LightmapSettings", out oldLightmaps))
+			{
+				Debug.Log("Skipping: " + scenePath);
+				return;
+			}
+			if (!oldLightmaps.childNodes.ContainsKey("m_Lightmaps"))
+            {
+                Debug.Log("Skipping: " + scenePath);
+                return;
+            }
+
+            foreach (YAMLNode lightmapNode in oldLightmaps.childNodes["m_Lightmaps"].nodeList)
 			{
 				YAMLNode entry = new YAMLNode
 				{

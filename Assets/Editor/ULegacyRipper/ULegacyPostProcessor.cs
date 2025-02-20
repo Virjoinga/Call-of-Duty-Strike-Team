@@ -34,8 +34,8 @@ namespace ULegacyRipper
         {
             //ULegacyUtils.TryMethod(TranslateShaders, "Shader translation");
             ULegacyUtils.TryMethod(GenerateLightmapData, "Lightmap translation");
-            ULegacyUtils.TryMethod(RebuildNavMeshes, "NavMesh reconstruction");
-            ULegacyUtils.TryMethod(ConvertMeshes, "Mesh conversion");
+            //ULegacyUtils.TryMethod(RebuildNavMeshes, "NavMesh reconstruction");
+            //ULegacyUtils.TryMethod(ConvertMeshes, "Mesh conversion");
         }
 
         private static void TranslateShaders()
@@ -81,6 +81,7 @@ namespace ULegacyRipper
             for (int i = 0; i < scenesWithLightmap.Count; i++)
             {
                 EditorUtility.DisplayProgressBar("ULegacy Post Processor", "Generating Lightmap for " + Path.GetFileName(scenesWithLightmap[i]), i == 0 ? 0 : (i / (float)scenesWithLightmap.Count));
+                Debug.LogWarning("Test: " + scenesWithLightmap[i]);
                 ULegacyLightmapGenerator.GenerateLightmap(scenesWithLightmap[i]);
             }
         }
