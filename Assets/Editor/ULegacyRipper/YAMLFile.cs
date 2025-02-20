@@ -373,7 +373,7 @@ namespace ULegacyRipper
                 if (!value.Contains("}") || retries >= 1) break;
 
                 retries++;
-                value = reader.ReadLine() + value;
+                value += " " + reader.ReadLine();
             }*/
 
             if (value.StartsWith("{"))
