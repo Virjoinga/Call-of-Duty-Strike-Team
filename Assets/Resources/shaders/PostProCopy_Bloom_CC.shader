@@ -1,387 +1,72 @@
-¤GShader "Corona/PostProcess/Copy_Bloom_CC" {
-Properties {
- _MainTex ("Base (RGB)", 2D) = "white" {}
- _BloomTex ("bloom tex", 2D) = "black" {}
- _RampTex ("ramp tex", 2D) = "grayscaleRamp" {}
-}
-SubShader { 
- Pass {
-  ZTest Always
-  ZWrite Off
-  Cull Off
-  Fog { Mode Off }
-Program "vp" {
-SubProgram "gles " {
-"!!GLES
+Shader "Corona/PostProcess/Copy_Bloom_CC" {
+    Properties {
+        _MainTex ("Base (RGB)", 2D) = "white" {}
+        _BloomTex ("bloom tex", 2D) = "black" {}
+        _RampTex ("ramp tex", 2D) = "grayscaleRamp" {}
+    }
+    SubShader { 
+        Pass {
+            ZTest Always
+            ZWrite Off
+            Cull Off
+            Fog { Mode Off }
 
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-#ifdef VERTEX
+            float _Bloomification;
+            sampler2D _RampTex;
+            sampler2D _BloomTex;
+            sampler2D _MainTex;
 
-varying mediump vec2 xlv_TEXCOORD0;
-uniform highp mat4 glstate_matrix_texture0;
-uniform highp mat4 glstate_matrix_mvp;
-attribute vec4 _glesMultiTexCoord0;
-attribute vec4 _glesVertex;
-void main ()
-{
-  vec2 tmpvar_1;
-  tmpvar_1 = _glesMultiTexCoord0.xy;
-  mediump vec2 tmpvar_2;
-  highp vec2 tmpvar_3;
-  highp vec4 tmpvar_4;
-  tmpvar_4.zw = vec2(0.0, 0.0);
-  tmpvar_4.x = tmpvar_1.x;
-  tmpvar_4.y = tmpvar_1.y;
-  tmpvar_3 = (glstate_matrix_texture0 * tmpvar_4).xy;
-  tmpvar_2 = tmpvar_3;
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = tmpvar_2;
-}
+            struct appdata_t {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
 
+            struct v2f {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
 
+            v2f vert(appdata_t v) {
+                v2f o;
+                
+                float2 tmpvar_1;
+                tmpvar_1 = v.uv.xy;
+                float2 tmpvar_2;
+                float2 tmpvar_3;
+                float4 tmpvar_4;
+                tmpvar_4.zw = float2(0.0, 0.0);
+                tmpvar_4.x = tmpvar_1.x;
+                tmpvar_4.y = tmpvar_1.y;
+                tmpvar_3 = mul(UNITY_MATRIX_TEXTURE0, tmpvar_4).xy;
+                tmpvar_2 = tmpvar_3;
+                o.pos = (UnityObjectToClipPos(v.vertex));
+                o.uv = tmpvar_2;
+                
+                return o;
+            }
 
-#endif
-#ifdef FRAGMENT
-
-varying lowp vec2 xlv_TEXCOORD0;
-uniform highp float _Bloomification;
-uniform sampler2D _RampTex;
-uniform sampler2D _BloomTex;
-uniform sampler2D _MainTex;
-void main ()
-{
-  highp vec4 tmpvar_1;
-  lowp vec4 col_2;
-  lowp vec4 tmpvar_3;
-  tmpvar_3 = texture2D (_MainTex, xlv_TEXCOORD0);
-  col_2.w = tmpvar_3.w;
-  lowp vec4 tmpvar_4;
-  tmpvar_4 = texture2D (_BloomTex, xlv_TEXCOORD0);
-  col_2.x = (texture2D (_RampTex, tmpvar_3.xx).x + 1e-05);
-  col_2.y = (texture2D (_RampTex, tmpvar_3.yy).y + 2e-05);
-  col_2.z = (texture2D (_RampTex, tmpvar_3.zz).z + 3e-05);
-  highp vec3 tmpvar_5;
-  tmpvar_5 = (col_2.xyz + (tmpvar_4.w * _Bloomification));
-  col_2.xyz = tmpvar_5;
-  tmpvar_1 = col_2;
-  gl_FragData[0] = tmpvar_1;
-}
-
-
-
-#endif"
-}
-SubProgram "gles3 " {
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-#define gl_Vertex _glesVertex
-in vec4 _glesVertex;
-#define gl_MultiTexCoord0 _glesMultiTexCoord0
-in vec4 _glesMultiTexCoord0;
-
-#line 151
-struct v2f_vertex_lit {
-    highp vec2 uv;
-    lowp vec4 diff;
-    lowp vec4 spec;
-};
-#line 187
-struct v2f_img {
-    highp vec4 pos;
-    mediump vec2 uv;
-};
-#line 181
-struct appdata_img {
-    highp vec4 vertex;
-    mediump vec2 texcoord;
-};
-#line 319
-struct v2f {
-    highp vec4 pos;
-    lowp vec2 uv;
-};
-uniform highp vec4 _Time;
-uniform highp vec4 _SinTime;
-#line 3
-uniform highp vec4 _CosTime;
-uniform highp vec4 unity_DeltaTime;
-uniform highp vec3 _WorldSpaceCameraPos;
-uniform highp vec4 _ProjectionParams;
-#line 7
-uniform highp vec4 _ScreenParams;
-uniform highp vec4 _ZBufferParams;
-uniform highp vec4 unity_CameraWorldClipPlanes[6];
-uniform highp vec4 _WorldSpaceLightPos0;
-#line 11
-uniform highp vec4 _LightPositionRange;
-uniform highp vec4 unity_4LightPosX0;
-uniform highp vec4 unity_4LightPosY0;
-uniform highp vec4 unity_4LightPosZ0;
-#line 15
-uniform highp vec4 unity_4LightAtten0;
-uniform highp vec4 unity_LightColor[8];
-uniform highp vec4 unity_LightPosition[8];
-uniform highp vec4 unity_LightAtten[8];
-#line 19
-uniform highp vec4 unity_SpotDirection[8];
-uniform highp vec4 unity_SHAr;
-uniform highp vec4 unity_SHAg;
-uniform highp vec4 unity_SHAb;
-#line 23
-uniform highp vec4 unity_SHBr;
-uniform highp vec4 unity_SHBg;
-uniform highp vec4 unity_SHBb;
-uniform highp vec4 unity_SHC;
-#line 27
-uniform highp vec3 unity_LightColor0;
-uniform highp vec3 unity_LightColor1;
-uniform highp vec3 unity_LightColor2;
-uniform highp vec3 unity_LightColor3;
-uniform highp vec4 unity_ShadowSplitSpheres[4];
-uniform highp vec4 unity_ShadowSplitSqRadii;
-uniform highp vec4 unity_LightShadowBias;
-#line 31
-uniform highp vec4 _LightSplitsNear;
-uniform highp vec4 _LightSplitsFar;
-uniform highp mat4 unity_World2Shadow[4];
-uniform highp vec4 _LightShadowData;
-#line 35
-uniform highp vec4 unity_ShadowFadeCenterAndType;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp mat4 glstate_matrix_modelview0;
-uniform highp mat4 glstate_matrix_invtrans_modelview0;
-#line 39
-uniform highp mat4 _Object2World;
-uniform highp mat4 _World2Object;
-uniform highp vec4 unity_Scale;
-uniform highp mat4 glstate_matrix_transpose_modelview0;
-#line 43
-uniform highp mat4 glstate_matrix_texture0;
-uniform highp mat4 glstate_matrix_texture1;
-uniform highp mat4 glstate_matrix_texture2;
-uniform highp mat4 glstate_matrix_texture3;
-#line 47
-uniform highp mat4 glstate_matrix_projection;
-uniform highp vec4 glstate_lightmodel_ambient;
-uniform highp mat4 unity_MatrixV;
-uniform highp mat4 unity_MatrixVP;
-#line 51
-uniform lowp vec4 unity_ColorSpaceGrey;
-#line 77
-#line 82
-#line 87
-#line 91
-#line 96
-#line 120
-#line 137
-#line 158
-#line 166
-#line 193
-#line 206
-#line 215
-#line 220
-#line 229
-#line 234
-#line 243
-#line 260
-#line 265
-#line 291
-#line 299
-#line 307
-#line 311
-#line 315
-uniform sampler2D _MainTex;
-uniform sampler2D _BloomTex;
-uniform sampler2D _RampTex;
-uniform highp float _Bloomification;
-#line 325
-#line 193
-highp vec2 MultiplyUV( in highp mat4 mat, in highp vec2 inUV ) {
-    highp vec4 temp = vec4( inUV.x, inUV.y, 0.0, 0.0);
-    temp = (mat * temp);
-    #line 197
-    return temp.xy;
-}
-#line 199
-v2f_img vert_img( in appdata_img v ) {
-    #line 201
-    v2f_img o;
-    o.pos = (glstate_matrix_mvp * v.vertex);
-    o.uv = MultiplyUV( glstate_matrix_texture0, v.texcoord);
-    return o;
-}
-out mediump vec2 xlv_TEXCOORD0;
-void main() {
-    v2f_img xl_retval;
-    appdata_img xlt_v;
-    xlt_v.vertex = vec4(gl_Vertex);
-    xlt_v.texcoord = vec2(gl_MultiTexCoord0);
-    xl_retval = vert_img( xlt_v);
-    gl_Position = vec4(xl_retval.pos);
-    xlv_TEXCOORD0 = vec2(xl_retval.uv);
-}
-
-
-#endif
-#ifdef FRAGMENT
-
-#define gl_FragData _glesFragData
-layout(location = 0) out mediump vec4 _glesFragData[4];
-
-#line 151
-struct v2f_vertex_lit {
-    highp vec2 uv;
-    lowp vec4 diff;
-    lowp vec4 spec;
-};
-#line 187
-struct v2f_img {
-    highp vec4 pos;
-    mediump vec2 uv;
-};
-#line 181
-struct appdata_img {
-    highp vec4 vertex;
-    mediump vec2 texcoord;
-};
-#line 319
-struct v2f {
-    highp vec4 pos;
-    lowp vec2 uv;
-};
-uniform highp vec4 _Time;
-uniform highp vec4 _SinTime;
-#line 3
-uniform highp vec4 _CosTime;
-uniform highp vec4 unity_DeltaTime;
-uniform highp vec3 _WorldSpaceCameraPos;
-uniform highp vec4 _ProjectionParams;
-#line 7
-uniform highp vec4 _ScreenParams;
-uniform highp vec4 _ZBufferParams;
-uniform highp vec4 unity_CameraWorldClipPlanes[6];
-uniform highp vec4 _WorldSpaceLightPos0;
-#line 11
-uniform highp vec4 _LightPositionRange;
-uniform highp vec4 unity_4LightPosX0;
-uniform highp vec4 unity_4LightPosY0;
-uniform highp vec4 unity_4LightPosZ0;
-#line 15
-uniform highp vec4 unity_4LightAtten0;
-uniform highp vec4 unity_LightColor[8];
-uniform highp vec4 unity_LightPosition[8];
-uniform highp vec4 unity_LightAtten[8];
-#line 19
-uniform highp vec4 unity_SpotDirection[8];
-uniform highp vec4 unity_SHAr;
-uniform highp vec4 unity_SHAg;
-uniform highp vec4 unity_SHAb;
-#line 23
-uniform highp vec4 unity_SHBr;
-uniform highp vec4 unity_SHBg;
-uniform highp vec4 unity_SHBb;
-uniform highp vec4 unity_SHC;
-#line 27
-uniform highp vec3 unity_LightColor0;
-uniform highp vec3 unity_LightColor1;
-uniform highp vec3 unity_LightColor2;
-uniform highp vec3 unity_LightColor3;
-uniform highp vec4 unity_ShadowSplitSpheres[4];
-uniform highp vec4 unity_ShadowSplitSqRadii;
-uniform highp vec4 unity_LightShadowBias;
-#line 31
-uniform highp vec4 _LightSplitsNear;
-uniform highp vec4 _LightSplitsFar;
-uniform highp mat4 unity_World2Shadow[4];
-uniform highp vec4 _LightShadowData;
-#line 35
-uniform highp vec4 unity_ShadowFadeCenterAndType;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp mat4 glstate_matrix_modelview0;
-uniform highp mat4 glstate_matrix_invtrans_modelview0;
-#line 39
-uniform highp mat4 _Object2World;
-uniform highp mat4 _World2Object;
-uniform highp vec4 unity_Scale;
-uniform highp mat4 glstate_matrix_transpose_modelview0;
-#line 43
-uniform highp mat4 glstate_matrix_texture0;
-uniform highp mat4 glstate_matrix_texture1;
-uniform highp mat4 glstate_matrix_texture2;
-uniform highp mat4 glstate_matrix_texture3;
-#line 47
-uniform highp mat4 glstate_matrix_projection;
-uniform highp vec4 glstate_lightmodel_ambient;
-uniform highp mat4 unity_MatrixV;
-uniform highp mat4 unity_MatrixVP;
-#line 51
-uniform lowp vec4 unity_ColorSpaceGrey;
-#line 77
-#line 82
-#line 87
-#line 91
-#line 96
-#line 120
-#line 137
-#line 158
-#line 166
-#line 193
-#line 206
-#line 215
-#line 220
-#line 229
-#line 234
-#line 243
-#line 260
-#line 265
-#line 291
-#line 299
-#line 307
-#line 311
-#line 315
-uniform sampler2D _MainTex;
-uniform sampler2D _BloomTex;
-uniform sampler2D _RampTex;
-uniform highp float _Bloomification;
-#line 325
-#line 332
-highp vec4 frag( in v2f i ) {
-    #line 334
-    lowp vec4 col = texture( _MainTex, i.uv);
-    lowp vec4 bloom = texture( _BloomTex, i.uv);
-    col.x = (texture( _RampTex, col.xx).x + 1e-05);
-    col.y = (texture( _RampTex, col.yy).y + 2e-05);
-    #line 338
-    col.z = (texture( _RampTex, col.zz).z + 3e-05);
-    col.xyz += (bloom.w * _Bloomification);
-    return col;
-}
-in lowp vec2 xlv_TEXCOORD0;
-void main() {
-    highp vec4 xl_retval;
-    v2f xlt_i;
-    xlt_i.pos = vec4(0.0);
-    xlt_i.uv = vec2(xlv_TEXCOORD0);
-    xl_retval = frag( xlt_i);
-    gl_FragData[0] = vec4(xl_retval);
-}
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-"!!GLES"
-}
-SubProgram "gles3 " {
-"!!GLES3"
-}
-}
- }
-}
-Fallback Off
+            half4 frag(v2f i) : SV_TARGET {
+                float4 tmpvar_1;
+                float4 col_2;
+                float4 tmpvar_3;
+                tmpvar_3 = tex2D (_MainTex, i.uv);
+                col_2.w = tmpvar_3.w;
+                float4 tmpvar_4;
+                tmpvar_4 = tex2D (_BloomTex, i.uv);
+                col_2.x = (tex2D (_RampTex, tmpvar_3.xx).x + 1e-05);
+                col_2.y = (tex2D (_RampTex, tmpvar_3.yy).y + 2e-05);
+                col_2.z = (tex2D (_RampTex, tmpvar_3.zz).z + 3e-05);
+                float3 tmpvar_5;
+                tmpvar_5 = (col_2.xyz + (tmpvar_4.w * _Bloomification));
+                col_2.xyz = tmpvar_5;
+                tmpvar_1 = col_2;
+                return tmpvar_1;
+            }
+            ENDCG
+        }
+    }
 }
