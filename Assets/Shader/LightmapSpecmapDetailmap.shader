@@ -1,10 +1,4 @@
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
-
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-
-// Upgrade NOTE: commented out 'sampler2D unity_Lightmap', a built-in variable
 
 Shader "Corona/Lightmap/[Spec] [Detail]" {
     Properties {
@@ -31,7 +25,6 @@ Shader "Corona/Lightmap/[Spec] [Detail]" {
 
             float _DetailPower;
             sampler2D _DetailTex;
-            // sampler2D unity_Lightmap;
             sampler2D _SpecMap;
             sampler2D _MainTex;
             float _SpecPower;
@@ -52,7 +45,6 @@ Shader "Corona/Lightmap/[Spec] [Detail]" {
                 float2 uv1 : TEXCOORD1;
                 float2 uv2 : TEXCOORD2;
                 float2 uv3 : TEXCOORD3;
-                float2 uv4 : TEXCOORD4;
                 float4 uv5 : TEXCOORD5;
                 float2 uv6 : TEXCOORD6;
             };
@@ -86,11 +78,7 @@ Shader "Corona/Lightmap/[Spec] [Detail]" {
                 tmpvar_11.w = 1.0;
                 tmpvar_11.xyz = _WorldSpaceCameraPos;
                 float3 tmpvar_12;
-                
-                // FIXED MATRIX MULTIPLICATION:
-                float3 worldToObjectPos = mul(unity_WorldToObject, tmpvar_11).xyz;
-                tmpvar_12 = normalize(worldToObjectPos - v.vertex.xyz);
-                
+                tmpvar_12 = normalize((mul(unity_WorldToObject, tmpvar_11).xyz - v.vertex.xyz));
                 tmpvar_4 = tmpvar_12;
                 float tmpvar_13;
                 tmpvar_13 = clamp (((tmpvar_8.z * _FogRange.x) + (_FogRange.y + 1.0)), _FogRange.z, 1.0);

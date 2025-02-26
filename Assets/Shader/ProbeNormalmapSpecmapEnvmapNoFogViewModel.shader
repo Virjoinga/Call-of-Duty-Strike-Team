@@ -74,7 +74,7 @@ Shader "Corona/Probe/[Normal] [Spec] [Env] [NoFog] [ViewModel]" {
                 float4 tmpvar_10;
                 tmpvar_10.x = tmpvar_9.x;
                 tmpvar_10.y = tmpvar_9.y;
-                tmpvar_10.z = (tmpvar_9.z * _DepthBand.x);
+                tmpvar_10.z = (tmpvar_9.z);
                 tmpvar_10.w = tmpvar_9.w;
                 float2 tmpvar_11;
                 tmpvar_11 = v.uv.xy;
