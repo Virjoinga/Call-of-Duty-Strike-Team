@@ -1,4 +1,4 @@
-ý¬Shader "Corona/Water/Arctic" {
+Shader "Corona/Water/Arctic" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _SunVec ("SunVector", Vector) = (-0.6,0.3,0.75,1)
