@@ -2,37 +2,32 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MissionRoot_atlas_004_00
   m_Shader: {fileID: 4800000, guid: a901e4dda825c654784a73e52641364f, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 2800000, guid: fbef6d09e811d3d488542f507e7be42d, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f5f0e44d648c26a4e9bc6ba0f9dc4ec0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _SpecMap
-      second:
+    - _SpecMap:
         m_Texture: {fileID: 2800000, guid: f09d012851de16d40967aa8c9db7ce3a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _SpecPower
-      second: 15
-    - first:
-        name: _Reflectivity
-      second: 0.2
+    - _Reflectivity: 0.2
+    - _SpecPower: 15
     m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
