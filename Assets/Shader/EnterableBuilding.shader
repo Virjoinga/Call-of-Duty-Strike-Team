@@ -1,5 +1,3 @@
-#warning Upgrade NOTE: unity_Scale shader variable was removed; replaced 'unity_Scale.w' with '1.0'
-
 Shader "Corona/Effects/Enterable Building" {
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
