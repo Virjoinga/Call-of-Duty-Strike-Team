@@ -211,7 +211,7 @@ public class MoviePlayer : MonoBehaviour
 		}
 		if (!flag)
 		{
-			Handheld.PlayFullScreenMovie(MovieName + ".mp4", Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
+			//Handheld.PlayFullScreenMovie(MovieName + ".mp4", Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
 			mLoadNextSection = true;
 		}
 	}
