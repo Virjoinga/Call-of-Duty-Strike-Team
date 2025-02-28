@@ -77,12 +77,12 @@ public class Moga_ControllerManager : MonoBehaviour
 	{
 		if (mogaControllerManager == null)
 		{
-			Object.DontDestroyOnLoad(base.transform.gameObject);
+			/*Object.DontDestroyOnLoad(base.transform.gameObject);
 			AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 			AndroidJavaObject @static = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
 			AndroidJavaObject instance = Moga_Controller.getInstance(@static);
 			mogaControllerManager = new Moga_Controller(@static, instance);
-			mogaControllerManager.init();
+			mogaControllerManager.init();*/
 		}
 	}
 
@@ -96,10 +96,10 @@ public class Moga_ControllerManager : MonoBehaviour
 				mogaControllerManager.onResume();
 			}
 		}
-		else if (!mogaControllerManager.isLobbyVisible() && mogaControllerManager != null)
+		/*else if (!mogaControllerManager.isLobbyVisible() && mogaControllerManager != null)
 		{
 			mogaControllerManager.onPause();
-		}
+		}*/
 	}
 
 	private void OnDestroy()

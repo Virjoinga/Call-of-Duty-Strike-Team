@@ -233,12 +233,12 @@ public class Moga_Input : MonoBehaviour
 		{
 			foreach (int item in new List<int>(value.Keys))
 			{
-				value[item] = mControllerManager.getAxisValue(item);
+				//value[item] = mControllerManager.getAxisValue(item);
 			}
 		}
 		foreach (int item2 in new List<int>(mogaButtons.Keys))
 		{
-			int keyCode = mControllerManager.getKeyCode(item2);
+			/*int keyCode = mControllerManager.getKeyCode(item2);
 			switch (mogaButtons[item2])
 			{
 			case ButtonState.RELEASED:
@@ -277,7 +277,7 @@ public class Moga_Input : MonoBehaviour
 					mogaButtons[item2] = ButtonState.RELEASED;
 				}
 				break;
-			}
+			}*/
 		}
 	}
 
