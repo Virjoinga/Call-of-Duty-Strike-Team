@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
-
 Shader "Corona/Lightmap/[Emissive]" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}

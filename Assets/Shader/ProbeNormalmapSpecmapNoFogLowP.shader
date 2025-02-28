@@ -1,6 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-
 Shader "Hidden/Probe/[Normal] [Spec] [NoFog] [LowP]" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}

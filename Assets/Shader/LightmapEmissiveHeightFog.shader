@@ -1,7 +1,3 @@
-// Upgrade NOTE: commented out 'sampler2D unity_Lightmap', a built-in variable
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
-
 Shader "Corona/Lightmap/[Emissive] [HeightFog]" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
@@ -23,7 +19,6 @@ Shader "Corona/Lightmap/[Emissive] [HeightFog]" {
             float3 _DepthBand;
             
             sampler2D _EmissiveTex;
-            // sampler2D unity_Lightmap;
             sampler2D _MainTex;
 
             struct appdata_t {

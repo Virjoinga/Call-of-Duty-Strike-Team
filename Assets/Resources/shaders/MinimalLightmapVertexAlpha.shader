@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
-
 Shader "Hidden/MinimalLightmapVertexAlpha" {
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
