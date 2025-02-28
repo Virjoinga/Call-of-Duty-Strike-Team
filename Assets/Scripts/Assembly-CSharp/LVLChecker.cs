@@ -73,24 +73,24 @@ public class LVLChecker : MonoBehaviour
 			new SHA1CryptoServiceProvider();
 			m_Nonce = new System.Random().Next();
 			object[] args = new object[1] { new AndroidJavaObject[1] { m_Activity } };
-			AndroidJavaObject[] array = m_LVLCheckType.Call<AndroidJavaObject[]>("getConstructors", new object[0]);
-			m_LVLCheck = array[0].Call<AndroidJavaObject>("newInstance", args);
-			m_LVLCheck.Call("create", m_Nonce, new AndroidJavaRunnable(Process));
+			//AndroidJavaObject[] array = m_LVLCheckType.Call<AndroidJavaObject[]>("getConstructors", new object[0]);
+			//m_LVLCheck = array[0].Call<AndroidJavaObject>("newInstance", args);
+			//m_LVLCheck.Call("create", m_Nonce, new AndroidJavaRunnable(Process));
 		}
 	}
 
 	private void LoadServiceBinder()
 	{
 		byte[] bytes = ServiceBinder.bytes;
-		m_Activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-		m_PackageName = m_Activity.Call<string>("getPackageName", new object[0]);
-		string text = Path.Combine(m_Activity.Call<AndroidJavaObject>("getCacheDir", new object[0]).Call<string>("getPath", new object[0]), m_PackageName);
-		Directory.CreateDirectory(text);
-		File.WriteAllBytes(text + "/classes.jar", bytes);
-		Directory.CreateDirectory(text + "/odex");
-		AndroidJavaObject androidJavaObject = new AndroidJavaObject("dalvik.system.DexClassLoader", text + "/classes.jar", text + "/odex", null, m_Activity.Call<AndroidJavaObject>("getClassLoader", new object[0]));
-		m_LVLCheckType = androidJavaObject.Call<AndroidJavaObject>("findClass", new object[1] { "com.unity3d.plugin.lvl.ServiceBinder" });
-		Directory.Delete(text, true);
+		//m_Activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+		//m_PackageName = m_Activity.Call<string>("getPackageName", new object[0]);
+		//string text = Path.Combine(m_Activity.Call<AndroidJavaObject>("getCacheDir", new object[0]).Call<string>("getPath", new object[0]), m_PackageName);
+		//Directory.CreateDirectory(text);
+		//File.WriteAllBytes(text + "/classes.jar", bytes);
+		//Directory.CreateDirectory(text + "/odex");
+		//AndroidJavaObject androidJavaObject = new AndroidJavaObject("dalvik.system.DexClassLoader", text + "/classes.jar", text + "/odex", null, m_Activity.Call<AndroidJavaObject>("getClassLoader", new object[0]));
+		//m_LVLCheckType = androidJavaObject.Call<AndroidJavaObject>("findClass", new object[1] { "com.unity3d.plugin.lvl.ServiceBinder" });
+		//Directory.Delete(text, true);
 	}
 
 	private void Process()
