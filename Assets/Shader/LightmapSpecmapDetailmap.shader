@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-
 Shader "Corona/Lightmap/[Spec] [Detail]" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}

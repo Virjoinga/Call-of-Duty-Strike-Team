@@ -1,7 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
-
 Shader "Corona/Lightmap/[Env]" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
