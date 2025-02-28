@@ -28,8 +28,8 @@ public class NewCoverPointBakedData : ScriptableObject
 	public int[] inAirCover;
 
 	public uint CoverGrid(int x, int z)
-	{
-		return (uint)coverGrid[x + z * coverGridXDim];
+    {
+        return (uint)coverGrid[x + z * coverGridXDim];
 	}
 
 	public void CoverGrid(int x, int z, uint v)
@@ -49,6 +49,6 @@ public class NewCoverPointBakedData : ScriptableObject
 
 	public void FixUpAnythingMissing()
 	{
-		coverTable.FixUpAnythingMissing();
+        coverTable.FixUpAnythingMissing();
 	}
 }
