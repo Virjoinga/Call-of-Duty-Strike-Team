@@ -15,11 +15,19 @@ public class UnstaticObject : EditorWindow
 
     void OnGUI()
     {
-        if (GUILayout.Button("Load Splash")) EditorSceneManager.OpenScene(Application.dataPath +"/Scenes/FrontEnd/Splash.unity");
+        if (GUILayout.Button("Bake Cover Tables"))
+        {
+            foreach (NewCoverPointManager manager in FindObjectsOfType<NewCoverPointManager>())
+            {
+                manager.StartBake(false, true);
+            }
+        }
+
+        GUILayout.Space(5);
+
+        if (GUILayout.Button("Load Boot")) EditorSceneManager.OpenScene(Application.dataPath +"/Scenes/FrontEnd/AndroidBootCheck.unity");
 
         GameObject[] realList = FindObjectsOfType<GameObject>();
-
-
 
         GUILayout.Label("GameObjects: " + realList.Length);
 
