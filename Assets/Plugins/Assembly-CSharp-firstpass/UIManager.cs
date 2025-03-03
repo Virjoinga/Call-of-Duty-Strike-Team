@@ -192,6 +192,12 @@ public class UIManager : MonoBehaviour
 			return s_Instance;
 		}
 	}
+#if UNITY_EDITOR
+	void OnGUI()
+	{
+		GUILayout.Label(" UI Pointer Type:" + pointerType.ToString());
+	}
+#endif
 
 	public RAY_ACTIVE_STATE RayActive
 	{
