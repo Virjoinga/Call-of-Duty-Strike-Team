@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
-
 Shader "Corona/FX/Additive" 
 {
     Properties
@@ -43,7 +41,7 @@ Shader "Corona/FX/Additive"
                 tmpvar_2.w = 1.0;
                 tmpvar_2.xyz = v.vertex.xyz;
                 float4 tmpvar_3;
-                tmpvar_3 = (UNITY_MATRIX_MVP * tmpvar_2);
+                tmpvar_3 = UnityObjectToClipPos(tmpvar_2);
                 float4 tmpvar_4;
                 tmpvar_4.x = tmpvar_3.x;
                 tmpvar_4.y = tmpvar_3.y;
