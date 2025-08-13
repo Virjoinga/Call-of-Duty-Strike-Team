@@ -1,5 +1,5 @@
 using System;
-//using Boo.Lang.Runtime;
+using Boo.Lang.Runtime;
 using UnityEngine;
 
 [Serializable]
@@ -38,7 +38,7 @@ public class PickObject : MonoBehaviour
 			object obj = text;
 			if (!(obj is string))
 			{
-				//obj = RuntimeServices.Coerce(obj, typeof(string));
+				obj = RuntimeServices.Coerce(obj, typeof(string));
 			}
 			textMesh.text = (string)obj;
 		}

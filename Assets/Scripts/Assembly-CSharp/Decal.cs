@@ -42,6 +42,7 @@ public class Decal : MonoBehaviour
 			mRendRef = componentInChildren;
 			mRendRef.enabled = false;
 			mColour = mRendRef.material.color;
+			Debug.Log(mColour);
 		}
 		mMeshFilterRef = GetComponent<MeshFilter>();
 	}
