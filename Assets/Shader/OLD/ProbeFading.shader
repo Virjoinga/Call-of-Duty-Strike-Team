@@ -1,19 +1,22 @@
-Shader "Hidden/ProbeFading" {
-    Properties {
+Shader "Hidden/ProbeFading" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _Opacity ("Opacity", Range(0,1)) = 1
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
             Fog { Mode Off }
             Blend SrcAlpha OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _FogRange;
             float3 _FogParams;
             float3 _AmbientLight;
@@ -25,26 +28,24 @@ Shader "Hidden/ProbeFading" {
             float4 cAg;
             float4 cAr;
             float3 _DepthBand;
-
             float _Opacity;
             sampler2D _MainTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv1 : TEXCOORD1;
-                float4 uv5 : TEXCOORD5;
+            struct v2f
+            {
+                float4 texcoord5 : TEXCOORD5;
+                float3 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float2 tmpvar_1;
                 float3 tmpvar_2;
                 float4 tmpvar_3;
@@ -52,14 +53,14 @@ Shader "Hidden/ProbeFading" {
                 tmpvar_4.w = 1.0;
                 tmpvar_4.xyz = v.vertex.xyz;
                 float4 tmpvar_5;
-                tmpvar_5 = (UnityObjectToClipPos(tmpvar_4));
+                tmpvar_5 = UnityObjectToClipPos(tmpvar_4);
                 float4 tmpvar_6;
                 tmpvar_6.x = tmpvar_5.x;
                 tmpvar_6.y = tmpvar_5.y;
                 tmpvar_6.z = ((tmpvar_5.z * _DepthBand.z) + (tmpvar_5.w * _DepthBand.y));
                 tmpvar_6.w = tmpvar_5.w;
                 float2 tmpvar_7;
-                tmpvar_7 = v.uv.xy;
+                tmpvar_7 = v.texcoord0.xy;
                 tmpvar_1 = tmpvar_7;
                 float4 tmpvar_8;
                 tmpvar_8.w = 0.0;
@@ -97,21 +98,21 @@ Shader "Hidden/ProbeFading" {
                 tmpvar_19.xyz = (_FogParams - (_FogParams * tmpvar_18));
                 tmpvar_19.w = tmpvar_18;
                 tmpvar_3 = tmpvar_19;
-                o.pos = tmpvar_6;
-                o.uv = tmpvar_1;
-                o.uv1 = tmpvar_2;
-                o.uv5 = tmpvar_3;
-                
+                o.vertex = tmpvar_6;
+                o.texcoord0 = tmpvar_1;
+                o.texcoord1 = tmpvar_2;
+                o.texcoord5 = tmpvar_3;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
-                tmpvar_1.xyz = (((tex2D (_MainTex, i.uv).xyz * i.uv1) * i.uv5.w) + i.uv5.xyz);
+                tmpvar_1.xyz = (((tex2D (_MainTex, i.texcoord0).xyz * i.texcoord1) * i.texcoord5.w) + i.texcoord5.xyz);
                 tmpvar_1.w = _Opacity;
                 return tmpvar_1;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

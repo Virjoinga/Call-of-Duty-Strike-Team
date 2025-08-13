@@ -1,20 +1,23 @@
-Shader "Corona/Probe/[Normal] [Spec]" {
-    Properties {
+Shader "Corona/Probe/[Normal] [Spec]" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}
         _BumpMap ("Normalmap", 2D) = "bump" {}
         _SpecPower ("Specular Power", Range(0,50)) = 10
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
             Fog { Mode Off }
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _FogRange;
             float3 _FogParams;
             float3 _AmbientLight;
@@ -27,31 +30,29 @@ Shader "Corona/Probe/[Normal] [Spec]" {
             float4 cAr;
             float3 _DepthBand;
             float3 _SpecDir;
-
             sampler2D _SpecMap;
             sampler2D _BumpMap;
             sampler2D _MainTex;
             float _SpecPower;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
+            struct appdata_t
+            {
                 float4 tangent : TANGENT;
+                float4 texcoord0 : TEXCOORD0;
+                float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv1 : TEXCOORD1;
-                float3 uv2 : TEXCOORD2;
-                float3 uv3 : TEXCOORD3;
-                float4 uv5 : TEXCOORD5;
+            struct v2f
+            {
+                float4 texcoord5 : TEXCOORD5;
+                float3 texcoord3 : TEXCOORD3;
+                float3 texcoord2 : TEXCOORD2;
+                float4 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 tmpvar_1.xyz = normalize(v.tangent.xyz);
                 tmpvar_1.w = v.tangent.w;
@@ -66,14 +67,14 @@ Shader "Corona/Probe/[Normal] [Spec]" {
                 tmpvar_8.w = 1.0;
                 tmpvar_8.xyz = v.vertex.xyz;
                 float4 tmpvar_9;
-                tmpvar_9 = (UnityObjectToClipPos(tmpvar_8));
+                tmpvar_9 = UnityObjectToClipPos(tmpvar_8);
                 float4 tmpvar_10;
                 tmpvar_10.x = tmpvar_9.x;
                 tmpvar_10.y = tmpvar_9.y;
                 tmpvar_10.z = ((tmpvar_9.z * _DepthBand.z) + (tmpvar_9.w * _DepthBand.y));
                 tmpvar_10.w = tmpvar_9.w;
                 float2 tmpvar_11;
-                tmpvar_11 = v.uv.xy;
+                tmpvar_11 = v.texcoord0.xy;
                 tmpvar_3 = tmpvar_11;
                 float3 tmpvar_12;
                 float3 dir_13;
@@ -140,21 +141,20 @@ Shader "Corona/Probe/[Normal] [Spec]" {
                 tmpvar_33.xyz = (_FogParams - (_FogParams * tmpvar_32));
                 tmpvar_33.w = tmpvar_32;
                 tmpvar_7 = tmpvar_33;
-                o.pos = tmpvar_10;
-                o.uv = tmpvar_3;
-                o.uv1 = tmpvar_4;
-                o.uv2 = tmpvar_5;
-                o.uv3 = tmpvar_6;
-                o.uv5 = tmpvar_7;
-                
+                o.vertex = tmpvar_10;
+                o.texcoord0 = tmpvar_3;
+                o.texcoord1 = tmpvar_4;
+                o.texcoord2 = tmpvar_5;
+                o.texcoord3 = tmpvar_6;
+                o.texcoord5 = tmpvar_7;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float tmpvar_1;
                 float spec_2;
                 float tmpvar_3;
-                tmpvar_3 = max (0.0, dot (normalize((normalize(i.uv3) + normalize(i.uv2))), normalize((tex2D (_BumpMap, i.uv).xyz - 0.5))));
+                tmpvar_3 = max (0.0, dot (normalize((normalize(i.texcoord3) + normalize(i.texcoord2))), normalize((tex2D (_BumpMap, i.texcoord0).xyz - 0.5))));
                 spec_2 = tmpvar_3;
                 float tmpvar_4;
                 tmpvar_4 = pow (spec_2, _SpecPower);
@@ -162,10 +162,11 @@ Shader "Corona/Probe/[Normal] [Spec]" {
                 tmpvar_1 = tmpvar_4;
                 float4 tmpvar_5;
                 tmpvar_5.w = 1.0;
-                tmpvar_5.xyz = ((((tex2D (_MainTex, i.uv).xyz + (tmpvar_1.xxx * tex2D (_SpecMap, i.uv).xyz)) * i.uv1.xyz) * i.uv5.w) + i.uv5.xyz);
+                tmpvar_5.xyz = ((((tex2D (_MainTex, i.texcoord0).xyz + (tmpvar_1.xxx * tex2D (_SpecMap, i.texcoord0).xyz)) * i.texcoord1.xyz) * i.texcoord5.w) + i.texcoord5.xyz);
                 return tmpvar_5;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

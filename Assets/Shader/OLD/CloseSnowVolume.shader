@@ -1,23 +1,26 @@
-Shader "Corona/Effects/CloseSnowVolume" {
-    Properties {
+Shader "Corona/Effects/CloseSnowVolume" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _Size ("Size", Float) = 0.01
         _Alpha ("Alpha", Float) = 1
         _Color ("Main Color", Color) = (1,1,1,1)
         _CentreFadeSpeed ("CentreFadeSpeed", Float) = 0.25
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "QUEUE"="Transparent+1" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
-        Pass {
+        Pass
+        {
             Tags { "QUEUE"="Transparent+1" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
             ZWrite Off
             Cull Off
             Blend SrcAlpha OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float _CentreFadeSpeed;
             float4 _Color;
             float _Alpha;
@@ -33,30 +36,28 @@ Shader "Corona/Effects/CloseSnowVolume" {
             float4 g_cameraPos;
             float3 _DepthBand;
             float3 _SpecDir;
-
             sampler2D _MainTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
                 float4 color : COLOR;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
+            struct v2f
+            {
                 float4 color : COLOR;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 tmpvar_1.w = 0.0;
                 tmpvar_1.xyz = v.normal;
                 float2 tmpvar_2;
-                tmpvar_2 = v.uv.xy;
+                tmpvar_2 = v.texcoord0.xy;
                 float4 tmpvar_3;
                 float3 lightDir_4;
                 float3 pos_5;
@@ -85,13 +86,13 @@ Shader "Corona/Effects/CloseSnowVolume" {
                 float tmpvar_15;
                 tmpvar_15 = cos(tmpvar_13);
                 float2 tmpvar_16;
-                tmpvar_16 = ((v.uv.xy * (2.0 * tmpvar_12)) - tmpvar_12);
+                tmpvar_16 = ((v.texcoord0.xy * (2.0 * tmpvar_12)) - tmpvar_12);
                 pos_5 = (tmpvar_8 + ((((tmpvar_16.x * tmpvar_15) - (tmpvar_16.y * tmpvar_14)) * g_cameraRight.xyz) + (((tmpvar_16.y * tmpvar_15) + (tmpvar_16.x * tmpvar_14)) * g_cameraUp.xyz)));
                 float tmpvar_17;
                 tmpvar_17 = ((g_closeSnowFade.x * clamp (((tmpvar_10 * g_closeSnowFade.w) + g_closeSnowFade.z), 0.0, 1.0)) + g_closeSnowFade.y);
                 float tmpvar_18;
                 if ((tmpvar_17 < 0.25)) {
-                    tmpvar_18 = tmpvar_17;
+                tmpvar_18 = tmpvar_17;
                 } else {
                     tmpvar_18 = 1.0;
                 };
@@ -119,17 +120,17 @@ Shader "Corona/Effects/CloseSnowVolume" {
                 tmpvar_25.w = tmpvar_24.w;
                 tmpvar_3.xyz = _Color.xyz;
                 tmpvar_3.w = tmpvar_21;
-                o.pos = tmpvar_25;
-                o.uv = tmpvar_2;
+                o.vertex = tmpvar_25;
+                o.texcoord0 = tmpvar_2;
                 o.color = tmpvar_3;
-                
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
-                return (tex2D (_MainTex, i.uv) * i.color);
+            float4 frag(v2f i) : SV_TARGET
+            {
+                return (tex2D (_MainTex, i.texcoord0) * i.color);
             }
             ENDCG
         }
     }
+    
 }

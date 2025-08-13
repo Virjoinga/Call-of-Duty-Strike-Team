@@ -1,5 +1,7 @@
-Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
-    Properties {
+Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}
         _BumpMap ("Normalmap", 2D) = "bump" {}
@@ -7,17 +9,18 @@ Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
         _Reflectivity ("Reflectivity", Range(0,1)) = 0.2
         _Opacity ("Opacity", Range(0,1)) = 1
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
             Fog { Mode Off }
             Blend SrcAlpha OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float3 _AmbientLight;
             float4 cC;
             float4 cBb;
@@ -28,7 +31,6 @@ Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
             float4 cAr;
             float3 _DepthBand;
             float3 _SpecDir;
-
             float _Opacity;
             float _Reflectivity;
             samplerCUBE _ThemedCube;
@@ -36,26 +38,25 @@ Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
             sampler2D _BumpMap;
             sampler2D _MainTex;
             float _SpecPower;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
+            struct appdata_t
+            {
                 float4 tangent : TANGENT;
+                float4 texcoord0 : TEXCOORD0;
+                float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv1 : TEXCOORD1;
-                float3 uv2 : TEXCOORD2;
-                float3 uv3 : TEXCOORD3;
-                float3 uv4 : TEXCOORD4;
+            struct v2f
+            {
+                float3 texcoord4 : TEXCOORD4;
+                float3 texcoord3 : TEXCOORD3;
+                float3 texcoord2 : TEXCOORD2;
+                float4 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 tmpvar_1.xyz = normalize(v.tangent.xyz);
                 tmpvar_1.w = v.tangent.w;
@@ -70,14 +71,14 @@ Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
                 tmpvar_8.w = 1.0;
                 tmpvar_8.xyz = v.vertex.xyz;
                 float4 tmpvar_9;
-                tmpvar_9 = (UnityObjectToClipPos(tmpvar_8));
+                tmpvar_9 = UnityObjectToClipPos(tmpvar_8);
                 float4 tmpvar_10;
                 tmpvar_10.x = tmpvar_9.x;
                 tmpvar_10.y = tmpvar_9.y;
                 tmpvar_10.z = ((tmpvar_9.z * _DepthBand.z) + (tmpvar_9.w * _DepthBand.y));
                 tmpvar_10.w = tmpvar_9.w;
                 float2 tmpvar_11;
-                tmpvar_11 = v.uv.xy;
+                tmpvar_11 = v.texcoord0.xy;
                 tmpvar_3 = tmpvar_11;
                 float3 tmpvar_12;
                 float3 dir_13;
@@ -146,34 +147,34 @@ Shader "Hidden/ProbeNormalmapSpecmapEnvmap NoFogFading" {
                 tmpvar_28 = ((x1_30 + x2_29) + (cC.xyz * ((tmpvar_18.x * tmpvar_18.x) - (tmpvar_18.y * tmpvar_18.y))));
                 tmpvar_4.xyz = tmpvar_28;
                 tmpvar_7 = tmpvar_21;
-                o.pos = tmpvar_10;
-                o.uv = tmpvar_3;
-                o.uv1 = tmpvar_4;
-                o.uv2 = tmpvar_5;
-                o.uv3 = tmpvar_6;
-                o.uv4 = tmpvar_7;
-                
+                o.vertex = tmpvar_10;
+                o.texcoord0 = tmpvar_3;
+                o.texcoord1 = tmpvar_4;
+                o.texcoord2 = tmpvar_5;
+                o.texcoord3 = tmpvar_6;
+                o.texcoord4 = tmpvar_7;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
-                tmpvar_1 = tex2D (_SpecMap, i.uv);
+                tmpvar_1 = tex2D (_SpecMap, i.texcoord0);
                 float tmpvar_2;
                 float spec_3;
                 float tmpvar_4;
-                tmpvar_4 = max (0.0, dot (normalize((normalize(i.uv3) + normalize(i.uv2))), normalize((tex2D (_BumpMap, i.uv).xyz - 0.5))));
+                tmpvar_4 = max (0.0, dot (normalize((normalize(i.texcoord3) + normalize(i.texcoord2))), normalize((tex2D (_BumpMap, i.texcoord0).xyz - 0.5))));
                 spec_3 = tmpvar_4;
                 float tmpvar_5;
                 tmpvar_5 = pow (spec_3, _SpecPower);
                 spec_3 = tmpvar_5;
                 tmpvar_2 = tmpvar_5;
                 float4 tmpvar_6;
-                tmpvar_6.xyz = (((tex2D (_MainTex, i.uv).xyz + (tmpvar_2.xxx * tmpvar_1.xyz)) * i.uv1.xyz) + ((texCUBE (_ThemedCube, i.uv4).xyz * _Reflectivity) * tmpvar_1.xyz));
+                tmpvar_6.xyz = (((tex2D (_MainTex, i.texcoord0).xyz + (tmpvar_2.xxx * tmpvar_1.xyz)) * i.texcoord1.xyz) + ((texCUBE (_ThemedCube, i.texcoord4).xyz * _Reflectivity) * tmpvar_1.xyz));
                 tmpvar_6.w = _Opacity;
                 return tmpvar_6;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

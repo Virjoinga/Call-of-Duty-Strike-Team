@@ -1,5 +1,7 @@
-Shader "Corona/Lightmap/[WindCloth]" {
-    Properties {
+Shader "Corona/Lightmap/[WindCloth]" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _WindAmount ("Wind Amount", Float) = 0.08
         _NormalDirectionScale ("Normal Direction Scale", Float) = 1
@@ -10,16 +12,17 @@ Shader "Corona/Lightmap/[WindCloth]" {
         _WindSpeed0Scale ("Wind Speed 0 Scale", Float) = 1
         _WindSpeed1Scale ("Wind Speed 1 Scale", Float) = 0
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "RenderType"="Opaque" }
-        Pass {
+        Pass
+        {
             Tags { "RenderType"="Opaque" }
             Fog { Mode Off }
-
-                        CGPROGRAM
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _FogRange;
             float3 _FogParams;
             float _WindSpeed1Scale;
@@ -34,27 +37,25 @@ Shader "Corona/Lightmap/[WindCloth]" {
             float4 g_globalWindDir;
             float4 g_globalWindData;
             float3 _DepthBand;
-
             sampler2D _MainTex;
-
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
+            struct appdata_t
+            {
+                float4 texcoord1 : TEXCOORD1;
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
                 float4 color : COLOR;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float4 uv5 : TEXCOORD5;
+            struct v2f
+            {
+                float4 texcoord5 : TEXCOORD5;
+                float2 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 fog_1;
                 float2 tmpvar_2;
                 float2 tmpvar_3;
@@ -91,7 +92,7 @@ Shader "Corona/Lightmap/[WindCloth]" {
                 b_17 = -(tmpvar_15);
                 float tmpvar_18;
                 if (tmpvar_16.x) {
-                    tmpvar_18 = b_17.x;
+                tmpvar_18 = b_17.x;
                 } else {
                     tmpvar_18 = tmpvar_15.x;
                 };
@@ -115,10 +116,10 @@ Shader "Corona/Lightmap/[WindCloth]" {
                 tmpvar_23.z = ((tmpvar_22.z * _DepthBand.z) + (tmpvar_22.w * _DepthBand.y));
                 tmpvar_23.w = tmpvar_22.w;
                 float2 tmpvar_24;
-                tmpvar_24 = v.uv.xy;
+                tmpvar_24 = v.texcoord0.xy;
                 tmpvar_2 = tmpvar_24;
                 float2 tmpvar_25;
-                tmpvar_25 = ((v.uv1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
+                tmpvar_25 = ((v.texcoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
                 tmpvar_3 = tmpvar_25;
                 float tmpvar_26;
                 tmpvar_26 = clamp (((tmpvar_23.z * _FogRange.x) + (_FogRange.y + 1.0)), _FogRange.z, 1.0);
@@ -128,21 +129,21 @@ Shader "Corona/Lightmap/[WindCloth]" {
                 fog_1.xyz = tmpvar_27.xyz;
                 fog_1.w = (tmpvar_26 * 2.0);
                 tmpvar_4 = fog_1;
-                o.pos = tmpvar_23;
-                o.uv = tmpvar_2;
-                o.uv1 = tmpvar_3;
-                o.uv5 = tmpvar_4;
-                
+                o.vertex = tmpvar_23;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord1 = tmpvar_3;
+                o.texcoord5 = tmpvar_4;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
                 tmpvar_1.w = 1.0;
-                tmpvar_1.xyz = (((tex2D (_MainTex, i.uv).xyz * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.uv1).xyz) * i.uv5.w) + i.uv5.xyz);
+                tmpvar_1.xyz = (((tex2D (_MainTex, i.texcoord0).xyz * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.texcoord1).xyz) * i.texcoord5.w) + i.texcoord5.xyz);
                 return tmpvar_1;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

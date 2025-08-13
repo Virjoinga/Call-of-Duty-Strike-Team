@@ -1,5 +1,7 @@
-Shader "Corona/Effects/Enterable Building" {
-    Properties {
+Shader "Corona/Effects/Enterable Building" 
+{
+    Properties
+    {
         _Color ("Main Color", Color) = (1,1,1,1)
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _EdgeTex ("Edge Texture", 2D) = "white" {}
@@ -7,43 +9,42 @@ Shader "Corona/Effects/Enterable Building" {
         _FadeHeight ("Fade Height", Float) = 0
         _FadeOrigin ("Fade Origin", Vector) = (0,0,0,0)
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "RenderType"="Opaque" }
-        Pass {
+        Pass
+        {
             Tags { "RenderType"="Opaque" }
             Fog { Mode Off }
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float3 _DepthBand;
-
             float4 _FadeOrigin;
             float _FadeHeight;
             float4 _Color;
             sampler2D _BlendTex;
             sampler2D _EdgeTex;
             sampler2D _MainTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
+            struct appdata_t
+            {
+                float4 texcoord1 : TEXCOORD1;
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float4 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 uv2 : TEXCOORD2;
-                float2 uv3 : TEXCOORD3;
+            struct v2f
+            {
+                float2 texcoord3 : TEXCOORD3;
+                float2 texcoord2 : TEXCOORD2;
+                float3 texcoord1 : TEXCOORD1;
+                float4 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 float3 tmpvar_2;
                 float2 tmpvar_3;
@@ -52,7 +53,7 @@ Shader "Corona/Effects/Enterable Building" {
                 tmpvar_5.w = 1.0;
                 tmpvar_5.xyz = v.vertex.xyz;
                 float4 tmpvar_6;
-                tmpvar_6 = (UnityObjectToClipPos(tmpvar_5));
+                tmpvar_6 = UnityObjectToClipPos(tmpvar_5);
                 float4 tmpvar_7;
                 tmpvar_7.x = tmpvar_6.x;
                 tmpvar_7.y = tmpvar_6.y;
@@ -68,21 +69,20 @@ Shader "Corona/Effects/Enterable Building" {
                 tmpvar_10 = mul(unity_ObjectToWorld, v.vertex);
                 tmpvar_1 = tmpvar_10;
                 float2 tmpvar_11;
-                tmpvar_11 = v.uv.xy;
+                tmpvar_11 = v.texcoord0.xy;
                 tmpvar_3 = tmpvar_11;
                 float2 tmpvar_12;
-                tmpvar_12 = ((v.uv1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
+                tmpvar_12 = ((v.texcoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
                 tmpvar_4 = tmpvar_12;
-                o.pos = tmpvar_7;
-                o.uv = tmpvar_1;
-                o.uv1 = tmpvar_2;
-                o.uv2 = tmpvar_3;
-                o.uv3 = tmpvar_4;
-                
+                o.vertex = tmpvar_7;
+                o.texcoord0 = tmpvar_1;
+                o.texcoord1 = tmpvar_2;
+                o.texcoord2 = tmpvar_3;
+                o.texcoord3 = tmpvar_4;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
                 float4 blendSample_2;
                 float3 normalView_3;
@@ -90,7 +90,7 @@ Shader "Corona/Effects/Enterable Building" {
                 float fade_5;
                 float4 fadeOffset_6;
                 float4 tmpvar_7;
-                tmpvar_7 = (i.uv - _FadeOrigin);
+                tmpvar_7 = (i.texcoord0 - _FadeOrigin);
                 fadeOffset_6 = tmpvar_7;
                 float tmpvar_8;
                 tmpvar_8 = sqrt(dot (fadeOffset_6, fadeOffset_6));
@@ -103,12 +103,12 @@ Shader "Corona/Effects/Enterable Building" {
                 tmpvar_11 = (fade_5 + (0.1 * cos(((_Time * 100.0) + (10.0 * tmpvar_9)))).x);
                 fade_5 = tmpvar_11;
                 if ((tmpvar_11 < 0.0)) {
-                    discard;
+					discard;
                 };
                 float3 tmpvar_12;
-                tmpvar_12 = (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.uv3).xyz);
+                tmpvar_12 = (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.texcoord3).xyz);
                 float4 tmpvar_13;
-                tmpvar_13 = tex2D (_MainTex, i.uv2);
+                tmpvar_13 = tex2D (_MainTex, i.texcoord2);
                 float3 tmpvar_14;
                 tmpvar_14 = ((_Color.xyz * tmpvar_12) * tmpvar_13.xyz);
                 strategyView_4 = tmpvar_14;
@@ -135,4 +135,5 @@ Shader "Corona/Effects/Enterable Building" {
             ENDCG
         }
     }
+    Fallback Off
 }

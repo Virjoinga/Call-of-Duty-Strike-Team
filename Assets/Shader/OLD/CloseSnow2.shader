@@ -1,23 +1,26 @@
-Shader "Corona/Effects/CloseSnow2" {
-    Properties {
+Shader "Corona/Effects/CloseSnow2" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _Size ("Size", Float) = 0.01
         _Alpha ("Alpha", Float) = 1
         _CameraMotionBlur ("CameraMotionBlur", Float) = 0.3
         _PosScale ("PosScale", Float) = 1
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "QUEUE"="Transparent+1" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
-        Pass {
+        Pass
+        {
             Tags { "QUEUE"="Transparent+1" "IGNOREPROJECTOR"="True" "RenderType"="Transparent" }
             ZWrite Off
             Cull Off
             Blend SrcAlpha OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float _PosScale;
             float _CameraMotionBlur;
             float _Alpha;
@@ -29,30 +32,28 @@ Shader "Corona/Effects/CloseSnow2" {
             float4 g_cameraVel;
             float4 g_cameraPos;
             float3 _DepthBand;
-
             sampler2D _MainTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
                 float4 color : COLOR;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float4 color : COLOR;
+            struct v2f
+            {
+                float color : COLOR;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 tmpvar_1.w = 0.0;
                 tmpvar_1.xyz = v.normal;
                 float2 tmpvar_2;
-                tmpvar_2 = v.uv.xy;
+                tmpvar_2 = v.texcoord0.xy;
                 float tmpvar_3;
                 float2 sinCos_4;
                 float3 pos_5;
@@ -96,7 +97,7 @@ Shader "Corona/Effects/CloseSnow2" {
                 float tmpvar_22;
                 tmpvar_22 = rsqrt(dot (tmpvar_19, tmpvar_19));
                 float2 tmpvar_23;
-                tmpvar_23 = ((v.uv.xy * 2.0) - 1.0);
+                tmpvar_23 = ((v.texcoord0.xy * 2.0) - 1.0);
                 pos_5 = (tmpvar_16 + (tmpvar_20 * ((max ((_Size - ((dot (tmpvar_18, tmpvar_20) * tmpvar_21) * tmpvar_22)), 0.0) * tmpvar_22) * tmpvar_23.x)));
                 pos_5 = (pos_5 + (tmpvar_18 * (tmpvar_23.x * tmpvar_21)));
                 pos_5 = (pos_5 + (tmpvar_19 * ((tmpvar_23.y * _Size) * tmpvar_22)));
@@ -104,7 +105,7 @@ Shader "Corona/Effects/CloseSnow2" {
                 tmpvar_24 = ((g_closeSnowFade.x * clamp (((tmpvar_17 * g_closeSnowFade.w) + g_closeSnowFade.z), 0.0, 1.0).x) + g_closeSnowFade.y);
                 float tmpvar_25;
                 if ((tmpvar_24 < 0.25)) {
-                    tmpvar_25 = tmpvar_24;
+                tmpvar_25 = tmpvar_24;
                 } else {
                     tmpvar_25 = 1.0;
                 };
@@ -124,20 +125,20 @@ Shader "Corona/Effects/CloseSnow2" {
                 float tmpvar_30;
                 tmpvar_30 = (tmpvar_25 * _Alpha);
                 tmpvar_3 = tmpvar_30;
-                o.pos = tmpvar_29;
-                o.uv = tmpvar_2;
+                o.vertex = tmpvar_29;
+                o.texcoord0 = tmpvar_2;
                 o.color = tmpvar_3;
-                
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
                 tmpvar_1.xyz = float3(1.0, 1.0, 1.0);
-                tmpvar_1.w = (tex2D (_MainTex, i.uv).w * i.color);
+                tmpvar_1.w = (tex2D (_MainTex, i.texcoord0).w * i.color);
                 return tmpvar_1;
             }
             ENDCG
         }
     }
+    
 }

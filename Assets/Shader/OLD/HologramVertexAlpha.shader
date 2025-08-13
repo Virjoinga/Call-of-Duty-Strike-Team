@@ -1,5 +1,7 @@
-Shader "Corona/Effects/Hologram Vertex Alpha" {
-    Properties {
+Shader "Corona/Effects/Hologram Vertex Alpha" 
+{
+    Properties
+    {
         _Color ("Main Color", Color) = (1,1,1,1)
         _NoiseTex ("Noise Texture", 2D) = "white" {}
         _NoiseTexRate ("Noise Tex Rate", Range(0,4)) = 0.85
@@ -8,48 +10,46 @@ Shader "Corona/Effects/Hologram Vertex Alpha" {
         _ShimmerRate ("Shimmer Rate", Range(0,400)) = 275
         _ZBias ("Z Bias", Float) = -0.0001
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "QUEUE"="Transparent-1" }
         UsePass "Corona/Effects/HologramZFill/PASS"
-        Pass {
+        Pass
+        {
             Tags { "QUEUE"="Transparent-1" }
             ZWrite Off
             Fog { Mode Off }
             Blend One OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
-
             float _ShimmerRate;
             float _ShimmerIntensity;
             float _NoiseRate;
             float _NoiseTexRate;
             float _ZBias;
             float3 _DepthBand;
-
             float4 _Color;
             sampler2D _NoiseTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
+            struct appdata_t
+            {
                 float3 normal : NORMAL;
                 float4 color : COLOR;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 uv2 : TEXCOORD2;
-                float2 uv3 : TEXCOORD3;
-                float2 uv4 : TEXCOORD4;
+            struct v2f
+            {
+                float texcoord4 : TEXCOORD4;
+                float texcoord3 : TEXCOORD3;
+                float3 texcoord2 : TEXCOORD2;
+                float3 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float4 tmpvar_1;
                 float2 tmpvar_2;
                 float3 tmpvar_3;
@@ -58,7 +58,7 @@ Shader "Corona/Effects/Hologram Vertex Alpha" {
                 tmpvar_5.w = 1.0;
                 tmpvar_5.xyz = v.vertex.xyz;
                 float4 tmpvar_6;
-                tmpvar_6 = (UnityObjectToClipPos(tmpvar_5));
+                tmpvar_6 = UnityObjectToClipPos(tmpvar_5);
                 float4 tmpvar_7;
                 tmpvar_7.x = tmpvar_6.x;
                 tmpvar_7.y = tmpvar_6.y;
@@ -79,7 +79,7 @@ Shader "Corona/Effects/Hologram Vertex Alpha" {
                 tmpvar_11.w = 0.0;
                 tmpvar_11.xyz = v.vertex.xyz;
                 float2 tmpvar_12;
-                tmpvar_12.x = -((UnityObjectToViewPos(tmpvar_10)).x);
+                tmpvar_12.x = -(UnityObjectToViewPos(tmpvar_10).x);
                 tmpvar_12.y = mul(unity_ObjectToWorld, tmpvar_11).y;
                 float2 tmpvar_13;
                 tmpvar_13.x = 0.0;
@@ -90,26 +90,26 @@ Shader "Corona/Effects/Hologram Vertex Alpha" {
                 float tmpvar_15;
                 tmpvar_15 = (0.25 + ((((sin((_Time.y * (_ShimmerRate / 3.0))) + sin((_Time.y * (_ShimmerRate / 5.0)))) + sin((_Time.y * (_ShimmerRate / 7.0)))) * 0.333333) * _ShimmerIntensity));
                 tmpvar_4 = tmpvar_15;
-                o.pos = tmpvar_1;
-                o.uv = tmpvar_2;
-                o.uv1 = tmpvar_3;
-                o.uv2 = normalize(v.normal);
-                o.uv3 = tmpvar_4;
-                o.uv4 = v.color.w;
-                
+                o.vertex = tmpvar_1;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord1 = tmpvar_3;
+                o.texcoord2 = normalize(v.normal);
+                o.texcoord3 = tmpvar_4;
+                o.texcoord4 = v.color.w;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 colour_1;
                 float tmpvar_2;
-                tmpvar_2 = clamp ((1.0 - abs((i.uv3 - dot (normalize(i.uv2), i.uv1)))), 0.0, 1.0);
+                tmpvar_2 = clamp ((1.0 - abs((i.texcoord3 - dot (normalize(i.texcoord2), i.texcoord1)))), 0.0, 1.0);
                 colour_1.w = (tmpvar_2 * ((tmpvar_2 * 0.75) + 0.25));
-                colour_1.w = (colour_1.w * i.uv4);
-                colour_1.xyz = (((_Color.xyz * 2.0) * tex2D (_NoiseTex, i.uv).xyz) * colour_1.w);
+                colour_1.w = (colour_1.w * i.texcoord4);
+                colour_1.xyz = (((_Color.xyz * 2.0) * tex2D (_NoiseTex, i.texcoord0).xyz) * colour_1.w);
                 return colour_1;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

@@ -1,5 +1,7 @@
-Shader "Corona/Effects/Datapad [ViewModel]" {
-    Properties {
+Shader "Corona/Effects/Datapad [ViewModel]" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}
         _NoiseTex ("Noise Texture", 2D) = "white" {}
@@ -9,16 +11,17 @@ Shader "Corona/Effects/Datapad [ViewModel]" {
         _PhaseLineFrequency ("Phase line frequency", Range(0,5)) = 0.5
         _PhaseLineOverscan ("Phase line overscan", Range(1,2)) = 1.2
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
             Fog { Mode Off }
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _FogRange;
             float3 _FogParams;
             float _BroadSpecular;
@@ -33,7 +36,6 @@ Shader "Corona/Effects/Datapad [ViewModel]" {
             float3 _DepthBand;
             float _PhaseLineOverscan;
             float _PhaseLineFrequency;
-
             float _Reflectivity;
             samplerCUBE _ThemedCube;
             sampler2D _SpecMap;
@@ -41,27 +43,25 @@ Shader "Corona/Effects/Datapad [ViewModel]" {
             float g_datapadBrightness;
             sampler2D _PhaseLineTex;
             sampler2D _NoiseTex;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv2 : TEXCOORD2;
-                float3 uv4 : TEXCOORD4;
-                float4 uv5 : TEXCOORD5;
-                float2 uv6 : TEXCOORD6;
-                float2 uv7 : TEXCOORD7;
+            struct v2f
+            {
+                float2 texcoord6 : TEXCOORD6;
+                float2 texcoord7 : TEXCOORD7;
+                float4 texcoord5 : TEXCOORD5;
+                float3 texcoord4 : TEXCOORD4;
+                float3 texcoord2 : TEXCOORD2;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float3 tmpvar_1;
                 tmpvar_1 = normalize(v.normal);
                 float2 tmpvar_2;
@@ -74,14 +74,14 @@ Shader "Corona/Effects/Datapad [ViewModel]" {
                 tmpvar_8.w = 1.0;
                 tmpvar_8.xyz = v.vertex.xyz;
                 float4 tmpvar_9;
-                tmpvar_9 = (UnityObjectToClipPos(tmpvar_8));
+                tmpvar_9 = UnityObjectToClipPos(tmpvar_8);
                 float4 tmpvar_10;
                 tmpvar_10.x = tmpvar_9.x;
                 tmpvar_10.y = tmpvar_9.y;
-                tmpvar_10.z = (tmpvar_9.z);
+                tmpvar_10.z = tmpvar_9.z;
                 tmpvar_10.w = tmpvar_9.w;
                 float2 tmpvar_11;
-                tmpvar_11 = v.uv.xy;
+                tmpvar_11 = v.texcoord0.xy;
                 tmpvar_2 = tmpvar_11;
                 float4 tmpvar_12;
                 tmpvar_12.w = 1.0;
@@ -129,37 +129,37 @@ Shader "Corona/Effects/Datapad [ViewModel]" {
                 tmpvar_26.x = frac((157.079 * _Time.y));
                 tmpvar_26.y = frac((135.914 * _Time.y));
                 float2 tmpvar_27;
-                tmpvar_27 = ((v.uv.xy * 2.0) + tmpvar_26);
+                tmpvar_27 = ((v.texcoord0.xy * 2.0) + tmpvar_26);
                 tmpvar_6 = tmpvar_27;
                 float2 tmpvar_28;
-                tmpvar_28 = (((((v.uv.y * 1024.0) / 245.0) - 4.17959) + (frac((_Time.y * _PhaseLineFrequency)) * _PhaseLineOverscan)));
+                tmpvar_28 = ((((v.texcoord0.y * 1024.0) / 245.0) - 4.17959) + (frac((_Time.y * _PhaseLineFrequency)) * _PhaseLineOverscan));
                 tmpvar_7 = tmpvar_28;
-                o.pos = tmpvar_10;
-                o.uv = tmpvar_2;
-                o.uv2 = tmpvar_3;
-                o.uv4 = tmpvar_4;
-                o.uv5 = tmpvar_5;
-                o.uv7 = tmpvar_6;
-                o.uv6 = tmpvar_7;
-                
+                o.vertex = tmpvar_10;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord2 = tmpvar_3;
+                o.texcoord4 = tmpvar_4;
+                o.texcoord5 = tmpvar_5;
+                o.texcoord7 = tmpvar_6;
+                o.texcoord6 = tmpvar_7;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 diffusemap_1;
                 float4 tmpvar_2;
-                tmpvar_2 = tex2D (_MainTex, i.uv);
+                tmpvar_2 = tex2D (_MainTex, i.texcoord0);
                 diffusemap_1.w = tmpvar_2.w;
                 float4 tmpvar_3;
-                tmpvar_3 = tex2D (_SpecMap, i.uv);
-                diffusemap_1.xyz = (tmpvar_2.xyz + tex2D (_PhaseLineTex, i.uv6).xyz);
-                diffusemap_1.xyz = (diffusemap_1.xyz * (tex2D (_NoiseTex, i.uv7).xyz * g_datapadBrightness));
+                tmpvar_3 = tex2D (_SpecMap, i.texcoord0);
+                diffusemap_1.xyz = (tmpvar_2.xyz + tex2D (_PhaseLineTex, i.texcoord6).xyz);
+                diffusemap_1.xyz = (diffusemap_1.xyz * (tex2D (_NoiseTex, i.texcoord7).xyz * g_datapadBrightness));
                 float4 tmpvar_4;
                 tmpvar_4.w = 1.0;
-                tmpvar_4.xyz = ((((diffusemap_1.xyz + (i.uv2 * tmpvar_3.xyz)) + ((texCUBE (_ThemedCube, i.uv4).xyz * _Reflectivity) * tmpvar_3.xyz)) * i.uv5.w) + i.uv5.xyz);
+                tmpvar_4.xyz = ((((diffusemap_1.xyz + (i.texcoord2 * tmpvar_3.xyz)) + ((texCUBE (_ThemedCube, i.texcoord4).xyz * _Reflectivity) * tmpvar_3.xyz)) * i.texcoord5.w) + i.texcoord5.xyz);
                 return tmpvar_4;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

@@ -1,22 +1,25 @@
-Shader "Hidden/ProbeSpecmapEnvmapFading" {
-    Properties {
+Shader "Hidden/ProbeSpecmapEnvmapFading" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}
         _SpecPower ("Specular Power", Range(0,50)) = 10
         _Reflectivity ("Reflectivity", Range(0,1)) = 0.2
         _Opacity ("Opacity", Range(0,1)) = 1
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
             Fog { Mode Off }
             Blend SrcAlpha OneMinusSrcAlpha
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _FogRange;
             float3 _FogParams;
             float3 _AmbientLight;
@@ -28,7 +31,6 @@ Shader "Hidden/ProbeSpecmapEnvmapFading" {
             float4 cAg;
             float4 cAr;
             float3 _DepthBand;
-
             float _Opacity;
             float _Reflectivity;
             samplerCUBE _ThemedCube;
@@ -36,27 +38,25 @@ Shader "Hidden/ProbeSpecmapEnvmapFading" {
             sampler2D _MainTex;
             float _SpecPower;
             float3 _SpecDir;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv1 : TEXCOORD1;
-                float2 uv2 : TEXCOORD2;
-                float2 uv3 : TEXCOORD3;
-                float3 uv4 : TEXCOORD4;
-                float4 uv5 : TEXCOORD5;
+            struct v2f
+            {
+                float4 texcoord5 : TEXCOORD5;
+                float3 texcoord4 : TEXCOORD4;
+                float3 texcoord3 : TEXCOORD3;
+                float3 texcoord2 : TEXCOORD2;
+                float3 texcoord1 : TEXCOORD1;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float3 tmpvar_1;
                 tmpvar_1 = normalize(v.normal);
                 float2 tmpvar_2;
@@ -68,14 +68,14 @@ Shader "Hidden/ProbeSpecmapEnvmapFading" {
                 tmpvar_7.w = 1.0;
                 tmpvar_7.xyz = v.vertex.xyz;
                 float4 tmpvar_8;
-                tmpvar_8 = (UnityObjectToClipPos(tmpvar_7));
+                tmpvar_8 = UnityObjectToClipPos(tmpvar_7);
                 float4 tmpvar_9;
                 tmpvar_9.x = tmpvar_8.x;
                 tmpvar_9.y = tmpvar_8.y;
                 tmpvar_9.z = ((tmpvar_8.z * _DepthBand.z) + (tmpvar_8.w * _DepthBand.y));
                 tmpvar_9.w = tmpvar_8.w;
                 float2 tmpvar_10;
-                tmpvar_10 = v.uv.xy;
+                tmpvar_10 = v.texcoord0.xy;
                 tmpvar_2 = tmpvar_10;
                 float4 tmpvar_11;
                 tmpvar_11.w = 1.0;
@@ -129,20 +129,19 @@ Shader "Hidden/ProbeSpecmapEnvmapFading" {
                 tmpvar_28.xyz = (_FogParams - (_FogParams * tmpvar_27));
                 tmpvar_28.w = tmpvar_27;
                 tmpvar_6 = tmpvar_28;
-                o.pos = tmpvar_9;
-                o.uv = tmpvar_2;
-                o.uv1 = tmpvar_3;
-                o.uv2 = tmpvar_4;
-                o.uv3 = tmpvar_1;
-                o.uv4 = tmpvar_5;
-                o.uv5 = tmpvar_6;
-                
+                o.vertex = tmpvar_9;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord1 = tmpvar_3;
+                o.texcoord2 = tmpvar_4;
+                o.texcoord3 = tmpvar_1;
+                o.texcoord4 = tmpvar_5;
+                o.texcoord5 = tmpvar_6;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float4 tmpvar_1;
-                tmpvar_1 = tex2D (_SpecMap, i.uv);
+                tmpvar_1 = tex2D (_SpecMap, i.texcoord0);
                 float3 lightDir_2;
                 float3 tmpvar_3;
                 float3 dir_4;
@@ -155,18 +154,19 @@ Shader "Hidden/ProbeSpecmapEnvmapFading" {
                 float tmpvar_6;
                 float spec_7;
                 float tmpvar_8;
-                tmpvar_8 = max (0.0, dot (normalize((lightDir_2 + normalize(i.uv2))), normalize(i.uv3)));
+                tmpvar_8 = max (0.0, dot (normalize((lightDir_2 + normalize(i.texcoord2))), normalize(i.texcoord3)));
                 spec_7 = tmpvar_8;
                 float tmpvar_9;
                 tmpvar_9 = pow (spec_7, _SpecPower);
                 spec_7 = tmpvar_9;
                 tmpvar_6 = tmpvar_9;
                 float4 tmpvar_10;
-                tmpvar_10.xyz = (((((tex2D (_MainTex, i.uv).xyz + (tmpvar_6.xxx * tmpvar_1.xyz)) * i.uv1) + ((texCUBE (_ThemedCube, i.uv4).xyz * _Reflectivity) * tmpvar_1.xyz)) * i.uv5.w) + i.uv5.xyz);
+                tmpvar_10.xyz = (((((tex2D (_MainTex, i.texcoord0).xyz + (tmpvar_6.xxx * tmpvar_1.xyz)) * i.texcoord1) + ((texCUBE (_ThemedCube, i.texcoord4).xyz * _Reflectivity) * tmpvar_1.xyz)) * i.texcoord5.w) + i.texcoord5.xyz);
                 tmpvar_10.w = _Opacity;
                 return tmpvar_10;
             }
             ENDCG
         }
     }
+    Fallback Off
 }

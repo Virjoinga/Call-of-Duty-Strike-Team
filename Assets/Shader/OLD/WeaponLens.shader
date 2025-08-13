@@ -1,5 +1,7 @@
-Shader "Corona/Effects/WeaponLens [ViewModel]" {
-    Properties {
+Shader "Corona/Effects/WeaponLens [ViewModel]" 
+{
+    Properties
+    {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SpecMap ("Specular Mask (RGB)", 2D) = "white" {}
         _Cube ("Reflection Cubemap", CUBE) = "_Skybox" {}
@@ -8,16 +10,17 @@ Shader "Corona/Effects/WeaponLens [ViewModel]" {
         _Reflectivity ("Reflectivity", Range(0,1)) = 0.2
         _LensCurvature ("Lens Curvature", Range(0,2)) = 1
     }
-    SubShader { 
+    SubShader
+    {
         Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
-        Pass {
+        Pass
+        {
             Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
             Fog { Mode Off }
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float3 _InternalSpecTint;
             float3 _AmbientLight;
             float4 cC;
@@ -28,31 +31,29 @@ Shader "Corona/Effects/WeaponLens [ViewModel]" {
             float4 cAg;
             float4 cAr;
             float3 _DepthBand;
-
             float _Reflectivity;
             samplerCUBE _Cube;
             sampler2D _SpecMap;
             sampler2D _MainTex;
             float _SpecPower;
             float3 _SpecDir;
-            
-            struct appdata_t {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+            struct appdata_t
+            {
+                float4 texcoord0 : TEXCOORD0;
                 float3 normal : NORMAL;
+                float4 vertex : POSITION;
             };
-
-            struct v2f {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 uv2 : TEXCOORD2;
-                float3 uv3 : TEXCOORD3;
-                float3 uv4 : TEXCOORD4;
+            struct v2f
+            {
+                float3 texcoord4 : TEXCOORD4;
+                float3 texcoord3 : TEXCOORD3;
+                float3 texcoord2 : TEXCOORD2;
+                float2 texcoord0 : TEXCOORD0;
+                float4 vertex : POSITION;
             };
-
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
-                
                 float3 tmpvar_1;
                 tmpvar_1 = normalize(v.normal);
                 float2 tmpvar_2;
@@ -63,14 +64,14 @@ Shader "Corona/Effects/WeaponLens [ViewModel]" {
                 tmpvar_6.w = 1.0;
                 tmpvar_6.xyz = v.vertex.xyz;
                 float4 tmpvar_7;
-                tmpvar_7 = (UnityObjectToClipPos(tmpvar_6));
+                tmpvar_7 = UnityObjectToClipPos(tmpvar_6);
                 float4 tmpvar_8;
                 tmpvar_8.x = tmpvar_7.x;
                 tmpvar_8.y = tmpvar_7.y;
                 tmpvar_8.z = (tmpvar_7.z * _DepthBand.x);
                 tmpvar_8.w = tmpvar_7.w;
                 float2 tmpvar_9;
-                tmpvar_9 = v.uv.xy;
+                tmpvar_9 = v.texcoord0.xy;
                 tmpvar_2 = tmpvar_9;
                 float4 tmpvar_10;
                 tmpvar_10.w = 1.0;
@@ -150,32 +151,32 @@ Shader "Corona/Effects/WeaponLens [ViewModel]" {
                 float3 tmpvar_36;
                 tmpvar_36 = ((((x1_31 + x2_30) + (cC.xyz * ((tmpvar_19.x * tmpvar_19.x) - (tmpvar_19.y * tmpvar_19.y)))) * _InternalSpecTint) * sqrt((1.0 - (tmpvar_1.x * tmpvar_1.x))));
                 tmpvar_5 = tmpvar_36;
-                o.pos = tmpvar_8;
-                o.uv = tmpvar_2;
-                o.uv2 = tmpvar_3;
-                o.uv3 = tmpvar_4;
-                o.uv4 = tmpvar_5;
-                
+                o.vertex = tmpvar_8;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord2 = tmpvar_3;
+                o.texcoord3 = tmpvar_4;
+                o.texcoord4 = tmpvar_5;
                 return o;
             }
-
-            half4 frag(v2f i) : SV_TARGET {
+            float4 frag(v2f i) : SV_TARGET
+            {
                 float specDotPow_1;
                 float specDot_2;
                 float4 tmpvar_3;
-                tmpvar_3 = tex2D (_SpecMap, i.uv);
+                tmpvar_3 = tex2D (_SpecMap, i.texcoord0);
                 float tmpvar_4;
-                tmpvar_4 = clamp (dot (normalize(i.uv2), _SpecDir), 0.0, 1.0);
+                tmpvar_4 = clamp (dot (normalize(i.texcoord2), _SpecDir), 0.0, 1.0);
                 specDot_2 = tmpvar_4;
                 float tmpvar_5;
                 tmpvar_5 = pow (specDot_2, _SpecPower);
                 specDotPow_1 = tmpvar_5;
                 float4 tmpvar_6;
                 tmpvar_6.w = 1.0;
-                tmpvar_6.xyz = (tex2D (_MainTex, i.uv).xyz + (((specDotPow_1 * i.uv3) + i.uv4) + ((tmpvar_3.xyz * tmpvar_3.xyz) * ((texCUBE (_Cube, i.uv2) * _Reflectivity).xyz + i.uv3))));
+                tmpvar_6.xyz = (tex2D (_MainTex, i.texcoord0).xyz + (((specDotPow_1 * i.texcoord3) + i.texcoord4) + ((tmpvar_3.xyz * tmpvar_3.xyz) * ((texCUBE (_Cube, i.texcoord2) * _Reflectivity).xyz + i.texcoord3))));
                 return tmpvar_6;
             }
             ENDCG
         }
     }
+    Fallback Off
 }
