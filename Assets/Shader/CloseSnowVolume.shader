@@ -93,7 +93,36 @@ Shader "Corona/Effects/CloseSnowVolume"
                 float tmpvar_18;
                 if ((tmpvar_17 < 0.25)) {
                 tmpvar_18 = tmpvar_17;
-                }
+                } else {
+                    tmpvar_18 = 1.0;
+                };
+                float3 tmpvar_19;
+                tmpvar_19.y = 0.0;
+                tmpvar_19.x = _SpecDir.x;
+                tmpvar_19.z = _SpecDir.z;
+                float3 tmpvar_20;
+                tmpvar_20 = normalize(tmpvar_19);
+                lightDir_4 = tmpvar_20;
+                float tmpvar_21;
+                tmpvar_21 = ((tmpvar_18 * tmpvar_11) * (_Alpha - ((_Alpha * 0.25) * max (0.0, dot (lightDir_4, normalize((pos_5 - g_cameraPos.xyz)))))));
+                float4 tmpvar_22;
+                tmpvar_22.w = 1.0;
+                tmpvar_22.xyz = pos_5;
+                float4 tmpvar_23;
+                tmpvar_23.w = 1.0;
+                tmpvar_23.xyz = tmpvar_22.xyz;
+                float4 tmpvar_24;
+                tmpvar_24 = (UnityObjectToClipPos(tmpvar_23));
+                float4 tmpvar_25;
+                tmpvar_25.x = tmpvar_24.x;
+                tmpvar_25.y = tmpvar_24.y;
+                tmpvar_25.z = ((tmpvar_24.z * _DepthBand.z) + (tmpvar_24.w * _DepthBand.y));
+                tmpvar_25.w = tmpvar_24.w;
+                tmpvar_3.xyz = _Color.xyz;
+                tmpvar_3.w = tmpvar_21;
+                o.vertex = tmpvar_25;
+                o.texcoord0 = tmpvar_2;
+                o.color = tmpvar_3;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET

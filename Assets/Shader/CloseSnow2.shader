@@ -106,7 +106,28 @@ Shader "Corona/Effects/CloseSnow2"
                 float tmpvar_25;
                 if ((tmpvar_24 < 0.25)) {
                 tmpvar_25 = tmpvar_24;
-                }
+                } else {
+                    tmpvar_25 = 1.0;
+                };
+                float4 tmpvar_26;
+                tmpvar_26.w = 1.0;
+                tmpvar_26.xyz = pos_5;
+                float4 tmpvar_27;
+                tmpvar_27.w = 1.0;
+                tmpvar_27.xyz = tmpvar_26.xyz;
+                float4 tmpvar_28;
+                tmpvar_28 = (UnityObjectToClipPos(tmpvar_27));
+                float4 tmpvar_29;
+                tmpvar_29.x = tmpvar_28.x;
+                tmpvar_29.y = tmpvar_28.y;
+                tmpvar_29.z = ((tmpvar_28.z * _DepthBand.z) + (tmpvar_28.w * _DepthBand.y));
+                tmpvar_29.w = tmpvar_28.w;
+                float tmpvar_30;
+                tmpvar_30 = (tmpvar_25 * _Alpha);
+                tmpvar_3 = tmpvar_30;
+                o.vertex = tmpvar_29;
+                o.texcoord0 = tmpvar_2;
+                o.color = tmpvar_3;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET

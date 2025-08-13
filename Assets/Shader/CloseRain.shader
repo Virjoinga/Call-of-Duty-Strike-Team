@@ -76,7 +76,28 @@ Shader "Corona/Effects/CloseRain"
                 float tmpvar_13;
                 if ((tmpvar_12 < 0.25)) {
                 tmpvar_13 = tmpvar_12;
-                }
+                } else {
+                    tmpvar_13 = 1.0;
+                };
+                float4 tmpvar_14;
+                tmpvar_14.w = 1.0;
+                tmpvar_14.xyz = pos_3;
+                float4 tmpvar_15;
+                tmpvar_15.w = 1.0;
+                tmpvar_15.xyz = tmpvar_14.xyz;
+                float4 tmpvar_16;
+                tmpvar_16 = (UnityObjectToClipPos(tmpvar_15));
+                float4 tmpvar_17;
+                tmpvar_17.x = tmpvar_16.x;
+                tmpvar_17.y = tmpvar_16.y;
+                tmpvar_17.z = ((tmpvar_16.z * _DepthBand.z) + (tmpvar_16.w * _DepthBand.y));
+                tmpvar_17.w = tmpvar_16.w;
+                float tmpvar_18;
+                tmpvar_18 = (tmpvar_13 * _Alpha);
+                tmpvar_2 = tmpvar_18;
+                o.vertex = tmpvar_17;
+                o.texcoord0 = tmpvar_1;
+                o.color = tmpvar_2;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET

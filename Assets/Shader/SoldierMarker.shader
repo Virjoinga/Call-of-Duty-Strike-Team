@@ -63,7 +63,16 @@ Shader "Corona/Effects/SoldierMarker"
                 float tmpvar_9;
                 if ((tmpvar_7 >= 0.0)) {
                 tmpvar_9 = tmpvar_8;
-                }
+                } else {
+                    tmpvar_9 = -(tmpvar_8);
+                };
+                float tmpvar_10;
+                tmpvar_10 = (1.0 - (tmpvar_9 * 2.0));
+                float tmpvar_11;
+                tmpvar_11 = (tmpvar_1.w * ((tmpvar_10 * (tmpvar_10 * 0.7)) + 0.3));
+                tmpvar_1.w = tmpvar_11;
+                o.vertex = tmpvar_4;
+                o.color = tmpvar_1;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET

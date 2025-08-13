@@ -93,7 +93,46 @@ Shader "Corona/Lightmap/[WindCloth]"
                 float tmpvar_18;
                 if (tmpvar_16.x) {
                 tmpvar_18 = b_17.x;
-                }
+                } else {
+                    tmpvar_18 = tmpvar_15.x;
+                };
+                float tmpvar_19;
+                if (tmpvar_16.y) {
+                  tmpvar_19 = b_17.y;
+                } else {
+                  tmpvar_19 = tmpvar_15.y;
+                };
+                float tmpvar_20;
+                tmpvar_20 = (g_globalWindData.w * _HighFrequencyAmount);
+                tmpvar_5.xyz = (v.vertex.xyz + (tmpvar_10 * (((((1.0 - (0.5 * tmpvar_20)) * tmpvar_14) + (tmpvar_19 * ((0.5 * tmpvar_20) * tmpvar_14))) * tmpvar_18) * v.color.w)));
+                float4 tmpvar_21;
+                tmpvar_21.w = 1.0;
+                tmpvar_21.xyz = tmpvar_5.xyz;
+                float4 tmpvar_22;
+                tmpvar_22 = (UnityObjectToClipPos(tmpvar_21));
+                float4 tmpvar_23;
+                tmpvar_23.x = tmpvar_22.x;
+                tmpvar_23.y = tmpvar_22.y;
+                tmpvar_23.z = ((tmpvar_22.z * _DepthBand.z) + (tmpvar_22.w * _DepthBand.y));
+                tmpvar_23.w = tmpvar_22.w;
+                float2 tmpvar_24;
+                tmpvar_24 = v.texcoord0.xy;
+                tmpvar_2 = tmpvar_24;
+                float2 tmpvar_25;
+                tmpvar_25 = ((v.texcoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
+                tmpvar_3 = tmpvar_25;
+                float tmpvar_26;
+                tmpvar_26 = clamp (((tmpvar_23.z * _FogRange.x) + (_FogRange.y + 1.0)), _FogRange.z, 1.0);
+                float4 tmpvar_27;
+                tmpvar_27.xyz = (_FogParams - (_FogParams * tmpvar_26));
+                tmpvar_27.w = tmpvar_26;
+                fog_1.xyz = tmpvar_27.xyz;
+                fog_1.w = (tmpvar_26 * 2.0);
+                tmpvar_4 = fog_1;
+                o.vertex = tmpvar_23;
+                o.texcoord0 = tmpvar_2;
+                o.texcoord1 = tmpvar_3;
+                o.texcoord5 = tmpvar_4;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET

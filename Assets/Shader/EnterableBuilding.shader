@@ -103,8 +103,33 @@ Shader "Corona/Effects/Enterable Building"
                 tmpvar_11 = (fade_5 + (0.1 * cos(((_Time * 100.0) + (10.0 * tmpvar_9)))).x);
                 fade_5 = tmpvar_11;
                 if ((tmpvar_11 < 0.0)) {
-                discard;
-                }
+					discard;
+                };
+                float3 tmpvar_12;
+                tmpvar_12 = (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.texcoord3).xyz);
+                float4 tmpvar_13;
+                tmpvar_13 = tex2D (_MainTex, i.texcoord2);
+                float3 tmpvar_14;
+                tmpvar_14 = ((_Color.xyz * tmpvar_12) * tmpvar_13.xyz);
+                strategyView_4 = tmpvar_14;
+                float2 tmpvar_15;
+                tmpvar_15.y = 0.0;
+                tmpvar_15.x = tmpvar_11;
+                float4 tmpvar_16;
+                tmpvar_16 = tex2D (_EdgeTex, tmpvar_15);
+                float3 tmpvar_17;
+                tmpvar_17 = (_Color * tmpvar_16).xyz;
+                normalView_3 = tmpvar_17;
+                float2 tmpvar_18;
+                tmpvar_18.y = 0.0;
+                tmpvar_18.x = tmpvar_11;
+                float4 tmpvar_19;
+                tmpvar_19 = tex2D (_BlendTex, tmpvar_18);
+                blendSample_2 = tmpvar_19;
+                float4 tmpvar_20;
+                tmpvar_20.w = 1.0;
+                tmpvar_20.xyz = ((blendSample_2.x * normalView_3) + (blendSample_2.y * strategyView_4));
+                tmpvar_1 = tmpvar_20;
                 return tmpvar_1;
             }
             ENDCG
