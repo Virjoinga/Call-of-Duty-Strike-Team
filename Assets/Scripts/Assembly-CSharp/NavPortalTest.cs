@@ -14,15 +14,15 @@ public class NavPortalTest : MonoBehaviour
 		component.destination = Target.transform.position;
 		if (Time.timeSinceLevelLoad > 5f)
 		{
-			component.walkableMask |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Portal1");
+			component.walkableMask |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Portal1");
 		}
 		if (Time.timeSinceLevelLoad > 10f)
 		{
-			component.walkableMask |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Portal2");
+			component.walkableMask |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Portal2");
 		}
 		if (Time.timeSinceLevelLoad > 15f)
 		{
-			component.walkableMask |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Portal3");
+			component.walkableMask |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Portal3");
 		}
 	}
 }

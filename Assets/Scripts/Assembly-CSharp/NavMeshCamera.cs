@@ -315,7 +315,7 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 		yaw = num;
 		num = (IdealPitch = eulerAngles.x);
 		pitch = num;
-		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Camera");
+		int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName("Camera");
 		if (!AttachToNavMesh(navMeshLayerFromName))
 		{
 		}

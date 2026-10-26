@@ -137,8 +137,8 @@ public class NewCoverPointManager : MonoBehaviour
 
 	private void Start()
 	{
-		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
-		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
+		walkableMaskNoDoors |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Default");
+		walkableMaskNoDoors |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Jump");
 		CoverPointCore[] array = coverPoints;
 		foreach (CoverPointCore coverPointCore in array)
 		{
@@ -490,8 +490,8 @@ public class NewCoverPointManager : MonoBehaviour
 		routeMatrix_footprint = 0;
 		walkableMask = -1;
 		walkableMaskNoDoors = 0;
-		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
-		walkableMaskNoDoors |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
+		walkableMaskNoDoors |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Default");
+		walkableMaskNoDoors |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Jump");
 		baked = ScriptableObject.CreateInstance<NewCoverPointBakedData>();
 		PerformSpeedTests();
 		Savings = 0;

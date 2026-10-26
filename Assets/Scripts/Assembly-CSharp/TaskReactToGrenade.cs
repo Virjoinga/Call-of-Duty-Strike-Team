@@ -131,7 +131,7 @@ public class TaskReactToGrenade : Task
 		}
 		Vector3 normalized = (mActor.GetPosition() - mGrenade.transform.position).normalized;
 		Vector3 position = mGrenade.transform.position + normalized * (mGrenade.DamageRadius * 1.5f);
-		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+		int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName("Default");
 		UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(position, 1 << navMeshLayerFromName);
 		if (navMeshHit.hit)
 		{

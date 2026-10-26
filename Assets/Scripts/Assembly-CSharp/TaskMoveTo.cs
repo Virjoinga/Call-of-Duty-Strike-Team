@@ -210,7 +210,7 @@ public class TaskMoveTo : Task
 		case State.GoingThroughDoor:
 		{
 			int num = 0;
-			num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
+			num |= 1 << (NavMeshUtils.GetNavMeshLayerFromName("Default") & 0x1F);
 			UnityEngine.AI.NavMeshHit hit;
 			if (mActor.navAgent.SamplePathPosition(num, 9f, out hit))
 			{
@@ -291,7 +291,7 @@ public class TaskMoveTo : Task
 			return;
 		}
 		int num = 0;
-		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
+		num |= 1 << (NavMeshUtils.GetNavMeshLayerFromName("Default") & 0x1F);
 		UnityEngine.AI.NavMeshHit hit;
 		if (!mActor.navAgent.SamplePathPosition(num, 9f, out hit))
 		{

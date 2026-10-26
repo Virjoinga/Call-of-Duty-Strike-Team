@@ -151,7 +151,7 @@ public class DebugWarp : MonoBehaviour
 				a.navAgent.ResetPath();
 			}
 			a.navAgent.enabled = false;
-			int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+			int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName("Default");
 			UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(pos, 1 << navMeshLayerFromName);
 			if (navMeshHit.hit)
 			{

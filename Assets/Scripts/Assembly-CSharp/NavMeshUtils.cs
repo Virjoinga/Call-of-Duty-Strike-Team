@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class NavMeshUtils
 {
+	public static int GetNavMeshLayerFromName(string name)
+	{
+		// Unity 4 called area zero Default; Unity 2017 calls it Walkable.
+		return UnityEngine.AI.NavMesh.GetAreaFromName(name == "Default" ? "Walkable" : name);
+	}
+
 	private static List<string> mPossibleLayers;
 
 	private static void Initialise()
@@ -47,7 +53,7 @@ public class NavMeshUtils
 		List<string> list = new List<string>();
 		foreach (string mPossibleLayer in mPossibleLayers)
 		{
-			int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName(mPossibleLayer);
+			int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName(mPossibleLayer);
 			if (navMeshLayerFromName != -1 && (mask & (1 << navMeshLayerFromName)) != 0)
 			{
 				list.Add(mPossibleLayer);
@@ -63,7 +69,7 @@ public class NavMeshUtils
 		for (int i = 0; i < 32; i++)
 		{
 			string text = string.Format("Portal{0}", i);
-			int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName(text);
+			int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName(text);
 			UnityEngine.AI.NavMeshHit hit;
 			if (navMeshLayerFromName != -1 && UnityEngine.AI.NavMesh.SamplePosition(testPosition, out hit, maxDistance, 1 << navMeshLayerFromName))
 			{

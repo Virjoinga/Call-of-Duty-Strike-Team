@@ -138,8 +138,8 @@ public class Tank : MonoBehaviour
 		navMeshAgent.avoidancePriority = 0;
 		navMeshAgent.speed = MAX_SPEED;
 		int num = 0;
-		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default") & 0x1F);
-		num |= 1 << (UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("EnemyOnly") & 0x1F);
+		num |= 1 << (NavMeshUtils.GetNavMeshLayerFromName("Default") & 0x1F);
+		num |= 1 << (NavMeshUtils.GetNavMeshLayerFromName("EnemyOnly") & 0x1F);
 		navMeshAgent.walkableMask = num;
 		mNavAgent = navMeshAgent;
 	}

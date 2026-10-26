@@ -117,7 +117,7 @@ public class StrategyViewCamera : CameraBase
 			base.transform.position = cameraTarget.transform.position;
 			base.transform.position += new Vector3(0f, initialDistance, 0f);
 		}
-		int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("StrategyCamera");
+		int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName("StrategyCamera");
 		if (!AttachToNavMesh(navMeshLayerFromName))
 		{
 		}

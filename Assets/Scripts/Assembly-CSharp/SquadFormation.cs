@@ -203,7 +203,7 @@ public static class SquadFormation
 			}
 			else
 			{
-				int navMeshLayerFromName = UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
+				int navMeshLayerFromName = NavMeshUtils.GetNavMeshLayerFromName("Default");
 				UnityEngine.AI.NavMeshHit navMeshHit = NavMeshUtils.SampleNavMesh(desiredDestination, 1 << navMeshLayerFromName);
 				result = ((!navMeshHit.hit) ? soldier.GetPosition() : navMeshHit.position);
 			}

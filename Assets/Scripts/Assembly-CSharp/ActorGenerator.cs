@@ -40,9 +40,9 @@ public class ActorGenerator
 			navAgent.obstacleAvoidanceType = UnityEngine.AI.ObstacleAvoidanceType.HighQualityObstacleAvoidance;
 		}
 		int num = 0;
-		num |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Default");
-		num |= 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
-		num |= (isEnemy ? (1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("EnemyOnly")) : 0);
+		num |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Default");
+		num |= 1 << NavMeshUtils.GetNavMeshLayerFromName("Jump");
+		num |= (isEnemy ? (1 << NavMeshUtils.GetNavMeshLayerFromName("EnemyOnly")) : 0);
 		navAgent.walkableMask = num;
 	}
 

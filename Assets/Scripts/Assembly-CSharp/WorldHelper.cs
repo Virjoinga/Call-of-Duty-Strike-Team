@@ -462,7 +462,7 @@ public static class WorldHelper
 	{
 		if (noMantlingMask == 0)
 		{
-			mantlingLayer = 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
+			mantlingLayer = 1 << NavMeshUtils.GetNavMeshLayerFromName("Jump");
 			noMantlingMask = ~mantlingLayer;
 		}
 		a.navAgent.walkableMask = a.navAgent.walkableMask | mantlingLayer;
@@ -472,7 +472,7 @@ public static class WorldHelper
 	{
 		if (noMantlingMask == 0)
 		{
-			mantlingLayer = 1 << UnityEngine.AI.NavMesh.GetNavMeshLayerFromName("Jump");
+			mantlingLayer = 1 << NavMeshUtils.GetNavMeshLayerFromName("Jump");
 			noMantlingMask = ~mantlingLayer;
 		}
 		a.navAgent.walkableMask = a.navAgent.walkableMask & noMantlingMask;
