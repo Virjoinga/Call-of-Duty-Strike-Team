@@ -10,7 +10,7 @@ Properties {
  cC ("Light Probe C", Color) = (1,1,1,1)
  _SpecDir ("Specular Dir", Vector) = (-0.66,0.333,0.66,1)
 }
-SubShader { 
+SubShader {
  LOD 200
  Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
  Pass {

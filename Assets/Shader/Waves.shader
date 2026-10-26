@@ -1,4 +1,4 @@
-Shader "Corona/Water/Waves" 
+Shader "Corona/Water/Waves"
 {
     Properties
     {
@@ -21,7 +21,7 @@ Shader "Corona/Water/Waves"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #include "UnityCG.cginc"
+            #include "CoronaLegacy.cginc"
             float4 _Waves2_ST;
             float4 _Waves1_ST;
             float4 _MainTex2_ST;
@@ -42,52 +42,52 @@ Shader "Corona/Water/Waves"
                 float4 texcoord2 : TEXCOORD2;
                 float2 texcoord1 : TEXCOORD1;
                 float2 texcoord0 : TEXCOORD0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                float2 tmpvar_1;
-                float2 tmpvar_2;
-                float4 tmpvar_3;
-                float4 tmpvar_4;
-                tmpvar_4.w = 1.0;
-                tmpvar_4.xyz = v.vertex.xyz;
-                float4 tmpvar_5;
-                tmpvar_5 = UnityObjectToClipPos(tmpvar_4);
-                float4 tmpvar_6;
-                tmpvar_6.x = tmpvar_5.x;
-                tmpvar_6.y = tmpvar_5.y;
-                tmpvar_6.z = ((tmpvar_5.z * _DepthBand.z) + (tmpvar_5.w * _DepthBand.y));
-                tmpvar_6.w = tmpvar_5.w;
-                float2 tmpvar_7;
-                tmpvar_7 = ((v.texcoord0.xy * _Waves1_ST.xy) + _Waves1_ST.zw);
-                tmpvar_1 = tmpvar_7;
-                float2 tmpvar_8;
-                tmpvar_8 = ((v.texcoord0.xy * _Waves2_ST.xy) + _Waves2_ST.zw);
-                tmpvar_2 = tmpvar_8;
-                float2 tmpvar_9;
-                tmpvar_9 = ((v.texcoord0.xy * _MainTex1_ST.xy) + _MainTex1_ST.zw);
-                tmpvar_3.xy = tmpvar_9;
-                float2 tmpvar_10;
-                tmpvar_10 = ((v.texcoord0.xy * _MainTex2_ST.xy) + _MainTex2_ST.zw);
-                tmpvar_3.zw = tmpvar_10;
-                tmpvar_3.yw = (tmpvar_3.yw - 0.5);
-                o.vertex = tmpvar_6;
-                o.texcoord0 = tmpvar_1;
-                o.texcoord1 = tmpvar_2;
-                o.texcoord2 = tmpvar_3;
+                  float2 tmpvar_1;
+                  float2 tmpvar_2;
+                  float4 tmpvar_3;
+                  float4 tmpvar_4;
+                  tmpvar_4.w = 1.0;
+                  tmpvar_4.xyz = v.vertex.xyz;
+                  float4 tmpvar_5;
+                  tmpvar_5 = CoronaObjectToClipPos(tmpvar_4);
+                  float4 tmpvar_6;
+                  tmpvar_6.x = tmpvar_5.x;
+                  tmpvar_6.y = tmpvar_5.y;
+                  tmpvar_6.z = ((tmpvar_5.z * _DepthBand.z) + (tmpvar_5.w * _DepthBand.y));
+                  tmpvar_6.w = tmpvar_5.w;
+                  float2 tmpvar_7;
+                  tmpvar_7 = ((v.texcoord0.xy * _Waves1_ST.xy) + _Waves1_ST.zw);
+                  tmpvar_1 = tmpvar_7;
+                  float2 tmpvar_8;
+                  tmpvar_8 = ((v.texcoord0.xy * _Waves2_ST.xy) + _Waves2_ST.zw);
+                  tmpvar_2 = tmpvar_8;
+                  float2 tmpvar_9;
+                  tmpvar_9 = ((v.texcoord0.xy * _MainTex1_ST.xy) + _MainTex1_ST.zw);
+                  tmpvar_3.xy = tmpvar_9;
+                  float2 tmpvar_10;
+                  tmpvar_10 = ((v.texcoord0.xy * _MainTex2_ST.xy) + _MainTex2_ST.zw);
+                  tmpvar_3.zw = tmpvar_10;
+                  tmpvar_3.yw = (tmpvar_3.yw - 0.5);
+                  o.vertex = CoronaClipToNative(tmpvar_6);
+                  o.texcoord0 = tmpvar_1;
+                  o.texcoord1 = tmpvar_2;
+                  o.texcoord2 = tmpvar_3;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                float4 mainUVs_1;
-                float2 offsets_2;
-                offsets_2.x = tex2D (_Waves1, i.texcoord0).w;
-                offsets_2.y = tex2D (_Waves2, i.texcoord1).w;
-                mainUVs_1.xz = i.texcoord2.xz;
-                mainUVs_1.yw = (i.texcoord2.yw + offsets_2);
-                return (max (tex2D (_MainTex1, mainUVs_1.xy), tex2D (_MainTex2, mainUVs_1.zw)) * _TintColor);
+                  float4 mainUVs_1;
+                  float2 offsets_2;
+                  offsets_2.x = tex2D (_Waves1, i.texcoord0).w;
+                  offsets_2.y = tex2D (_Waves2, i.texcoord1).w;
+                  mainUVs_1.xz = i.texcoord2.xz;
+                  mainUVs_1.yw = (i.texcoord2.yw + offsets_2);
+                  return (max (tex2D (_MainTex1, mainUVs_1.xy), tex2D (_MainTex2, mainUVs_1.zw)) * _TintColor);
             }
             ENDCG
         }

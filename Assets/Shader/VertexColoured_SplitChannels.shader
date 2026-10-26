@@ -1,4 +1,4 @@
-Shader "Sprite/Vertex Colored, Split Channels" 
+Shader "Sprite/Vertex Colored, Split Channels"
 {
     Properties
     {
@@ -33,29 +33,29 @@ Shader "Sprite/Vertex Colored, Split Channels"
             {
                 float2 texcoord0 : TEXCOORD0;
                 float4 color0 : COLOR0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                float4 tmpvar_1;
-                float4 tmpvar_2;
-                tmpvar_2 = (v.color * _Color);
-                tmpvar_1 = tmpvar_2;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.color0 = tmpvar_1;
-                o.texcoord0 = v.texcoord0.xy;
+                  float4 tmpvar_1;
+                  float4 tmpvar_2;
+                  tmpvar_2 = (v.color * _Color);
+                  tmpvar_1 = tmpvar_2;
+                  o.vertex = UnityObjectToClipPos(v.vertex);
+                  o.color0 = tmpvar_1;
+                  o.texcoord0 = v.texcoord0.xy;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                float4 tmpvar_1;
-                tmpvar_1.xyz = tex2D (_MainTex, i.texcoord0).xyz;
-                tmpvar_1.w = tex2D (_AlphaTex, i.texcoord0).x;
-                return (tmpvar_1 * i.color0);
+                  float4 tmpvar_1;
+                  tmpvar_1.xyz = tex2D (_MainTex, i.texcoord0).xyz;
+                  tmpvar_1.w = tex2D (_AlphaTex, i.texcoord0).x;
+                  return (tmpvar_1 * i.color0);
             }
             ENDCG
         }
     }
-    
+
 }

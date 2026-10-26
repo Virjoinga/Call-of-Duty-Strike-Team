@@ -1,4 +1,4 @@
-Shader "Corona/Effects/BoatSplash" 
+Shader "Corona/Effects/BoatSplash"
 {
     Properties
     {
@@ -18,7 +18,7 @@ Shader "Corona/Effects/BoatSplash"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #include "UnityCG.cginc"
+            #include "CoronaLegacy.cginc"
             float4 _MainTex_ST;
             float4 _TintColor;
             float3 _DepthBand;
@@ -33,33 +33,33 @@ Shader "Corona/Effects/BoatSplash"
             {
                 float4 texcoord1 : TEXCOORD1;
                 float2 texcoord0 : TEXCOORD0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                float2 tmpvar_1;
-                float4 tmpvar_2;
-                tmpvar_2.w = 1.0;
-                tmpvar_2.xyz = v.vertex.xyz;
-                float4 tmpvar_3;
-                tmpvar_3 = UnityObjectToClipPos(tmpvar_2);
-                float4 tmpvar_4;
-                tmpvar_4.x = tmpvar_3.x;
-                tmpvar_4.y = tmpvar_3.y;
-                tmpvar_4.z = ((tmpvar_3.z * _DepthBand.z) + (tmpvar_3.w * _DepthBand.y));
-                tmpvar_4.w = tmpvar_3.w;
-                float2 tmpvar_5;
-                tmpvar_5 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-                tmpvar_1 = tmpvar_5;
-                o.vertex = tmpvar_4;
-                o.texcoord0 = tmpvar_1;
-                o.texcoord1 = (_TintColor * v.color);
+                  float2 tmpvar_1;
+                  float4 tmpvar_2;
+                  tmpvar_2.w = 1.0;
+                  tmpvar_2.xyz = v.vertex.xyz;
+                  float4 tmpvar_3;
+                  tmpvar_3 = CoronaObjectToClipPos(tmpvar_2);
+                  float4 tmpvar_4;
+                  tmpvar_4.x = tmpvar_3.x;
+                  tmpvar_4.y = tmpvar_3.y;
+                  tmpvar_4.z = ((tmpvar_3.z * _DepthBand.z) + (tmpvar_3.w * _DepthBand.y));
+                  tmpvar_4.w = tmpvar_3.w;
+                  float2 tmpvar_5;
+                  tmpvar_5 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+                  tmpvar_1 = tmpvar_5;
+                  o.vertex = CoronaClipToNative(tmpvar_4);
+                  o.texcoord0 = tmpvar_1;
+                  o.texcoord1 = (_TintColor * v.color);
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                return (tex2D (_MainTex, i.texcoord0) * i.texcoord1);
+                  return (tex2D (_MainTex, i.texcoord0) * i.texcoord1);
             }
             ENDCG
         }

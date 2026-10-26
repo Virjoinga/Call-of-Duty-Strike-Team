@@ -1,4 +1,4 @@
-Shader "Hidden/FirstPersonTransition" 
+Shader "Hidden/FirstPersonTransition"
 {
     Properties
     {
@@ -26,20 +26,20 @@ Shader "Hidden/FirstPersonTransition"
             };
             struct v2f
             {
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                  o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                return _Color;
+                  return _Color;
             }
             ENDCG
         }
     }
-    
+
 }

@@ -1,4 +1,4 @@
-Shader "Corona/Effects/Globe" 
+Shader "Corona/Effects/Globe"
 {
     Properties
     {
@@ -30,22 +30,22 @@ Shader "Corona/Effects/Globe"
             struct v2f
             {
                 float2 texcoord0 : TEXCOORD0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                float2 tmpvar_1;
-                float2 tmpvar_2;
-                tmpvar_2 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-                tmpvar_1 = tmpvar_2;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.texcoord0 = tmpvar_1;
+                  float2 tmpvar_1;
+                  float2 tmpvar_2;
+                  tmpvar_2 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+                  tmpvar_1 = tmpvar_2;
+                  o.vertex = UnityObjectToClipPos(v.vertex);
+                  o.texcoord0 = tmpvar_1;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                return ((tex2D (_MainTex, i.texcoord0) * 0.2) * _TintColor);
+                  return ((tex2D (_MainTex, i.texcoord0) * 0.2) * _TintColor);
             }
             ENDCG
         }
@@ -70,22 +70,22 @@ Shader "Corona/Effects/Globe"
             struct v2f
             {
                 float2 texcoord0 : TEXCOORD0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
                 v2f o;
-                float2 tmpvar_1;
-                float2 tmpvar_2;
-                tmpvar_2 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-                tmpvar_1 = tmpvar_2;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.texcoord0 = tmpvar_1;
+                  float2 tmpvar_1;
+                  float2 tmpvar_2;
+                  tmpvar_2 = ((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+                  tmpvar_1 = tmpvar_2;
+                  o.vertex = UnityObjectToClipPos(v.vertex);
+                  o.texcoord0 = tmpvar_1;
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
             {
-                return (tex2D (_MainTex, i.texcoord0) * _TintColor);
+                  return (tex2D (_MainTex, i.texcoord0) * _TintColor);
             }
             ENDCG
         }
