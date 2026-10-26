@@ -148,6 +148,47 @@ namespace ULegacyRipper
             return line;
         }
 
+        public List<string> ReadBlock()
+        {
+            List<string> readLines = new List<string>();
+            string line;
+
+            int blockLevel = 0;
+
+            Search("{");
+
+            RecalculateIndentation();
+            int blockIndentationLevel = indentationLevel;
+
+            while (true)
+            {
+                RecalculateIndentation();
+                line = lines[lineIndex++].Substring(Mathf.Max(0, indentationLevel - blockIndentationLevel));
+
+                if (line.Contains("{"))
+                {
+                    blockLevel++;
+                }
+
+                if (line.Contains("}"))
+                {
+                    blockLevel--;
+                }
+
+                if (blockLevel < 0)
+                {
+                    break;
+                }
+
+                if (line.Trim() != "")
+                {
+                    readLines.Add(line);
+                }
+            }
+
+            return readLines;
+        }
+
         public List<string> ReadUntil(string pattern)
         {
             List<string> readLines = new List<string>();

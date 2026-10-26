@@ -72,6 +72,7 @@ namespace ULegacyRipper
             //math functions
             {"mix", "lerp"},
             {"inversesqrt", "rsqrt"},
+            {"fract", "frac"}
         };
 
         private static Dictionary<string, string> VertexMethodReplacements = new Dictionary<string, string>
@@ -82,12 +83,13 @@ namespace ULegacyRipper
             {"(unity_ObjectToWorld *", "mul(unity_ObjectToWorld,"},
             {"(unity_WorldToObject *", "mul(unity_WorldToObject,"},
             {"(UNITY_MATRIX_TEXTURE0 *", "mul(UNITY_MATRIX_TEXTURE0,"},
+            {"(glstate_matrix_texture0 *", "mul(UNITY_MATRIX_TEXTURE0,"},
             {"(tmpvar_1 * (normalize(_glesNormal) * unity_Scale.w))", "mul(tmpvar_1, (normalize(_glesNormal) * unity_Scale.w))"},
             {"(tmpvar_2 * (normalize(_glesNormal) * unity_Scale.w))", "mul(tmpvar_2, (normalize(_glesNormal) * unity_Scale.w))"},
             {"(tmpvar_3 * (normalize(_glesNormal) * unity_Scale.w))", "mul(tmpvar_3, (normalize(_glesNormal) * unity_Scale.w))"},
             {"(tmpvar_4 * (normalize(_glesNormal) * unity_Scale.w))", "mul(tmpvar_4, (normalize(_glesNormal) * unity_Scale.w))"},
             {"(tmpvar_5 * (normalize(_glesNormal) * unity_Scale.w))", "mul(tmpvar_5, (normalize(_glesNormal) * unity_Scale.w))"},
-            {"(_LightMatrix0 * ", "mul(unity_WorldToLight, "}//
+            {"(_LightMatrix0 * ", "mul(unity_WorldToLight, "}
         };
 
         private static Dictionary<string, string> FragmentMethodReplacements = new Dictionary<string, string>
@@ -484,14 +486,12 @@ namespace ULegacyRipper
                             reader.Search("#ifdef VERTEX");
                             pass.vertexVariables = reader.ReadUntil("void", "#");
 
-                            reader.Search("{");
-                            pass.vertex = reader.ReadUntil("}");
+                            pass.vertex = reader.ReadBlock();
 
                             reader.Search("#ifdef FRAGMENT");
                             pass.fragmentVariables = reader.ReadUntil("void", "#");
 
-                            reader.Search("{");
-                            pass.fragment = reader.ReadUntil("}");
+                            pass.fragment = reader.ReadBlock();
 
                             subShader.passes.Add(pass);
                         }

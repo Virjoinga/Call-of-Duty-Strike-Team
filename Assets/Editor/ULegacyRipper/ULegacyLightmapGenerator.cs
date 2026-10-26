@@ -161,7 +161,9 @@ namespace ULegacyRipper
 			lightingDataAsset.AddNode("m_BakedReflectionProbes", "[]");
 
 			lightingDataAsset.AddNode("m_EnlightenData");
-			lightingDataAsset.AddNode("m_EnlightenDataVersion", "0");
+			// Unity 2017.4 expects version 112 even for an empty, baked-only
+			// Enlighten section. Version 0 makes the recovered container invalid.
+			lightingDataAsset.AddNode("m_EnlightenDataVersion", "112");
 
 
 			lightingDataYaml.nodes.Add(112000000, lightingDataAsset);
