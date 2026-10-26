@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobeSelect : MonoBehaviour
 {
@@ -96,7 +97,7 @@ public class GlobeSelect : MonoBehaviour
 		mLoadingSearchTypeLabel = LoadingText.gameObject.GetComponent<SearchTypeLabel>();
 		LoadingText.Text = Language.Get("S_LOADING_MSG_00");
 		yield return new WaitForSeconds(0.5f);
-		AsyncOperation settings = Application.LoadLevelAdditiveAsync("SettingsMenu");
+		AsyncOperation settings = SceneManager.LoadSceneAsync("SettingsMenu", LoadSceneMode.Additive);
 		while (!settings.isDone)
 		{
 			yield return settings;
@@ -105,7 +106,7 @@ public class GlobeSelect : MonoBehaviour
 		mLoadingSearchTypeLabel.ResetAndProcess();
 		StartCoroutine(FadeInGlobe(0.5f));
 		yield return new WaitForSeconds(0.5f);
-		AsyncOperation stats = Application.LoadLevelAdditiveAsync("StatsMenu");
+		AsyncOperation stats = SceneManager.LoadSceneAsync("StatsMenu", LoadSceneMode.Additive);
 		while (!stats.isDone)
 		{
 			yield return stats;
@@ -113,7 +114,7 @@ public class GlobeSelect : MonoBehaviour
 		StartCoroutine(FadeInGlobeBackground(0.5f));
 		LoadingText.Text = Language.Get("S_LOADING_MSG_05");
 		mLoadingSearchTypeLabel.ResetAndProcess();
-		AsyncOperation credits = Application.LoadLevelAdditiveAsync("Credits");
+		AsyncOperation credits = SceneManager.LoadSceneAsync("Credits", LoadSceneMode.Additive);
 		while (!credits.isDone)
 		{
 			yield return credits;
@@ -122,7 +123,7 @@ public class GlobeSelect : MonoBehaviour
 		LoadingText.Text = Language.Get("S_LOADING_MSG_06");
 		mLoadingSearchTypeLabel.ResetAndProcess();
 		StartCoroutine(CreateSatellites());
-		AsyncOperation globeadditive = Application.LoadLevelAdditiveAsync("GlobeSelectAdditive");
+		AsyncOperation globeadditive = SceneManager.LoadSceneAsync("GlobeSelectAdditive", LoadSceneMode.Additive);
 		while (!globeadditive.isDone)
 		{
 			yield return globeadditive;
@@ -130,7 +131,7 @@ public class GlobeSelect : MonoBehaviour
 		yield return new WaitForSeconds(0.3f);
 		LoadingText.Text = string.Empty;
 		mLoadingSearchTypeLabel.ResetAndProcess();
-		Application.LoadLevelAdditiveAsync("AlwaysLoaded");
+        SceneManager.LoadSceneAsync("AlwaysLoaded", LoadSceneMode.Additive);
 		CreditsController creditsController = UnityEngine.Object.FindObjectOfType(typeof(CreditsController)) as CreditsController;
 		if (creditsController == null || !creditsController.SequenceIsRunning)
 		{

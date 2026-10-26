@@ -499,23 +499,32 @@ public class UIListItem : UIButton, IUIListObject, IEZDragDrop, IUIObject
 		return (UIListItem)gameObject.AddComponent(typeof(UIListItem));
 	}
 
-	/*virtual void IUIListObject.UpdateCamera()
+	void IUIListObject.UpdateCamera()
 	{
 		UpdateCamera();
 	}
 
-	virtual Vector2 IUIListObject.get_TopLeftEdge()
+	Vector2 IUIListObject.TopLeftEdge
 	{
-		return base.TopLeftEdge;
+		get
+		{
+            return base.TopLeftEdge;
+        }
 	}
 
-	virtual Vector2 IUIListObject.get_BottomRightEdge()
+	Vector2 IUIListObject.BottomRightEdge
 	{
-		return base.BottomRightEdge;
+		get
+		{
+			return base.BottomRightEdge;
+		}
 	}
 
-	virtual bool IUIListObject.get_Managed()
+	bool IUIListObject.Managed
 	{
-		return base.Managed;
-	}*/
+		get
+		{
+			return base.Managed;
+		}
+	}
 }

@@ -19,6 +19,6 @@ public class FullScreenImage : MonoBehaviour
 		component.texture = texture2D;
 		base.transform.position = Vector3.zero;
 		base.transform.localScale = Vector3.zero;
-		component.pixelInset = new Rect((Screen.width - texture2D.width) / 2, (Screen.height - texture2D.height) / 2, texture2D.width, texture2D.height);
+		//component.pixelInset = new Rect((Screen.width - texture2D.width) / 2, (Screen.height - texture2D.height) / 2, texture2D.width, texture2D.height);
 	}
 }

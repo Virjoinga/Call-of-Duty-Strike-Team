@@ -738,7 +738,7 @@ public class CommonHudController : MonoBehaviour
 		}
 		if (GameController.Instance != null)
 		{
-			SetZoomButtonFrame(GameController.Instance.IsFirstPerson);
+			//SetZoomButtonFrame(GameController.Instance.IsFirstPerson);
 		}
 		MoveRightSnapToTargetForKindleFire();
 		FollowMeOrderFrame = 0;
@@ -844,7 +844,7 @@ public class CommonHudController : MonoBehaviour
 			HideChainGunUi(hide);
 			UpdateTargetDetails(actor);
 			UpdateMantleButton(actor);
-			SetTriggerButtonIcon(actor);
+			//SetTriggerButtonIcon(actor);
 			if (GKM.UnitCount(GKM.PlayerControlledMask & GKM.UpAndAboutMask & GKM.SelectableMask) <= 1)
 			{
 				HideFollowMe(true);

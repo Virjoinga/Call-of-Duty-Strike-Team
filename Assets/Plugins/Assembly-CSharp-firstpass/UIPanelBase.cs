@@ -728,18 +728,27 @@ public abstract class UIPanelBase : MonoBehaviour, IEZDragDrop, IUIContainer, IU
 		return null;
 	}
 
-	/*virtual GameObject IUIObject.get_gameObject()
+	GameObject IUIObject.gameObject
 	{
-		return base.gameObject;
+		get
+		{
+            return base.gameObject;
+        }
 	}
 
-	virtual Transform IUIObject.get_transform()
+	Transform IUIObject.transform
 	{
-		return base.transform;
+		get
+		{
+			return base.transform;
+		}
 	}
 
-	virtual string IUIObject.get_name()
+	string IUIObject.name
 	{
-		return base.name;
-	}*/
+		get
+		{
+            return base.name;
+        }
+	}
 }
