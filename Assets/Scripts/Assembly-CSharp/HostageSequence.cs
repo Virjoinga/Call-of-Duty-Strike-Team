@@ -380,7 +380,7 @@ public class HostageSequence : MonoBehaviour
 			{
 				float[] array = new float[27];
 				Transform transform = gameObject.transform.FindInHierarchy("Bip002 Pelvis");
-				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], array);
+				ProbeUtils.GetInterpolatedProbe(transform.position, componentsInChildren[0], array);
 				ProbeUtils.UpdateMaterials(array, componentsInChildren);
 				blobShadow.ShadowColour = ProbeUtils.CalculateShadowColour(array);
 			}

@@ -69,7 +69,7 @@ public class MuzzleFlashEffect : MonoBehaviour
 			}
 			if (LightmapSettings.lightProbes != null && ProbeAnchor != null)
 			{
-				//LightmapSettings.lightProbes.GetInterpolatedProbe(ProbeAnchor.position, Renderers[0], mCoefficientTemp);
+				ProbeUtils.GetInterpolatedProbe(ProbeAnchor.position, Renderers[0], mCoefficientTemp);
 			}
 			else
 			{

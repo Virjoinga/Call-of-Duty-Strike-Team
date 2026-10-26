@@ -50,7 +50,7 @@ public class CutsceneLighting : MonoBehaviour
 			}
 			else if (LightmapSettings.lightProbes != null && ProbeAnchor != null)
 			{
-				//LightmapSettings.lightProbes.GetInterpolatedProbe(ProbeAnchor.position, mRenderers[0], mCoefficientTemp);
+				ProbeUtils.GetInterpolatedProbe(ProbeAnchor.position, mRenderers[0], mCoefficientTemp);
 			}
 			else
 			{

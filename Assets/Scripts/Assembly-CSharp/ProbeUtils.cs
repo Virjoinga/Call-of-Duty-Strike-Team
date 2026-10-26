@@ -3,6 +3,39 @@ using UnityEngine;
 
 public class ProbeUtils
 {
+	// The original game consumes raw, RGB-interleaved Unity 4 SH coefficients.
+	// Native Unity 2017 probes store channel-major, basis-weighted coefficients.
+	private static readonly double[] NativeBasisFactors =
+	{
+		0.28209479177387814,
+		-0.32573500793527993, 0.32573500793527993, -0.32573500793527993,
+		0.2731371076480198, -0.2731371076480198, 0.07884789131313001,
+		-0.2731371076480198, 0.1365685538240099
+	};
+
+	public static void GetInterpolatedProbe(Vector3 position, Renderer renderer, float[] coefficients)
+	{
+		if (coefficients == null || coefficients.Length < 27)
+		{
+			throw new ArgumentException("A legacy light-probe sample needs 27 coefficients.", "coefficients");
+		}
+		LightProbes probes = LightmapSettings.lightProbes;
+		if (probes == null || probes.count == 0)
+		{
+			Array.Clear(coefficients, 0, 27);
+			return;
+		}
+		UnityEngine.Rendering.SphericalHarmonicsL2 sample;
+		LightProbes.GetInterpolatedProbe(position, renderer, out sample);
+		for (int channel = 0; channel < 3; channel++)
+		{
+			for (int coefficient = 0; coefficient < 9; coefficient++)
+			{
+				coefficients[coefficient * 3 + channel] = (float)(sample[channel, coefficient] / NativeBasisFactors[coefficient]);
+			}
+		}
+	}
+
 	private static MaterialPropertyBlock smPropertyBlock;
 
 	private static int smPropertyAr;

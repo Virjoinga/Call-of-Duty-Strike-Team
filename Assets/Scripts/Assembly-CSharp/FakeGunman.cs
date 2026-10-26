@@ -99,7 +99,7 @@ public class FakeGunman : MonoBehaviour
 			{
 				float[] coefficients = new float[27];
 				Transform transform = mModel.transform.FindInHierarchy(ProbeAnchorName);
-				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
+				ProbeUtils.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
 				ProbeUtils.UpdateMaterials(coefficients, componentsInChildren);
 				mRenderers = componentsInChildren;
 			}

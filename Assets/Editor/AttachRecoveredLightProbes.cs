@@ -24,7 +24,6 @@ public static class AttachRecoveredLightProbes
         if (probes == null || probes.count == 0 || !probePath.StartsWith("Assets/RecoveredLightProbes/", StringComparison.Ordinal))
             throw new InvalidOperationException("Select this level's LightProbes asset under Assets/RecoveredLightProbes.");
         string level = new DirectoryInfo(Path.GetDirectoryName(probePath)).Name;
-        string originalPath = "Assets/Levels/Test/" + level + "/LightingData.asset";
         LightingDataAsset previous = Lightmapping.lightingDataAsset;
         string previousPath = AssetDatabase.GetAssetPath(previous);
         string existingSceneGuid = AssetDatabase.AssetPathToGUID(scene.path);
@@ -34,13 +33,10 @@ public static class AttachRecoveredLightProbes
         if (!expectedOwner.Success || expectedOwner.Groups[1].Value != existingSceneGuid)
             throw new InvalidOperationException("The selected probes belong to a different level. Open the matching level scene.");
         // Prefer the scene's current lighting, preserving any later lighting edits.
-        string templatePath = string.IsNullOrEmpty(previousPath) ? originalPath : previousPath;
-        string text = File.Exists(templatePath) ? File.ReadAllText(templatePath) : "";
+        string text = string.IsNullOrEmpty(previousPath) ? snapshot : File.ReadAllText(previousPath);
         if (!text.StartsWith("%YAML", StringComparison.Ordinal))
         {
-            if (templatePath != originalPath)
-                throw new InvalidOperationException("Current lighting data is binary. Serialize it as text before attaching probes so its lighting edits can be preserved.");
-            text = snapshot;
+            throw new InvalidOperationException("Current lighting data is binary. Serialize it as text before attaching probes so its lighting edits can be preserved.");
         }
         if (!text.StartsWith("%YAML", StringComparison.Ordinal) ||
             Regex.Matches(text, @"(?m)^  m_LightProbes:.*$").Count != 1 ||
@@ -51,6 +47,7 @@ public static class AttachRecoveredLightProbes
         if (owner.Success && owner.Groups[1].Value != existingSceneGuid)
             throw new InvalidOperationException("The lighting template belongs to a different scene. Open the matching level scene.");
         text = Regex.Replace(text, @"(?m)^  m_LightProbes:.*$", "  m_LightProbes: {fileID: 25800000, guid: " + AssetDatabase.AssetPathToGUID(probePath) + ", type: 2}");
+        text = Regex.Replace(text, @"(?m)(^  m_EnlightenData:\s*\r?\n  m_EnlightenDataVersion:) 0", "$1 112");
         text = Regex.Replace(text, @"(?m)^  m_Scene:.*$", "  m_Scene: {fileID: 102900000, guid: " + existingSceneGuid + ", type: 3}");
         string output = AssetDatabase.GenerateUniqueAssetPath(Path.GetDirectoryName(probePath).Replace('\\', '/') + "/LightingData_Recovered.asset");
         File.WriteAllText(output, text);

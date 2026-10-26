@@ -48,7 +48,7 @@ public class FakeActor : MonoBehaviour
 			{
 				float[] coefficients = new float[27];
 				Transform transform = mModel.transform.FindInHierarchy("Bip002 Pelvis");
-				//LightmapSettings.lightProbes.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
+				ProbeUtils.GetInterpolatedProbe(transform.position, componentsInChildren[0], coefficients);
 				ProbeUtils.UpdateMaterials(coefficients, componentsInChildren);
 			}
 		}
