@@ -307,6 +307,9 @@ public class UIManager : MonoBehaviour
 			return;
 		}
 		m_awake = true;
+#if UNITY_STANDALONE || UNITY_EDITOR
+		pointerType = POINTER_TYPE.MOUSE;
+#endif
 		if (s_Instance != null)
 		{
 			Debug.LogError("You can only have one instance of this singleton object in existence.");
@@ -389,9 +392,6 @@ public class UIManager : MonoBehaviour
 	protected void SetupPointers()
 	{
 		Start();
-#if UNITY_STANDALONE || UNITY_EDITOR
-		pointerType = POINTER_TYPE.MOUSE_AND_RAY;
-#endif
 		pointers = new POINTER_INFO[uiCameras.Length, numTouches];
 		try
 		{

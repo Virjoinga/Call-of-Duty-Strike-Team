@@ -262,6 +262,8 @@ public class CommonHudController : MonoBehaviour
 
 	private Vector2 mMoveAmountInternalPad;
 
+	private Vector2 mMoveAmountInternalKeyboard;
+
 	private Vector2 mMoveAmountExternal;
 
 	private bool mLookAmountStall;
@@ -861,6 +863,17 @@ public class CommonHudController : MonoBehaviour
 
 	private void UpdateKeyboardInput()
 	{
+		mMoveAmountInternalKeyboard = Vector2.zero;
+#if UNITY_STANDALONE || UNITY_EDITOR
+		GameController game = GameController.Instance;
+		if (game == null || !game.IsFirstPerson || game.IsPaused || !game.AllowMovementInFirstPerson || TutorialToggles.LockFPPMovement || TutorialToggles.IsRespotting)
+		{
+			return;
+		}
+		float x = (Input.GetKey(KeyCode.D) ? 1f : 0f) - (Input.GetKey(KeyCode.A) ? 1f : 0f);
+		float y = (Input.GetKey(KeyCode.W) ? 1f : 0f) - (Input.GetKey(KeyCode.S) ? 1f : 0f);
+		mMoveAmountInternalKeyboard = Vector2.ClampMagnitude(new Vector2(x, y), 1f);
+#endif
 	}
 
 	private void UpdatePadInput()
@@ -1440,6 +1453,7 @@ public class CommonHudController : MonoBehaviour
 	private void ResetMoveAmount()
 	{
 		mMoveAmountInternalTouch = Vector2.zero;
+		mMoveAmountInternalKeyboard = Vector2.zero;
 		mMoveAmountExternal = Vector2.zero;
 	}
 
@@ -2370,8 +2384,13 @@ public class CommonHudController : MonoBehaviour
 	private void UpdateMoveAmount()
 	{
 		mMoveAmountExternal = ((!(mMoveAmountInternalTouch.sqrMagnitude > mMoveAmountInternalPad.sqrMagnitude)) ? mMoveAmountInternalPad : mMoveAmountInternalTouch);
+		if (mMoveAmountInternalKeyboard.sqrMagnitude > mMoveAmountExternal.sqrMagnitude)
+		{
+			mMoveAmountExternal = mMoveAmountInternalKeyboard;
+		}
 		mMoveAmountInternalTouch = Vector2.zero;
 		mMoveAmountInternalPad = Vector2.zero;
+		mMoveAmountInternalKeyboard = Vector2.zero;
 	}
 
 	public void AnimateAddedAmmo()
