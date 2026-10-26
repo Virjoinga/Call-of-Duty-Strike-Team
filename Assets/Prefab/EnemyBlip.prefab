@@ -585,9 +585,9 @@ MonoBehaviour:
   width: 0
   height: 0
   bleedCompensation: {x: 0, y: 0}
-  anchor: 9
-  pixelPerfect: 0
-  autoResize: 0
+  anchor: 7
+  pixelPerfect: 1
+  autoResize: 1
   billboarded: 0
   offset: {x: 0, y: 0, z: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -600,30 +600,94 @@ MonoBehaviour:
   crossfadeFrames: 0
   defaultAnim: 0
   doNotTrimImages: 0
-  animations: []
-  staticTexPath: 
-  staticTexGUID: 
+  animations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 0
+    index: 0
+    onAnimEnd: 0
+  staticTexPath: Assets/Textures/Hud/blips/Enemy_Marker.png
+  staticTexGUID: 594b0beef4e1efb49aa233cba617e088
   _ser_stat_frame_info:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0.9296875
+      y: 0.5
+      width: 0.0625
+      height: 0.03125
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
   staticFrameInfo:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0.9296875
+      y: 0.5
+      width: 0.0625
+      height: 0.03125
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
-  textureAnimations: []
+  textureAnimations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 0
+    onAnimEnd: 0
+    framePaths: []
+    frameGUIDs:
+    - 594b0beef4e1efb49aa233cba617e088
+    - ad4ef9d10e8388a499a12cb98133b3ef
+    - a187242b1f5da6b4fb3313f0e6356618
+    - 0c32ea0958df85949963945bd632dcdd
+    - eab2c9eedeab246429a662f7c0aebd8b
+    spriteFrames:
+    - uvs:
+        serializedVersion: 2
+        x: 0.9296875
+        y: 0.5
+        width: 0.0625
+        height: 0.03125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.9296875
+        y: 0.43554688
+        width: 0.0625
+        height: 0.0625
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.9375
+        y: 0.12695312
+        width: 0.0546875
+        height: 0.046875
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.9355469
+        y: 0.19726562
+        width: 0.0625
+        height: 0.0625
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.23242188
+        y: 0.17578125
+        width: 0.0078125
+        height: 0.0078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
 --- !u!114 &114517861477631001
 MonoBehaviour:
   m_ObjectHideFlags: 1

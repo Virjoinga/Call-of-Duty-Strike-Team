@@ -5509,8 +5509,8 @@ MonoBehaviour:
   height: 0
   bleedCompensation: {x: 0, y: 0}
   anchor: 9
-  pixelPerfect: 0
-  autoResize: 0
+  pixelPerfect: 1
+  autoResize: 1
   billboarded: 0
   offset: {x: 0, y: 0, z: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -5523,30 +5523,74 @@ MonoBehaviour:
   crossfadeFrames: 0
   defaultAnim: 0
   doNotTrimImages: 0
-  animations: []
-  staticTexPath: 
-  staticTexGUID: 
+  animations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 29.999998
+    index: 0
+    onAnimEnd: 0
+  staticTexPath: Assets/Textures/Hud/Firstperson/trigger_fire.png
+  staticTexGUID: 063cb96f7faa26b4a8375fde241fcb89
   _ser_stat_frame_info:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0
+      y: 0.59765625
+      width: 0.1328125
+      height: 0.1171875
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
   staticFrameInfo:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0
+      y: 0.59765625
+      width: 0.1328125
+      height: 0.1171875
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
-  textureAnimations: []
+  textureAnimations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 29.999998
+    onAnimEnd: 0
+    framePaths: []
+    frameGUIDs:
+    - 063cb96f7faa26b4a8375fde241fcb89
+    - 2f2f7cafee00dea45bb97889acbf418c
+    - aadf07b018585774e8c4e35bdcd20aaa
+    spriteFrames:
+    - uvs:
+        serializedVersion: 2
+        x: 0
+        y: 0.59765625
+        width: 0.1328125
+        height: 0.1171875
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0
+        y: 0.4794922
+        width: 0.1328125
+        height: 0.1171875
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.37402344
+        y: 0.8076172
+        width: 0.080078125
+        height: 0.080078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
 --- !u!114 &258
 MonoBehaviour:
   m_ObjectHideFlags: 0

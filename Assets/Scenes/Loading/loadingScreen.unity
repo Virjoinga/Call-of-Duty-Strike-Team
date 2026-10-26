@@ -2743,8 +2743,8 @@ MonoBehaviour:
   height: 0
   bleedCompensation: {x: 0, y: 0}
   anchor: 9
-  pixelPerfect: 0
-  autoResize: 0
+  pixelPerfect: 1
+  autoResize: 1
   billboarded: 0
   offset: {x: 0, y: 0, z: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -2757,30 +2757,124 @@ MonoBehaviour:
   crossfadeFrames: 0
   defaultAnim: 0
   doNotTrimImages: 0
-  animations: []
-  staticTexPath: 
-  staticTexGUID: 
+  animations:
+  - name: New Animation
+    loopCycles: -1
+    loopReverse: 0
+    framerate: 10
+    index: 0
+    onAnimEnd: 0
+  staticTexPath: Assets/Textures/Frontend/Loading/loading_spinner_1.png
+  staticTexGUID: 9101dfb7442e601408d33fb82637fc3f
   _ser_stat_frame_info:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
-    scaleFactor: {x: 0.5, y: 0.5}
-    topLeftOffset: {x: -1, y: 1}
-    bottomRightOffset: {x: 1, y: -1}
+      x: 0
+      y: 0.2109375
+      width: 0.1796875
+      height: 0.1953125
+    scaleFactor: {x: 0.6086956, y: 0.56}
+    topLeftOffset: {x: -0.8214286, y: 0.96428573}
+    bottomRightOffset: {x: 0.8214286, y: -0.8214286}
   staticFrameInfo:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
-    scaleFactor: {x: 0.5, y: 0.5}
-    topLeftOffset: {x: -1, y: 1}
-    bottomRightOffset: {x: 1, y: -1}
-  textureAnimations: []
+      x: 0
+      y: 0.2109375
+      width: 0.1796875
+      height: 0.1953125
+    scaleFactor: {x: 0.6086956, y: 0.56}
+    topLeftOffset: {x: -0.8214286, y: 0.96428573}
+    bottomRightOffset: {x: 0.8214286, y: -0.8214286}
+  textureAnimations:
+  - name: New Animation
+    loopCycles: -1
+    loopReverse: 0
+    framerate: 10
+    onAnimEnd: 0
+    framePaths: []
+    frameGUIDs:
+    - 9101dfb7442e601408d33fb82637fc3f
+    - cb3b5563ffb2b414f800081db9753fcd
+    - 6408df20eaad5014c801e4b27c503082
+    - 26d3d0db9343ab8449f6ced2c6861a6d
+    - 23256581d83e22341899e5f01ce7acb7
+    - bea774bb0e654f8469d73faf32165433
+    - 5984001fb4a6d804c92d82431995436b
+    - 26e83b7c41bb1274f9bbd43f88b6c8f7
+    spriteFrames:
+    - uvs:
+        serializedVersion: 2
+        x: 0
+        y: 0.2109375
+        width: 0.1796875
+        height: 0.1953125
+      scaleFactor: {x: 0.6086956, y: 0.56}
+      topLeftOffset: {x: -0.8214286, y: 0.96428573}
+      bottomRightOffset: {x: 0.8214286, y: -0.8214286}
+    - uvs:
+        serializedVersion: 2
+        x: 0
+        y: 0.41015625
+        width: 0.1796875
+        height: 0.1953125
+      scaleFactor: {x: 0.6086956, y: 0.56}
+      topLeftOffset: {x: -0.8214286, y: 0.96428573}
+      bottomRightOffset: {x: 0.8214286, y: -0.8214286}
+    - uvs:
+        serializedVersion: 2
+        x: 0.18359375
+        y: 0.2109375
+        width: 0.1953125
+        height: 0.1796875
+      scaleFactor: {x: 0.56, y: 0.6086956}
+      topLeftOffset: {x: -0.8214286, y: 0.8214286}
+      bottomRightOffset: {x: 0.96428573, y: -0.8214286}
+    - uvs:
+        serializedVersion: 2
+        x: 0.18359375
+        y: 0.39453125
+        width: 0.1953125
+        height: 0.1796875
+      scaleFactor: {x: 0.56, y: 0.6086956}
+      topLeftOffset: {x: -0.8214286, y: 0.8214286}
+      bottomRightOffset: {x: 0.96428573, y: -0.8214286}
+    - uvs:
+        serializedVersion: 2
+        x: 0
+        y: 0.609375
+        width: 0.1796875
+        height: 0.1953125
+      scaleFactor: {x: 0.6086956, y: 0.56}
+      topLeftOffset: {x: -0.8214286, y: 0.8214286}
+      bottomRightOffset: {x: 0.8214286, y: -0.96428573}
+    - uvs:
+        serializedVersion: 2
+        x: 0.18359375
+        y: 0.578125
+        width: 0.1796875
+        height: 0.1953125
+      scaleFactor: {x: 0.6086956, y: 0.56}
+      topLeftOffset: {x: -0.8214286, y: 0.8214286}
+      bottomRightOffset: {x: 0.8214286, y: -0.96428573}
+    - uvs:
+        serializedVersion: 2
+        x: 0.7421875
+        y: 0
+        width: 0.1953125
+        height: 0.1953125
+      scaleFactor: {x: 0.56, y: 0.56}
+      topLeftOffset: {x: -0.96428573, y: 0.8214286}
+      bottomRightOffset: {x: 0.8214286, y: -0.96428573}
+    - uvs:
+        serializedVersion: 2
+        x: 0.18359375
+        y: 0.77734375
+        width: 0.1953125
+        height: 0.1796875
+      scaleFactor: {x: 0.56, y: 0.6086956}
+      topLeftOffset: {x: -0.96428573, y: 0.8214286}
+      bottomRightOffset: {x: 0.8214286, y: -0.8214286}
 --- !u!114 &164
 MonoBehaviour:
   m_ObjectHideFlags: 0

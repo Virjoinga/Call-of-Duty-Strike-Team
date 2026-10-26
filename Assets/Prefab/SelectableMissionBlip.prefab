@@ -524,9 +524,9 @@ MonoBehaviour:
   width: 0
   height: 0
   bleedCompensation: {x: 0, y: 0}
-  anchor: 9
-  pixelPerfect: 0
-  autoResize: 0
+  anchor: 4
+  pixelPerfect: 1
+  autoResize: 1
   billboarded: 0
   offset: {x: 0, y: 0, z: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -539,30 +539,84 @@ MonoBehaviour:
   crossfadeFrames: 0
   defaultAnim: 0
   doNotTrimImages: 0
-  animations: []
-  staticTexPath: 
-  staticTexGUID: 
+  animations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 0
+    index: 0
+    onAnimEnd: 0
+  staticTexPath: Assets/Textures/Hud/blips/SelectableMissionBlip.png
+  staticTexGUID: 4e722c4f0bd68224d8bf3560d14bb8ea
   _ser_stat_frame_info:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0.69921875
+      y: 0.37695312
+      width: 0.078125
+      height: 0.078125
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
   staticFrameInfo:
     uvs:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0.69921875
+      y: 0.37695312
+      width: 0.078125
+      height: 0.078125
     scaleFactor: {x: 0.5, y: 0.5}
     topLeftOffset: {x: -1, y: 1}
     bottomRightOffset: {x: 1, y: -1}
-  textureAnimations: []
+  textureAnimations:
+  - name: New Animation
+    loopCycles: 0
+    loopReverse: 0
+    framerate: 0
+    onAnimEnd: 0
+    framePaths: []
+    frameGUIDs:
+    - 5c56fad9abbaf6c49b1b77b6ade2de9e
+    - 5748d2bb72f1d5743b8c6ed4522d71b3
+    - 0a37dca1f51871b45864b8daa968befa
+    - a33c2490d572bb34ab027a6219fbd706
+    spriteFrames:
+    - uvs:
+        serializedVersion: 2
+        x: 0.119140625
+        y: 0.91015625
+        width: 0.078125
+        height: 0.078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.19921875
+        y: 0.91015625
+        width: 0.078125
+        height: 0.078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.27929688
+        y: 0.91015625
+        width: 0.078125
+        height: 0.078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
+    - uvs:
+        serializedVersion: 2
+        x: 0.359375
+        y: 0.91015625
+        width: 0.078125
+        height: 0.078125
+      scaleFactor: {x: 0.5, y: 0.5}
+      topLeftOffset: {x: -1, y: 1}
+      bottomRightOffset: {x: 1, y: -1}
 --- !u!114 &114229839770761428
 MonoBehaviour:
   m_ObjectHideFlags: 1
