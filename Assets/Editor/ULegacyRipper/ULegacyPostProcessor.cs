@@ -47,10 +47,10 @@ namespace ULegacyRipper
 
         private static void PostProcess()
         {
-            //ULegacyUtils.TryMethod(TranslateShaders, "Shader translation");
+            ULegacyUtils.TryMethod(TranslateShaders, "Shader translation");
             ULegacyUtils.TryMethod(GenerateLightmapData, "Lightmap translation");
-            ULegacyUtils.TryMethod(RebuildNavMeshes, "NavMesh reconstruction");
-            ULegacyUtils.TryMethod(ConvertMeshes, "Mesh conversion");
+            //ULegacyUtils.TryMethod(RebuildNavMeshes, "NavMesh reconstruction");
+            //ULegacyUtils.TryMethod(ConvertMeshes, "Mesh conversion");
         }
 
         private static void TranslateShaders()

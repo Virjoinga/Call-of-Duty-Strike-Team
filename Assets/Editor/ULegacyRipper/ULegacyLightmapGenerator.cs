@@ -14,6 +14,19 @@ namespace ULegacyRipper
 		public static void GenerateLightmap(string scenePath)
 		{
 			YAML yaml = YAMLReader.ReadYAML(File.ReadAllLines(scenePath));
+			YAMLNode oldLightmaps = yaml.FindNode("LightmapSettings");
+			YAMLNode existingLighting;
+			if (oldLightmaps.childNodes.TryGetValue("m_LightingDataAsset", out existingLighting) && existingLighting.table.ContainsKey("guid") &&
+				AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(existingLighting.table["guid"])) != null)
+			{
+				Debug.Log("Keeping existing native lighting data for " + scenePath);
+				return;
+			}
+			if (!oldLightmaps.childNodes.ContainsKey("m_Lightmaps"))
+			{
+				Debug.LogWarning("No legacy lightmap list remains in " + scenePath + ". Restore it from the original export before translating.");
+				return;
+			}
 
 			YAML lightingDataYaml = new YAML();
 			YAMLNode lightingDataAsset = new YAMLNode
@@ -37,7 +50,6 @@ namespace ULegacyRipper
 			sceneNode.table.Add("type", "3");
 
 			YAMLNode lightmapsNode = lightingDataAsset.AddNode("m_Lightmaps");
-			YAMLNode oldLightmaps = yaml.FindNode("LightmapSettings");
 
 			foreach (YAMLNode lightmapNode in oldLightmaps.childNodes["m_Lightmaps"].nodeList)
 			{

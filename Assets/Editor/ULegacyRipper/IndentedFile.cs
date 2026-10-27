@@ -91,12 +91,16 @@ namespace ULegacyRipper
 
         public void RecalculateIndentation()
         {
-            if (IsAtEnd())
+            while (!HasEnded() && string.IsNullOrEmpty(lines[lineIndex].Trim()))
             {
-                return;
+                lineIndex++;
             }
 
             indentationLevel = 0;
+            if (HasEnded())
+            {
+                return;
+            }
 
             for (int i = 0; i < lines[lineIndex].Length; i++)
             {
@@ -132,19 +136,11 @@ namespace ULegacyRipper
 
         public string ReadLine()
         {
-            string line = "";
-
-            while (line == "")
-            {
-                if (HasEnded())
-                {
-                    break;
-                }
-
-                RecalculateIndentation();
-                line = lines[lineIndex++].Substring(indentationLevel);
-            }
-
+            RecalculateIndentation();
+            if (HasEnded()) return "";
+            string line = lines[lineIndex++].Substring(indentationLevel);
+            // Keep lookahead indentation aligned with CurrentLine(), including after blank lines.
+            RecalculateIndentation();
             return line;
         }
 

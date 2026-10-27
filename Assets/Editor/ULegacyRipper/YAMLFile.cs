@@ -194,10 +194,12 @@ namespace ULegacyRipper
 
                 if (node.nodeList.Count > 0)
                 {
+                    if (isArrayElement && !string.IsNullOrEmpty(node.name)) writer.indentationLevel++;
                     foreach (YAMLNode childNode in node.nodeList)
                     {
                         WriteYAMLNode(childNode, writer, true);
                     }
+                    if (isArrayElement && !string.IsNullOrEmpty(node.name)) writer.indentationLevel--;
                 }
             }
 
@@ -227,18 +229,20 @@ namespace ULegacyRipper
 
             while (!reader.HasEnded())
             {
-                string line = reader.ReadLine();
+                string line = reader.CurrentLine();
 
                 if (line.StartsWith("---"))
                 {
+                    reader.ReadLine();
                     currentTag = long.Parse(line.Split(' ')[2].Substring(1));
                     currentType = long.Parse(line.Split(' ')[1].Substring(3));
                 }
-                else if (!line.StartsWith("%"))
+                else if (line.StartsWith("%") || string.IsNullOrEmpty(line))
                 {
-                    reader.lineIndex--;
-                    reader.RecalculateIndentation();
-
+                    reader.ReadLine();
+                }
+                else
+                {
                     YAMLNode node = ReadNode(reader);
                     node.type = currentType;
 
@@ -262,16 +266,35 @@ namespace ULegacyRipper
 
             YAMLNode node = ReadSimpleKeyValue(line, reader);
 
-            while (reader.indentationLevel == currentIndentation + 2 || (reader.CurrentLine().StartsWith("- ") && reader.indentationLevel == currentIndentation))
+            // The first key in a sequence mapping can itself contain a mapping:
+            // - goToOnSpawn:
+            //     m_Object: ...
+            //   gait: ...
+            if (isArrayElement && node.name != null && string.IsNullOrEmpty(node.value) &&
+                reader.indentationLevel == currentIndentation + 4)
+            {
+                YAMLNode entry = new YAMLNode();
+                entry.childNodes.Add(node.name, node);
+                node.parentNode = entry;
+                while (!reader.HasEnded() && reader.indentationLevel == currentIndentation + 4)
+                {
+                    YAMLNode child = ReadNode(reader);
+                    child.parentNode = node;
+                    node.childNodes.Add(child.name, child);
+                }
+                node = entry;
+            }
+
+            while (reader.indentationLevel == currentIndentation + 2 || ((reader.CurrentLine().StartsWith("- ") || reader.CurrentLine() == "-") && reader.indentationLevel == currentIndentation))
             {
                 if (reader.HasEnded())
                 {
                     break;
                 }
 
-                if (reader.CurrentLine().StartsWith("- "))
+                if (reader.CurrentLine().StartsWith("- ") || reader.CurrentLine() == "-")
                 {
-                    if (isArrayElement)
+                    if (isArrayElement && reader.indentationLevel == currentIndentation)
                     {
                         break;
                     }
@@ -295,6 +318,7 @@ namespace ULegacyRipper
 
         private static YAMLNode ReadSimpleKeyValue(string line, IndentedReader reader)
         {
+            if (line == "-") return new YAMLNode();
             if (line.StartsWith("- ") && line.Substring(2).StartsWith("{"))
             {
                 YAMLNode entry = new YAMLNode();
@@ -343,6 +367,10 @@ namespace ULegacyRipper
         {
             if (value.StartsWith("{"))
             {
+                while (!value.Contains("}") && !reader.HasEnded())
+                {
+                    value += " " + reader.ReadLine();
+                }
                 if (value != "{}")
                 {
                     while (true)
