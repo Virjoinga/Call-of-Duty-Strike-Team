@@ -45,7 +45,10 @@ public class TaskOpen : Task
 			break;
 		}
 		case State.Opening:
-			mState = State.OpeningComplete;
+			if (mTarget == null || mTarget.m_Interface.State != BuildingDoor.DoorSate.Opening)
+			{
+				mState = State.OpeningComplete;
+			}
 			break;
 		case State.MovingToTarget:
 			break;
@@ -54,7 +57,9 @@ public class TaskOpen : Task
 
 	public override void Finish()
 	{
-		if (mTarget.m_Interface.State != BuildingDoor.DoorSate.Open)
+		if (mTarget != null && mTarget.m_NavGate != null &&
+			mTarget.m_Interface.State != BuildingDoor.DoorSate.Open &&
+			mTarget.m_Interface.State != BuildingDoor.DoorSate.Missing)
 		{
 			mActor.navAgent.walkableMask &= ~mTarget.m_NavGate.m_Interface.NavLayerID;
 		}
@@ -62,6 +67,10 @@ public class TaskOpen : Task
 
 	public override bool HasFinished()
 	{
+		if (mTarget == null)
+		{
+			return true;
+		}
 		if (mState == State.Start)
 		{
 			return false;

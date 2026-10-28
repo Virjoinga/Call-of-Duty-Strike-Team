@@ -104,6 +104,7 @@ public class Ragdoll : MonoBehaviour
 			{
 				hitLocation.GetComponent<Rigidbody>().isKinematic = true;
 				hitLocation.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.None;
+				hitLocation.GetComponent<Rigidbody>().detectCollisions = true;
 			}
 			hitLocation.transform.localPosition = Vector3.zero;
 			hitLocation.transform.localRotation = Quaternion.identity;
@@ -452,7 +453,8 @@ public class Ragdoll : MonoBehaviour
 			rigidbody.mass = hitLocation.Mass;
 			dictionary[hitLocation.Location] = rigidbody;
 			hitLocation.GetComponent<Collider>().enabled = true;
-			rigidbody.detectCollisions = false;
+			rigidbody.isKinematic = true;
+			rigidbody.detectCollisions = true;
 		}
 		bodiesCache = dictionary;
 		mRagdollAttached = true;

@@ -23,7 +23,7 @@ public class MusicTriggerOverride : ContainerOverride
 	{
 		base.SendOverrideMessage(gameObj, methodName);
 		MusicTrigger componentInChildren = gameObj.GetComponentInChildren<MusicTrigger>();
-		if (componentInChildren != null)
+		if (componentInChildren != null && componentInChildren.gameObject.activeInHierarchy)
 		{
 			componentInChildren.SendMessage(methodName);
 		}

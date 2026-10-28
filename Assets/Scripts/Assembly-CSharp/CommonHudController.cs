@@ -352,6 +352,8 @@ public class CommonHudController : MonoBehaviour
 
 	private int mSnapToTargetFingerMask;
 
+	private int mMouseSnapSide;
+
 	public bool mMovingTrigger;
 
 	private bool mHUDInvulnerabilityEffectActive;
@@ -782,6 +784,7 @@ public class CommonHudController : MonoBehaviour
 
 	public void OnDisable()
 	{
+		mMouseSnapSide = 0;
 		ResetLookAmount();
 		ResetMoveAmount();
 	}
@@ -812,6 +815,7 @@ public class CommonHudController : MonoBehaviour
 		UpdateKeyboardInput();
 		UpdatePadInput();
 		UpdateGestures();
+		UpdateMouseTargetSnap();
 		UpdateXPFeedback();
 		UpdateSnapToTargetUI();
 		UpdateWeaponBar();
@@ -1176,6 +1180,42 @@ public class CommonHudController : MonoBehaviour
 				ZoomInButtonSuggest.SetColor(new Color(0f, 0f, 0f, 0f));
 				ZoomInButtonSuggest.Hide(true);
 				mFlashZoomInButtonTimer = -1f;
+			}
+		}
+	}
+
+	private void UpdateMouseTargetSnap()
+	{
+#if UNITY_STANDALONE || UNITY_EDITOR
+		GameController game = GameController.Instance;
+		if (Input.touchCount != 0 || game == null || !game.IsFirstPerson || game.IsPaused || TutorialToggles.IsRespotting || !AllowSnapToTarget() || (MessageBoxController.Instance != null && MessageBoxController.Instance.IsAnyMessageActive))
+		{
+			mMouseSnapSide = 0;
+			return;
+		}
+		HandleMouseTargetSnap(Input.mousePosition, Input.GetMouseButtonDown(0), Input.GetMouseButtonUp(0));
+#endif
+	}
+
+	private void HandleMouseTargetSnap(Vector2 position, bool pressed, bool released)
+	{
+		bool left = InLeftSnapZone(position) && SnapToTargetLeft != null && SnapToTargetLeft.gameObject.activeInHierarchy;
+		bool right = InRightSnapZone(position) && SnapToTargetRight != null && SnapToTargetRight.gameObject.activeInHierarchy;
+		if (pressed)
+		{
+			mMouseSnapSide = left ? -1 : (right ? 1 : 0);
+		}
+		if (released)
+		{
+			int side = mMouseSnapSide;
+			mMouseSnapSide = 0;
+			if (side == -1 && left)
+			{
+				SnapEnemyLeftButtonClick();
+			}
+			else if (side == 1 && right)
+			{
+				SnapEnemyRightButtonClick();
 			}
 		}
 	}

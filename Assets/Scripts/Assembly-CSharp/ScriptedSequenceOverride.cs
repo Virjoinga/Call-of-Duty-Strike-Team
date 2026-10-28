@@ -28,7 +28,7 @@ public class ScriptedSequenceOverride : ContainerOverride
 	{
 		base.SendOverrideMessage(gameObj, methodName);
 		ScriptedSequence componentInChildren = gameObj.GetComponentInChildren<ScriptedSequence>();
-		if (componentInChildren != null)
+		if (componentInChildren != null && componentInChildren.gameObject.activeInHierarchy)
 		{
 			componentInChildren.SendMessage(methodName);
 		}

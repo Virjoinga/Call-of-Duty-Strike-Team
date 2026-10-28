@@ -200,7 +200,8 @@ public class BuildingWithInterior : MonoBehaviour
 		{
 			if (meshCollider.isTrigger)
 			{
-				BuildingInteriorVolume buildingInteriorVolume = meshCollider.gameObject.AddComponent<BuildingInteriorVolume>();
+				BuildingInteriorVolume buildingInteriorVolume = meshCollider.GetComponent<BuildingInteriorVolume>();
+				if (buildingInteriorVolume == null) buildingInteriorVolume = meshCollider.gameObject.AddComponent<BuildingInteriorVolume>();
 				buildingInteriorVolume.ParentBuilding = this;
 				break;
 			}

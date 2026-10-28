@@ -26,7 +26,9 @@ public class ProbeUtils
 			return;
 		}
 		UnityEngine.Rendering.SphericalHarmonicsL2 sample;
-		LightProbes.GetInterpolatedProbe(position, renderer, out sample);
+		Renderer probeHint = renderer != null && renderer.lightProbeUsage != UnityEngine.Rendering.LightProbeUsage.Off
+			? renderer : null;
+		LightProbes.GetInterpolatedProbe(position, probeHint, out sample);
 		for (int channel = 0; channel < 3; channel++)
 		{
 			for (int coefficient = 0; coefficient < 9; coefficient++)

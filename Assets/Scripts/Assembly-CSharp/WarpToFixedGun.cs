@@ -18,6 +18,15 @@ public class WarpToFixedGun : MonoBehaviour
 
 	private void Update()
 	{
+		if (FixedGun == null || !FixedGun.activeInHierarchy || CinematicHelper.IsInCinematic)
+		{
+			return;
+		}
+		FixedGun componentInChildren2 = FixedGun.GetComponentInChildren<FixedGun>();
+		if (componentInChildren2 == null || !componentInChildren2.gameObject.activeInHierarchy)
+		{
+			return;
+		}
 		Actor actor = null;
 		if (UseMainCharacter)
 		{
@@ -37,11 +46,6 @@ public class WarpToFixedGun : MonoBehaviour
 			actor = componentInChildren.GetActor();
 		}
 		if (actor == null)
-		{
-			return;
-		}
-		FixedGun componentInChildren2 = FixedGun.GetComponentInChildren<FixedGun>();
-		if (componentInChildren2 == null)
 		{
 			return;
 		}

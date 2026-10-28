@@ -26,7 +26,7 @@ public class MoveToCoverDescriptor : TaskDescriptor
 		{
 			Parameters.mDestination = GeneralArea.GetLocation(Target.theObject);
 			NewCoverPoint component2 = Target.theObject.GetComponent<NewCoverPoint>();
-			if (component2 != null && component2.index < NewCoverPointManager.Instance().coverPoints.Length)
+			if (component2 != null && component2.index >= 0 && component2.index < NewCoverPointManager.Instance().coverPoints.Length)
 			{
 				flags |= Task.Config.ClearAllCurrentType;
 				task = new TaskMoveToCover(owner, priority, flags | ConfigFlags.GetAsFlags(), NewCoverPointManager.Instance().coverPoints[component2.index], Parameters.Clone());

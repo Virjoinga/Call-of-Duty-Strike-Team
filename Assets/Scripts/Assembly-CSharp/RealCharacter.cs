@@ -815,8 +815,13 @@ public class RealCharacter : BaseCharacter, ICharacterDefinition
 		UnityEngine.AI.NavMeshAgent navAgent = myActor.navAgent;
 		if ((bool)navAgent)
 		{
+			UnityEngine.AI.NavMeshHit resumeHit = default(UnityEngine.AI.NavMeshHit);
+			bool restorePosition = mNextFrameNavMesh && !navAgent.enabled &&
+				UnityEngine.AI.NavMesh.SamplePosition(base.transform.position - Vector3.up * navAgent.baseOffset,
+					out resumeHit, 0.5f, navAgent.areaMask);
 			navAgent.enabled = mNextFrameNavMesh;
-			if (CharacterTypeHelper.CanMantle(myActor.awareness.ChDefCharacterType) && navAgent.isOnOffMeshLink)
+			if (restorePosition) navAgent.Warp(resumeHit.position);
+			if (navAgent.enabled && navAgent.isOnNavMesh && CharacterTypeHelper.CanMantle(myActor.awareness.ChDefCharacterType) && navAgent.isOnOffMeshLink)
 			{
 				navAgent.CompleteOffMeshLink();
 			}

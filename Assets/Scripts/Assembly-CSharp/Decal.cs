@@ -12,6 +12,10 @@ public class Decal : MonoBehaviour
 
 	private MeshFilter mMeshFilterRef;
 
+	private Material mMaterial;
+
+	private string mColourProperty;
+
 	private Color mColour = Color.white;
 
 	private float mOneOverFadeTimeOrig;
@@ -41,8 +45,13 @@ public class Decal : MonoBehaviour
 		{
 			mRendRef = componentInChildren;
 			mRendRef.enabled = false;
-			mColour = mRendRef.material.color;
-			Debug.Log(mColour);
+			mMaterial = mRendRef.material;
+			mColourProperty = mMaterial.HasProperty("_TintColor") ? "_TintColor"
+				: (mMaterial.HasProperty("_Color") ? "_Color" : null);
+			if (mColourProperty != null)
+			{
+				mColour = mMaterial.GetColor(mColourProperty);
+			}
 		}
 		mMeshFilterRef = GetComponent<MeshFilter>();
 	}
@@ -64,7 +73,10 @@ public class Decal : MonoBehaviour
 		if ((bool)mRendRef)
 		{
 			mColour.a = 1f;
-			mRendRef.material.color = mColour;
+			if (mColourProperty != null)
+			{
+				mMaterial.SetColor(mColourProperty, mColour);
+			}
 			mRendRef.enabled = true;
 		}
 	}
@@ -75,7 +87,10 @@ public class Decal : MonoBehaviour
 		if (mLifeTime > 0f && (bool)mRendRef)
 		{
 			mColour.a = 0f;
-			mRendRef.material.color = mColour;
+			if (mColourProperty != null)
+			{
+				mMaterial.SetColor(mColourProperty, mColour);
+			}
 			mRendRef.enabled = false;
 		}
 	}
@@ -92,7 +107,10 @@ public class Decal : MonoBehaviour
 			if ((bool)mRendRef)
 			{
 				mColour.a = mFadeTime * mOneOverFadeTimeOrig;
-				mRendRef.material.color = mColour;
+				if (mColourProperty != null)
+				{
+					mMaterial.SetColor(mColourProperty, mColour);
+				}
 			}
 		}
 		else

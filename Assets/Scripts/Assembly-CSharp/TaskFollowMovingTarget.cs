@@ -230,6 +230,7 @@ public class TaskFollowMovingTarget : TaskRouteTo
 		else
 		{
 			hasStopped = false;
+			mActor.navAgent.Resume();
 			mActor.navAgent.destination = mMoveParams.mDestination;
 			mActor.realCharacter.MovementStyleActive = mMoveParams.mMovementStyle;
 			mActor.navAgent.speed = mActor.baseCharacter.GetGaitSpeed(mActor.realCharacter.MovementStyleActive) * Random.Range(0.95f, 1.05f);

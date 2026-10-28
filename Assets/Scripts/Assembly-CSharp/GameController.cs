@@ -2441,36 +2441,40 @@ public class GameController : MonoBehaviour
 			cc.ForcedCutTo(cam);
 		}
 		mDisableZoomButtonsDuringCoroutineTransition = true;
-		CameraController cc2 = default(CameraController);
-		Func<bool> cameraCheck = () => (!cc2.IsTransitioning() && cc2.CurrentCameraBase == cam) || cc2.IsTransitioningTo(cam);
-		while (transitionTime > 0f && cameraCheck())
+		try
 		{
-			if (InteractionsManager.Instance.IsPlayingCutscene())
+			Func<bool> cameraCheck = () => cc != null && ((!cc.IsTransitioning() && cc.CurrentCameraBase == cam) || cc.IsTransitioningTo(cam));
+			while (transitionTime > 0f && cameraCheck())
 			{
-				mDisableZoomButtonsDuringCoroutineTransition = false;
-				yield break;
-			}
-			float timeDelta = TimeManager.DeltaTime;
-			if (IsPaused)
-			{
-				timeDelta = 0f;
-			}
-			transitionTime -= timeDelta;
-			if (!CameraManager.Instance.IsSwitching)
-			{
+				if (InteractionsManager.Instance.IsPlayingCutscene())
+				{
+					yield break;
+				}
+				float timeDelta = TimeManager.DeltaTime;
+				if (IsPaused)
+				{
+					timeDelta = 0f;
+				}
+				transitionTime -= timeDelta;
+				if (!CameraManager.Instance.IsSwitching)
+				{
+					yield return null;
+				}
+				cam.Fov = fovCurve.Evaluate(transitionTime);
+				cam.Rotation = Quaternion.RotateTowards(cam.Rotation, targetCam.Rotation, timeDelta * 10f);
 				yield return null;
 			}
-			cam.Fov = fovCurve.Evaluate(transitionTime);
-			cam.Rotation = Quaternion.RotateTowards(cam.Rotation, targetCam.Rotation, timeDelta * 10f);
-			yield return null;
+			if (cameraCheck())
+			{
+				cc.ForcedCutTo(targetCam);
+				cc.RestoreCameraToDefault();
+			}
 		}
-		mDisableZoomButtonsDuringCoroutineTransition = false;
-		if (cameraCheck())
+		finally
 		{
-			cc.ForcedCutTo(targetCam);
-			cc.RestoreCameraToDefault();
+			mDisableZoomButtonsDuringCoroutineTransition = false;
+			UnityEngine.Object.Destroy(cam.gameObject);
 		}
-		UnityEngine.Object.Destroy(cam.gameObject);
 	}
 
 	public void ExitFirstPerson(bool DoTransition)

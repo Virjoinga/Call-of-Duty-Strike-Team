@@ -27,7 +27,7 @@ public class DialogueTriggerOverride : ContainerOverride
 	{
 		base.SendOverrideMessage(gameObj, methodName);
 		DialogueTrigger componentInChildren = gameObj.GetComponentInChildren<DialogueTrigger>();
-		if (componentInChildren != null)
+		if (componentInChildren != null && componentInChildren.gameObject.activeInHierarchy)
 		{
 			componentInChildren.SendMessage(methodName);
 		}

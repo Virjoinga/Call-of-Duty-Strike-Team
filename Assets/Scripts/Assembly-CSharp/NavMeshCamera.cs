@@ -414,6 +414,9 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 
 	private void DisableInput()
 	{
+#if UNITY_EDITOR || UNITY_STANDALONE
+		ResetMouseRotation();
+#endif
 		if (mInputEnabled)
 		{
 			mInputEnabled = false;
@@ -613,9 +616,6 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 		}
 		else if (allowPinchZoom)
 		{
-			mIdealFocusPoint = CurrentFocusPoint();
-			mLastDistToFocus = 0f;
-			mIsZooming = true;
 			float num = IdealFov - delta * pinchZoomSensitivity;
 			float num2 = pinchZoomSensitivity;
 			float num3 = 10f;
@@ -631,10 +631,91 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 				value2 = Mathf.Clamp(value2, 0f, num3);
 				num2 *= (num3 - value2) / num3;
 			}
-			IdealFov -= delta * num2;
-			IdealFov = Mathf.Clamp(IdealFov, 1f, 180f);
+			ApplyZoomDelta(-delta * num2);
 		}
 	}
+
+	private void ApplyZoomDelta(float fovDelta)
+	{
+		mIdealFocusPoint = CurrentFocusPoint();
+		mLastDistToFocus = 0f;
+		mIsZooming = true;
+		IdealFov = Mathf.Clamp(IdealFov + fovDelta, MIN_FOV, MAX_FOV);
+	}
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+	private bool mMouseRotating;
+	private Vector2 mLastMouseRotatePosition;
+
+	private bool CanUseDesktopCameraInput()
+	{
+		GameController game = GameController.Instance;
+		CameraManager cameras = CameraManager.Instance;
+		return mInputEnabled && Input.touchCount == 0 && game != null && !game.IsPaused &&
+			!game.IsFirstPerson && !CinematicHelper.IsInCinematic && cameras != null &&
+			!cameras.IsSwitching && cameras.ActiveCamera == CameraManager.ActiveCameraType.PlayCamera &&
+			cameras.PlayCameraController.CurrentCameraBase == this &&
+			(MessageBoxController.Instance == null || !MessageBoxController.Instance.IsAnyMessageActive);
+	}
+
+	private void ApplyMouseWheelZoom(float wheelDelta)
+	{
+		if (wheelDelta == 0f || !allowPinchZoom || !CanUseDesktopCameraInput()) return;
+		float targetFov = Mathf.Clamp(IdealFov - wheelDelta * 3f, MinFov, MaxFov);
+		if (targetFov != IdealFov) ApplyZoomDelta(targetFov - IdealFov);
+	}
+
+	private void UpdateMouseRotation(Vector2 position, bool pressed, bool held, bool released)
+	{
+		if (!allowOrbit || !CanUseDesktopCameraInput())
+		{
+			ResetMouseRotation();
+			return;
+		}
+		if (pressed)
+		{
+			if (position.x < 0f || position.y < 0f || position.x >= Screen.width || position.y >= Screen.height) return;
+			Camera_OnRotateBegin(position, position);
+			panVelocity = Vector3.zero;
+			mPanMove = Vector3.zero;
+			orbitVelocity = Vector2.zero;
+			mBeginRotateMove = false;
+			mMouseRotating = true;
+			mLastMouseRotatePosition = position;
+			return;
+		}
+		if (!mMouseRotating) return;
+		if (released || !held)
+		{
+			ResetMouseRotation();
+			return;
+		}
+		Vector2 delta = position - mLastMouseRotatePosition;
+		mLastMouseRotatePosition = position;
+		Camera_OnRotateMove(position, position, delta.x * yawSensitivity * 0.02f);
+	}
+
+	private void ResetMouseRotation()
+	{
+		if (!mMouseRotating) return;
+		mMouseRotating = false;
+		if (Input.touchCount == 0)
+		{
+			Camera_OnRotateEnd(Vector2.zero, Vector2.zero, 0f);
+			disableFingerDrag = false;
+		}
+	}
+
+	private void OnDisable()
+	{
+		ResetMouseRotation();
+	}
+
+	private void OnApplicationFocus(bool focused)
+	{
+		if (!focused) ResetMouseRotation();
+	}
+#endif
 
 	private void Camera_OnTwoFingerDragBegin(Vector2 fingerPos, Vector2 startPos)
 	{
@@ -907,6 +988,10 @@ public class NavMeshCamera : CameraBase, PlayCameraInterface
 
 	private void LateUpdate()
 	{
+#if UNITY_EDITOR || UNITY_STANDALONE
+		UpdateMouseRotation(Input.mousePosition, Input.GetMouseButtonDown(1), Input.GetMouseButton(1), Input.GetMouseButtonUp(1));
+		ApplyMouseWheelZoom(Input.mouseScrollDelta.y);
+#endif
 		Apply();
 	}
 

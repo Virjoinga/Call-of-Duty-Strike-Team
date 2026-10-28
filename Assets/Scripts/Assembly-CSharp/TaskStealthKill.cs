@@ -79,8 +79,7 @@ public class TaskStealthKill : Task
 				else
 				{
 					mFlags |= Flags.TargetInvalidated;
-					mActor.navAgent.ResetPath();
-					mActor.navAgent.Stop();
+					StopApproachNavigation();
 				}
 			}
 			break;
@@ -223,13 +222,22 @@ public class TaskStealthKill : Task
 			{
 				if (a.behaviour.InActiveAlertState())
 				{
-					mActor.navAgent.ResetPath();
-					mActor.navAgent.Stop();
+					StopApproachNavigation();
 					return true;
 				}
 			}
 		}
 		return mState == State.EnagementComplete;
+	}
+
+	private void StopApproachNavigation()
+	{
+		UnityEngine.AI.NavMeshAgent agent = mActor.navAgent;
+		if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh)
+		{
+			agent.ResetPath();
+			agent.Stop();
+		}
 	}
 
 	private void MoveToTarget()

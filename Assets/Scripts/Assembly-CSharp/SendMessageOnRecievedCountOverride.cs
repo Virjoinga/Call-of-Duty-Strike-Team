@@ -23,7 +23,7 @@ public class SendMessageOnRecievedCountOverride : ContainerOverride
 	{
 		base.SendOverrideMessage(gameObj, methodName);
 		SendMessageOnRecievedCount componentInChildren = gameObj.GetComponentInChildren<SendMessageOnRecievedCount>();
-		if (componentInChildren != null)
+		if (componentInChildren != null && componentInChildren.gameObject.activeInHierarchy)
 		{
 			componentInChildren.SendMessage(methodName);
 		}

@@ -278,16 +278,18 @@ public class TaskMultiCharacterSetPiece : Task
 		}
 		case State.Animating:
 		{
-			for (int i = 0; i < mActors.Count; i++)
-			{
-				if (!mSetPiece.HasActorFinished(i))
-				{
-					mActors[i].realCharacter.mIdleTimer = 0f;
-				}
-			}
 			if (mSetPiece.HasFinished())
 			{
 				EndSetPiece();
+				break;
+			}
+			for (int i = 0; i < mActors.Count; i++)
+			{
+				Actor actor = mActors[i];
+				if (actor != null && actor.baseCharacter != null && !mSetPiece.HasActorFinished(i))
+				{
+					actor.baseCharacter.mIdleTimer = 0f;
+				}
 			}
 			break;
 		}

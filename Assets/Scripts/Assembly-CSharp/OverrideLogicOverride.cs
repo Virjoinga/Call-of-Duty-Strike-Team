@@ -70,7 +70,7 @@ public class OverrideLogicOverride : ContainerOverride
 	{
 		base.SendOverrideMessage(gameObj, methodName);
 		TaskDescriptorOverrideHub componentInChildren = gameObj.GetComponentInChildren<TaskDescriptorOverrideHub>();
-		if (componentInChildren != null)
+		if (componentInChildren != null && componentInChildren.gameObject.activeInHierarchy)
 		{
 			componentInChildren.SendMessage(methodName);
 		}
