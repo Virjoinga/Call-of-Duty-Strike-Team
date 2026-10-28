@@ -346,6 +346,10 @@ public class InterfaceableObject : SelectableObject
 
 	public override int OnSelected(Vector2 selectedScreenPos, bool fromTap)
 	{
+		if (!Application.isMobilePlatform && GameController.Instance != null && GameController.Instance.IsFirstPerson)
+		{
+			return 0;
+		}
 		int result = 0;
 		if (CommonHudController.Instance.gameObject.activeInHierarchy)
 		{

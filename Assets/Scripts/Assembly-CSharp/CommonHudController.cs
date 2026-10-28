@@ -218,6 +218,8 @@ public class CommonHudController : MonoBehaviour
 
 	private bool mTriggerPressedBuffer;
 
+	private bool mMeleePressedBuffer;
+
 	private bool mCrouchPressedBuffer;
 
 	private bool mFollowMeBuffer;
@@ -640,6 +642,11 @@ public class CommonHudController : MonoBehaviour
 
 	private void CheckTapZone(Vector2 position)
 	{
+		if (!Application.isMobilePlatform)
+		{
+			mActiveTapZones = 0;
+			return;
+		}
 		int b = mTapZones.Length;
 		for (int i = 0; i < mActiveTapZones; i++)
 		{
@@ -812,6 +819,7 @@ public class CommonHudController : MonoBehaviour
 		Actor actor = ((!GameController.Instance) ? null : GameController.Instance.mFirstPersonActor);
 		UpdateZoomInTimer();
 		UpdateOnScreenContextMenu();
+		UpdateDesktopActions();
 		UpdateKeyboardInput();
 		UpdatePadInput();
 		UpdateGestures();
@@ -863,6 +871,41 @@ public class CommonHudController : MonoBehaviour
 			}
 		}
 		RemoveExpiredTapZones();
+	}
+
+	private void UpdateDesktopActions()
+	{
+#if UNITY_STANDALONE || UNITY_EDITOR
+		if (!GameCursor.CanUseMouse || TutorialToggles.IsRespotting)
+		{
+			return;
+		}
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			ReloadButtonClick();
+		}
+		if (Input.GetKeyDown(KeyCode.C) && !FPPCrouchLocked)
+		{
+			ToggleCrouch();
+		}
+		if (Input.GetKeyDown(KeyCode.E) && !ContextInteractionLocked && GameController.Instance.AllowContextActionsInFirstPerson)
+		{
+			CallContextInteraction();
+		}
+		if (Input.GetKeyDown(KeyCode.V) && !TriggerLocked)
+		{
+			mMeleePressedBuffer = true;
+		}
+		float scroll = Input.mouseScrollDelta.y;
+		if (scroll > 0f)
+		{
+			SwitchWeaponLeft();
+		}
+		else if (scroll < 0f)
+		{
+			SwitchWeaponRight();
+		}
+#endif
 	}
 
 	private void UpdateKeyboardInput()
@@ -974,7 +1017,8 @@ public class CommonHudController : MonoBehaviour
 			return;
 		}
 		Actor mFirstPersonActor = GameController.Instance.mFirstPersonActor;
-		if (!FPPADSLocked && mFirstPersonActor != null && mFirstPersonActor.realCharacter != null)
+		if (!FPPADSLocked && mFirstPersonActor != null && mFirstPersonActor.realCharacter != null &&
+			(controllerState.leftTrigger.down || controllerState.leftTrigger.pressed || controllerState.leftTrigger.up))
 		{
 			if (controllerState.leftTrigger.down && !mFirstPersonActor.realCharacter.IsAimingDownSights)
 			{
@@ -1064,7 +1108,9 @@ public class CommonHudController : MonoBehaviour
 			return;
 		}
 		Actor mFirstPersonActor = GameController.Instance.mFirstPersonActor;
-		if (!FPPADSLocked && mFirstPersonActor != null && mFirstPersonActor.realCharacter != null)
+		if (!FPPADSLocked && mFirstPersonActor != null && mFirstPersonActor.realCharacter != null &&
+			(controllerState.leftTrigger.down || controllerState.leftTrigger.pressed || controllerState.leftTrigger.up ||
+			(!isMogaPro && (controllerState.leftShoulder.down || controllerState.leftShoulder.pressed || controllerState.leftShoulder.up))))
 		{
 			if ((controllerState.leftTrigger.down || (!isMogaPro && controllerState.leftShoulder.down)) && !mFirstPersonActor.realCharacter.IsAimingDownSights)
 			{
@@ -1992,6 +2038,14 @@ public class CommonHudController : MonoBehaviour
 		}
 	}
 
+	public void OnContextInteractionButtonClick()
+	{
+		if (Application.isMobilePlatform)
+		{
+			CallContextInteraction();
+		}
+	}
+
 	public void CallContextInteraction()
 	{
 		if (IsContextActionInProgress || !(ContextInteractionButton != null) || !ContextInteractionButton.gameObject.activeInHierarchy)
@@ -2491,7 +2545,15 @@ public class CommonHudController : MonoBehaviour
 	private void UpdateTrigger(Actor firstPersonActor)
 	{
 		bool flag = AllowTrigger(firstPersonActor);
+#if UNITY_STANDALONE || UNITY_EDITOR
+		if (GameCursor.CanUseMouse && !TriggerLocked && Input.GetMouseButton(0))
+		{
+			mTriggerPressedBuffer = true;
+		}
+#endif
 		MeleePressed = false;
+		bool separateMelee = !Application.isMobilePlatform;
+		bool meleeInput = separateMelee ? mMeleePressedBuffer : mTriggerPressedBuffer;
 		if (flag && firstPersonActor != null && firstPersonActor.realCharacter != null)
 		{
 			if ((bool)firstPersonActor.realCharacter.Carried)
@@ -2500,9 +2562,9 @@ public class CommonHudController : MonoBehaviour
 				SetTriggerPressed(false);
 				return;
 			}
-			if (CloseEnoughToStealthKill())
+			if ((!separateMelee || meleeInput) && !FPPStealthKillLocked && CloseEnoughToStealthKill())
 			{
-				StealthKillPressed = mTriggerPressedBuffer;
+				StealthKillPressed = meleeInput;
 				SetTriggerPressed(false);
 				if (StealthKillPressed)
 				{
@@ -2510,9 +2572,9 @@ public class CommonHudController : MonoBehaviour
 				}
 				return;
 			}
-			if (CloseEnoughToMelee())
+			if (separateMelee ? meleeInput : CloseEnoughToMelee())
 			{
-				MeleePressed = mTriggerPressedBuffer;
+				MeleePressed = meleeInput;
 				SetTriggerPressed(false);
 				return;
 			}
@@ -2543,6 +2605,7 @@ public class CommonHudController : MonoBehaviour
 	{
 		mCrouchPressedBuffer = false;
 		mTriggerPressedBuffer = false;
+		mMeleePressedBuffer = false;
 		mFollowMeBuffer = false;
 	}
 

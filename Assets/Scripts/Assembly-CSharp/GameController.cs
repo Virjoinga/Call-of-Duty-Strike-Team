@@ -235,6 +235,8 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	public bool AimAssistEnabled { get; set; }
+
 	public bool DirectFireToSoftLockPosition
 	{
 		get
@@ -888,10 +890,21 @@ public class GameController : MonoBehaviour
 			float num13 = num2 * num * num12;
 			num13 += CommonHudController.Instance.LookAmountTouch.x * num4;
 			num13 += CommonHudController.Instance.LookAmountGamepad.x * num6;
+#if UNITY_STANDALONE || UNITY_EDITOR
+			if (GameCursor.CanUseMouse)
+			{
+				num10 -= Input.GetAxisRaw("Mouse Y") * 2f;
+				num13 += Input.GetAxisRaw("Mouse X") * 2f;
+			}
+#endif
 			LastLookInput = new Vector2(num10, num13);
 			float num14 = 4f;
-			float a = ((!FirstPersonTargetIsLivingEnemy) ? 0f : Mathf.Clamp01(player.FirstPersonAimAssist));
-			a = Mathf.Clamp(mLastAimAssistValue - TimeManager.DeltaTime * num14, Mathf.Max(a, 0f), 1f);
+			float a = 0f;
+			if (AimAssistEnabled)
+			{
+				a = ((!FirstPersonTargetIsLivingEnemy) ? 0f : Mathf.Clamp01(player.FirstPersonAimAssist));
+				a = Mathf.Clamp(mLastAimAssistValue - TimeManager.DeltaTime * num14, Mathf.Max(a, 0f), 1f);
+			}
 			float num15 = Mathf.Lerp(1f, InputSettings.FirstPersonAimAssistSensitivityModifierX, a);
 			float num16 = Mathf.Lerp(1f, InputSettings.FirstPersonAimAssistSensitivityModifierY, a);
 			float num17 = ((!(mFirstPersonActor != null)) ? 1f : mFirstPersonActor.realCharacter.GetSensitivityModifier());
@@ -950,7 +963,7 @@ public class GameController : MonoBehaviour
 				}
 				if (mAutoSnapTarget != null)
 				{
-					FirstPersonSnapToActor(mAutoSnapTarget);
+					if (AimAssistEnabled) FirstPersonSnapToActor(mAutoSnapTarget);
 					mAutoSnapTarget = null;
 				}
 			}
@@ -1871,6 +1884,7 @@ public class GameController : MonoBehaviour
 
 	public void ADSAutoLockOn()
 	{
+		if (!AimAssistEnabled) return;
 		GameSettings instance = GameSettings.Instance;
 		if (instance != null && instance.PlayerGameSettings().ADSAutoLockOn)
 		{
@@ -1951,7 +1965,7 @@ public class GameController : MonoBehaviour
 			mFirstPersonLockOnAngles -= vector;
 			TurnFirstPersonCamera(vector);
 			mLastLockOnUpdate += vector;
-			if (mFirstPersonLockOnAngles.sqrMagnitude < 1f && mFirstPersonPointOfInterest == null)
+			if (AimAssistEnabled && mFirstPersonLockOnAngles.sqrMagnitude < 1f && mFirstPersonPointOfInterest == null)
 			{
 				float num2 = ((!(mSoftLockTarget != null) || !(mSoftLockTarget.realCharacter != null)) ? 0f : Mathf.Clamp01(mSoftLockTarget.realCharacter.AliveTimeReal));
 				float x = ((!(Mathf.Abs(LastLookInput.x) < 0.25f) && Mathf.Sign(LastLookInput.x) != Mathf.Sign(mFirstPersonSoftLockAngles.x)) ? 0f : 1f);
@@ -2277,7 +2291,7 @@ public class GameController : MonoBehaviour
 			mDisableZoomButtonsDuringCoroutineTransition = false;
 			UnityEngine.Object.Destroy(cam.gameObject);
 		}
-		if (mAutoSnapTarget == null && !(damageDealer == null))
+		if (AimAssistEnabled && mAutoSnapTarget == null && !(damageDealer == null))
 		{
 			mAutoSnapTarget = new AutoSnapTarget(damageDealer.baseCharacter.SnapTarget);
 		}
