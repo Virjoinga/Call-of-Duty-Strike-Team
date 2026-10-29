@@ -211,7 +211,14 @@ public class ContextMenuDistanceManager : MonoBehaviour
 		}
 		if (a != null)
 		{
-			return io.Interior == a.baseCharacter.Location;
+			BuildingWithInterior location = a.baseCharacter.Location;
+			if (io.Interior == location) return true;
+			// Door thresholds can lie just outside the room's trigger volume.
+			// Keep close first-person doors usable without changing room membership.
+			GameController game = GameController.Instance;
+			return component != null && location == null && game != null &&
+				game.IsFirstPerson && game.mFirstPersonActor == a &&
+				(a.transform.position - io.transform.position).sqrMagnitude < io.FirstPersonTriggerRadiusSqr;
 		}
 		return false;
 	}

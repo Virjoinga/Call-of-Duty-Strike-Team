@@ -157181,7 +157181,7 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d2ea8dce1d680954b808d369f8355d8a, type: 2}
@@ -162893,7 +162893,7 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b359f53d2d2fa1d44bc904e15d390a28, type: 2}
@@ -218334,20 +218334,20 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_Object: {fileID: 1745}
+        m_ObjectGuid: e0f57368-dc66-4df6-a852-1a4f2c02be5c
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1089}
+        m_ObjectGuid: 6052d2f7-abc6-4653-92af-17b59a8375e1
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
+        m_ObjectGuid:
+      behaviour1:
+      behaviour2:
+      behaviour3:
     DoorType: 1
 --- !u!114 &11069
 MonoBehaviour:
@@ -221147,27 +221147,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
-      holdCover: 0
+        m_Object: {fileID: 2940}
+        m_ObjectGuid: 6da0a0dc-b64e-4120-9c1f-e593b3285dae
+      gait: 1
+      takeCover: 1
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 3659}
+        m_ObjectGuid: eafc3ac6-933c-4572-addf-f1873fb68770
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near Helip Spawners_Quick Destination.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Helipad Right_Cover Cluster
+  SpawnFromPoint: {fileID: 7858}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2236}
+  DoorPivot: {fileID: 6620}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -229341,27 +229341,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
+        m_Object: {fileID: 1474}
+        m_ObjectGuid: 9ecf26a9-ea95-4821-b472-99ca42e8613c
+      gait: 1
       takeCover: 0
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1225}
+        m_ObjectGuid: f6b684d1-a1e3-449b-aede-5f7a8f5d47d2
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First go to 01.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Air Traffic Control_Cover Cluster
+  SpawnFromPoint: {fileID: 6552}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1255}
+  DoorPivot: {fileID: 8011}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -234027,19 +234027,19 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 916}
+        m_ObjectGuid: 09cfb763-e161-462e-b20a-490ff01371c3
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
+        m_ObjectGuid:
+      behaviour1:
+      behaviour2:
+      behaviour3:
     DoorType: 1
 --- !u!114 &11731
 MonoBehaviour:
@@ -243223,27 +243223,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_Object: {fileID: 993}
+        m_ObjectGuid: 7c60138e-ff41-4d18-b38e-12067bdf08ab
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 3927}
+        m_ObjectGuid: b84c6606-f662-4640-a3a0-d81a594dedee
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near 01.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Research Roof Top_Cover Cluster
+  SpawnFromPoint: {fileID: 5467}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1746}
+  DoorPivot: {fileID: 6462}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -243757,27 +243757,27 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1124}
+        m_ObjectGuid: f1c13d66-c025-44e1-926b-eecdc44f16bf
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Portacabins_Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 7274}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 2545}
+  DoorPivot: {fileID: 8111}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 3
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
@@ -247458,27 +247458,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
+        m_Object: {fileID: 1442}
+        m_ObjectGuid: caf7eb65-9a00-4495-9a3e-548da0203d28
+      gait: 1
       takeCover: 0
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1225}
+        m_ObjectGuid: f6b684d1-a1e3-449b-aede-5f7a8f5d47d2
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First go to 01.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Air Traffic Control_Cover Cluster
+  SpawnFromPoint: {fileID: 6501}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3856}
+  DoorPivot: {fileID: 7871}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -249463,20 +249463,20 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
-      holdCover: 0
+        m_Object: {fileID: 483}
+        m_ObjectGuid: ce815a58-a4ff-490d-822b-5f87ae1a1d12
+      gait: 1
+      takeCover: 1
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 2866}
+        m_ObjectGuid: 4fc31a77-e1af-45fe-89a0-4c29de050919
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
+        m_ObjectGuid:
+      behaviour1:
+      behaviour2:
+      behaviour3:
     DoorType: 1
 --- !u!114 &12432
 MonoBehaviour:
@@ -250847,20 +250847,20 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
-      holdCover: 0
+        m_Object: {fileID: 483}
+        m_ObjectGuid: ce815a58-a4ff-490d-822b-5f87ae1a1d12
+      gait: 1
+      takeCover: 1
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 2866}
+        m_ObjectGuid: 4fc31a77-e1af-45fe-89a0-4c29de050919
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
+        m_ObjectGuid:
+      behaviour1:
+      behaviour2:
+      behaviour3:
     DoorType: 1
 --- !u!114 &12494
 MonoBehaviour:
@@ -262303,26 +262303,26 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
+        m_ObjectGuid:
+      gait: 1
       takeCover: 0
       holdCover: 0
       coverCluster:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_ObjectGuid:
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: No routine generated.
+      behaviour2:
+      behaviour3:
+  SpawnFromPoint: {fileID: 7986}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1104}
+  DoorPivot: {fileID: 6093}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -266174,19 +266174,43 @@ MonoBehaviour:
   LinkInfo: []
   Sequence:
     Statements:
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
+    - Conditions:
+      - Type: 1
+        Actor:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
       Actions:
       - Type: 1
         Clip: {fileID: 7400000, guid: 93ce916c554214445a8cf2e9106f1718, type: 2}
@@ -266206,7 +266230,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266243,11 +266267,11 @@ MonoBehaviour:
         BlobShadowOnOff: 0
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266256,13 +266280,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266282,8 +266306,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 0
@@ -266292,8 +266316,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266317,7 +266341,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266333,7 +266357,7 @@ MonoBehaviour:
         ConditionType: 0
         ParticleFX: {fileID: 0}
         Target:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266355,10 +266379,10 @@ MonoBehaviour:
         HUDOnOff: 0
         LaserOnOff: 1
         CommandText: OnLoadSection
-        MessageText: 
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266367,13 +266391,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266393,8 +266417,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 0
@@ -266403,8 +266427,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266428,7 +266452,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266444,7 +266468,7 @@ MonoBehaviour:
         ConditionType: 0
         ParticleFX: {fileID: 0}
         Target:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266465,11 +266489,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266478,13 +266502,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266504,8 +266528,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -266514,8 +266538,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266525,7 +266549,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266539,7 +266563,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266576,11 +266600,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266589,13 +266613,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266614,9 +266638,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -266626,8 +266649,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266637,7 +266660,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266651,7 +266674,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266688,11 +266711,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266701,13 +266724,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266726,9 +266749,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -266738,8 +266760,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266749,7 +266771,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266763,7 +266785,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266800,11 +266822,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266813,13 +266835,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266838,9 +266860,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -266850,8 +266871,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266861,7 +266882,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266875,7 +266896,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266912,11 +266933,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -266925,13 +266946,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266950,9 +266971,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -266962,8 +266982,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -266973,7 +266993,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -266987,7 +267007,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267024,11 +267044,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267037,13 +267057,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267062,9 +267082,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -267074,8 +267093,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267085,7 +267104,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267099,7 +267118,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267136,11 +267155,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267149,13 +267168,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267174,9 +267193,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -267186,8 +267204,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267197,7 +267215,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267211,7 +267229,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267248,11 +267266,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267261,13 +267279,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267286,9 +267304,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -267298,8 +267315,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267309,7 +267326,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267323,7 +267340,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267360,11 +267377,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267373,13 +267390,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267398,9 +267415,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadType
         PlayFP3D: 1
         Play3D: 0
@@ -267410,8 +267426,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267421,7 +267437,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267435,7 +267451,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267472,11 +267488,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267485,13 +267501,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267510,9 +267526,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadUnlock
         PlayFP3D: 1
         Play3D: 0
@@ -267522,8 +267537,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267533,7 +267548,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267547,7 +267562,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267584,11 +267599,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267597,13 +267612,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267622,9 +267637,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: GateOpen
         PlayFP3D: 1
         Play3D: 0
@@ -267634,8 +267648,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267645,7 +267659,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267659,7 +267673,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267696,11 +267710,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267709,13 +267723,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267734,9 +267748,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: HandKeypad
         PlayFP3D: 1
         Play3D: 0
@@ -267746,8 +267759,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267757,7 +267770,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267771,7 +267784,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267808,11 +267821,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267821,13 +267834,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267846,9 +267859,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: GateClose
         PlayFP3D: 1
         Play3D: 0
@@ -267858,8 +267870,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267869,7 +267881,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267883,7 +267895,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267920,11 +267932,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -267933,13 +267945,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267958,9 +267970,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114607675716143460, guid: 0812dc07c7c5bf14db7e9551cd959856, type: 2}
+        PlayFPFunction:
         PlayFunction: KeypadDestroy
         PlayFP3D: 1
         Play3D: 0
@@ -267970,8 +267981,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -267981,7 +267992,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -267995,7 +268006,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268032,11 +268043,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268045,13 +268056,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268070,9 +268081,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268082,8 +268092,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268093,7 +268103,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268107,7 +268117,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268144,11 +268154,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268157,13 +268167,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268182,9 +268192,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268194,8 +268203,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268205,7 +268214,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268219,7 +268228,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268256,11 +268265,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268269,13 +268278,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268294,9 +268303,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268306,8 +268314,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268317,7 +268325,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268331,7 +268339,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268368,11 +268376,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268381,13 +268389,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268406,9 +268414,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268418,8 +268425,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268429,7 +268436,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268443,7 +268450,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268480,11 +268487,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268493,13 +268500,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268518,9 +268525,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268530,8 +268536,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268541,7 +268547,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268555,7 +268561,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268592,11 +268598,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268605,13 +268611,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268630,9 +268636,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268642,8 +268647,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268653,7 +268658,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268667,7 +268672,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268704,11 +268709,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268717,13 +268722,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268742,9 +268747,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268754,8 +268758,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268765,7 +268769,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268779,7 +268783,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268816,11 +268820,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268829,13 +268833,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268854,9 +268858,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 0
@@ -268866,8 +268869,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268877,7 +268880,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268891,7 +268894,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268928,11 +268931,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -268941,13 +268944,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -268966,9 +268969,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -268978,8 +268980,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -268989,7 +268991,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269003,7 +269005,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269040,11 +269042,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -269053,13 +269055,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269078,9 +269080,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -269090,8 +269091,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -269101,7 +269102,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269115,7 +269116,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269152,11 +269153,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -269165,13 +269166,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269190,9 +269191,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_OUTRO_03
         PlayFP3D: 1
         Play3D: 0
@@ -269202,8 +269202,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -269213,7 +269213,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269227,7 +269227,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269264,11 +269264,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -269277,13 +269277,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269302,9 +269302,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_OUTRO_01
         PlayFP3D: 1
         Play3D: 0
@@ -269314,8 +269313,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -269325,7 +269324,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269339,7 +269338,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269376,11 +269375,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -269389,13 +269388,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -269414,9 +269413,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114793889997528345, guid: a89ee5df2ac6fda48be30f59f3e4e414, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_OUTRO_02
         PlayFP3D: 1
         Play3D: 0
@@ -269426,13 +269424,53 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
         AwarenessCanLook: 0
         AwarenessCanBeLookedAt: 0
+      IsTestStatement: 0
+      branchTo: -1
+    - Conditions:
+      - Type: 8
+        Actor:
+          Name: Actor0
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
+      Actions: []
       IsTestStatement: 0
       branchTo: -1
   ReferenceMesh: {fileID: 3605}
@@ -270854,27 +270892,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
+        m_Object: {fileID: 3084}
+        m_ObjectGuid: c53036bb-ca30-45b7-ac32-d493619842d1
+      gait: 1
       takeCover: 0
-      holdCover: 0
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 2299}
+        m_ObjectGuid: fe4ba5c8-c4a5-4ffd-8e32-b9169456cc7b
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near 01.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Research Roof_Cover Cluster
+  SpawnFromPoint: {fileID: 4587}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 137}
+  DoorPivot: {fileID: 5685}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -277880,27 +277918,27 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
+        m_ObjectGuid:
+      gait: 1
       takeCover: 0
       holdCover: 0
       coverCluster:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_ObjectGuid:
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: No routine generated.
+      behaviour2:
+      behaviour3:
+  SpawnFromPoint: {fileID: 6741}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 145}
+  DoorPivot: {fileID: 8372}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 2
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
@@ -278487,20 +278525,20 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_Object: {fileID: 3597}
+        m_ObjectGuid: 2fbdcdce-758a-4f3f-bec3-ac0b87a5b4cc
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1089}
+        m_ObjectGuid: 6052d2f7-abc6-4653-92af-17b59a8375e1
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
+        m_ObjectGuid:
+      behaviour1:
+      behaviour2:
+      behaviour3:
     DoorType: 1
 --- !u!114 &13612
 MonoBehaviour:
@@ -281344,19 +281382,43 @@ MonoBehaviour:
   LinkInfo: []
   Sequence:
     Statements:
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
+    - Conditions:
+      - Type: 1
+        Actor:
+          Name:
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: -1
+          GunAway: 0
+          GunOut: 1
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
       Actions:
       - Type: 1
         Clip: {fileID: 7400000, guid: ca3142446b7db394bb03b544f89de1e3, type: 2}
@@ -281376,7 +281438,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 1
         Prop:
-          Name: 
+          Name:
           Type: 1
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281413,11 +281475,11 @@ MonoBehaviour:
         BlobShadowOnOff: 0
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281426,13 +281488,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281452,8 +281514,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 0
@@ -281462,8 +281524,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -281473,7 +281535,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 1
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281487,7 +281549,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 1
         Prop:
-          Name: 
+          Name:
           Type: 1
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281524,11 +281586,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281537,13 +281599,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281562,9 +281624,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114300984963032430, guid: f1058c3ea0228d84786bd493c82d2e36,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114300984963032430, guid: f1058c3ea0228d84786bd493c82d2e36, type: 2}
+        PlayFPFunction:
         PlayFunction: A_ARC_S03_DIALOGUE_01
         PlayFP3D: 1
         Play3D: 0
@@ -281574,8 +281635,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -281585,7 +281646,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281599,7 +281660,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281636,11 +281697,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281649,13 +281710,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281674,9 +281735,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -281686,8 +281746,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -281697,7 +281757,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281711,7 +281771,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281748,11 +281808,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281761,13 +281821,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281786,9 +281846,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -281798,8 +281857,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -281809,7 +281868,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281823,7 +281882,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281860,11 +281919,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281873,13 +281932,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281898,9 +281957,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -281910,8 +281968,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -281921,7 +281979,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281935,7 +281993,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -281972,11 +282030,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -281985,13 +282043,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282010,9 +282068,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114872019424076239, guid: 032bd895d8f1b86478f97286a059c34d, type: 2}
+        PlayFPFunction:
         PlayFunction: FSRunSnow
         PlayFP3D: 1
         Play3D: 1
@@ -282022,8 +282079,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282033,7 +282090,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282047,7 +282104,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282084,11 +282141,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282097,13 +282154,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282122,9 +282179,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114724258654076861, guid: 4d26438b6c64f824b8762a77cbb75e6f, type: 2}
+        PlayFPFunction:
         PlayFunction: FoleyGrab
         PlayFP3D: 1
         Play3D: 1
@@ -282134,8 +282190,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282145,7 +282201,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282159,7 +282215,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282196,11 +282252,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 1
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282209,13 +282265,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282234,9 +282290,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114303658834456694, guid: eae658a463dc0d947bce8a77c78a390d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114303658834456694, guid: eae658a463dc0d947bce8a77c78a390d, type: 2}
+        PlayFPFunction:
         PlayFunction: AN94MagOut
         PlayFP3D: 1
         Play3D: 1
@@ -282246,8 +282301,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282257,7 +282312,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282271,7 +282326,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282308,11 +282363,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282321,13 +282376,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282346,9 +282401,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114303658834456694, guid: eae658a463dc0d947bce8a77c78a390d,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114303658834456694, guid: eae658a463dc0d947bce8a77c78a390d, type: 2}
+        PlayFPFunction:
         PlayFunction: AN94MagIn
         PlayFP3D: 1
         Play3D: 1
@@ -282358,8 +282412,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282369,7 +282423,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282383,7 +282437,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282420,11 +282474,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282433,13 +282487,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282458,9 +282512,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
         PlayFunction: FSSnowLoopArThree
         PlayFP3D: 1
         Play3D: 0
@@ -282470,8 +282523,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282481,7 +282534,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282495,7 +282548,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282532,11 +282585,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282545,13 +282598,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282570,10 +282623,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 0
         PlayVolume: 1
@@ -282583,7 +282635,7 @@ MonoBehaviour:
         DesiredVolume: 0.4
         DesiredVolumeFP: 1
         FadeFunction: FSSnowLoopArThree
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -282593,7 +282645,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282607,7 +282659,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282644,11 +282696,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -282657,13 +282709,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -282682,10 +282734,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 0
         PlayVolume: 1
@@ -282695,12 +282746,52 @@ MonoBehaviour:
         DesiredVolume: 1
         DesiredVolumeFP: 1
         FadeFunction: FSSnowLoopArThree
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
         AwarenessCanLook: 0
         AwarenessCanBeLookedAt: 0
+      IsTestStatement: 0
+      branchTo: -1
+    - Conditions:
+      - Type: 2
+        Actor:
+          Name: Actor0
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 7814}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 10843}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: -1
+          GunAway: 0
+          GunOut: 1
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 14.800001
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
+      Actions: []
       IsTestStatement: 0
       branchTo: -1
   ReferenceMesh: {fileID: 3638}
@@ -284887,19 +284978,43 @@ MonoBehaviour:
   LinkInfo: []
   Sequence:
     Statements:
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
-      Actions: []
-      IsTestStatement: 0
-      branchTo: -1
-    - Conditions: []
+    - Conditions:
+      - Type: 1
+        Actor:
+          Name:
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 7203}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 10839}
+          CurrentAnim: {fileID: 7400000, guid: 886e789b77f806342a0cf22c193baf02, type: 2}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 20.742714
+          GunAway: 0
+          GunOut: 1
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 0
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
       Actions:
       - Type: 26
         Clip: {fileID: 0}
@@ -284919,7 +285034,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 1
         Prop:
-          Name: 
+          Name:
           Type: 1
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -284935,7 +285050,7 @@ MonoBehaviour:
         ConditionType: 0
         ParticleFX: {fileID: 0}
         Target:
-          Name: 
+          Name:
           Type: 3
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -284956,11 +285071,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -284969,13 +285084,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -284995,8 +285110,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -285005,8 +285120,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285030,7 +285145,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 1
         Prop:
-          Name: 
+          Name:
           Type: 1
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285067,11 +285182,11 @@ MonoBehaviour:
         BlobShadowOnOff: 0
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285080,13 +285195,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285106,8 +285221,8 @@ MonoBehaviour:
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
         SoundBank: {fileID: 0}
-        PlayFPFunction: 
-        PlayFunction: 
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 0
@@ -285116,8 +285231,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 0
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285127,7 +285242,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285141,7 +285256,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285178,11 +285293,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285191,13 +285306,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285216,9 +285331,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
         PlayFunction: HeliFlyBy
         PlayFP3D: 1
         Play3D: 1
@@ -285228,8 +285342,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285239,7 +285353,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285253,7 +285367,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285290,11 +285404,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285303,13 +285417,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285328,10 +285442,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -285341,7 +285454,7 @@ MonoBehaviour:
         DesiredVolume: 1
         DesiredVolumeFP: 1
         FadeFunction: HeliLoop
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285351,7 +285464,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285365,7 +285478,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285402,11 +285515,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285415,13 +285528,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285440,10 +285553,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -285453,7 +285565,7 @@ MonoBehaviour:
         DesiredVolume: 1
         DesiredVolumeFP: 1
         FadeFunction: HeliLoop
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285463,7 +285575,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285477,7 +285589,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285514,11 +285626,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285527,13 +285639,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285552,10 +285664,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -285565,7 +285676,7 @@ MonoBehaviour:
         DesiredVolume: 0.75
         DesiredVolumeFP: 1
         FadeFunction: HeliLoopLowerPitch
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285575,7 +285686,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285589,7 +285700,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285626,11 +285737,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285639,13 +285750,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285664,10 +285775,9 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
-        PlayFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
+        PlayFunction:
         PlayFP3D: 1
         Play3D: 1
         PlayVolume: 1
@@ -285677,7 +285787,7 @@ MonoBehaviour:
         DesiredVolume: 1
         DesiredVolumeFP: 1
         FadeFunction: HeliLoopLowerPitch
-        FadeFPFunction: 
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285687,7 +285797,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285701,7 +285811,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285738,11 +285848,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285751,13 +285861,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285776,9 +285886,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
         PlayFunction: HeliWindDown
         PlayFP3D: 1
         Play3D: 1
@@ -285788,8 +285897,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285799,7 +285908,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285813,7 +285922,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285850,11 +285959,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285863,13 +285972,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285888,9 +285997,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114455255942999287, guid: 1b6bde0a85b5d39459d8facd74f59617, type: 2}
+        PlayFPFunction:
         PlayFunction: HeliLoop
         PlayFP3D: 1
         Play3D: 1
@@ -285900,8 +286008,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -285911,7 +286019,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285925,7 +286033,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -285962,11 +286070,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -285975,13 +286083,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286000,9 +286108,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_MIDTRO_01
         PlayFP3D: 1
         Play3D: 1
@@ -286012,8 +286119,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -286023,7 +286130,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286037,7 +286144,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286074,11 +286181,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -286087,13 +286194,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286112,9 +286219,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_MIDTRO_02
         PlayFP3D: 1
         Play3D: 1
@@ -286124,8 +286230,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -286135,7 +286241,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286149,7 +286255,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286186,11 +286292,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -286199,13 +286305,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286224,9 +286330,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84, type: 2}
+        PlayFPFunction:
         PlayFunction: S_PICKUP_ARC_S3_MIDTRO_03
         PlayFP3D: 1
         Play3D: 1
@@ -286236,8 +286341,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -286247,7 +286352,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286261,7 +286366,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286298,11 +286403,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -286311,13 +286416,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286336,9 +286441,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_MIDTRO_04
         PlayFP3D: 1
         Play3D: 1
@@ -286348,8 +286452,8 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -286359,7 +286463,7 @@ MonoBehaviour:
         Clip: {fileID: 0}
         FPSClip: {fileID: 0}
         Actor:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286373,7 +286477,7 @@ MonoBehaviour:
           GunAway: 0
           GunOut: 0
         Prop:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286410,11 +286514,11 @@ MonoBehaviour:
         BlobShadowOnOff: 1
         HUDOnOff: 0
         LaserOnOff: 1
-        CommandText: 
-        MessageText: 
+        CommandText:
+        MessageText:
         ActionDone: 0
         Value: 0
-        AttachPoint: 
+        AttachPoint:
         DestroyOnDetach: 0
         IsSelected: 1
         AnimSpeed: 1
@@ -286423,13 +286527,13 @@ MonoBehaviour:
         Easing: 0
         ContinuePlaying: 0
         SetTether: 0
-        WeaponID: 
+        WeaponID:
         DontClearDepthBuffer: 0
         AlwaysAnim: 0
         movementType: 0
         CameraBase: {fileID: 0}
         LookAt:
-          Name: 
+          Name:
           Type: 0
           Index: 0
           Position: {x: 0, y: 0, z: 0}
@@ -286448,9 +286552,8 @@ MonoBehaviour:
         IsZoomInAvailable: 0
         IsZoomOutAvailable: 0
         SoundFPBank: {fileID: 0}
-        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84,
-          type: 2}
-        PlayFPFunction: 
+        SoundBank: {fileID: 114765438961447926, guid: 7b4628c07215c6647bf4c253d4b23f84, type: 2}
+        PlayFPFunction:
         PlayFunction: S_ARC_S3_MIDTRO_05
         PlayFP3D: 1
         Play3D: 1
@@ -286460,8 +286563,159 @@ MonoBehaviour:
         FadeDurationFP: 1
         DesiredVolume: 1
         DesiredVolumeFP: 1
-        FadeFunction: 
-        FadeFPFunction: 
+        FadeFunction:
+        FadeFPFunction:
+        FadeGroup: 0
+        FadeGroupDuration: 1
+        DesiredFadeGroupVolume: 1
+        AwarenessCanLook: 0
+        AwarenessCanBeLookedAt: 0
+      IsTestStatement: 0
+      branchTo: -1
+    - Conditions:
+      - Type: 2
+        Actor:
+          Name: Actor0
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 7203}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 10839}
+          CurrentAnim: {fileID: 7400000, guid: 886e789b77f806342a0cf22c193baf02, type: 2}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 20.742714
+          GunAway: 0
+          GunOut: 1
+        Point:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        Frames: 0
+        Timer: 18.333334
+        MinusDelay: 0
+        Signal:
+        gestureDetector:
+          detected: 0
+          type: 0
+      Actions:
+      - Type: 11
+        Clip: {fileID: 0}
+        FPSClip: {fileID: 0}
+        Actor:
+          Name: Actor0
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 7203}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 10839}
+          CurrentAnim: {fileID: 7400000, guid: 886e789b77f806342a0cf22c193baf02, type: 2}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 20.742714
+          GunAway: 0
+          GunOut: 1
+        Prop:
+          Name:
+          Type: 1
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 7203}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 10839}
+          CurrentAnim: {fileID: 7400000, guid: 886e789b77f806342a0cf22c193baf02, type: 2}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 20.742714
+          GunAway: 0
+          GunOut: 1
+        ConditionType: 0
+        ParticleFX: {fileID: 0}
+        Target:
+          Name:
+          Type: 3
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: -1
+          GunAway: 0
+          GunOut: 1
+        DelayTime: 0
+        DelayTimeFP: 0
+        ActionTime: 1
+        OnOff: 1
+        GOOnOff: 1
+        BlobShadowOnOff: 1
+        HUDOnOff: 0
+        LaserOnOff: 1
+        CommandText:
+        MessageText:
+        ActionDone: 0
+        Value: 0
+        AttachPoint:
+        DestroyOnDetach: 0
+        IsSelected: 1
+        AnimSpeed: 1
+        AnimLooped: 0
+        BlendTime: 0.25
+        Easing: 0
+        ContinuePlaying: 0
+        SetTether: 0
+        WeaponID:
+        DontClearDepthBuffer: 0
+        AlwaysAnim: 0
+        movementType: 0
+        CameraBase: {fileID: 0}
+        LookAt:
+          Name:
+          Type: 0
+          Index: 0
+          Position: {x: 0, y: 0, z: 0}
+          ObjectTransform: {fileID: 0}
+          linkTransform: {fileID: 0}
+          ActorAnimation: {fileID: 0}
+          CurrentAnim: {fileID: 0}
+          AnimDirector: {fileID: 0}
+          ActorRef: {fileID: 0}
+          AnimationStartTime: 0
+          GunAway: 0
+          GunOut: 0
+        HealAmount: 0
+        HealDelayTime: 0
+        IsLockedToCurrentCharacter: 0
+        IsZoomInAvailable: 0
+        IsZoomOutAvailable: 0
+        SoundFPBank: {fileID: 0}
+        SoundBank: {fileID: 0}
+        PlayFPFunction:
+        PlayFunction:
+        PlayFP3D: 1
+        Play3D: 1
+        PlayVolume: 1
+        PlayVolumeFP: 1
+        FadeDuration: 1
+        FadeDurationFP: 1
+        DesiredVolume: 1
+        DesiredVolumeFP: 1
+        FadeFunction:
+        FadeFPFunction:
         FadeGroup: 0
         FadeGroupDuration: 1
         DesiredFadeGroupVolume: 1
@@ -289034,27 +289288,27 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
-      holdCover: 0
+        m_Object: {fileID: 2940}
+        m_ObjectGuid: 6da0a0dc-b64e-4120-9c1f-e593b3285dae
+      gait: 1
+      takeCover: 1
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 3022}
+        m_ObjectGuid: 1ed41cdb-0434-47f4-91dc-066f038ff992
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near Helip Spawners_Quick Destination.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Helipad Left_Cover Cluster
+  SpawnFromPoint: {fileID: 7707}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3601}
+  DoorPivot: {fileID: 8079}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
   DoorType: 0
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
@@ -290530,27 +290784,27 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 916}
+        m_ObjectGuid: 09cfb763-e161-462e-b20a-490ff01371c3
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Research Out Front_Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 4773}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 1594}
+  DoorPivot: {fileID: 8114}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 3
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
@@ -300089,28 +300343,28 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_Object: {fileID: 3410}
+        m_ObjectGuid: 8a788750-c257-410f-aac4-5709cb28e273
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1089}
+        m_ObjectGuid: 6052d2f7-abc6-4653-92af-17b59a8375e1
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near Look At.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Sentry Fodder_Cover Cluster
+  SpawnFromPoint: {fileID: 5879}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 2960}
+  DoorPivot: {fileID: 6830}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 1
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
@@ -301618,27 +301872,27 @@ MonoBehaviour:
     quickDestinations:
     - goToOnSpawn:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
-      holdCover: 0
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 1
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1225}
+        m_ObjectGuid: f6b684d1-a1e3-449b-aede-5f7a8f5d47d2
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Air Traffic Control_Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 7433}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 640}
+  DoorPivot: {fileID: 6806}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 3
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
@@ -304865,28 +305119,28 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      gait: 0
-      takeCover: 0
+        m_Object: {fileID: 2805}
+        m_ObjectGuid: c32f0a63-7502-45d2-8bd2-e7299b3f06a0
+      gait: 1
+      takeCover: 1
       holdCover: 0
       coverCluster:
-        m_Object: {fileID: 0}
-        m_ObjectGuid: 
+        m_Object: {fileID: 1124}
+        m_ObjectGuid: f1c13d66-c025-44e1-926b-eecdc44f16bf
       magnet:
         m_Object: {fileID: 0}
-        m_ObjectGuid: 
-      behaviour1: 
-      behaviour2: 
-      behaviour3: 
-  SpawnFromPoint: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near Compound cabins_Quick Destination.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use only cover points in Portacabins_Cover Cluster
+  SpawnFromPoint: {fileID: 5775}
   StaticTether: {fileID: 0}
   ClimbAnimation: {fileID: 0}
-  PhysicalDoor: {fileID: 0}
-  DoorPivot: {fileID: 0}
-  DoorOpenAnimation: {fileID: 0}
-  DoorCloseAnimation: {fileID: 0}
-  DoorType: 0
+  PhysicalDoor: {fileID: 1054}
+  DoorPivot: {fileID: 7619}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 3
   m_TutorialEnemyOverrides:
     LineOfSightFOV: 60
     LineOfSightPeripheralFOV: 140
