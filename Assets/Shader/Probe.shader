@@ -137,6 +137,11 @@ Shader "Corona/Probe/Base"
             }
             ENDCG
         }
+    }
+    SubShader
+    {
+        LOD 200
+        Tags { "RenderType"="Opaque" }
         Pass
         {
             Tags { "LightMode"="ForwardBase" "RenderType"="Opaque" }
