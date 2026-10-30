@@ -11812,8 +11812,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: d936cdde46a702b4fa13c5bb4ea1be3d, type: 2}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 799d1a31b19890843878a2a0087aa282, type: 2}
 --- !u!64 &10618
 MeshCollider:
   serializedVersion: 2
@@ -248996,6 +248996,7 @@ GameObject:
   - 4: {fileID: 5869}
   - 33: {fileID: 9762}
   - 64: {fileID: 10617}
+  - component: {fileID: 1958500000}
   m_Layer: 2
   m_Name: arc_guardhouse_int_vol
   m_TagString: Untagged
@@ -300030,3 +300031,16 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   GameCamera: {fileID: 0}
+--- !u!114 &1958500000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 14049}
+  PrimaryVolume: {fileID: 0}

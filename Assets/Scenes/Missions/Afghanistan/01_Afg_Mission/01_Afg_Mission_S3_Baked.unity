@@ -12941,8 +12941,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: ec5bf54dd6bffff429c8b78ce9414762, type: 2}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 0591bf8ff687f224c89685b7fe593126, type: 2}
 --- !u!64 &11692
 MeshCollider:
   serializedVersion: 2
@@ -263345,6 +263345,7 @@ GameObject:
   - 4: {fileID: 9564}
   - 33: {fileID: 10806}
   - 64: {fileID: 11691}
+  - component: {fileID: 1958500000}
   m_Layer: 2
   m_Name: afg_section02_bldg01_int_VOL
   m_TagString: Untagged
@@ -283314,3 +283315,16 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   GameCamera: {fileID: 0}
+--- !u!114 &1958500000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 12898}
+  PrimaryVolume: {fileID: 0}

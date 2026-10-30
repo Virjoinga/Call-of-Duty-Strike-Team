@@ -14026,8 +14026,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: ec5bf54dd6bffff429c8b78ce9414762, type: 2}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 0591bf8ff687f224c89685b7fe593126, type: 2}
 --- !u!64 &11115
 MeshCollider:
   serializedVersion: 2
@@ -15443,8 +15443,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 951c3829e79fb7947ab6fc3a17d7f3cc, type: 2}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 8c6c128a11891fb4381ba8cf97699432, type: 2}
 --- !u!64 &11025
 MeshCollider:
   serializedVersion: 2
@@ -241606,6 +241606,7 @@ GameObject:
   - 4: {fileID: 7033}
   - 33: {fileID: 10021}
   - 64: {fileID: 11050}
+  - component: {fileID: 1958500001}
   m_Layer: 2
   m_Name: afg_transition01_bldg01_int_geom_VOL
   m_TagString: Untagged
@@ -244984,6 +244985,7 @@ GameObject:
   - 4: {fileID: 7275}
   - 33: {fileID: 10076}
   - 64: {fileID: 11114}
+  - component: {fileID: 1958500000}
   m_Layer: 2
   m_Name: afg_section02_bldg01_int_VOL
   m_TagString: Untagged
@@ -311198,7 +311200,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.83395886, w: 0.5518266}
   m_LocalPosition: {x: 13.995724, y: -29.635895, z: 3.1205578}
   m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1958500003}
+  - {fileID: 1958500007}
+  - {fileID: 1958500011}
+  - {fileID: 1958500015}
+  - {fileID: 1958500019}
+  - {fileID: 1958500023}
   m_Father: {fileID: 5817}
 --- !u!4 &7034
 Transform:
@@ -346104,3 +346112,353 @@ MonoBehaviour:
     Clip: {fileID: 7400000, guid: 9dcfba4caf6ff214a8651e1f41763936, type: 2}
   Blend:
     Clip: {fileID: 7400000, guid: dd749a0e2f3fca24da7409e68cdc0cb3, type: 2}
+--- !u!114 &1958500000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 12380}
+  PrimaryVolume: {fileID: 0}
+--- !u!114 &1958500001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 13649}
+  PrimaryVolume: {fileID: 0}
+--- !u!1 &1958500002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500003}
+  - component: {fileID: 1958500004}
+  - component: {fileID: 1958500005}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500003
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500004
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 81ca8c0da448fbf4592082db571703bd, type: 2}
+--- !u!114 &1958500005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}
+--- !u!1 &1958500006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500007}
+  - component: {fileID: 1958500008}
+  - component: {fileID: 1958500009}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500008
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 7eb637cd45e2c7d42ba1b142b5dc75b4, type: 2}
+--- !u!114 &1958500009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}
+--- !u!1 &1958500010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500011}
+  - component: {fileID: 1958500012}
+  - component: {fileID: 1958500013}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500011
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500012
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 21567d295c253f146801cc2fd551c812, type: 2}
+--- !u!114 &1958500013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}
+--- !u!1 &1958500014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500015}
+  - component: {fileID: 1958500016}
+  - component: {fileID: 1958500017}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500015
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500016
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: cc5c59f0ed67c4f41849da0e143a65cc, type: 2}
+--- !u!114 &1958500017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}
+--- !u!1 &1958500018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500019}
+  - component: {fileID: 1958500020}
+  - component: {fileID: 1958500021}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500019
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500020
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: c43e6706e52d67c428d458e18c6b9e67, type: 2}
+--- !u!114 &1958500021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}
+--- !u!1 &1958500022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1958500023}
+  - component: {fileID: 1958500024}
+  - component: {fileID: 1958500025}
+  m_Layer: 2
+  m_Name: afg_transition01_bldg01_int_geom_VOL_triggerpart07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958500023
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7033}
+--- !u!64 &1958500024
+MeshCollider:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 3d1c4e55f177fc847a6d3c1aed3c070e, type: 2}
+--- !u!114 &1958500025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958500022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 1958500001}

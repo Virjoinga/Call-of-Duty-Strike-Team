@@ -11087,6 +11087,7 @@ GameObject:
   - component: {fileID: 4944}
   - component: {fileID: 9166}
   - component: {fileID: 10145}
+  - component: {fileID: 1958500000}
   m_Layer: 2
   m_Name: arc_guardhouse02_int_vol
   m_TagString: Untagged
@@ -34017,6 +34018,7 @@ GameObject:
   - component: {fileID: 6336}
   - component: {fileID: 9525}
   - component: {fileID: 10326}
+  - component: {fileID: 1958500001}
   m_Layer: 2
   m_Name: arc_hut02A_small_int_vol
   m_TagString: Untagged
@@ -154907,10 +154909,10 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 02f988f5df468e24faa931c15e05d378, type: 2}
+  m_SkinWidth: 0.001
+  m_Mesh: {fileID: 4300000, guid: 3b9925e8e3830b047b347fd2acd6661b, type: 2}
 --- !u!64 &10146
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -157441,10 +157443,10 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: b359f53d2d2fa1d44bc904e15d390a28, type: 2}
+  m_SkinWidth: 0.001
+  m_Mesh: {fileID: 4300000, guid: 6fa9ea1eb44da00499270e4548ae2fbb, type: 2}
 --- !u!64 &10327
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -302100,3 +302102,29 @@ MonoBehaviour:
   coverCheckPos: {x: 0, y: 0, z: 0}
   subsectionMask: 0
   core: {fileID: 787511318}
+--- !u!114 &1958500000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 12494}
+  PrimaryVolume: {fileID: 0}
+--- !u!114 &1958500001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f17815a47c2e6d6e579f0d91b89a19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  ParentBuilding: {fileID: 0}
+  PrimaryVolume: {fileID: 0}
