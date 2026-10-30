@@ -54797,6 +54797,81 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 4738}
+        m_ObjectGuid: 2098e766-c50d-4e9f-a18a-a3267727b25c
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetB1.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 4494}
+        m_ObjectGuid: 4b718833-e145-44f6-b36c-583c2e074b30
+      gait: 2
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetB2.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 1986}
+        m_ObjectGuid: 975d189d-bde1-40a2-a407-533c0bb9c69d
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetB3.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 3911}
+        m_ObjectGuid: ed070ca7-1bc5-40f4-acbc-3eda9137c493
+      gait: 2
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetB4.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+  SpawnFromPoint: {fileID: 7402}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3558}
+  DoorPivot: {fileID: 6937}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &15452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68226,6 +68301,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 1
+      coverCluster:
+        m_Object: {fileID: 3431}
+        m_ObjectGuid: 079ff42a-8abb-4545-b365-a419a529b90d
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Boat Camp - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 5389}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2906}
+  DoorPivot: {fileID: 5920}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70295,6 +70400,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 2588}
+        m_ObjectGuid: 69ceed26-8183-4ca2-bb84-45634cd7819f
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( W2Enem - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 8953}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2109}
+  DoorPivot: {fileID: 6272}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76265,6 +76400,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 2647}
+        m_ObjectGuid: 07e38e79-9686-4f8b-ad10-0e36a5365364
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( CourtYard - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 6176}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 4141}
+  DoorPivot: {fileID: 7727}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 1
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &15023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82481,6 +82646,81 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 2625}
+        m_ObjectGuid: b17a18c7-096c-4570-9396-b07e00c4e007
+      gait: 2
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetA1.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 1441}
+        m_ObjectGuid: 58d7cf0d-611d-4e3f-b4c3-e2a5249ee098
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetA2.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 100}
+        m_ObjectGuid: 8c2a76d4-7616-4de7-a8ad-db603fc887ec
+      gait: 2
+      takeCover: 0
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First go to MoveToTargetA3.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 1655}
+        m_ObjectGuid: ee87b819-55f5-4321-991e-f19fe5ba13e8
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetA4.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+  SpawnFromPoint: {fileID: 6562}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1539}
+  DoorPivot: {fileID: 5193}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &16511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94512,6 +94752,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 3431}
+        m_ObjectGuid: 079ff42a-8abb-4545-b365-a419a529b90d
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Boat Camp - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 8614}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1640}
+  DoorPivot: {fileID: 5004}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &16167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167665,6 +167935,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 2647}
+        m_ObjectGuid: 07e38e79-9686-4f8b-ad10-0e36a5365364
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( CourtYard - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 9018}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2286}
+  DoorPivot: {fileID: 5184}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 1
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &12859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173591,6 +173891,51 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 1249}
+        m_ObjectGuid: f4d9edd6-32df-4a01-93bc-54c88dffd867
+      gait: 2
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetStarter1.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+    - goToOnSpawn:
+        m_Object: {fileID: 847}
+        m_ObjectGuid: 3523b798-7d7c-416c-b9b0-f654dc0d3e25
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: First take cover near MoveToTargetStarter2.
+      behaviour2: When alerted, enter standard combat AI.
+      behaviour3: Use any available cover points.
+  SpawnFromPoint: {fileID: 7910}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3274}
+  DoorPivot: {fileID: 6471}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184204,6 +184549,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 2588}
+        m_ObjectGuid: 69ceed26-8183-4ca2-bb84-45634cd7819f
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( W2Enem - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 4916}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1301}
+  DoorPivot: {fileID: 9428}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184437,6 +184812,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 4621}
+        m_ObjectGuid: 6db22461-5012-4cdd-aab9-d4f5019d88a5
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( IceSheetVTOlAttack - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 9085}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2291}
+  DoorPivot: {fileID: 6572}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190624,6 +191029,36 @@ MonoBehaviour:
     DontDropAmmo: 1
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 1
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 4621}
+        m_ObjectGuid: 6db22461-5012-4cdd-aab9-d4f5019d88a5
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( IceSheetVTOlAttack - Cover Cluster )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 8914}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3034}
+  DoorPivot: {fileID: 9118}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 0
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &13665
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -61456,6 +61456,51 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 188}
+        m_ObjectGuid: 8aff65f9-ce45-4d25-a9a2-94636e817630
+      gait: 1
+      takeCover: 0
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 4128}
+        m_ObjectGuid: e0799947-47c8-473f-b479-6ed02b22af00
+      magnet:
+        m_Object: {fileID: 3527}
+        m_ObjectGuid: 958deaf2-3abd-4684-829b-128f57aca619
+      behaviour1: First go to MoveFromBuilding!.
+      behaviour2: When alerted, assault AssaultFromHill
+      behaviour3: Use only cover points in Take Positions
+    - goToOnSpawn:
+        m_Object: {fileID: 188}
+        m_ObjectGuid: 8aff65f9-ce45-4d25-a9a2-94636e817630
+      gait: 1
+      takeCover: 0
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 4128}
+        m_ObjectGuid: e0799947-47c8-473f-b479-6ed02b22af00
+      magnet:
+        m_Object: {fileID: 935}
+        m_ObjectGuid: 329ade2d-fefa-409b-9a11-0a2047d87d23
+      behaviour1: First go to MoveFromBuilding!.
+      behaviour2: When alerted, assault TakePositionsFroBuilding
+      behaviour3: Use only cover points in Take Positions
+  SpawnFromPoint: {fileID: 6248}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 923}
+  DoorPivot: {fileID: 7439}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 6
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &14183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97112,6 +97157,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 0
+      takeCover: 0
+      holdCover: 1
+      coverCluster:
+        m_Object: {fileID: 2646}
+        m_ObjectGuid: 594f1add-b17a-47b5-85ee-5cb76e979e4d
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( DF3 )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 8312}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3157}
+  DoorPivot: {fileID: 9434}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 6
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &15417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99093,6 +99168,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 2
+      takeCover: 1
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 3338}
+        m_ObjectGuid: 1afb0eec-3d75-4670-b0a0-add6fe9692eb
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Barricade )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 5733}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 2075}
+  DoorPivot: {fileID: 5616}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 5
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &12545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102171,6 +102276,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 0
+      takeCover: 0
+      holdCover: 1
+      coverCluster:
+        m_Object: {fileID: 2238}
+        m_ObjectGuid: c4ce2028-01f0-437c-8bcc-bbde0d014f52
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( DF2 )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 9043}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 1746}
+  DoorPivot: {fileID: 7244}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 5
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &12645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138335,6 +138470,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 0
+      takeCover: 0
+      holdCover: 1
+      coverCluster:
+        m_Object: {fileID: 4053}
+        m_ObjectGuid: fd990480-e8fe-4fdc-b2b3-cd983b56958d
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( DF1 )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 7641}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 4315}
+  DoorPivot: {fileID: 6937}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 4
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &13657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141935,6 +142100,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 0
+      takeCover: 0
+      holdCover: 0
+      coverCluster:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      magnet:
+        m_Object: {fileID: 354}
+        m_ObjectGuid: 238a74fd-7056-4a7c-b75f-3ca15c2d9f49
+      behaviour1: Assault exact location of PlaceAntiTankMine1.
+      behaviour2: Use any available cover points.
+      behaviour3:
+  SpawnFromPoint: {fileID: 7558}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3180}
+  DoorPivot: {fileID: 9182}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 4
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &13527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167804,6 +167999,36 @@ MonoBehaviour:
     DontDropAmmo: 0
     quickDestinations:
     - goToOnSpawn:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      gait: 0
+      takeCover: 0
+      holdCover: 1
+      coverCluster:
+        m_Object: {fileID: 3338}
+        m_ObjectGuid: 1afb0eec-3d75-4670-b0a0-add6fe9692eb
+      magnet:
+        m_Object: {fileID: 0}
+        m_ObjectGuid:
+      behaviour1: Soldier will be given a TaskOccupyCoverCluster
+      behaviour2: ( Barricade )
+      behaviour3: and move between cover points at intervals.
+  SpawnFromPoint: {fileID: 7273}
+  StaticTether: {fileID: 0}
+  ClimbAnimation: {fileID: 0}
+  PhysicalDoor: {fileID: 3010}
+  DoorPivot: {fileID: 7918}
+  DoorOpenAnimation: {fileID: 7400000, guid: 5e29574ea50c53348a9b368a6bd6485e, type: 2}
+  DoorCloseAnimation: {fileID: 7400000, guid: 0f69a0ac97b3c614999262a06ca2a567, type: 2}
+  DoorType: 5
+  m_TutorialEnemyOverrides:
+    LineOfSightFOV: 60
+    LineOfSightPeripheralFOV: 140
+    LineOfSightDistance: 10
+    AuditoryAwarenessRange: 5
+    DamageMultiplier: 0.5
+    HealthModifier: 0.5
+  IsTutorialEnemy: 0
 --- !u!114 &13321
 MonoBehaviour:
   m_ObjectHideFlags: 0
