@@ -72,25 +72,25 @@ public class HaloEffect : MonoBehaviour
 		switch (Colour)
 		{
 		case HaloColour.Red:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 0f, 0f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(1f, 0f, 0f, 1f));
 			break;
 		case HaloColour.Green:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0f, 1f, 0f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(0f, 1f, 0f, 1f));
 			break;
 		case HaloColour.Cyan:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0f, 0.8f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(0f, 0.8f, 1f, 1f));
 			break;
 		default:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
 			break;
 		case HaloColour.Orange:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0.88f, 0.6f, 0.31f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(0.88f, 0.6f, 0.31f, 1f));
 			break;
 		case HaloColour.MintGreen:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(0.5f, 0.79f, 0.69f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(0.5f, 0.79f, 0.69f, 1f));
 			break;
 		case HaloColour.Yellowish:
-			HaloModel.GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
+			HaloModel.GetComponent<Renderer>().sharedMaterial.SetColor("_TintColor", new Color(1f, 1f, 1f, 1f));
 			break;
 		}
 	}
