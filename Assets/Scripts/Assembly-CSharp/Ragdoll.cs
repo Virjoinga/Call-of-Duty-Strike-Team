@@ -162,6 +162,12 @@ public class Ragdoll : MonoBehaviour
 			Bones[i].transform.parent = null;
 			Bones[i].transform.position = Bones[i].Bone.transform.position;
 			Bones[i].transform.rotation = Bones[i].Bone.transform.rotation;
+			Rigidbody body = Bones[i].GetComponent<Rigidbody>();
+			if (body != null)
+			{
+				body.position = Bones[i].Bone.position;
+				body.rotation = Bones[i].Bone.rotation;
+			}
 		}
 		mKinematic = false;
 		mBonesParented = false;
@@ -170,6 +176,17 @@ public class Ragdoll : MonoBehaviour
 		if (!mRagdollAttached)
 		{
 			AddRagdollParts();
+		}
+		// Bind linear anchors to the current animated pose before waking any body.
+		foreach (HitLocation bone in Bones)
+		{
+			ConfigurableJoint joint = bone.GetComponent<ConfigurableJoint>();
+			if (joint != null && joint.connectedBody != null)
+			{
+				joint.autoConfigureConnectedAnchor = false;
+				joint.connectedAnchor = joint.connectedBody.transform.InverseTransformPoint(
+					joint.transform.TransformPoint(joint.anchor));
+			}
 		}
 		int num = Bones.Length;
 		int layer = LayerMask.NameToLayer("Default");
@@ -185,11 +202,14 @@ public class Ragdoll : MonoBehaviour
 				hitLocation.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 				hitLocation.GetComponent<Rigidbody>().detectCollisions = true;
 				hitLocation.GetComponent<Rigidbody>().gameObject.layer = layer;
-				if (mPreviousTransforms != null && mPreviousTransformsValid)
+				hitLocation.GetComponent<Rigidbody>().velocity = Vector3.zero;
+				hitLocation.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+				if (mPreviousTransforms != null && mPreviousTransformsValid && Time.deltaTime > 0f)
 				{
 					BoneTransform boneTransform = mPreviousTransforms[j];
 					hitLocation.GetComponent<Rigidbody>().velocity = (hitLocation.transform.position - boneTransform.Position) / Time.deltaTime;
-					hitLocation.GetComponent<Rigidbody>().angularVelocity = (float)Math.PI / 180f * (Quaternion.Inverse(boneTransform.Rotation) * hitLocation.transform.rotation).eulerAngles / Time.deltaTime;
+					hitLocation.GetComponent<Rigidbody>().angularVelocity = CalculateAngularVelocity(
+						boneTransform.Rotation, hitLocation.transform.rotation, Time.deltaTime);
 				}
 				else
 				{
@@ -239,12 +259,24 @@ public class Ragdoll : MonoBehaviour
 			{
 				HitLocation hitLocation = Bones[i];
 				BoneTransform boneTransform = default(BoneTransform);
-				boneTransform.Position = hitLocation.transform.position;
-				boneTransform.Rotation = hitLocation.transform.rotation;
+				// Query-only hitboxes may be parked offscreen between updates.
+				boneTransform.Position = hitLocation.Bone.position;
+				boneTransform.Rotation = hitLocation.Bone.rotation;
 				mPreviousTransforms[i] = boneTransform;
 			}
 			mPreviousTransformsValid = true;
 		}
+	}
+
+	private static Vector3 CalculateAngularVelocity(Quaternion previous, Quaternion current, float deltaTime)
+	{
+		if (deltaTime <= 0f) return Vector3.zero;
+		float angle;
+		Vector3 axis;
+		(current * Quaternion.Inverse(previous)).ToAngleAxis(out angle, out axis);
+		if (angle > 180f) angle -= 360f;
+		if (Mathf.Abs(angle) < 0.0001f) return Vector3.zero;
+		return axis * (angle * Mathf.Deg2Rad / deltaTime);
 	}
 
 	private void CopyRagdollToBones(float drag)
@@ -451,6 +483,8 @@ public class Ragdoll : MonoBehaviour
 			rigidbody.freezeRotation = true;
 			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			rigidbody.mass = hitLocation.Mass;
+			rigidbody.solverIterations = 12;
+			rigidbody.solverVelocityIterations = 4;
 			dictionary[hitLocation.Location] = rigidbody;
 			hitLocation.GetComponent<Collider>().enabled = true;
 			rigidbody.isKinematic = true;
@@ -465,7 +499,7 @@ public class Ragdoll : MonoBehaviour
 	{
 		foreach (HitBoxDescriptor.Constraint constraint in HitBoxDesc.Constraints)
 		{
-			if (bodiesCache.ContainsKey(constraint.Body))
+			if (bodiesCache.ContainsKey(constraint.Body) && bodiesCache.ContainsKey(constraint.Connected))
 			{
 				Rigidbody rigidbody = bodiesCache[constraint.Body];
 				Rigidbody connectedBody = bodiesCache[constraint.Connected];
@@ -479,11 +513,53 @@ public class Ragdoll : MonoBehaviour
 				configurableJoint.angularXMotion = ConfigurableJointMotion.Limited;
 				configurableJoint.angularYMotion = ConfigurableJointMotion.Limited;
 				configurableJoint.angularZMotion = ConfigurableJointMotion.Limited;
-				/*configurableJoint.lowAngularXLimit = ActorGenerator.CreateSoftJointStructure(constraint.LowerAngularXLimit);
-				configurableJoint.highAngularXLimit = ActorGenerator.CreateSoftJointStructure(constraint.UpperAngularXLimit);
-				configurableJoint.angularYLimit = ActorGenerator.CreateSoftJointStructure(constraint.AngularYLimit);
-				configurableJoint.angularZLimit = ActorGenerator.CreateSoftJointStructure(constraint.AngularZLimit);*/
+				HitBoxDescriptor.SoftJointLimitSpring low = constraint.LowerAngularXLimit;
+				HitBoxDescriptor.SoftJointLimitSpring high = constraint.UpperAngularXLimit;
+				if (low.Limit > high.Limit)
+				{
+					HitBoxDescriptor.SoftJointLimitSpring swap = low;
+					low = high;
+					high = swap;
+				}
+				// Unity clamps each endpoint against the other immediately; both defaults are zero.
+				if (low.Limit > 0f)
+				{
+					configurableJoint.highAngularXLimit = MakeJointLimit(high.Limit, high.Bounciness);
+					configurableJoint.lowAngularXLimit = MakeJointLimit(low.Limit, low.Bounciness);
+				}
+				else
+				{
+					configurableJoint.lowAngularXLimit = MakeJointLimit(low.Limit, low.Bounciness);
+					configurableJoint.highAngularXLimit = MakeJointLimit(high.Limit, high.Bounciness);
+				}
+				configurableJoint.angularYLimit = MakeJointLimit(Mathf.Abs(constraint.AngularYLimit.Limit), constraint.AngularYLimit.Bounciness);
+				configurableJoint.angularZLimit = MakeJointLimit(Mathf.Abs(constraint.AngularZLimit.Limit), constraint.AngularZLimit.Bounciness);
+				configurableJoint.angularXLimitSpring = MakeLimitSpring(low, high);
+				configurableJoint.angularYZLimitSpring = MakeLimitSpring(constraint.AngularYLimit, constraint.AngularZLimit);
+				configurableJoint.enableCollision = false;
+				configurableJoint.enablePreprocessing = false;
+				configurableJoint.projectionMode = JointProjectionMode.PositionAndRotation;
+				configurableJoint.projectionDistance = 0.05f;
+				// Angular projection fights articulated limits; retain linear anti-stretch projection only.
+				configurableJoint.projectionAngle = 180f;
 			}
 		}
 	}
+	private static SoftJointLimit MakeJointLimit(float limit, float bounciness)
+	{
+		SoftJointLimit result = new SoftJointLimit();
+		result.limit = limit;
+		result.bounciness = bounciness;
+		return result;
+	}
+
+	private static SoftJointLimitSpring MakeLimitSpring(HitBoxDescriptor.SoftJointLimitSpring first, HitBoxDescriptor.SoftJointLimitSpring second)
+	{
+		SoftJointLimitSpring result = new SoftJointLimitSpring();
+		result.spring = Mathf.Max(first.Spring, second.Spring);
+		// A damper-only spring softens limits in PhysX 3; legacy zero-spring limits are hard.
+		result.damper = result.spring > 0f ? Mathf.Max(first.Damper, second.Damper) : 0f;
+		return result;
+	}
+
 }
