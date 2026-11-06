@@ -13065,7 +13065,7 @@ BoxCollider:
   m_GameObject: {fileID: 1448}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &12035
@@ -58887,6 +58887,7 @@ MonoBehaviour:
   - {fileID: 15150}
   - {fileID: 15155}
   - {fileID: 15149}
+  - {fileID: 1900015102}
   - {fileID: 15156}
 --- !u!114 &15152
 MonoBehaviour:
@@ -58903,6 +58904,7 @@ MonoBehaviour:
   - {fileID: 15149}
   - {fileID: 15155}
   - {fileID: 15150}
+  - {fileID: 1900015102}
   - {fileID: 15156}
 --- !u!114 &15153
 MonoBehaviour:
@@ -91662,10 +91664,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec57469ef59edafbd30e61a603da7232, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a5b203407535eb3f0adab12d12fd76e, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  SuppressHUD: 1
+  target: {fileID: 0}
+  Target:
+    m_Object: {fileID: 2888}
+    m_ObjectGuid: 84c5dfdf-45f5-45e1-80b2-64cbb0d99807
+  Message: Activate
+  StringParam:
+  GameObjectParam: {fileID: 0}
 --- !u!114 &16795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91688,7 +91696,6 @@ MonoBehaviour:
   - {fileID: 16803}
   - {fileID: 16801}
   - {fileID: 16794}
-  - {fileID: 16800}
 --- !u!114 &16796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91703,7 +91710,6 @@ MonoBehaviour:
   commands:
   - {fileID: 16799}
   - {fileID: 16801}
-  - {fileID: 16800}
   - {fileID: 16802}
   - {fileID: 16803}
   - {fileID: 16794}
@@ -92483,19 +92489,6 @@ MonoBehaviour:
   m_AdditionalIcon: {fileID: 0}
   m_UseExportedPosition: 0
   m_Depreciated: 0
---- !u!114 &16800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 4689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e11857072a1ab03d6b2a8b8c9ae6462, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  LockMove: 1
-  LockLook: 1
 --- !u!114 &16707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277702,6 +277695,7 @@ GameObject:
   - 114: {fileID: 15155}
   - 114: {fileID: 15150}
   - 114: {fileID: 15156}
+  - 114: {fileID: 1900015102}
   m_Layer: 0
   m_Name: Scripted Sequence - Turn off Black Bars_Enable FPP Controls
   m_TagString: Untagged
@@ -369911,7 +369905,6 @@ GameObject:
   - 114: {fileID: 16795}
   - 114: {fileID: 16799}
   - 114: {fileID: 16801}
-  - 114: {fileID: 16800}
   - 114: {fileID: 16802}
   - 114: {fileID: 16803}
   - 114: {fileID: 16794}
@@ -394994,3 +394987,15 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   ParentBuilding: {fileID: 0}
   PrimaryVolume: {fileID: 1958500025}
+--- !u!114 &1900015102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec57469ef59edafbd30e61a603da7232, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  SuppressHUD: 0
