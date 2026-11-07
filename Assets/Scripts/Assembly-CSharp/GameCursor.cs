@@ -14,8 +14,27 @@ public sealed class GameCursor : MonoBehaviour
 
     public static bool CanUseMouse
     {
+        get { return HasMouseCapture && !IsOverwatchView(); }
+    }
+
+    public static bool CanUseOverwatchMouse
+    {
+        get { return HasMouseCapture && IsOverwatchView(); }
+    }
+
+    private static bool HasMouseCapture
+    {
         get { return sInstance != null && sInstance.WantsCapture() &&
             Cursor.lockState == CursorLockMode.Locked && Time.frameCount > sInstance.mCaptureFrame; }
+    }
+
+    private static bool IsOverwatchView()
+    {
+        OverwatchController overwatch = OverwatchController.Instance;
+        CameraManager cameras = CameraManager.Instance;
+        return overwatch != null && overwatch.Active && overwatch.OverwatchLC != null &&
+            cameras != null && cameras.ActiveCamera == CameraManager.ActiveCameraType.StrategyCamera &&
+            cameras.StrategyCameraController.CurrentCameraBase == overwatch.OverwatchLC;
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -42,12 +61,13 @@ public sealed class GameCursor : MonoBehaviour
     {
         GameController game = GameController.Instance;
         CameraManager cameras = CameraManager.Instance;
-        if (game == null || !game.IsReady || !game.GameplayStarted || !game.IsFirstPerson ||
+        if (game == null || !game.IsReady || !game.GameplayStarted ||
             game.IsPaused || CinematicHelper.IsInCinematic ||
             (TimeManager.instance != null && TimeManager.instance.GlobalTimeState == TimeManager.State.IngamePaused) ||
-            (OverwatchController.Instance != null && OverwatchController.Instance.Active) ||
-            cameras == null || cameras.IsSwitching ||
-            cameras.ActiveCamera != CameraManager.ActiveCameraType.PlayCamera) return false;
+            cameras == null || cameras.IsSwitching) return false;
+        bool overwatchActive = OverwatchController.Instance != null && OverwatchController.Instance.Active;
+        if (overwatchActive ? !IsOverwatchView() :
+            !game.IsFirstPerson || cameras.ActiveCamera != CameraManager.ActiveCameraType.PlayCamera) return false;
         if (mFrontend == null) mFrontend = FindObjectOfType<FrontEndController>();
         if (mMessages == null) mMessages = FindObjectOfType<MessageBoxController>();
         return (mFrontend == null || mFrontend.ActiveScreen == ScreenID.None) &&

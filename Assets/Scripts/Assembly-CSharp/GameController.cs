@@ -1021,6 +1021,12 @@ public class GameController : MonoBehaviour
 			}
 			Vector2 delta = new Vector2(num34, 0f - num31);
 			delta.Scale(scale);
+#if UNITY_STANDALONE || UNITY_EDITOR
+			if (GameCursor.CanUseOverwatchMouse)
+			{
+				delta += new Vector2(-Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+			}
+#endif
 			overwatchLC.DoPan(delta);
 		}
 	}

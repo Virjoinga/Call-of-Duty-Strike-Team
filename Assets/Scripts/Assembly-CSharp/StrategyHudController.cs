@@ -258,6 +258,16 @@ public class StrategyHudController : MonoBehaviour
 			ShowOverwatchShootingHUD = false;
 		}
 		UpdateAndroidPadInput();
+#if UNITY_STANDALONE || UNITY_EDITOR
+		if (GameCursor.CanUseOverwatchMouse)
+		{
+			mTriggerPressedBuffer |= Input.GetMouseButton(0) && TriggerButton.gameObject.activeInHierarchy;
+			if (Input.GetMouseButtonDown(1))
+			{
+				FireRocket();
+			}
+		}
+#endif
 		SetTriggerPressed(mTriggerPressedBuffer);
 		mTriggerPressedBuffer = false;
 		mLookAmountFrames[mLookAmountFrameIndex++] = mLookAmountInternalTouch;

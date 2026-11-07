@@ -2942,6 +2942,12 @@ public class CommonHudController : MonoBehaviour
 
 	public void OnMoveInput(ref POINTER_INFO ptr)
 	{
+#if UNITY_STANDALONE || UNITY_EDITOR
+		if (ptr.type == POINTER_INFO.POINTER_TYPE.MOUSE && Cursor.lockState == CursorLockMode.Locked)
+		{
+			return;
+		}
+#endif
 		if (ptr.evt == POINTER_INFO.INPUT_EVENT.RELEASE || ptr.evt == POINTER_INFO.INPUT_EVENT.TAP)
 		{
 			CheckTapZone(ptr.devicePos.xy());
