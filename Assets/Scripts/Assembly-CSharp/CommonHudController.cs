@@ -858,7 +858,7 @@ public class CommonHudController : MonoBehaviour
 			HideChainGunUi(hide);
 			UpdateTargetDetails(actor);
 			UpdateMantleButton(actor);
-			//SetTriggerButtonIcon(actor);
+			SetTriggerButtonIcon(actor);
 			if (GKM.UnitCount(GKM.PlayerControlledMask & GKM.UpAndAboutMask & GKM.SelectableMask) <= 1)
 			{
 				HideFollowMe(true);
@@ -892,7 +892,7 @@ public class CommonHudController : MonoBehaviour
 		{
 			CallContextInteraction();
 		}
-		if (Input.GetKeyDown(KeyCode.V) && !TriggerLocked)
+		if (Input.GetKeyDown(KeyCode.V) && (!TriggerLocked || !FPPStealthKillLocked))
 		{
 			mMeleePressedBuffer = true;
 		}
@@ -2572,7 +2572,7 @@ public class CommonHudController : MonoBehaviour
 				}
 				return;
 			}
-			if (separateMelee ? meleeInput : CloseEnoughToMelee())
+			if (separateMelee ? meleeInput && !TriggerLocked : CloseEnoughToMelee())
 			{
 				MeleePressed = meleeInput;
 				SetTriggerPressed(false);

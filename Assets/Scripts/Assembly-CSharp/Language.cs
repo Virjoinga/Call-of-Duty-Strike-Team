@@ -152,13 +152,22 @@ public static class Language
 		return (TextAsset)Resources.Load("Languages/" + lang + "_" + sheetTitle, typeof(TextAsset)) != null;
 	}
 
-	private static string GetLanguageFileContents(string sheetTitle)
-	{
-		TextAsset textAsset = (TextAsset)Resources.Load(string.Concat("Languages/", currentLanguage, "_", sheetTitle), typeof(TextAsset));
-		return textAsset.text;
-	}
+    private static string GetLanguageFileContents(string sheetTitle)
+    {
+        string fileName = string.Concat(currentLanguage, "_", sheetTitle);
+        if (!Application.isMobilePlatform)
+        {
+            TextAsset desktopSheet = Resources.Load<TextAsset>("Languages/PC/" + fileName);
+            if (desktopSheet != null)
+            {
+                return desktopSheet.text;
+            }
+        }
+        TextAsset textAsset = Resources.Load<TextAsset>("Languages/" + fileName);
+        return textAsset.text;
+    }
 
-	public static LanguageCode CurrentLanguage()
+    public static LanguageCode CurrentLanguage()
 	{
 		return currentLanguage;
 	}
