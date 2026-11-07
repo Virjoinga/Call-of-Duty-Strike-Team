@@ -106,7 +106,7 @@ public class SoundManager : SingletonMonoBehaviour
 				{
 					if (m_isPaused)
 					{
-						m_soundObj.m_audioSource.Play();
+						m_soundObj.m_audioSource.UnPause();
 					}
 					else
 					{
@@ -279,11 +279,6 @@ public class SoundManager : SingletonMonoBehaviour
 					m_soundObj.m_audioLPF.enabled = false;
 				}
 			}
-		}
-
-		public void SetPausedVariable(bool pause)
-		{
-			m_isPaused = pause;
 		}
 
 		public void Play()
@@ -1211,7 +1206,7 @@ public class SoundManager : SingletonMonoBehaviour
 			mAppPaused = false;
 			for (int j = 0; j < 9; j++)
 			{
-				PauseVolumeGroupWhenRegainingFocus((SoundFXData.VolumeGroup)j, mPauseGroupSave[j]);
+				PauseVolumeGroup((SoundFXData.VolumeGroup)j, mPauseGroupSave[j]);
 			}
 		}
 	}
@@ -1642,26 +1637,6 @@ public class SoundManager : SingletonMonoBehaviour
 			if (soundInstance.Sfx.m_sfxData.VolGroup == volGrp)
 			{
 				soundInstance.IsPaused = paused;
-			}
-		}
-	}
-
-	public void PauseVolumeGroupWhenRegainingFocus(SoundFXData.VolumeGroup volGrp, bool paused)
-	{
-		VolumeGroups[(int)volGrp].Paused = paused;
-		for (int i = 0; i < m_playingInstances.Count; i++)
-		{
-			SoundInstance soundInstance = m_playingInstances[i];
-			if (soundInstance.Sfx.m_sfxData.VolGroup == volGrp)
-			{
-				if (!paused)
-				{
-					soundInstance.SetPausedVariable(paused);
-				}
-				else
-				{
-					soundInstance.IsPaused = paused;
-				}
 			}
 		}
 	}
